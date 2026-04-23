@@ -1,0 +1,6 @@
+{
+  "version": "1.0",
+  "lastUpdated": "2026-04-23T00:00:00-06:00",
+  "description": "Patrones de voz, estructura y teología detectados en el corpus de Daniel Lira. Solo crecen con aprobación explícita. El pattern-harvester lee este archivo al inicio de cada sesión y lo actualiza solo tras OK de Daniel.",
+  "patterns": []
+}
