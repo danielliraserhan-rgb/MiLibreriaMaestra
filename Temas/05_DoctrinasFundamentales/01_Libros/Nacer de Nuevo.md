@@ -109,7 +109,7 @@ fecha_actualizacion: "2026-04-23"
 # Nacer de Nuevo
 
 > **Coautores:** Daniel Lira · Luis Ortiz · Rodrigo Weigend
-> **Archivos fuente:** `Inbox/Nacer de nuevo Libro Digital.pdf` · `Inbox/Nacer de Nuevo_ Versión Final tamaño carta.docx`
+> **Archivos fuente:** `Temas/05_DoctrinasFundamentales/01_Libros/Nacer de nuevo Libro Digital.pdf` · `Temas/05_DoctrinasFundamentales/01_Libros/Nacer de Nuevo_ Versión Final tamaño carta.docx`
 
 ---
 
