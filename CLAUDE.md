@@ -137,7 +137,7 @@ fecha_actualizacion: ""
 
 ## Control de Tokens
 
-Al llegar al **70% del contexto** de la sesión, avisar: *"Estamos al 70% del contexto. Considera abrir una nueva sesión para no perder continuidad."*
+Al llegar al **50% del contexto** de la sesión, avisar: *"Estamos al 70% del contexto. Considera abrir una nueva sesión para no perder continuidad."*
 
 ## graphify
 
