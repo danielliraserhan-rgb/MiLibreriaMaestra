@@ -70,6 +70,34 @@ Un sistema de dos fases para gestionar el conocimiento pastoral y teológico de 
 
 ---
 
+## Motor oficial de escritura — obsidian-markdown
+
+A partir de 2026-04-24, **toda creación o edición de archivos `.md` en el vault usa `obsidian-markdown`** (kepano/obsidian-skills), que se activa en los pasos 2.e y 2.f del ciclo por archivo (escritura de ZK aprobadas y actualización del YAML fuente).
+
+### Reglas de escritura (obligatorias)
+
+| Regla | Detalle |
+|---|---|
+| **Usar `obsidian-markdown` siempre** | Para crear o editar cualquier `.md` en Modos 1–7 y Académico tras aprobación de Daniel |
+| **Prohibido: terminal** | `cat`, `echo`, `sed`, `awk` y similares NO pueden usarse para escribir archivos Markdown |
+| **YAML v2 vía `obsidian-markdown`** | La inyección del frontmatter usa el motor para garantizar formato perfecto sin escapes manuales |
+| **Wikilinks obligatorios** | Los campos `source_file`, `notas_relacionadas` y la sección "Conexiones" usan `[[Nombre]]` — `obsidian-markdown` los genera nativamente |
+| **Callouts nativos** | Las ideas centrales se resaltan con callouts de Obsidian (`> [!note]`, `> [!important]`, etc.) mediante `obsidian-markdown` |
+
+### Cuándo se activa en el flujo
+
+```
+Ciclo por archivo (§6 del plan):
+  2.e — zettelkasten-forge propone notas → Daniel aprueba
+        → obsidian-markdown CREA los archivos ZK en 09_Zettelkasten/
+  2.f — actualizar zettelkasten_notes en YAML del archivo fuente
+        → obsidian-markdown EDITA el frontmatter del archivo fuente
+```
+
+`obsidian-markdown` también se usa al crear contenedores en `inbox-triage` Fase 2 si el archivo de destino es nuevo.
+
+---
+
 ## Reglas no negociables
 
 1. Nunca aplicar voz pastoral a material académico (`08_Academico/Maestria/`)
@@ -77,6 +105,7 @@ Un sistema de dos fases para gestionar el conocimiento pastoral y teológico de 
 3. Nunca escribir en `activePatterns.json` sin aprobación explícita de Daniel
 4. Nunca cortar, resumir ni tomar decisiones de contenido en transcripciones orales (§11 Contexto Maestro)
 5. Nunca inventar teología — si hay hueco, señalar y preguntar
+6. **Nunca usar comandos de terminal para escribir archivos `.md` — usar `obsidian-markdown` siempre**
 
 ---
 

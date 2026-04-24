@@ -95,10 +95,25 @@ ZK destino: 09_Zettelkasten/academico/
 
 ---
 
+## Motor de escritura — obsidian-markdown
+
+**`obsidian-markdown` es el motor oficial de escritura.** Se activa siempre que hay que crear o editar un `.md` tras aprobación de Daniel.
+
+| Momento | Acción de `obsidian-markdown` |
+|---|---|
+| Post-aprobación ZK (paso 2.e) | Crea los archivos en `09_Zettelkasten/pastoral/` o `/academico/` con YAML v2 y wikilinks `[[…]]` |
+| Actualización YAML fuente (paso 2.f) | Edita el frontmatter del archivo fuente añadiendo los IDs a `zettelkasten_notes` |
+| Creación de contenedor (inbox-triage Fase 2) | Crea el archivo de destino con el frontmatter YAML v2 completo |
+
+**Prohibido usar terminal** (`cat`, `echo`, `sed`, `awk`) para escribir archivos `.md` en cualquier momento del flujo.
+
+---
+
 ## Reglas de oro
 
 1. `inbox-triage` **siempre primero**
 2. `pattern-harvester` **siempre último**
 3. `zettelkasten-forge` **siempre antes del harvester**
-4. Nunca avanzar de paso sin OK explícito de Daniel
-5. Si el modo no está claro después de leer el archivo, preguntar antes de proceder
+4. `obsidian-markdown` **siempre para crear/editar `.md`** — nunca terminal
+5. Nunca avanzar de paso sin OK explícito de Daniel
+6. Si el modo no está claro después de leer el archivo, preguntar antes de proceder
