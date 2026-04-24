@@ -1,5 +1,10 @@
 {
   "openBehavior": "",
   "newFileLocation": "folder",
-  "newFileFolderPath": "Inbox"
+  "newFileFolderPath": "Inbox",
+  "userIgnoreFilters": [
+    "_Skills/",
+    "Templates/",
+    "ContextoMaestro/"
+  ]
 }
