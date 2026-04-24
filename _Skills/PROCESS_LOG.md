@@ -49,10 +49,16 @@
 
 **Notas Zettelkasten generadas:** 22 (ZK-20260423-1200-001 a ZK-20260423-1200-022)
 
-**Patrones detectados (pattern-harvester):**
-— Pendiente
+**Patrones detectados (pattern-harvester):** 8 propuestos · 3 aprobados
 
 **Propuestas:**
-— Pendiente
+- [x] P-006 — La tríada como estructura de completitud — APROBADO (sugerencia al detectar pares)
+- [ ] P-001 — El remate de golpe — RECHAZADO (ya cubierto en ContextoMaestro §4.5)
+- [ ] P-002 — "Pero Dios" como bisagra — RECHAZADO
+- [ ] P-003 — La objeción anticipada — RECHAZADO
+- [ ] P-004 — El personaje como espejo del lector — RECHAZADO
+- [ ] P-005 — Definición en negativo antes del positivo — RECHAZADO
+- [x] P-007 — Diseño → corrupción → restauración — APROBADO (alternativa al arco de 3 tiempos)
+- [x] P-008 — Identidad antes de conducta — APROBADO (corrección ante tono acusatorio o sin base teológica)
 
-**Resolución:** En proceso — pattern-harvester no ejecutado aún
+**Resolución:** Completado 2026-04-23. 3 patrones activos en activePatterns.json v1.1
