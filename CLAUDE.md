@@ -1,74 +1,100 @@
-# CLAUDE.md — MiLibreriaMaestra
+# CLAUDE.md v3 — MiLibreriaMaestra
 
-> Las 5 marcas de voz, marcos teológicos, líneas rojas, checklist de 11 puntos
-> y descripción de modos (A, B, C, R, E) están en el Contexto Maestro.
-> Ruta canónica: `ContextoMaestro/ContextoMaestro.md`
-> Este archivo cubre solo arquitectura operativa.
+> Voz, teología, marcos y líneas rojas: `ContextoMaestro/ContextoMaestro.md`
+> Este archivo cubre arquitectura operativa únicamente.
 
 ---
 
-## Estructura del Vault
+## §1 Identidad del Sistema
 
-**Dominio pastoral** — `Temas/01–07`:
+**S1 — Segundo cerebro** (Obsidian): catalogar, conectar, generar notas atómicas.
+**S2 — Coach de escritura** (Claude Code): analizar, retroalimentar, entrenar. Nunca escribe por Daniel.
+Ambos comparten: `Inbox/` · `ContextoMaestro/` · `_Skills/activePatterns.json`
+
+---
+
+## §2 Estructura del Vault
+
+**Pastoral** — `Temas/01–07`:
 `01_Origenes` · `02_HistoriaDeIsrael` · `03_Escatologia—Destino` · `04_ExegesisNT`
 `05_DoctrinasFundamentales` · `06_DiscipuladoVidaCristiana` · `07_PredicacionesDevocionales`
 
-Cada tema contiene: `01_Libros` / `02_EsquemasDeClase` / `03_ClasesEnVivo` / `04_NotasSinProcesar` / `05_MaterialExterno`
+Cada tema: `01_Libros` / `02_EsquemasDeClase` / `03_ClasesEnVivo` / `04_NotasSinProcesar` / `05_MaterialExterno`
 
-**Dominio académico** — `Temas/08_Academico/Maestria`:
+**Académico** — `Temas/08_Academico/Maestria`:
 `01_ArtículosAcadémicos` / `02_CasosDeEstudio` / `03_ForosDePreguntas` / `04_Exámenes` / `05_NotasDeClasePorMi` / `06_NotasDeClasePorElProfesor`
 
-**Sistema**:
-`Inbox/` · `Templates/` · `ContextoMaestro/` · `MapasDeContenido—MOCs/` · `_Skills/` · `Assets/`
+**Sistema**: `Inbox/` · `Inbox/scrivener-sync/` · `Templates/` · `ContextoMaestro/` · `MapasDeContenido—MOCs/` · `_Skills/` · `Assets/`
 
-**Segundo cerebro (Zettelkasten)**:
-`09_Zettelkasten/pastoral/` · `09_Zettelkasten/academico/` · `09_Zettelkasten/_indice/`
+**Zettelkasten**: `09_Zettelkasten/pastoral/` · `09_Zettelkasten/academico/` · `09_Zettelkasten/_indice/`
 
-> `ClasesPorSemestre/` — fuera del alcance del sistema. No procesar.
+> `ClasesPorSemestre/` — fuera del alcance. No procesar.
 
 ---
 
-## Flujo de Entrada — Sistema completo
+## §3 Protocolo de Entrada
 
-**Punto de entrada siempre:** `modo-selector` (lee `_Skills/activePatterns.json`, orquesta todo)
+**Punto de entrada siempre:** `modo-selector` → lee `activePatterns.json` → llama a `inbox-triage`
 
 ```
-Daniel trae archivo → Inbox/
+Daniel trae archivo → Inbox/   (o llega vía Inbox/scrivener-sync/ con source: scrivener)
 ↓
-modo-selector:
-  1. Lee _Skills/activePatterns.json
-  2. inbox-triage Fase 1 → detecta MODO (1-7) + YAML → reporte → espera OK
-  3. inbox-triage Fase 2 → crea contenedor
-  4. Ejecuta skills del MODO (ver tabla §Modos)
-  5. zettelkasten-forge → propone N notas atómicas → espera OK
-  6. Guarda ZK aprobadas → actualiza zettelkasten_notes en YAML
-  7. pattern-harvester → propone patrones → espera OK granular
-  8. Si aprueba: actualiza _Skills/activePatterns.json + _Skills/PROCESS_LOG.md
+modo-selector → inbox-triage Fase 1 → detecta MODO + genera YAML → reporte → espera OK
+↓
+inbox-triage Fase 2 → crea contenedor en Temas/
+↓
+Skills del MODO (ver §4) → espera OK en cada checkpoint
+↓
+zettelkasten-forge → propone notas atómicas → espera OK
+↓
+pattern-harvester → propone patrones → espera OK granular
+↓
+Si aprueba: actualiza activePatterns.json + PROCESS_LOG.md
 ```
 
-**Regla de oro:** `inbox-triage` siempre primero. `pattern-harvester` siempre último. `zettelkasten-forge` siempre antes del harvester. Nunca avanzar sin OK explícito de Daniel.
+**Regla de oro:** `inbox-triage` siempre primero · `pattern-harvester` siempre último · `zettelkasten-forge` antes del harvester · nunca avanzar sin OK explícito de Daniel.
+
+**Motor de escritura:** `obsidian-markdown` es la ÚNICA herramienta para crear/editar .md en el vault. Prohibido: `cat`, `echo >>`, `sed`, `awk`, terminal para markdown.
 
 ---
 
-## Los 7 Modos — Tipología de archivos
+## §4 Tabla de Enrutamiento de Modos
 
-| Modo | Tipo | Descripción | Skills en orden |
+| Modo | Tipo | Skills en orden | Output ZK |
 |---|---|---|---|
-| **1** | Libro Terminado | Completo, va directo a catalogar | `inbox-triage` → `modo-c`(opcional) → `zettelkasten-forge` → `pattern-harvester` |
-| **2** | Libro Pre-Diseño | Necesita edición bloque a bloque | `inbox-triage` → `modo-c` → `modo-ab` → `modo-r`(si hueco) → `zettelkasten-forge` → `pattern-harvester` |
-| **3** | Ideas Sueltas | Sin estructura, solo mapear | `inbox-triage` → `zettelkasten-forge` → `pattern-harvester` |
-| **4** | Guía de Estudio | Exegética versículo a versículo | `inbox-triage` → `modo-e`(bíblica) → `zettelkasten-forge` → `pattern-harvester` |
-| **5** | Nota Temática | Resuelve un tema, referencia permanente | `inbox-triage` → `modo-c`(opcional) → `zettelkasten-forge` → `pattern-harvester` |
-| **6** | Estudio / Clase Larga | Clase 1–3 h, notas para Daniel + estudiantes | `inbox-triage` → `modo-e` → `modo-ab`(si transcripción) → `zettelkasten-forge` → `pattern-harvester` |
-| **7** | Grupos Conexión | ~15 min, para OTRA PERSONA facilite | `inbox-triage` → `modo-e`(temática) → `zettelkasten-forge` → `pattern-harvester` |
-| — | Académico | Material maestría, régimen neutral | `inbox-triage` → `notas-maestria` → `zettelkasten-forge`(neutral) → `pattern-harvester` |
-
-**Output Zettelkasten por modo:**
-`Modo 1:` 15–30 notas · `Modo 2:` 10–25 · `Modo 3:` 5–10 · `Modo 4:` 10–20 · `Modo 5:` 5–10 · `Modo 6:` 8–15 · `Modo 7:` 3–5
+| **1** | Libro Terminado | `inbox-triage` → `modo-c`(opt) → `zettelkasten-forge` → `pattern-harvester` | 15–30 |
+| **2** | Libro Pre-Diseño | `inbox-triage` → `modo-c` → `modo-ab` → `modo-r`(si hueco) → `zettelkasten-forge` → `pattern-harvester` | 10–25 |
+| **3** | Ideas Sueltas | `inbox-triage` → `zettelkasten-forge` → `pattern-harvester` | 5–10 |
+| **4** | Guía de Estudio | `inbox-triage` → `modo-e`(bíblica) → `zettelkasten-forge` → `pattern-harvester` | 10–20 |
+| **5** | Nota Temática | `inbox-triage` → `modo-c`(opt) → `zettelkasten-forge` → `pattern-harvester` | 5–10 |
+| **6** | Clase Larga | `inbox-triage` → `modo-e` → `modo-ab`(si transcripción) → `zettelkasten-forge` → `pattern-harvester` | 8–15 |
+| **7** | Grupos Conexión | `inbox-triage` → `modo-e`(temática) → `zettelkasten-forge` → `pattern-harvester` | 3–5 |
+| **Acad.** | Maestría | `inbox-triage` → `notas-maestria` → `zettelkasten-forge`(neutral) → `pattern-harvester` | 5–15 |
 
 ---
 
-## Plantilla YAML v2
+## §5 Mapa de Skills
+
+| Situación | Skill |
+|---|---|
+| Nuevo archivo en inbox | `modo-selector` |
+| Diagnóstico de tipo + YAML | `inbox-triage` |
+| Texto pastoral: oral + escrito, o borrador | `modo-ab-seccion-mixta` |
+| Diagnóstico / mapa estructural | `modo-c-esquema-editorial` |
+| Hueco estructural, material de referencia | `modo-r-material-referencia` |
+| Esquema para clase / enseñanza | `modo-e-unificado` |
+| Lectura académica / nota de maestría | `notas-maestria` |
+| Generar notas atómicas Zettelkasten | `zettelkasten-forge` |
+| Detectar y proponer patrones | `pattern-harvester` |
+| Mapa de contenido (índice de notas) | `moc-builder` |
+| **Análisis de voz + teología (S2)** | `writing-coach` |
+| **Espejo de voz vs patrones aprobados** | `voice-trainer` |
+| **Guía de formato por tipo de contenido** | `format-adapter` |
+| **Detectar archivo nuevo desde Scrivener** | `scrivener-bridge` |
+
+---
+
+## §6 Contrato YAML v2
 
 ```yaml
 ---
@@ -92,59 +118,61 @@ modo: ""            # 1-libro-terminado | 2-libro-pre-diseno | 3-ideas-sueltas |
                     # 7-grupos-conexion | academico
 fase: ""            # (solo MODO 2) pre-diseno | en-diseno | disenado
 serie: ""
-fuente: ""          # dictado | grabacion | borrador | clase | conferencia | paper
-author_quotes: []   # autores/teólogos citados (Wright, Keller, Walton…)
-zettelkasten_notes: []  # IDs de notas atómicas generadas desde este archivo (ZK-YYYYMMDD-HHMM-NNN)
+fuente: ""          # dictado | grabacion | borrador | clase | conferencia | paper | scrivener
+author_quotes: []
+zettelkasten_notes: []  # IDs: ZK-YYYYMMDD-HHMM-NNN
+coaching_notes: []      # IDs de sesiones de coach que usaron este archivo como fuente
 version_yaml: "2.0"
 fecha_actualizacion: ""
 ---
 ```
 
-**Regla de coexistencia:** Notas con YAML v1 siguen siendo válidas. Al pasar por el sistema se hace upgrade automático (campos nuevos con `""` o `[]`). Los campos v1 NUNCA se renombran.
+**Regla:** YAML v1 sigue siendo válido. Al pasar por el sistema: upgrade automático. Campos v1 NUNCA se renombran.
 
 ---
 
-## Mapa de Skills
-
-| Situación | Skill |
-|---|---|
-| Nuevo archivo en inbox (punto de entrada siempre) | `modo-selector` |
-| Diagnóstico de tipo + YAML | `inbox-triage` |
-| Texto pastoral: oral + escrito, o borrador limpio | `modo-ab-seccion-mixta` |
-| Diagnóstico / mapa estructural | `modo-c-esquema-editorial` |
-| Hueco estructural, buscar material de referencia | `modo-r-material-referencia` |
-| Esquema para clase / enseñanza | `modo-e-unificado` |
-| Lectura académica / nota de maestría | `notas-maestria` |
-| Generar notas atómicas Zettelkasten | `zettelkasten-forge` |
-| Detectar y proponer patrones de voz/estructura | `pattern-harvester` |
-| Mapa de contenido (índice de notas existentes) | `moc-builder` |
-
----
-
-## Archivos del Sistema
+## §7 Archivos del Sistema
 
 | Archivo | Propósito |
 |---|---|
-| `_Skills/activePatterns.json` | Patrones de voz/estructura aprobados por Daniel — se lee en cada sesión |
-| `_Skills/PROCESS_LOG.md` | Bitácora append-only de archivos procesados + propuestas de cambio |
-| `_Skills/mapeo-modos-skills.md` | Tabla canónica modo → skills (referencia rápida) |
-| `_Skills/README-sistema.md` | Documentación operativa del sistema completo |
-| `ContextoMaestro/ContextoMaestro.md` | Fuente de verdad de voz, teología y líneas rojas |
+| `_Skills/activePatterns.json` | Patrones aprobados — leer al inicio de cada sesión |
+| `_Skills/PROCESS_LOG.md` | Bitácora append-only |
+| `ContextoMaestro/ContextoMaestro.md` | Fuente de verdad: voz, teología, líneas rojas |
+| `ContextoMaestro/00_ESENCIAL.md` | Cargar siempre. Resumen ejecutivo del ContextoMaestro |
+| `ContextoMaestro/04_voz.md` | Cargar solo para tareas pastorales o sesiones de coach |
+| `Inbox/scrivener-sync/` | Carpeta monitoreada: archivos que llegan desde Scrivener |
 
-> **IMPORTANTE:** Sincronizar `ContextoMaestro/ContextoMaestro.md` con `~/Desktop/Claude/Contexto Maestro — Daniel Lira.md` cada vez que el Contexto Maestro se actualice.
+> Sincronizar `ContextoMaestro/ContextoMaestro.md` con `~/Desktop/Claude/Contexto Maestro — Daniel Lira.md` cuando se actualice.
 
 ---
 
-## Control de Tokens
+## §8 Protocolo Coach de Escritura (S2)
 
-Al llegar al **70% del contexto** de la sesión, avisar: *"Estamos al 70% del contexto. Considera abrir una nueva sesión para no perder continuidad."*
+**Principio:** El coach analiza. Daniel escribe. Siempre.
 
-## graphify
+**Activación:** Cuando Daniel trae un texto propio para revisión (no para catalogar).
 
-This project has a graphify knowledge graph at graphify-out/.
+**Flujo del coach:**
+1. Leer `ContextoMaestro/00_ESENCIAL.md` + `ContextoMaestro/04_voz.md` antes de analizar
+2. Leer `_Skills/activePatterns.json` para patrones activos
+3. Analizar el texto en 5 categorías y devolver reporte:
+   - **Voz** — ¿Cuáles de las 5 marcas están presentes / ausentes? Citar líneas exactas.
+   - **Teología** — ¿Algún marco del §2 está ausente o comprometido?
+   - **Estructura** — ¿El arco humana condición → respuesta de Dios → aplicación está completo?
+   - **Ritmo** — ¿Hay párrafos largos sin remate corto? ¿Dónde falta respiración?
+   - **Líneas rojas** — ¿Alguna de las 8 prohibiciones activada? Citar sección exacta del ContextoMaestro.
+4. Proponer 2–3 preguntas que Daniel pueda hacerse para mejorar el texto (no reescribir)
+5. Si el análisis genera insights permanentes → proponer a `pattern-harvester`
 
-Rules:
-- Before answering architecture or codebase questions, read graphify-out/GRAPH_REPORT.md for god nodes and community structure
-- If graphify-out/wiki/index.md exists, navigate it instead of reading raw files
-- For cross-module "how does X relate to Y" questions, prefer `graphify query "<question>"`, `graphify path "<A>" "<B>"`, or `graphify explain "<concept>"` over grep — these traverse the graph's EXTRACTED + INFERRED edges instead of scanning files
-- After modifying code files in this session, run `graphify update .` to keep the graph current (AST-only, no API cost)
+**Regla:** Toda observación debe citar la sección de ContextoMaestro que la sustenta.
+
+---
+
+## §9 Reglas de Control
+
+- **70% del contexto:** Avisar: *"Estamos al 70%. Considera abrir una nueva sesión."*
+- **ContextoMaestro/:** Nunca modificar. Solo leer.
+- **activePatterns.json:** Solo actualizar con OK explícito de Daniel.
+- **Notas ZK:** Solo crear con OK explícito de Daniel después de revisión.
+- **Dominio académico ↔ pastoral:** No mezclar. Las notas ZK de cada dominio no se enlazan entre sí salvo aprobación explícita.
+- **Scrivener sync:** La dirección `Obsidian → Scrivener` es siempre manual. El sistema nunca sobreescribe drafts de Scrivener.
