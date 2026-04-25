@@ -46,6 +46,36 @@
       ],
       "source": "Nacer de Nuevo — Cap. 3, 6",
       "approved_date": "2026-04-23"
+    },
+    {
+      "id": "P-009",
+      "name": "El tipo del AT como espejo del momento presente",
+      "scope": "hermenéutica",
+      "description": "Daniel no usa figuras del AT como ilustraciones de principios generales — las usa como espejos proféticos que revelan la forma exacta del momento actual. El patrón: 'Así como X ocurrió entonces, así también ocurre/ocurrirá ahora.' La figura no describe una verdad atemporal — describe la situación específica del oyente. El tipo revela la forma real de la realidad presente, no solo la ilustra.",
+      "trigger": "Activar cuando Daniel trabaje con figuras del AT (Noé, el arca, el diluvio, el éxodo, el templo, etc.). Proponer que la figura no se use solo como ilustración sino como espejo profético del presente. Preguntar: ¿qué revela este tipo sobre la forma exacta de lo que vive el oyente hoy?",
+      "evidence": [
+        "La primera figura de lo que ha de venir son los días de Noé",
+        "Así como los días de Noé, también hubo los días de los apóstoles, los días de la iglesia...",
+        "Lucas 17:26: Tal como ocurrió en los días de Noé, así será también en los días del Hijo del Hombre",
+        "Hoy el arca está abierta para todos — el arca como tipo del evangelio abierto hoy"
+      ],
+      "source": "En los días de Noé — predicación 2026-04-24",
+      "approved_date": "2026-04-24"
+    },
+    {
+      "id": "P-010",
+      "name": "La frustración personal como umbral de la revelación teológica",
+      "scope": "estructura / voz",
+      "description": "Daniel abre desde una tensión o frustración personal — no como dispositivo de conexión emocional, sino como punto de partida honesto de descubrimiento teológico. La incompletitud personal no es ornamental: es estructural. Es el umbral por el que el oyente entra con él a la revelación. La vulnerabilidad del predicador espeja la del oyente, y el argumento teológico llena el hueco de ambos.",
+      "trigger": "Preservar y proteger estos momentos de apertura vulnerable cuando aparezcan. No suavizarlos ni hacerlos más 'presentables'. Si se detecta que una pieza arranca directamente con argumento teológico sin umbral personal, se puede sugerir (no imponer) un punto de entrada desde la tensión del predicador.",
+      "evidence": [
+        "Estaba buscando respuestas a una frustración y un celo de no verme viviendo como ellos",
+        "Un celo que he estado guardando pero creo que es momento de dejarlo salir",
+        "¿Qué es lo que ellos sabían que yo había pasado por alto?",
+        "Me temo que estemos pasando por lo mismo"
+      ],
+      "source": "En los días de Noé — predicación 2026-04-24",
+      "approved_date": "2026-04-24"
     }
   ]
 }
