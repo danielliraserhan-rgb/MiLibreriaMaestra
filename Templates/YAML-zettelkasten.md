@@ -13,6 +13,12 @@ source_type: ""     # libro | clase | nota-tematica | guia-estudio | grupos-cone
 notas_relacionadas: []  # ["[[ZK-...]]", "[[ZK-...]]"]
 pattern_id:         # ID del activePattern que sugirió esta nota (si aplica)
 fecha_creacion: YYYY-MM-DD
+# === Spaced Review (SM-2) ===
+fecha_proxima_revision: YYYY-MM-DD   # fecha_creacion + 1 día
+intervalo_dias: 1
+repeticiones: 0
+facilidad: 2.5
+pregunta_reflexion: ""  # Pregunta generada al crear: ¿qué implica esta afirmación para tu ministerio?
 ---
 
 # [Título como afirmación completa]
