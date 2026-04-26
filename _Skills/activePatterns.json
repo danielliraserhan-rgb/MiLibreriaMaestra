@@ -1,81 +1,95 @@
 {
-  "version": "1.1",
-  "lastUpdated": "2026-04-23T12:00:00-06:00",
+  "version": "2.0",
+  "lastUpdated": "2026-04-26T00:00:00-06:00",
   "description": "Patrones de voz, estructura y teología detectados en el corpus de Daniel Lira. Solo crecen con aprobación explícita. El pattern-harvester lee este archivo al inicio de cada sesión y lo actualiza solo tras OK de Daniel.",
-  "patterns": [
-    {
-      "id": "P-006",
-      "name": "La tríada como estructura de completitud",
-      "scope": "estructura",
-      "description": "Tres elementos paralelos que cubren un tema de forma completa. Cuando Daniel llega a tres, el argumento está terminado. Frecuentemente trinitaria, pero también aparece en la descripción de la caída, los reinos del pecado y las dimensiones de la santificación.",
-      "trigger": "Sugerencia: cuando al redactar o revisar se detecten dos elementos paralelos en un argumento — proponer un tercer elemento para completar la tríada. Si el tercer elemento no existe orgánicamente en el texto, no forzarlo.",
-      "evidence": [
-        "Adoptado. Redimido. Sellado.",
-        "Satanás, sus propios deseos, las corrientes del mundo (los tres reinos del pecado)",
-        "El hacer es necesario; el conocer es bueno; sentir a Dios es parte del diseño.",
-        "Padre, Hijo y Espíritu Santo actúan en unísono en el nuevo nacimiento"
-      ],
-      "source": "Nacer de Nuevo — corpus completo",
-      "approved_date": "2026-04-23"
-    },
-    {
-      "id": "P-007",
-      "name": "Diseño → corrupción → restauración como arco macro",
-      "scope": "teología",
-      "description": "El arco macro de toda la enseñanza de Daniel: Dios diseñó algo bueno, el pecado lo corrompió, Cristo lo restaura. Opera como alternativa o variante del arco de tres tiempos (condición humana → respuesta de Dios → aplicación). La diferencia: este patrón es más histórico-redentor y puede aplicarse dentro de un solo capítulo o ilustración, no solo al cierre de una pieza.",
-      "trigger": "Alternativa al arco de tres tiempos cuando el tema lo permita. Usar especialmente cuando el texto trabaja con imágenes del AT que apuntan a Cristo (tipo-antitipo, institución → cumplimiento). Si el arco de tres tiempos (ContextoMaestro §4.3) ya está presente, este patrón puede reforzarlo añadiendo la dimensión de restauración escatológica en el tercer movimiento.",
-      "evidence": [
-        "Jardín (diseño) → Adán y Eva pecan (corrupción) → Cristo como nuevo Adán (restauración) [Cap. 1–3]",
-        "Mikveh institución pura (diseño) → Israel confía en cisternas rotas (corrupción) → Cristo como Mikveh de Israel (restauración) [Cap. 4]",
-        "Creados a imagen de Dios (diseño) → naturaleza corrupta por el pecado → nueva creación en Cristo (restauración) [Cap. 2–3]"
-      ],
-      "source": "Nacer de Nuevo — estructura de capítulos",
-      "approved_date": "2026-04-23"
-    },
-    {
-      "id": "P-008",
-      "name": "Identidad declarada antes del llamado a actuar",
-      "scope": "teología",
-      "description": "Antes de cualquier imperativo ('haz esto', 'vive así', 'debes...'), Daniel declara quién ya es el creyente en Cristo. El llamado a actuar siempre emerge de la identidad establecida, nunca al revés. La obediencia es respuesta, no mérito.",
-      "trigger": "Corrección/sugerencia: activar cuando se detecte tono de tribuna, acusatorio, o aplicación sin base teológica previa — es decir, cuando el texto llama a hacer algo sin haber declarado primero quién es el lector en Cristo. En esos casos, proponer insertar la declaración de identidad antes del imperativo.",
-      "evidence": [
-        "No haces cosas buenas para convertirte en su obra maestra: las haces porque ya lo eres.",
-        "No luchas para ser aceptado; luchas desde la aceptación.",
-        "No estás haciendo méritos para ver si llegas a cumplir los estándares de santidad... estás caminando para convertirte en lo que ya eres.",
-        "Hemos sido adoptados por el Padre, redimidos por el Hijo y sellados por el Espíritu Santo [declaración] → por lo tanto, vive bajo Su gobierno [imperativo]"
-      ],
-      "source": "Nacer de Nuevo — Cap. 3, 6",
-      "approved_date": "2026-04-23"
-    },
-    {
-      "id": "P-009",
-      "name": "El tipo del AT como espejo del momento presente",
-      "scope": "hermenéutica",
-      "description": "Daniel no usa figuras del AT como ilustraciones de principios generales — las usa como espejos proféticos que revelan la forma exacta del momento actual. El patrón: 'Así como X ocurrió entonces, así también ocurre/ocurrirá ahora.' La figura no describe una verdad atemporal — describe la situación específica del oyente. El tipo revela la forma real de la realidad presente, no solo la ilustra.",
-      "trigger": "Activar cuando Daniel trabaje con figuras del AT (Noé, el arca, el diluvio, el éxodo, el templo, etc.). Proponer que la figura no se use solo como ilustración sino como espejo profético del presente. Preguntar: ¿qué revela este tipo sobre la forma exacta de lo que vive el oyente hoy?",
-      "evidence": [
-        "La primera figura de lo que ha de venir son los días de Noé",
-        "Así como los días de Noé, también hubo los días de los apóstoles, los días de la iglesia...",
-        "Lucas 17:26: Tal como ocurrió en los días de Noé, así será también en los días del Hijo del Hombre",
-        "Hoy el arca está abierta para todos — el arca como tipo del evangelio abierto hoy"
-      ],
-      "source": "En los días de Noé — predicación 2026-04-24",
-      "approved_date": "2026-04-24"
-    },
-    {
-      "id": "P-010",
-      "name": "La frustración personal como umbral de la revelación teológica",
-      "scope": "estructura / voz",
-      "description": "Daniel abre desde una tensión o frustración personal — no como dispositivo de conexión emocional, sino como punto de partida honesto de descubrimiento teológico. La incompletitud personal no es ornamental: es estructural. Es el umbral por el que el oyente entra con él a la revelación. La vulnerabilidad del predicador espeja la del oyente, y el argumento teológico llena el hueco de ambos.",
-      "trigger": "Preservar y proteger estos momentos de apertura vulnerable cuando aparezcan. No suavizarlos ni hacerlos más 'presentables'. Si se detecta que una pieza arranca directamente con argumento teológico sin umbral personal, se puede sugerir (no imponer) un punto de entrada desde la tensión del predicador.",
-      "evidence": [
-        "Estaba buscando respuestas a una frustración y un celo de no verme viviendo como ellos",
-        "Un celo que he estado guardando pero creo que es momento de dejarlo salir",
-        "¿Qué es lo que ellos sabían que yo había pasado por alto?",
-        "Me temo que estemos pasando por lo mismo"
-      ],
-      "source": "En los días de Noé — predicación 2026-04-24",
-      "approved_date": "2026-04-24"
-    }
-  ]
+  "load_for": {
+    "pastoral_general": ["estructura", "teologia", "hermeneutica"],
+    "coach_s2": ["voz", "estructura"],
+    "exegesis": ["hermeneutica", "teologia"],
+    "academico": ["teologia", "hermeneutica"],
+    "bulk_ingest": ["teologia", "hermeneutica", "estructura"]
+  },
+  "patterns": {
+    "estructura": [
+      {
+        "id": "P-006",
+        "name": "La tríada como estructura de completitud",
+        "scope": "estructura",
+        "description": "Tres elementos paralelos que cubren un tema de forma completa. Cuando Daniel llega a tres, el argumento está terminado. Frecuentemente trinitaria, pero también aparece en la descripción de la caída, los reinos del pecado y las dimensiones de la santificación.",
+        "trigger": "Sugerencia: cuando al redactar o revisar se detecten dos elementos paralelos en un argumento — proponer un tercer elemento para completar la tríada. Si el tercer elemento no existe orgánicamente en el texto, no forzarlo.",
+        "evidence": [
+          "Adoptado. Redimido. Sellado.",
+          "Satanás, sus propios deseos, las corrientes del mundo (los tres reinos del pecado)",
+          "El hacer es necesario; el conocer es bueno; sentir a Dios es parte del diseño.",
+          "Padre, Hijo y Espíritu Santo actúan en unísono en el nuevo nacimiento"
+        ],
+        "source": "Nacer de Nuevo — corpus completo",
+        "approved_date": "2026-04-23"
+      },
+      {
+        "id": "P-010",
+        "name": "La frustración personal como umbral de la revelación teológica",
+        "scope": "estructura / voz",
+        "description": "Daniel abre desde una tensión o frustración personal — no como dispositivo de conexión emocional, sino como punto de partida honesto de descubrimiento teológico. La incompletitud personal no es ornamental: es estructural. Es el umbral por el que el oyente entra con él a la revelación. La vulnerabilidad del predicador espeja la del oyente, y el argumento teológico llena el hueco de ambos.",
+        "trigger": "Preservar y proteger estos momentos de apertura vulnerable cuando aparezcan. No suavizarlos ni hacerlos más 'presentables'. Si se detecta que una pieza arranca directamente con argumento teológico sin umbral personal, se puede sugerir (no imponer) un punto de entrada desde la tensión del predicador.",
+        "evidence": [
+          "Estaba buscando respuestas a una frustración y un celo de no verme viviendo como ellos",
+          "Un celo que he estado guardando pero creo que es momento de dejarlo salir",
+          "¿Qué es lo que ellos sabían que yo había pasado por alto?",
+          "Me temo que estemos pasando por lo mismo"
+        ],
+        "source": "En los días de Noé — predicación 2026-04-24",
+        "approved_date": "2026-04-24"
+      }
+    ],
+    "teologia": [
+      {
+        "id": "P-007",
+        "name": "Diseño → corrupción → restauración como arco macro",
+        "scope": "teología",
+        "description": "El arco macro de toda la enseñanza de Daniel: Dios diseñó algo bueno, el pecado lo corrompió, Cristo lo restaura. Opera como alternativa o variante del arco de tres tiempos (condición humana → respuesta de Dios → aplicación). La diferencia: este patrón es más histórico-redentor y puede aplicarse dentro de un solo capítulo o ilustración, no solo al cierre de una pieza.",
+        "trigger": "Alternativa al arco de tres tiempos cuando el tema lo permita. Usar especialmente cuando el texto trabaja con imágenes del AT que apuntan a Cristo (tipo-antitipo, institución → cumplimiento). Si el arco de tres tiempos (ContextoMaestro §4.3) ya está presente, este patrón puede reforzarlo añadiendo la dimensión de restauración escatológica en el tercer movimiento.",
+        "evidence": [
+          "Jardín (diseño) → Adán y Eva pecan (corrupción) → Cristo como nuevo Adán (restauración) [Cap. 1–3]",
+          "Mikveh institución pura (diseño) → Israel confía en cisternas rotas (corrupción) → Cristo como Mikveh de Israel (restauración) [Cap. 4]",
+          "Creados a imagen de Dios (diseño) → naturaleza corrupta por el pecado → nueva creación en Cristo (restauración) [Cap. 2–3]"
+        ],
+        "source": "Nacer de Nuevo — estructura de capítulos",
+        "approved_date": "2026-04-23"
+      },
+      {
+        "id": "P-008",
+        "name": "Identidad declarada antes del llamado a actuar",
+        "scope": "teología",
+        "description": "Antes de cualquier imperativo ('haz esto', 'vive así', 'debes...'), Daniel declara quién ya es el creyente en Cristo. El llamado a actuar siempre emerge de la identidad establecida, nunca al revés. La obediencia es respuesta, no mérito.",
+        "trigger": "Corrección/sugerencia: activar cuando se detecte tono de tribuna, acusatorio, o aplicación sin base teológica previa — es decir, cuando el texto llama a hacer algo sin haber declarado primero quién es el lector en Cristo. En esos casos, proponer insertar la declaración de identidad antes del imperativo.",
+        "evidence": [
+          "No haces cosas buenas para convertirte en su obra maestra: las haces porque ya lo eres.",
+          "No luchas para ser aceptado; luchas desde la aceptación.",
+          "No estás haciendo méritos para ver si llegas a cumplir los estándares de santidad... estás caminando para convertirte en lo que ya eres.",
+          "Hemos sido adoptados por el Padre, redimidos por el Hijo y sellados por el Espíritu Santo [declaración] → por lo tanto, vive bajo Su gobierno [imperativo]"
+        ],
+        "source": "Nacer de Nuevo — Cap. 3, 6",
+        "approved_date": "2026-04-23"
+      }
+    ],
+    "hermeneutica": [
+      {
+        "id": "P-009",
+        "name": "El tipo del AT como espejo del momento presente",
+        "scope": "hermenéutica",
+        "description": "Daniel no usa figuras del AT como ilustraciones de principios generales — las usa como espejos proféticos que revelan la forma exacta del momento actual. El patrón: 'Así como X ocurrió entonces, así también ocurre/ocurrirá ahora.' La figura no describe una verdad atemporal — describe la situación específica del oyente. El tipo revela la forma real de la realidad presente, no solo la ilustra.",
+        "trigger": "Activar cuando Daniel trabaje con figuras del AT (Noé, el arca, el diluvio, el éxodo, el templo, etc.). Proponer que la figura no se use solo como ilustración sino como espejo profético del presente. Preguntar: ¿qué revela este tipo sobre la forma exacta de lo que vive el oyente hoy?",
+        "evidence": [
+          "La primera figura de lo que ha de venir son los días de Noé",
+          "Así como los días de Noé, también hubo los días de los apóstoles, los días de la iglesia...",
+          "Lucas 17:26: Tal como ocurrió en los días de Noé, así será también en los días del Hijo del Hombre",
+          "Hoy el arca está abierta para todos — el arca como tipo del evangelio abierto hoy"
+        ],
+        "source": "En los días de Noé — predicación 2026-04-24",
+        "approved_date": "2026-04-24"
+      }
+    ],
+    "voz": []
+  }
 }
