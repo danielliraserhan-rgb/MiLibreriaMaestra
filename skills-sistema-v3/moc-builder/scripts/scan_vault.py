@@ -364,9 +364,200 @@ def analyze_gaps(vault_path: str) -> dict:
     }
 
 
+# ─────────────────────────────────────────────
+# MODO INDEX — índice comprimido del vault
+# ─────────────────────────────────────────────
+
+def generate_index(vault_path: str) -> str:
+    """
+    Genera un índice comprimido del vault en Markdown.
+
+    Salida pensada para ser cargada por Claude Code al inicio de sesiones
+    de investigación, navegación o coach — en lugar de leer 2000 archivos.
+
+    Uso:
+        python scan_vault.py --vault . --mode index > _Skills/VAULT_INDEX.md
+    """
+    from datetime import date
+
+    vault = Path(vault_path)
+    if not vault.exists():
+        print(f"Error: vault path '{vault_path}' does not exist.", file=sys.stderr)
+        sys.exit(1)
+
+    source_docs = {"pastoral": [], "academico": []}
+    zk_by_domain = {"pastoral": [], "academico": []}
+    zk_by_source = {}   # source_title -> list of ZK titles
+
+    for md_file in vault.rglob("*.md"):
+        if should_exclude(md_file, vault):
+            continue
+        if md_file.stem in ("Bienvenido", "CLAUDE", "VAULT_INDEX"):
+            continue
+
+        try:
+            text = md_file.read_text(encoding="utf-8", errors="ignore")
+        except Exception:
+            continue
+
+        fm = extract_frontmatter(text)
+        tipo = fm.get("tipo", "")
+        if not tipo:
+            continue
+
+        dominio = fm.get("dominio", "")
+        domain = dominio if dominio in ("pastoral", "academico") else "pastoral"
+
+        if tipo == "zettelkasten":
+            titulo = fm.get("titulo", md_file.stem)
+            zk_id = fm.get("id", md_file.stem)
+            fecha = fm.get("fecha_creacion", "")
+            n_conexiones = len(fm.get("notas_relacionadas", []))
+            source_raw = fm.get("source_file", "")
+            source = source_raw.replace("[[", "").replace("]]", "").strip()
+
+            zk_by_domain[domain].append({
+                "id": zk_id,
+                "titulo": titulo,
+                "tags": fm.get("tags", []),
+                "source": source,
+                "fecha": fecha,
+                "n_conexiones": n_conexiones,
+            })
+
+            if source:
+                if source not in zk_by_source:
+                    zk_by_source[source] = {"domain": domain, "titles": []}
+                zk_by_source[source]["titles"].append(titulo)
+
+        elif tipo not in ("indice-zettelkasten",) and "MOC" not in md_file.stem:
+            titulo = fm.get("title", fm.get("titulo", md_file.stem))
+            zk_count = len(fm.get("zettelkasten_notes", []))
+            modo = fm.get("modo", "")
+            tema = fm.get("tema", "")
+            fecha = fm.get("fecha", fm.get("fecha_actualizacion", ""))
+            source_docs[domain].append({
+                "titulo": titulo,
+                "modo": modo,
+                "tema": tema,
+                "zk_count": zk_count,
+                "fecha": fecha,
+                "tipo": tipo,
+            })
+
+    # Ordenar por fecha descendente
+    for d in ("pastoral", "academico"):
+        zk_by_domain[d].sort(key=lambda x: x["fecha"], reverse=True)
+        source_docs[d].sort(key=lambda x: x["fecha"], reverse=True)
+
+    today = date.today().isoformat()
+    pastoral_zk = len(zk_by_domain["pastoral"])
+    academico_zk = len(zk_by_domain["academico"])
+    pastoral_src = len(source_docs["pastoral"])
+    academico_src = len(source_docs["academico"])
+
+    lines = [
+        "# VAULT INDEX — MiLibreriaMaestra",
+        f"> Regenerar: `python skills-sistema-v3/moc-builder/scripts/scan_vault.py --vault . --mode index > _Skills/VAULT_INDEX.md`",
+        f"> Última actualización: {today}",
+        "",
+        "---",
+        "",
+        "## Estado del vault",
+        "",
+        "| | Fuentes procesadas | Notas ZK |",
+        "|---|---|---|",
+        f"| **Pastoral** | {pastoral_src} | {pastoral_zk} |",
+        f"| **Académico** | {academico_src} | {academico_zk} |",
+        f"| **Total** | {pastoral_src + academico_src} | {pastoral_zk + academico_zk} |",
+        "",
+        "---",
+        "",
+        "## Dominio Pastoral",
+        "",
+    ]
+
+    if source_docs["pastoral"]:
+        lines += ["### Fuentes procesadas", ""]
+        for doc in source_docs["pastoral"]:
+            lines.append(
+                f"- **{doc['titulo']}** — modo: `{doc['modo']}` · tema: `{doc['tema']}` · ZK generadas: {doc['zk_count']}"
+            )
+        lines.append("")
+
+    if zk_by_source:
+        lines += ["### Clusters por fuente", ""]
+        for source, data in sorted(zk_by_source.items()):
+            if data["domain"] != "pastoral":
+                continue
+            titles = data["titles"]
+            lines.append(f"**{source}** — {len(titles)} notas")
+            for t in titles[:6]:
+                lines.append(f"  - {t}")
+            if len(titles) > 6:
+                lines.append(f"  - _...y {len(titles) - 6} más_")
+            lines.append("")
+
+    if zk_by_domain["pastoral"]:
+        most_connected = sorted(
+            zk_by_domain["pastoral"], key=lambda x: x["n_conexiones"], reverse=True
+        )[:5]
+        lines += ["### Notas más conectadas", ""]
+        for zk in most_connected:
+            lines.append(
+                f"- `{zk['id']}` — {zk['titulo']} _(conexiones: {zk['n_conexiones']})_"
+            )
+        lines.append("")
+
+    lines += ["---", "", "## Dominio Académico", ""]
+
+    if source_docs["academico"]:
+        lines += ["### Fuentes procesadas", ""]
+        for doc in source_docs["academico"]:
+            lines.append(
+                f"- **{doc['titulo']}** — tipo: `{doc['tipo']}` · ZK generadas: {doc['zk_count']}"
+            )
+        lines.append("")
+
+    if zk_by_source:
+        acad_sources = {s: d for s, d in zk_by_source.items() if d["domain"] == "academico"}
+        if acad_sources:
+            lines += ["### Clusters por fuente", ""]
+            for source, data in sorted(acad_sources.items()):
+                titles = data["titles"]
+                lines.append(f"**{source}** — {len(titles)} notas")
+                for t in titles[:6]:
+                    lines.append(f"  - {t}")
+                lines.append("")
+
+    if not zk_by_domain["academico"]:
+        lines.append("_Sin notas ZK generadas todavía._")
+        lines.append("")
+
+    lines += [
+        "---",
+        "",
+        "## Comandos rápidos",
+        "",
+        "```bash",
+        "# Buscar notas sobre un tema",
+        "python skills-sistema-v3/moc-builder/scripts/scan_vault.py --vault . --query \"término\"",
+        "",
+        "# Detectar huecos de conocimiento",
+        "python skills-sistema-v3/moc-builder/scripts/scan_vault.py --vault . --mode gaps",
+        "",
+        "# Regenerar este índice",
+        "python skills-sistema-v3/moc-builder/scripts/scan_vault.py --vault . --mode index > _Skills/VAULT_INDEX.md",
+        "```",
+        "",
+    ]
+
+    return "\n".join(lines)
+
+
 def main():
     parser = argparse.ArgumentParser(
-        description="Scan Obsidian vault: búsqueda por query o reporte de huecos"
+        description="Scan Obsidian vault: búsqueda, huecos o índice comprimido"
     )
     parser.add_argument("--vault", required=True, help="Ruta al vault de Obsidian")
     parser.add_argument("--query", default=None, help="Query de búsqueda (modo scan)")
@@ -374,14 +565,16 @@ def main():
     parser.add_argument(
         "--mode",
         default="scan",
-        choices=["scan", "gaps"],
-        help="scan: buscar notas relevantes | gaps: detectar huecos de conocimiento",
+        choices=["scan", "gaps", "index"],
+        help="scan: buscar notas | gaps: detectar huecos | index: índice comprimido del vault",
     )
     args = parser.parse_args()
 
     if args.mode == "gaps":
         result = analyze_gaps(args.vault)
         print(json.dumps(result, ensure_ascii=False, indent=2))
+    elif args.mode == "index":
+        print(generate_index(args.vault))
     else:
         if not args.query:
             parser.error("--query es requerido en modo scan")
