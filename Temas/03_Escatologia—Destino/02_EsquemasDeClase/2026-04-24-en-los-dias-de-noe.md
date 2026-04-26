@@ -27,7 +27,7 @@ seo_keywords:
   - escatología pastoral
   - misión cristiana
 fecha: 2026-04-24
-estado: sin_procesar
+estado: completado
 dominio: pastoral
 modo: 6-estudio-clase
 fase: ""
@@ -43,7 +43,6 @@ zettelkasten_notes:
   - "[[ZK-20260424-1628-006]]"
   - "[[ZK-20260424-1628-007]]"
   - "[[ZK-20260424-1628-008]]"
-estado: completado
 version_yaml: "2.0"
 fecha_actualizacion: 2026-04-24
 ---
