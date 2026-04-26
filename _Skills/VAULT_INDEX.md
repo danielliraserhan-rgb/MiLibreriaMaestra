@@ -14,7 +14,7 @@
 
 ---
 
-## 03 · Escatología — Destino  (8 notas ZK)
+## 03 · Escatologia — Destino  (8 notas ZK)
 
 - _fuente:_ **En los días de Noé** · modo `6-estudio-clase` · 8 ZK
 
@@ -41,7 +41,7 @@
 - `ZK-20260423-1200-013` Mikveh significa confianza: el bautismo siempre fue sobre fe en quien purifica, no en el agua _3 cx_
 - _...y 14 notas más_
 
-## 08 · Académico / Maestría  (0 notas ZK)
+## 08 · Academico  (0 notas ZK)
 
 - _fuente:_ **Naked But Not Ashamed: The Fruit of Sin Covered by God's Grace** · modo `academico` · 0 ZK
 
