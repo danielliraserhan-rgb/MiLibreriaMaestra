@@ -368,12 +368,43 @@ def analyze_gaps(vault_path: str) -> dict:
 # MODO INDEX — índice comprimido del vault
 # ─────────────────────────────────────────────
 
+# Taxonomía canónica de temas (01-08) — siempre en este orden
+TEMA_ORDER = [
+    "01_origenes",
+    "02_historiadeisrael",
+    "03_escatologia—destino",
+    "03_escatologia-destino",   # variante sin em-dash
+    "04_exegesisnt",
+    "05_doctrinasfundamentales",
+    "06_discipuladovidacristiana",
+    "07_predicacionesdevocionales",
+    "08_academico",
+]
+
+TEMA_LABELS = {
+    "01_origenes":                  "01 · Orígenes / Creación / Génesis",
+    "02_historiadeisrael":          "02 · Historia de Israel",
+    "03_escatologia—destino":       "03 · Escatología — Destino",
+    "03_escatologia-destino":       "03 · Escatología — Destino",
+    "04_exegesisnt":                "04 · Exégesis NT",
+    "05_doctrinasfundamentales":    "05 · Doctrinas Fundamentales",
+    "06_discipuladovidacristiana":  "06 · Discipulado / Vida Cristiana",
+    "07_predicacionesdevocionales": "07 · Predicaciones / Devocionales",
+    "08_academico":                 "08 · Académico / Maestría",
+}
+
+
+def _norm_tema(tema: str) -> str:
+    """Normaliza el campo tema a clave canónica para TEMA_LABELS."""
+    return normalize(tema).replace(" ", "_").replace("/", "_")
+
+
 def generate_index(vault_path: str) -> str:
     """
-    Genera un índice comprimido del vault en Markdown.
+    Genera un índice comprimido del vault agrupado por tema teológico (01-08).
 
-    Salida pensada para ser cargada por Claude Code al inicio de sesiones
-    de investigación, navegación o coach — en lugar de leer 2000 archivos.
+    Escalable: a 254 fuentes da 8 grupos temáticos, no 254 clusters por fuente.
+    Cargable en segundos al inicio de sesiones de investigación o coach.
 
     Uso:
         python scan_vault.py --vault . --mode index > _Skills/VAULT_INDEX.md
@@ -385,16 +416,15 @@ def generate_index(vault_path: str) -> str:
         print(f"Error: vault path '{vault_path}' does not exist.", file=sys.stderr)
         sys.exit(1)
 
-    source_docs = {"pastoral": [], "academico": []}
-    zk_by_domain = {"pastoral": [], "academico": []}
-    zk_by_source = {}   # source_title -> list of ZK titles
+    # Paso 1 — construir mapa source_title → tema (del documento fuente)
+    source_to_tema = {}   # titulo_fuente -> tema normalizado
+    source_docs_by_tema = {}  # tema_norm -> lista de {titulo, modo, zk_count, fecha}
 
     for md_file in vault.rglob("*.md"):
         if should_exclude(md_file, vault):
             continue
         if md_file.stem in ("Bienvenido", "CLAUDE", "VAULT_INDEX"):
             continue
-
         try:
             text = md_file.read_text(encoding="utf-8", errors="ignore")
         except Exception:
@@ -402,60 +432,83 @@ def generate_index(vault_path: str) -> str:
 
         fm = extract_frontmatter(text)
         tipo = fm.get("tipo", "")
-        if not tipo:
+        if not tipo or tipo == "zettelkasten" or tipo == "indice-zettelkasten":
+            continue
+        if "MOC" in md_file.stem:
             continue
 
-        dominio = fm.get("dominio", "")
-        domain = dominio if dominio in ("pastoral", "academico") else "pastoral"
+        titulo = fm.get("title", fm.get("titulo", md_file.stem))
+        tema_raw = fm.get("tema", "")
+        tema_norm = _norm_tema(tema_raw) if tema_raw else ""
+        zk_count = len(fm.get("zettelkasten_notes", []))
+        modo = fm.get("modo", "")
+        fecha = fm.get("fecha", fm.get("fecha_actualizacion", ""))
 
-        if tipo == "zettelkasten":
-            titulo = fm.get("titulo", md_file.stem)
-            zk_id = fm.get("id", md_file.stem)
-            fecha = fm.get("fecha_creacion", "")
-            n_conexiones = len(fm.get("notas_relacionadas", []))
-            source_raw = fm.get("source_file", "")
-            source = source_raw.replace("[[", "").replace("]]", "").strip()
+        # Registrar mapeo por título Y por nombre de archivo (stem)
+        # Las notas ZK pueden referenciar la fuente de cualquiera de las dos formas
+        source_to_tema[titulo] = tema_norm
+        source_to_tema[md_file.stem] = tema_norm
 
-            zk_by_domain[domain].append({
-                "id": zk_id,
-                "titulo": titulo,
-                "tags": fm.get("tags", []),
-                "source": source,
-                "fecha": fecha,
-                "n_conexiones": n_conexiones,
-            })
-
-            if source:
-                if source not in zk_by_source:
-                    zk_by_source[source] = {"domain": domain, "titles": []}
-                zk_by_source[source]["titles"].append(titulo)
-
-        elif tipo not in ("indice-zettelkasten",) and "MOC" not in md_file.stem:
-            titulo = fm.get("title", fm.get("titulo", md_file.stem))
-            zk_count = len(fm.get("zettelkasten_notes", []))
-            modo = fm.get("modo", "")
-            tema = fm.get("tema", "")
-            fecha = fm.get("fecha", fm.get("fecha_actualizacion", ""))
-            source_docs[domain].append({
+        if tema_norm:
+            if tema_norm not in source_docs_by_tema:
+                source_docs_by_tema[tema_norm] = []
+            source_docs_by_tema[tema_norm].append({
                 "titulo": titulo,
                 "modo": modo,
-                "tema": tema,
                 "zk_count": zk_count,
                 "fecha": fecha,
-                "tipo": tipo,
             })
 
-    # Ordenar por fecha descendente
-    for d in ("pastoral", "academico"):
-        zk_by_domain[d].sort(key=lambda x: x["fecha"], reverse=True)
-        source_docs[d].sort(key=lambda x: x["fecha"], reverse=True)
+    # Paso 2 — agrupar notas ZK por tema (via source_file → tema)
+    zk_by_tema = {}      # tema_norm -> lista de {id, titulo, n_conexiones, fecha}
+    zk_all = []          # lista completa para stats globales
 
+    for md_file in vault.rglob("*.md"):
+        if should_exclude(md_file, vault):
+            continue
+        try:
+            text = md_file.read_text(encoding="utf-8", errors="ignore")
+        except Exception:
+            continue
+
+        fm = extract_frontmatter(text)
+        if fm.get("tipo", "") != "zettelkasten":
+            continue
+
+        titulo = fm.get("titulo", md_file.stem)
+        zk_id = fm.get("id", md_file.stem)
+        fecha = fm.get("fecha_creacion", "")
+        n_conexiones = len(fm.get("notas_relacionadas", []))
+        source_raw = fm.get("source_file", "")
+        source = source_raw.replace("[[", "").replace("]]", "").strip()
+
+        # Resolver tema via source_file
+        tema_norm = source_to_tema.get(source, "")
+
+        zk_entry = {
+            "id": zk_id,
+            "titulo": titulo,
+            "fecha": fecha,
+            "n_conexiones": n_conexiones,
+            "source": source,
+        }
+        zk_all.append(zk_entry)
+
+        if tema_norm:
+            if tema_norm not in zk_by_tema:
+                zk_by_tema[tema_norm] = []
+            zk_by_tema[tema_norm].append(zk_entry)
+
+    # Totales
     today = date.today().isoformat()
-    pastoral_zk = len(zk_by_domain["pastoral"])
-    academico_zk = len(zk_by_domain["academico"])
-    pastoral_src = len(source_docs["pastoral"])
-    academico_src = len(source_docs["academico"])
+    total_src = sum(len(v) for v in source_docs_by_tema.values())
+    total_zk = len(zk_all)
+    pastoral_zk = sum(
+        len(v) for k, v in zk_by_tema.items() if k != "08_academico"
+    )
+    academico_zk = len(zk_by_tema.get("08_academico", []))
 
+    # ── Construir output ──────────────────────────────────────────────
     lines = [
         "# VAULT INDEX — MiLibreriaMaestra",
         f"> Regenerar: `python skills-sistema-v3/moc-builder/scripts/scan_vault.py --vault . --mode index > _Skills/VAULT_INDEX.md`",
@@ -467,71 +520,67 @@ def generate_index(vault_path: str) -> str:
         "",
         "| | Fuentes procesadas | Notas ZK |",
         "|---|---|---|",
-        f"| **Pastoral** | {pastoral_src} | {pastoral_zk} |",
-        f"| **Académico** | {academico_src} | {academico_zk} |",
-        f"| **Total** | {pastoral_src + academico_src} | {pastoral_zk + academico_zk} |",
+        f"| **Pastoral** | {total_src - len(source_docs_by_tema.get('08_academico', []))} | {pastoral_zk} |",
+        f"| **Académico** | {len(source_docs_by_tema.get('08_academico', []))} | {academico_zk} |",
+        f"| **Total** | {total_src} | {total_zk} |",
         "",
         "---",
         "",
-        "## Dominio Pastoral",
-        "",
     ]
 
-    if source_docs["pastoral"]:
-        lines += ["### Fuentes procesadas", ""]
-        for doc in source_docs["pastoral"]:
-            lines.append(
-                f"- **{doc['titulo']}** — modo: `{doc['modo']}` · tema: `{doc['tema']}` · ZK generadas: {doc['zk_count']}"
-            )
-        lines.append("")
+    # ── Secciones por tema (orden canónico 01-08) ─────────────────────
+    seen_temas = set()
+    for tema_key in TEMA_ORDER:
+        if tema_key in seen_temas:
+            continue
+        seen_temas.add(tema_key)
 
-    if zk_by_source:
-        lines += ["### Clusters por fuente", ""]
-        for source, data in sorted(zk_by_source.items()):
-            if data["domain"] != "pastoral":
-                continue
-            titles = data["titles"]
-            lines.append(f"**{source}** — {len(titles)} notas")
-            for t in titles[:6]:
-                lines.append(f"  - {t}")
-            if len(titles) > 6:
-                lines.append(f"  - _...y {len(titles) - 6} más_")
+        label = TEMA_LABELS.get(tema_key, tema_key)
+        src_list = source_docs_by_tema.get(tema_key, [])
+        zk_list = sorted(
+            zk_by_tema.get(tema_key, []),
+            key=lambda x: x["n_conexiones"],
+            reverse=True,
+        )
+
+        if not src_list and not zk_list:
+            continue
+
+        lines += [f"## {label}  ({len(zk_list)} notas ZK)", ""]
+
+        # Fuentes del tema (condensadas en una línea cada una)
+        if src_list:
+            for doc in sorted(src_list, key=lambda x: x["fecha"], reverse=True):
+                lines.append(
+                    f"- _fuente:_ **{doc['titulo']}** · modo `{doc['modo']}` · {doc['zk_count']} ZK"
+                )
             lines.append("")
 
-    if zk_by_domain["pastoral"]:
-        most_connected = sorted(
-            zk_by_domain["pastoral"], key=lambda x: x["n_conexiones"], reverse=True
-        )[:5]
-        lines += ["### Notas más conectadas", ""]
-        for zk in most_connected:
-            lines.append(
-                f"- `{zk['id']}` — {zk['titulo']} _(conexiones: {zk['n_conexiones']})_"
-            )
+        # Notas ZK del tema — primeras 8, ordenadas por conexiones
+        for zk in zk_list[:8]:
+            conn = f" _{zk['n_conexiones']} cx_" if zk["n_conexiones"] > 0 else ""
+            lines.append(f"- `{zk['id']}` {zk['titulo']}{conn}")
+        if len(zk_list) > 8:
+            lines.append(f"- _...y {len(zk_list) - 8} notas más_")
         lines.append("")
 
-    lines += ["---", "", "## Dominio Académico", ""]
-
-    if source_docs["academico"]:
-        lines += ["### Fuentes procesadas", ""]
-        for doc in source_docs["academico"]:
-            lines.append(
-                f"- **{doc['titulo']}** — tipo: `{doc['tipo']}` · ZK generadas: {doc['zk_count']}"
-            )
+    # Temas de otros dominios no cubiertos por TEMA_ORDER
+    extra_temas = set(zk_by_tema.keys()) - seen_temas
+    if extra_temas:
+        lines += ["## Otras notas (tema no clasificado)", ""]
+        for tema_key in sorted(extra_temas):
+            for zk in zk_by_tema[tema_key]:
+                lines.append(f"- `{zk['id']}` {zk['titulo']}")
         lines.append("")
 
-    if zk_by_source:
-        acad_sources = {s: d for s, d in zk_by_source.items() if d["domain"] == "academico"}
-        if acad_sources:
-            lines += ["### Clusters por fuente", ""]
-            for source, data in sorted(acad_sources.items()):
-                titles = data["titles"]
-                lines.append(f"**{source}** — {len(titles)} notas")
-                for t in titles[:6]:
-                    lines.append(f"  - {t}")
-                lines.append("")
-
-    if not zk_by_domain["academico"]:
-        lines.append("_Sin notas ZK generadas todavía._")
+    # ── Notas sin tema (huérfanas de tema) ───────────────────────────
+    sin_tema = [z for z in zk_all if not source_to_tema.get(z["source"], "")]
+    if sin_tema:
+        lines += [f"## Sin tema detectado  ({len(sin_tema)} notas)", ""]
+        for zk in sin_tema[:5]:
+            lines.append(f"- `{zk['id']}` {zk['titulo']}")
+        if len(sin_tema) > 5:
+            lines.append(f"- _...y {len(sin_tema) - 5} más_")
         lines.append("")
 
     lines += [
