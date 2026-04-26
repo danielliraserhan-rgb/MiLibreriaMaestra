@@ -62,3 +62,26 @@
 - [x] P-008 — Identidad antes de conducta — APROBADO (corrección ante tono acusatorio o sin base teológica)
 
 **Resolución:** Completado 2026-04-23. 3 patrones activos en activePatterns.json v1.1
+
+---
+
+### 2026-04-24 — MODO 6 (Clase Larga) — "En los días de Noé"
+
+**Archivo:** `Temas/03_Escatologia—Destino/02_EsquemasDeClase/2026-04-24-en-los-dias-de-noe.md`
+**Archivos fuente:** notas de predicación (borrador escrito)
+**Skills ejecutados:** inbox-triage → modo-e → zettelkasten-forge → pattern-harvester
+**Metadatos extraídos:**
+- Temas principales: Reino de Dios, Regreso de Cristo / escatología, Urgencia misionera, Santidad y separación del mundo, Identidad en Cristo
+- Libros bíblicos: Lucas, Marcos, Génesis, 1 Pedro
+- Personajes: Noé, Lot, Jesús, apóstoles
+- Versículos clave: Marcos 1:14, Marcos 1:17-18, Génesis 6:11-13, Lucas 17:20-21, Lucas 17:26-30, 1 Pedro 1
+
+**Notas Zettelkasten generadas:** 8 (ZK-20260424-1628-001 a ZK-20260424-1628-008)
+
+**Patrones detectados (pattern-harvester):** 2 aprobados
+
+**Propuestas:**
+- [x] P-009 — El tipo del AT como espejo del momento presente — APROBADO (hermenéutica)
+- [x] P-010 — La frustración personal como umbral de revelación teológica — APROBADO (estructura/voz)
+
+**Resolución:** Completado 2026-04-24. 5 patrones activos en activePatterns.json v1.1
