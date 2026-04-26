@@ -368,35 +368,49 @@ def analyze_gaps(vault_path: str) -> dict:
 # MODO INDEX — índice comprimido del vault
 # ─────────────────────────────────────────────
 
-# Taxonomía canónica de temas (01-08) — siempre en este orden
-TEMA_ORDER = [
-    "01_origenes",
-    "02_historiadeisrael",
-    "03_escatologia—destino",
-    "03_escatologia-destino",   # variante sin em-dash
-    "04_exegesisnt",
-    "05_doctrinasfundamentales",
-    "06_discipuladovidacristiana",
-    "07_predicacionesdevocionales",
-    "08_academico",
-]
-
-TEMA_LABELS = {
-    "01_origenes":                  "01 · Orígenes / Creación / Génesis",
-    "02_historiadeisrael":          "02 · Historia de Israel",
-    "03_escatologia—destino":       "03 · Escatología — Destino",
-    "03_escatologia-destino":       "03 · Escatología — Destino",
-    "04_exegesisnt":                "04 · Exégesis NT",
-    "05_doctrinasfundamentales":    "05 · Doctrinas Fundamentales",
-    "06_discipuladovidacristiana":  "06 · Discipulado / Vida Cristiana",
-    "07_predicacionesdevocionales": "07 · Predicaciones / Devocionales",
-    "08_academico":                 "08 · Académico / Maestría",
-}
-
-
 def _norm_tema(tema: str) -> str:
-    """Normaliza el campo tema a clave canónica para TEMA_LABELS."""
+    """Normaliza el campo tema a clave canónica (minúsculas, sin tildes, sin espacios)."""
     return normalize(tema).replace(" ", "_").replace("/", "_")
+
+
+def _folder_to_label(folder_name: str) -> str:
+    """
+    Convierte nombre de carpeta Temas/ a etiqueta de display legible.
+    '03_Escatologia—Destino' → '03 · Escatologia — Destino'
+    '05_DoctrinasFundamentales' → '05 · Doctrinas Fundamentales'
+    """
+    if "_" not in folder_name:
+        return folder_name
+    num, rest = folder_name.split("_", 1)
+    # Em-dash → espaciado legible
+    rest = rest.replace("—", " — ").replace("--", " — ")
+    # Insertar espacio en transiciones CamelCase (minúscula → Mayúscula)
+    rest = re.sub(r"([a-záéíóúüñ])([A-ZÁÉÍÓÚÜÑ])", r"\1 \2", rest)
+    return f"{num} · {rest}"
+
+
+def _discover_temas(vault: Path) -> list:
+    """
+    Descubre la taxonomía de temas leyendo la estructura de Temas/.
+    Retorna lista ordenada de (tema_norm, label_display).
+
+    Si Daniel añade o renombra un folder en Temas/, el índice lo refleja
+    automáticamente sin tocar el código.
+    """
+    temas_dir = vault / "Temas"
+    if not temas_dir.exists():
+        return []
+
+    temas = []
+    for folder in sorted(temas_dir.iterdir()):
+        if not folder.is_dir() or folder.name.startswith("."):
+            continue
+        name = folder.name
+        norm = _norm_tema(name)
+        label = _folder_to_label(name)
+        temas.append((norm, label))
+
+    return temas
 
 
 def generate_index(vault_path: str) -> str:
@@ -528,14 +542,14 @@ def generate_index(vault_path: str) -> str:
         "",
     ]
 
-    # ── Secciones por tema (orden canónico 01-08) ─────────────────────
+    # ── Secciones por tema (orden descubierto de Temas/) ────────────────
+    discovered_temas = _discover_temas(vault)
     seen_temas = set()
-    for tema_key in TEMA_ORDER:
+    for tema_key, label in discovered_temas:
         if tema_key in seen_temas:
             continue
         seen_temas.add(tema_key)
 
-        label = TEMA_LABELS.get(tema_key, tema_key)
         src_list = source_docs_by_tema.get(tema_key, [])
         zk_list = sorted(
             zk_by_tema.get(tema_key, []),
