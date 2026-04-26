@@ -130,8 +130,10 @@ Daniel debe responder "sí", "adelante", "procede" o equivalente claro. Una resp
 
 Crear un archivo Markdown nuevo con:
 - Nombre de archivo: `YYYY-MM-DD-[slug-del-tema].md`
-- YAML frontmatter v2 completo (todos los campos — sin dejar vacíos si el texto los tiene)
+- YAML frontmatter v2 completo (todos los campos — sin dejar vacíos si el texto los tiene; `source_file` apunta al nombre del archivo original)
 - Estructura del cuerpo según dominio (ver §Estructuras)
+
+**La nota es el índice, no la copia.** No duplicar el texto completo dentro de la nota. El cuerpo contiene resumen breve + wikilink al original.
 
 ### 2.2 Agregar [[enlaces]]
 
@@ -143,21 +145,25 @@ Revisar el texto y agregar wikilinks a:
 
 No inventar enlaces. Solo enlazar lo que el texto establece.
 
-### 2.3 Mover a carpeta correcta
+### 2.3 Mover a carpeta correcta y ligar archivos
 
-Mover el archivo a la ruta propuesta en Fase 1.
+1. Mover el archivo original a la ruta propuesta en Fase 1.
+2. Si el archivo original es `.md`: agregar al inicio de su frontmatter el campo `nota_triage: "[[YYYY-MM-DD-slug]]"` apuntando a la nota recién creada.
+3. Si el archivo original no es `.md` (txt, docx, etc.): la nota es el único punto de enlace — no se modifica el original.
 
 ### 2.4 Reporte de cierre
 
 ```
 ── TRIAGE COMPLETADO ──────────────────────────────────
 
-Nota creada:  [nombre-del-archivo.md]
-Ubicación:    [ruta/final/]
-YAML v2:      completo ✓
-[[enlaces]]:  [N] agregados
-Modo asignado: [N — Nombre]
-Próximos skills: [lista en orden]
+Nota creada:      [nombre-del-archivo.md]  ← entrada del vault
+Archivo original: [ruta/final/nombre-original.ext]  ← fuente cruda
+Enlace nota→original: source_file: [[nombre-original]] ✓
+Enlace original→nota: nota_triage: [[nombre-del-archivo]] ✓  (solo si es .md)
+YAML v2:          completo ✓
+[[enlaces]]:      [N] agregados
+Modo asignado:    [N — Nombre]
+Próximos skills:  [lista en orden]
 
 [Si es transcripción oral pastoral]:
   → El texto original NO fue modificado.
@@ -198,6 +204,7 @@ serie: ""
 fuente: ""          # dictado | grabacion | borrador | clase | conferencia
 author_quotes: []
 zettelkasten_notes: []
+source_file: ""     # nombre del archivo original movido (ej. "mi-archivo-original.md")
 version_yaml: "2.0"
 fecha_actualizacion: ""
 ---
@@ -227,6 +234,7 @@ serie: ""
 fuente: ""          # paper | clase | conferencia | libro | tesis
 author_quotes: []
 zettelkasten_notes: []
+source_file: ""     # nombre del archivo original movido
 version_yaml: "2.0"
 fecha_actualizacion: ""
 
@@ -245,9 +253,13 @@ tesis_del_autor: ""
 ### Estructura pastoral (transcripción oral o borrador)
 
 ```markdown
-## Contenido
+## Resumen
 
-[texto original — sin modificar una sola palabra si es transcripción oral]
+[2–3 oraciones: tema central, tono, estado del texto — suficiente para decidir si vale leer el original]
+
+## Archivo fuente
+
+[[nombre-del-archivo-original]]
 
 ## Notas de triage
 
@@ -262,11 +274,11 @@ tesis_del_autor: ""
 ```markdown
 ## Resumen
 
-[síntesis en 2-3 oraciones del argumento principal]
+[2–3 oraciones: tesis del autor, argumento central, relevancia para la maestría]
 
-## Contenido
+## Archivo fuente
 
-[texto original]
+[[nombre-del-archivo-original]]
 
 ## Notas de triage
 
@@ -286,9 +298,9 @@ tesis_del_autor: ""
 - Año:
 - Páginas relevantes:
 
-## Extracto
+## Archivo fuente
 
-[texto original — intacto]
+[[nombre-del-archivo-original]]
 
 ## Notas de lectura
 
