@@ -51,21 +51,41 @@ Usar `obsidian-markdown` para crear cada nota con este formato:
 ```yaml
 ---
 id: ZK-YYYYMMDD-HHMM-NNN
-title: ""
+titulo: ""          # Afirmación completa
 tipo: zettelkasten
-dominio: pastoral | academico
-tema: ""
-libro_biblico_principal: ""
-temas_principales: []
-versiculos_citados: []
-fuente: ""            # ID del archivo fuente (título o ruta)
-coaching_notes: []    # IDs de sesiones de writing-coach que usaron esta nota
-zettelkasten_notes: []
-fecha: ""
-version_yaml: "2.0"
-fecha_actualizacion: ""
+subtipo: ""         # conceptual | argumental | exegetica | narrativa | conexion
+dominio: ""         # pastoral | academico
+tags: []
+versiculos_biblicos: []
+personajes: []
+source_file: ""
+source_section: ""
+source_type: ""
+notas_relacionadas: []
+pattern_id:
+fecha_creacion: YYYY-MM-DD
+# === Spaced Review (SM-2) ===
+fecha_proxima_revision: YYYY-MM-DD   # = fecha_creacion + 1 día
+intervalo_dias: 1
+repeticiones: 0
+facilidad: 2.5
+pregunta_reflexion: ""  # Ver instrucción abajo
 ---
 ```
+
+**Instrucción `pregunta_reflexion`:** Generar una pregunta que interrogue la afirmación central de la nota desde el ministerio concreto de Daniel. La pregunta debe:
+- Ser específica a la idea de la nota (no genérica)
+- Conectar con predicación, congregación o vida espiritual si dominio=pastoral
+- Conectar con el argumento académico y su vigencia si dominio=academico
+- Formato: una sola oración interrogativa directa
+
+Ejemplos pastorales:
+- "¿En qué momento de tu última predicación esta distinción hubiera cambiado la aplicación?"
+- "¿Dónde has visto a tu congregación confundir precisamente esto?"
+
+Ejemplos académicos:
+- "¿Qué evidencia del texto cambiaría esta interpretación?"
+- "¿Cómo responde este argumento a la objeción más fuerte del autor contrario?"
 
 Carpeta destino:
 - Pastoral: `09_Zettelkasten/pastoral/`
