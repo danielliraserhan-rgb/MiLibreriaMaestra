@@ -53,6 +53,8 @@ EXCLUDED_DIRS = {
     ".obsidian",
     ".git",
     "_Archive",
+    "skills-sistema-v3",
+    ".claude",
 }
 
 # Caracteres del cuerpo a buscar (primeros N chars después del frontmatter)
@@ -244,6 +246,38 @@ def scan_vault(vault_path: str, query: str, tipo_filter: str = None) -> list:
 # ─────────────────────────────────────────────
 
 ZK_COVERAGE_THRESHOLD = 2   # temas con menos de N notas ZK = hueco
+MIN_MATCH_WORD_LEN = 4       # palabras más cortas que esto no se usan en matching parcial
+
+
+def _count_zk_for_topic(norm_topic: str, zk_notes_tags: list) -> int:
+    """
+    Cuenta cuántas notas ZK distintas cubren un tema.
+    Usa matching de subcadena por palabra: una nota cubre el tema si alguno
+    de sus tags es subcadena del topic o viceversa (palabras >= MIN_MATCH_WORD_LEN).
+    Evita doble conteo — cada nota se cuenta una sola vez.
+    """
+    topic_words = {w for w in norm_topic.split() if len(w) >= MIN_MATCH_WORD_LEN}
+    if not topic_words:
+        return 0
+    count = 0
+    for note_tags in zk_notes_tags:
+        matched = False
+        for tag in note_tags:
+            if matched:
+                break
+            # El tag completo aparece dentro del topic (ej: "mikveh" en "mikveh hebreo")
+            if len(tag) >= MIN_MATCH_WORD_LEN and tag in norm_topic:
+                matched = True
+            else:
+                # Alguna palabra del topic aparece dentro del tag
+                # (ej: "expiacion" del topic en el tag "expiacion")
+                for w in topic_words:
+                    if w in tag:
+                        matched = True
+                        break
+        if matched:
+            count += 1
+    return count
 
 
 def analyze_gaps(vault_path: str) -> dict:
@@ -262,7 +296,7 @@ def analyze_gaps(vault_path: str) -> dict:
 
     # Acumuladores
     source_topic_map = {}   # normalized_topic -> {"topic": str, "sources": [{"filepath", "title"}]}
-    zk_tag_counts = {}      # normalized_tag -> int
+    zk_notes_tags = []      # lista de frozensets — tags normalizados de cada nota ZK
     source_docs_without_zk = []
     orphan_zk_notes = []
     total_zk = 0
@@ -289,9 +323,11 @@ def analyze_gaps(vault_path: str) -> dict:
 
         if tipo == "zettelkasten":
             total_zk += 1
-            for tag in frontmatter.get("tags", []):
-                norm = normalize(tag)
-                zk_tag_counts[norm] = zk_tag_counts.get(norm, 0) + 1
+            note_tags = frozenset(
+                normalize(tag).replace("-", " ")
+                for tag in frontmatter.get("tags", [])
+            )
+            zk_notes_tags.append(note_tags)
             related = frontmatter.get("notas_relacionadas", [])
             if not related:
                 orphan_zk_notes.append({
@@ -331,7 +367,7 @@ def analyze_gaps(vault_path: str) -> dict:
     # Detectar temas con baja cobertura ZK
     coverage_gaps = []
     for norm_topic, data in source_topic_map.items():
-        zk_count = zk_tag_counts.get(norm_topic, 0)
+        zk_count = _count_zk_for_topic(norm_topic, zk_notes_tags)
         if zk_count < ZK_COVERAGE_THRESHOLD:
             coverage_gaps.append({
                 "topic": data["topic"],
@@ -345,7 +381,7 @@ def analyze_gaps(vault_path: str) -> dict:
 
     topics_covered = len([
         t for t in source_topic_map
-        if zk_tag_counts.get(t, 0) >= ZK_COVERAGE_THRESHOLD
+        if _count_zk_for_topic(t, zk_notes_tags) >= ZK_COVERAGE_THRESHOLD
     ])
 
     return {
