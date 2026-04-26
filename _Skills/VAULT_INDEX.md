@@ -14,50 +14,37 @@
 
 ---
 
-## Dominio Pastoral
+## 03 · Escatología — Destino  (8 notas ZK)
 
-### Fuentes procesadas
+- _fuente:_ **En los días de Noé** · modo `6-estudio-clase` · 8 ZK
 
-- **En los días de Noé** — modo: `6-estudio-clase` · tema: `03_Escatologia—Destino` · ZK generadas: 8
-- **Nacer de Nuevo** — modo: `1-libro-terminado` · tema: `05_DoctrinasFundamentales` · ZK generadas: 22
+- `ZK-20260424-1628-003` El Reino de Dios es el eje de toda la existencia — vivir fuera de esa realidad es vivir sin sentido _3 cx_
+- `ZK-20260424-1628-004` Dos eras, una decisión: ¿para cuál vivimos? _3 cx_
+- `ZK-20260424-1628-007` El arca abierta — el evangelio es una invitación urgente, no una oferta permanente _3 cx_
+- `ZK-20260424-1628-008` Dejar las redes al instante — el llamado misionero exige abandono inmediato, no negociación gradual _3 cx_
+- `ZK-20260424-1628-001` El pecado de los días de Noé no fue la inmoralidad — fue vivir sin sentido ante el diluvio que se acercaba _3 cx_
+- `ZK-20260424-1628-005` Diluir el evangelio a un ritual dominical es repetir el error de la generación de Noé _3 cx_
+- `ZK-20260424-1628-006` La identidad de escogido es el fundamento del llamado misionero, no su recompensa _3 cx_
+- `ZK-20260424-1628-002` La urgencia misionera no nace de la emoción — nace de saber que esta era tiene un fin _3 cx_
 
-### Clusters por fuente
+## 05 · Doctrinas Fundamentales  (22 notas ZK)
 
-**2026-04-24-en-los-dias-de-noe** — 8 notas
-  - El Reino de Dios es el eje de toda la existencia — vivir fuera de esa realidad es vivir sin sentido
-  - Dos eras, una decisión: ¿para cuál vivimos?
-  - El arca abierta — el evangelio es una invitación urgente, no una oferta permanente
-  - Dejar las redes al instante — el llamado misionero exige abandono inmediato, no negociación gradual
-  - El pecado de los días de Noé no fue la inmoralidad — fue vivir sin sentido ante el diluvio que se acercaba
-  - Diluir el evangelio a un ritual dominical es repetir el error de la generación de Noé
-  - _...y 2 más_
+- _fuente:_ **Nacer de Nuevo** · modo `1-libro-terminado` · 22 ZK
 
-**Nacer de Nuevo** — 22 notas
-  - La caída produce tres reinos del pecado: Satanás, la carne y el mundo
-  - El vacío espiritual es la invitación de Dios, no un defecto del diseño
-  - Presentar el cuerpo como sacrificio vivo es el culto racional — la respuesta lógica a la gracia
-  - La expiación tiene dos caras: corregir lo que estaba mal y cubrir al que pecó
-  - Los seis cuerpos del Mikveh apuntan al agua viva como origen divino de la purificación
-  - Somos embajadores de reconciliación: ya fuiste reconciliado, ahora lleva la reconciliación
-  - _...y 16 más_
+- `ZK-20260423-1200-005` La serpiente de bronce prefigura a Cristo levantado: el mismo veneno, el mismo remedio _4 cx_
+- `ZK-20260423-1200-003` Nacer de nuevo es reconocer — no un proceso sino un momento de fe _4 cx_
+- `ZK-20260423-1200-007` La caída produce tres reinos del pecado: Satanás, la carne y el mundo _3 cx_
+- `ZK-20260423-1200-001` El vacío espiritual es la invitación de Dios, no un defecto del diseño _3 cx_
+- `ZK-20260423-1200-021` Presentar el cuerpo como sacrificio vivo es el culto racional — la respuesta lógica a la gracia _3 cx_
+- `ZK-20260423-1200-008` La expiación tiene dos caras: corregir lo que estaba mal y cubrir al que pecó _3 cx_
+- `ZK-20260423-1200-009` El primer sacrificio en el Jardín es el tipo que anticipa el Calvario _3 cx_
+- `ZK-20260423-1200-013` Mikveh significa confianza: el bautismo siempre fue sobre fe en quien purifica, no en el agua _3 cx_
+- _...y 14 notas más_
 
-### Notas más conectadas
+## 08 · Académico / Maestría  (0 notas ZK)
 
-- `ZK-20260423-1200-005` — La serpiente de bronce prefigura a Cristo levantado: el mismo veneno, el mismo remedio _(conexiones: 4)_
-- `ZK-20260423-1200-003` — Nacer de nuevo es reconocer — no un proceso sino un momento de fe _(conexiones: 4)_
-- `ZK-20260424-1628-003` — El Reino de Dios es el eje de toda la existencia — vivir fuera de esa realidad es vivir sin sentido _(conexiones: 3)_
-- `ZK-20260424-1628-004` — Dos eras, una decisión: ¿para cuál vivimos? _(conexiones: 3)_
-- `ZK-20260424-1628-007` — El arca abierta — el evangelio es una invitación urgente, no una oferta permanente _(conexiones: 3)_
+- _fuente:_ **Naked But Not Ashamed: The Fruit of Sin Covered by God's Grace** · modo `academico` · 0 ZK
 
----
-
-## Dominio Académico
-
-### Fuentes procesadas
-
-- **Naked But Not Ashamed: The Fruit of Sin Covered by God's Grace** — tipo: `articulo_academico` · ZK generadas: 0
-
-_Sin notas ZK generadas todavía._
 
 ---
 
