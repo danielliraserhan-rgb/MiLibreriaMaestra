@@ -91,7 +91,8 @@ def sm2_calc(intervalo: int, repeticiones: int, facilidad: float, rating: int) -
             nuevo_intervalo = max(MIN_INTERVALO, round(intervalo * facilidad))
 
         nuevas_repeticiones = repeticiones + 1
-        nueva_facilidad = facilidad + (0.1 if rating == 5 else 0.0)
+        # Fórmula SM-2 estándar: penaliza facilidad cuando rating < 5
+        nueva_facilidad = facilidad + (0.1 - (5 - rating) * (0.08 + (5 - rating) * 0.02))
         nueva_facilidad = max(MIN_FACILIDAD, round(nueva_facilidad, 2))
 
     fecha_proxima = (date.today() + timedelta(days=nuevo_intervalo)).isoformat()
@@ -155,8 +156,14 @@ def build_queue(vault_path: str, limit: int = 5, dominio: str = None) -> list:
         if dominio and fm.get("dominio", "") != dominio:
             continue
 
-        repeticiones = int(fm.get("repeticiones", 0) or 0)
-        intervalo = int(fm.get("intervalo_dias", 1) or 1)
+        try:
+            repeticiones = int(fm.get("repeticiones", 0) or 0)
+        except (ValueError, TypeError):
+            repeticiones = 0
+        try:
+            intervalo = int(fm.get("intervalo_dias", 1) or 1)
+        except (ValueError, TypeError):
+            intervalo = 1
         try:
             facilidad = float(fm.get("facilidad", 2.5) or 2.5)
         except (ValueError, TypeError):
