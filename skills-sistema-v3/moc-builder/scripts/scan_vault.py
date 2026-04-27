@@ -488,7 +488,11 @@ def generate_index(vault_path: str) -> str:
             continue
 
         titulo = fm.get("title", fm.get("titulo", md_file.stem))
+        # Busca campo 'tema' (singular, YAML v1) y fallback a 'temas_principales' (lista, YAML v2)
         tema_raw = fm.get("tema", "")
+        if not tema_raw:
+            temas_list = fm.get("temas_principales", [])
+            tema_raw = temas_list[0] if temas_list else ""
         tema_norm = _norm_tema(tema_raw) if tema_raw else ""
         zk_count = len(fm.get("zettelkasten_notes", []))
         modo = fm.get("modo", "")

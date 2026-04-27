@@ -174,7 +174,7 @@ fecha_actualizacion: ""
    - **Teología** — ¿Algún marco del §2 está ausente o comprometido?
    - **Estructura** — ¿El arco humana condición → respuesta de Dios → aplicación está completo?
    - **Ritmo** — ¿Hay párrafos largos sin remate corto? ¿Dónde falta respiración?
-   - **Líneas rojas** — ¿Alguna de las 8 prohibiciones activada? Citar sección exacta del ContextoMaestro.
+   - **Líneas rojas** — ¿Alguna de las 9 prohibiciones activada? Citar sección exacta del ContextoMaestro.
 4. Proponer 2–3 preguntas que Daniel pueda hacerse para mejorar el texto (no reescribir)
 5. Si el análisis genera insights permanentes → proponer a `pattern-harvester`
 
