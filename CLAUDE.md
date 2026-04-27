@@ -52,6 +52,8 @@ pattern-harvester → propone patrones → espera OK granular
 Si aprueba: actualiza activePatterns.json + PROCESS_LOG.md
 ```
 
+**Para carga masiva (5+ documentos):** usar `bulk-ingest` en lugar de `modo-selector`. Los checkpoints se agrupan por lote: triage del lote → OK → procesamiento auto → revisión ZK del lote → OK → pattern-harvester una vez → OK.
+
 **Regla de oro:** `inbox-triage` siempre primero · `pattern-harvester` siempre último · `zettelkasten-forge` antes del harvester · nunca avanzar sin OK explícito de Daniel.
 
 **Motor de escritura:** `obsidian-markdown` es la ÚNICA herramienta para crear/editar .md en el vault. Prohibido: `cat`, `echo >>`, `sed`, `awk`, terminal para markdown.
@@ -78,6 +80,7 @@ Si aprueba: actualiza activePatterns.json + PROCESS_LOG.md
 | Situación | Skill |
 |---|---|
 | Nuevo archivo en inbox | `modo-selector` |
+| **5+ archivos en inbox (carga masiva)** | `bulk-ingest` |
 | Diagnóstico de tipo + YAML | `inbox-triage` |
 | Texto pastoral: oral + escrito, o borrador | `modo-ab-seccion-mixta` |
 | Diagnóstico / mapa estructural | `modo-c-esquema-editorial` |
@@ -87,6 +90,7 @@ Si aprueba: actualiza activePatterns.json + PROCESS_LOG.md
 | Generar notas atómicas Zettelkasten | `zettelkasten-forge` |
 | Detectar y proponer patrones | `pattern-harvester` |
 | Mapa de contenido (índice de notas) | `moc-builder` |
+| **Detectar huecos de conocimiento** | `scan_vault.py --mode gaps` |
 | **Análisis de voz + teología (S2)** | `writing-coach` |
 | **Espejo de voz vs patrones aprobados** | `voice-trainer` |
 | **Guía de formato por tipo de contenido** | `format-adapter` |
@@ -135,12 +139,22 @@ fecha_actualizacion: ""
 
 | Archivo | Propósito |
 |---|---|
-| `_Skills/activePatterns.json` | Patrones aprobados — leer al inicio de cada sesión |
+| `_Skills/activePatterns.json` | Patrones aprobados v2.0 — organizados por categoría (estructura, teologia, hermeneutica, voz). Usar `load_for` para cargar solo las categorías relevantes a la tarea. |
+| `_Skills/VAULT_INDEX.md` | Índice comprimido del vault: fuentes procesadas, clusters ZK, notas más conectadas. Cargar al inicio de sesiones de investigación o coach. Regenerar con `scan_vault.py --mode index`. |
 | `_Skills/PROCESS_LOG.md` | Bitácora append-only |
 | `ContextoMaestro/ContextoMaestro.md` | Fuente de verdad: voz, teología, líneas rojas |
 | `ContextoMaestro/00_ESENCIAL.md` | Cargar siempre. Resumen ejecutivo del ContextoMaestro |
 | `ContextoMaestro/04_voz.md` | Cargar solo para tareas pastorales o sesiones de coach |
 | `Inbox/scrivener-sync/` | Carpeta monitoreada: archivos que llegan desde Scrivener |
+
+**Protocolo de carga por tipo de sesión:**
+
+| Tipo de sesión | Cargar al inicio |
+|---|---|
+| Procesamiento de archivo nuevo | `00_ESENCIAL.md` + `activePatterns.json` (categorías relevantes) |
+| Investigación / rutas de conocimiento | `00_ESENCIAL.md` + `VAULT_INDEX.md` + `activePatterns.json` |
+| Coach de escritura (S2) | `00_ESENCIAL.md` + `04_voz.md` + `activePatterns.json` (voz + estructura) |
+| Bulk-ingest | `00_ESENCIAL.md` + `activePatterns.json` (bulk_ingest) |
 
 > Sincronizar `ContextoMaestro/ContextoMaestro.md` con `~/Desktop/Claude/Contexto Maestro — Daniel Lira.md` cuando se actualice.
 
