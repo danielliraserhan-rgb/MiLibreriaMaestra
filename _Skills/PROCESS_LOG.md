@@ -157,6 +157,36 @@
 
 ---
 
+### 2026-04-28 — MODO 5 (Nota Temática) — "How and when did you come to faith in Jesus"
+
+**Archivos creados:**
+- `Temas/06_DiscipuladoVidaCristiana/04_NotasSinProcesar/2026-04-28-how-and-when-did-you-come-to-faith-in-jesus.md`
+- `Temas/06_DiscipuladoVidaCristiana/04_NotasSinProcesar/2026-04-28-como-y-cuando-llego-a-la-fe-en-jesus.md`
+
+**Skills ejecutados:** modo-selector → inbox-triage → zettelkasten-forge → pattern-harvester
+**Metadatos extraídos:**
+- Temas principales: conversión, búsqueda de verdad, islam y new age como caminos vacíos, identidad en Cristo
+- Libros bíblicos: Juan
+- Autores citados: John MacArthur (Study Bible), "El desconocido en el camino a Emaús"
+- Versículos clave: Juan 4:26
+
+**Notas Zettelkasten generadas:** 8 (ZK-20260428-1000-001 a ZK-20260428-1000-008)
+
+**Patrones detectados (pattern-harvester):**
+1. P-011 — Todo se cae, solo Cristo se sostiene (estructura)
+2. P-012 — La pregunta que nombra el problema exacto (voz)
+3. P-013 — Durante todo este tiempo era Él quien me hablaba (teologia)
+4. P-014 — Imagen física para una crisis (voz)
+
+**Resolución:** 4 aprobados, 0 rechazados
+
+**Notas:**
+- Documento original bilingüe (EN + ES) dividido en dos notas enlazadas entre sí
+- Conversión desde .docx via markitdown[docx]; fuente eliminada tras verificación
+- Skill conversion-documentos confirmado presente en main
+
+---
+
 #### PROBLEMAS DOCUMENTADOS (sin acción requerida ahora)
 
 - `inbox-triage/SKILL.md`: ruta académica no especifica subcarpeta en `Maestria/` → pendiente revisión
