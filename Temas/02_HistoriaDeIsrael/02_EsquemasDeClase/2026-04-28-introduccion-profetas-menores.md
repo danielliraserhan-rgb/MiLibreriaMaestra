@@ -78,7 +78,7 @@ seo_keywords:
   - "gobierno teocrático"
   - "historia de Israel estudio bíblico"
 fecha: "2026-04-28"
-estado: sin_procesar
+estado: en_proceso
 dominio: pastoral
 modo: "6-estudio-clase"
 fase: ""
@@ -89,7 +89,19 @@ author_quotes:
   - "Laureano Benitez Grande-Caballero"
   - "John Calvin (cesacionismo)"
   - "Josefo"
-zettelkasten_notes: []
+zettelkasten_notes:
+  - ZK-20260428-1600-001
+  - ZK-20260428-1601-002
+  - ZK-20260428-1602-003
+  - ZK-20260428-1603-004
+  - ZK-20260428-1604-005
+  - ZK-20260428-1605-006
+  - ZK-20260428-1606-007
+  - ZK-20260428-1607-008
+  - ZK-20260428-1608-009
+  - ZK-20260428-1609-010
+  - ZK-20260428-1610-011
+  - ZK-20260428-1611-012
 source_file: "Intro Profetas Menores (1).md"
 version_yaml: "2.0"
 fecha_actualizacion: "2026-04-28"
