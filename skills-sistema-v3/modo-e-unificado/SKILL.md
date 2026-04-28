@@ -222,9 +222,9 @@ Si 2+ fallan en cualquier sección, corregir antes de entregar el .docx.
 
 ## 8. Flujo de entrega — tres pasos obligatorios
 
-**Paso 1 — Chat primero.** Entregar el esquema en chat. Daniel edita, corta, reordena, marca huecos. Nunca ir directo a .docx.
+**Paso 1 — Chat primero.** Entregar el esquema en chat. Daniel edita, corta, reordena, marca huecos.
 
-**Paso 2 — .docx al cerrar.** Cuando Daniel dé visto bueno ("cerrar", "pásalo a docx", "listo"), generar .docx respetando el formato del §5.
+**Paso 2 — .md al cerrar.** Cuando Daniel dé visto bueno ("cerrar", "pásalo a .md", "listo"), generar .md respetando el formato del §5.
 
 **Paso 3 — zettelkasten-forge + pattern-harvester.** Al entregar el .docx, invocar `zettelkasten-forge` sobre el esquema aprobado. Los remates intercalados (§2.5) y las máximas/afirmaciones del esquema son candidatos naturales a notas de tipo `argumental` y `conceptual`. Luego cerrar con `pattern-harvester`.
 
