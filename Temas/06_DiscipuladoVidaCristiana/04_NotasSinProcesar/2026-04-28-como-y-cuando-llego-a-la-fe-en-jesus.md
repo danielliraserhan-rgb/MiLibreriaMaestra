@@ -31,7 +31,15 @@ fuente: borrador
 author_quotes:
   - "John MacArthur (Study Bible)"
   - "El desconocido en el camino a Emaús"
-zettelkasten_notes: []
+zettelkasten_notes:
+  - ZK-20260428-1000-001
+  - ZK-20260428-1000-002
+  - ZK-20260428-1000-003
+  - ZK-20260428-1000-004
+  - ZK-20260428-1000-005
+  - ZK-20260428-1000-006
+  - ZK-20260428-1000-007
+  - ZK-20260428-1000-008
 coaching_notes: []
 version_yaml: "2.0"
 fecha_actualizacion: "2026-04-28"
