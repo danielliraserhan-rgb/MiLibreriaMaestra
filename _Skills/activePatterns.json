@@ -1,6 +1,6 @@
 {
   "version": "2.0",
-  "lastUpdated": "2026-04-26T00:00:00-06:00",
+  "lastUpdated": "2026-04-28T00:00:00-06:00",
   "description": "Patrones de voz, estructura y teología detectados en el corpus de Daniel Lira. Solo crecen con aprobación explícita. El pattern-harvester lee este archivo al inicio de cada sesión y lo actualiza solo tras OK de Daniel.",
   "load_for": {
     "pastoral_general": ["estructura", "teologia", "hermeneutica"],
@@ -25,6 +25,19 @@
         ],
         "source": "Nacer de Nuevo — corpus completo",
         "approved_date": "2026-04-23"
+      },
+      {
+        "id": "P-011",
+        "name": "Todo se cae, solo Cristo se sostiene",
+        "scope": "estructura",
+        "description": "Investiga todo lo que parece verdad. Todo se cae cuando le pregunta profundo. Solo Cristo se sostiene. Al final: rendición total.",
+        "evidence": [
+          "Interrogué a mi familia musulmana, amigos hindúes, maestros new age, budistas, chamanes mexicanos, ateos...",
+          "Los argumentos empezaron a desmoronarse y caer. No podían sostenerse por sí mismos.",
+          "Renuncié a todo lo que creía ser y empecé de la nada."
+        ],
+        "source": "2026-04-28-how-and-when-did-you-come-to-faith-in-jesus",
+        "approved_date": "2026-04-28"
       },
       {
         "id": "P-010",
@@ -56,6 +69,19 @@
         ],
         "source": "Nacer de Nuevo — estructura de capítulos",
         "approved_date": "2026-04-23"
+      },
+      {
+        "id": "P-013",
+        "name": "Durante todo este tiempo era Él quien me hablaba",
+        "scope": "teologia",
+        "description": "Al convertirse, Daniel ve hacia atrás y reconoce que Cristo ya estaba trabajando antes. La gracia llegó primero.",
+        "evidence": [
+          "Durante todo este tiempo era él quien me hablaba.",
+          "Fue como viajar en el tiempo y verle hablarme 7 años antes.",
+          "Él fue el que me sacó de mi casa, sacó la idea islámica de mi mente, me hizo ver que la filosofía del mundo está vacía."
+        ],
+        "source": "2026-04-28-how-and-when-did-you-come-to-faith-in-jesus",
+        "approved_date": "2026-04-28"
       },
       {
         "id": "P-008",
@@ -90,6 +116,32 @@
         "approved_date": "2026-04-24"
       }
     ],
-    "voz": []
+    "voz": [
+      {
+        "id": "P-012",
+        "name": "La pregunta que nombra el problema exacto",
+        "scope": "voz",
+        "description": "En el punto de más tensión, Daniel hace una sola pregunta que nombra el problema exacto.",
+        "evidence": [
+          "¿Cómo seguir a un Dios que no me habla?",
+          "¿Cómo hacerme cristiano si toda la religión se basa en una relación con Dios, y este Dios no me habla?",
+          "¿Cómo puede tener tanto sentido si va en contra de todas mis creencias?"
+        ],
+        "source": "2026-04-28-how-and-when-did-you-come-to-faith-in-jesus",
+        "approved_date": "2026-04-28"
+      },
+      {
+        "id": "P-014",
+        "name": "Imagen física para una crisis",
+        "scope": "voz",
+        "description": "Para describir una crisis, Daniel usa una imagen física. Lo abstracto se vuelve visible.",
+        "evidence": [
+          "Escalé una montaña para encontrar un precipicio.",
+          "Si daba un paso más, caería en el abismo."
+        ],
+        "source": "2026-04-28-how-and-when-did-you-come-to-faith-in-jesus",
+        "approved_date": "2026-04-28"
+      }
+    ]
   }
 }
