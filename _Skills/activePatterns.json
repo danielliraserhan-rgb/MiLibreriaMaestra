@@ -12,6 +12,21 @@
   "patterns": {
     "estructura": [
       {
+        "id": "P-015",
+        "name": "Juicio → restauración → soberanía final de Dios",
+        "scope": "estructura",
+        "description": "Arco profético de tres movimientos presente en los profetas menores: (1) juicio sobre el pecado/nación enemiga, (2) restauración del pueblo de Dios, (3) declaración final de soberanía de Yhwh. El tercer movimiento no es opcional — sin él el arco queda trunco. Opera tanto en una profecía individual (Abdías) como en un libro completo (Joel).",
+        "trigger": "Cuando se trabaja con profetas menores o texto profético del AT: verificar si los tres movimientos están presentes. Si falta el tercero (soberanía final), proponer completarlo antes de cerrar la enseñanza.",
+        "evidence": [
+          "Abdías 1-14: juicio sobre Edom por traicionar a Israel",
+          "Abdías 15-21: restauración de Israel / 'el reino será del Señor'",
+          "Joel 1-2: langostas como disciplina → llamado al arrepentimiento → Día del Señor",
+          "Joel 2.28+: 'después del Día del Señor' — bendición y paz total en el reino del Mesías"
+        ],
+        "source": "Introducción a los Profetas Menores — esquema MODO E 2026-04-28",
+        "approved_date": "2026-04-28"
+      },
+      {
         "id": "P-006",
         "name": "La tríada como estructura de completitud",
         "scope": "estructura",
@@ -56,6 +71,35 @@
       }
     ],
     "teologia": [
+      {
+        "id": "P-016",
+        "name": "El profeta como fiscal del pacto, no como adivino",
+        "scope": "teología",
+        "description": "El oficio profético en Israel no era predictivo sino covenantal: el profeta recordaba la Ley (Mal. 2:7), discernía entre lo santo y lo profano (Ez. 44:23), y llamaba al arrepentimiento en injusticias, idolatría e indiferencia. Definirlo como 'fiscal del pacto' cambia el marco interpretativo de toda la literatura profética — el profeta no habla del futuro por curiosidad sino para restaurar la relación rota.",
+        "trigger": "Cuando se introduce cualquier profeta del AT: establecer primero su rol covenantal antes de hablar de predicciones. Corrección: si el texto o la enseñanza trata al profeta como 'adivino', proponer reformular desde el marco del pacto.",
+        "evidence": [
+          "El profeta no era un adivino. Era el fiscal del pacto.",
+          "Mal. 2:7 — el sacerdote/profeta guarda y enseña el conocimiento",
+          "Ez. 44:23 — discernir entre lo santo y lo profano",
+          "Jer. 5:23 — pueblo de corazón obstinado y rebelde"
+        ],
+        "source": "Introducción a los Profetas Menores — esquema MODO E 2026-04-28",
+        "approved_date": "2026-04-28"
+      },
+      {
+        "id": "P-017",
+        "name": "Cristo como filtro de selección del canon",
+        "scope": "teología",
+        "description": "El criterio que determina qué textos entraron al canon bíblico no fue calidad literaria ni importancia histórica sino la revelación del plan de redención en Cristo. Jesús como Salvador prometido es el filtro — todo lo canónico apunta a Él. Esto explica la exclusión de libros auténticos (crónicas de Natán, Gad) y da respuesta al problema de los apócrifos sin apelar a tradición eclesiástica.",
+        "trigger": "Cuando alguien pregunta por qué ciertos libros no están en la Biblia, o cuando se trabaja con el canon: usar el filtro cristológico como respuesta primaria, no el concilio ni la tradición.",
+        "evidence": [
+          "El principal propósito de la Biblia es apuntar a Jesús como el Salvador prometido. Ese filtro es lo que determina qué está adentro y qué no.",
+          "Las crónicas de Natán no están — no porque sean malas, sino porque Dios determinó que lo necesario para revelar la redención ya estaba",
+          "Lo canónico revela el plan de redención; lo apócrifo tiene errores doctrinales y geográficos que lo excluyen"
+        ],
+        "source": "Introducción a los Profetas Menores — esquema MODO E 2026-04-28",
+        "approved_date": "2026-04-28"
+      },
       {
         "id": "P-007",
         "name": "Diseño → corrupción → restauración como arco macro",

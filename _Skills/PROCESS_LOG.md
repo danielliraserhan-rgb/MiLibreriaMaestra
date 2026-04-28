@@ -187,6 +187,37 @@
 
 ---
 
+### 2026-04-28 — MODO 6 (Clase Larga) — "Introducción a los Profetas Menores"
+
+**Archivo:** `Temas/02_HistoriaDeIsrael/02_EsquemasDeClase/2026-04-28-introduccion-profetas-menores.md`
+**Archivos fuente:** `Inbox/Intro Profetas Menores (1).docx` (~10,500 palabras)
+**Skills ejecutados:** conversion-documentos → inbox-triage → modo-e-unificado → zettelkasten-forge → pattern-harvester
+**Metadatos extraídos:**
+- Temas principales: Profetismo bíblico y fuentes de revelación, Canon bíblico, Gobierno teocrático de Israel, Reino dividido (norte/sur), Etnocentrismo y universalidad de la salvación
+- Libros bíblicos: Los Doce (Profetas Menores), Abdías, Joel
+- Autores citados: Alfonso Ropero (Editorial Clie), Laureano Benitez Grande-Caballero, John Calvin
+- Versículos clave: Mal. 2:7, Ez. 44:23, Jer. 5:23, Abd. 1-14, Abd. 15-21, Joel 2, 2 Ti. 3:16, 2 Pe. 1:19-21
+
+**Notas Zettelkasten generadas:** 12 (ZK-20260428-1600-001 a ZK-20260428-1611-012)
+
+**Outputs adicionales:**
+- `Temas/02_HistoriaDeIsrael/02_EsquemasDeClase/MODO-E-Introduccion-Profetas-Menores.docx` — esquema MODO E generado (docx-js)
+- `Temas/02_HistoriaDeIsrael/02_EsquemasDeClase/Intro Profetas Menores (1).md` — conversión markitdown del original
+
+**Patrones detectados (pattern-harvester):**
+1. P-015 — Juicio → restauración → soberanía final de Dios (estructura)
+2. P-016 — El profeta como fiscal del pacto, no como adivino (teología)
+3. P-017 — Cristo como filtro de selección del canon (teología)
+
+**Propuestas:**
+- [x] P-015 — Juicio → restauración → soberanía final de Dios — APROBADO
+- [x] P-016 — El profeta como fiscal del pacto, no como adivino — APROBADO
+- [x] P-017 — Cristo como filtro de selección del canon — APROBADO
+
+**Resolución:** 3 aprobados, 0 rechazados. activePatterns.json actualizado a 17 patrones. ZK con pattern_id actualizados: ZK-1607-008, ZK-1608-009 (P-015); ZK-1600-001 (P-016); ZK-1602-003, ZK-1610-011 (P-017)
+
+---
+
 #### PROBLEMAS DOCUMENTADOS (sin acción requerida ahora)
 
 - `inbox-triage/SKILL.md`: ruta académica no especifica subcarpeta en `Maestria/` → pendiente revisión
