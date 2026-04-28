@@ -63,6 +63,7 @@ source_section: ""
 source_type: ""
 notas_relacionadas: []
 pattern_id:
+coaching_notes: []  # IDs de sesiones de writing-coach o voice-trainer que usaron esta nota como fuente
 fecha_creacion: YYYY-MM-DD
 # === Spaced Review (SM-2) ===
 fecha_proxima_revision: YYYY-MM-DD   # = fecha_creacion + 1 día
@@ -94,6 +95,8 @@ Carpeta destino:
 ## FASE 4 — ACTUALIZAR FUENTE
 
 Agregar los IDs de las notas ZK creadas al campo `zettelkasten_notes:` del archivo fuente.
+
+**Nota para writing-coach y voice-trainer:** cuando una sesión de S2 use una nota ZK como fuente de análisis, agregar el ID de la sesión al campo `coaching_notes:` de esa nota usando `obsidian-markdown`.
 
 ---
 
