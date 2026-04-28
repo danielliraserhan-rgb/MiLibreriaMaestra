@@ -42,6 +42,7 @@ Scope: pastoral | academico
 Nombre propuesto: [nombre corto]
 Descripción: [una oración]
 Evidencia: [citar 2-3 líneas del texto que lo muestran]
+Notas ZK relacionadas: [IDs ZK-YYYYMMDD-HHMM-NNN donde aparece esta evidencia — dejar vacío si la evidencia viene del archivo fuente, no de notas ZK]
 Frecuencia observada: [primera vez | segunda vez | recurrente]
 ```
 
@@ -67,6 +68,16 @@ Agregar al array `patterns` de `_Skills/activePatterns.json`:
   "sesion_origen": ""
 }
 ```
+
+## FASE 4.5 — ACTUALIZAR pattern_id EN NOTAS ZK
+
+Para cada patrón aprobado: si el candidato tenía "Notas ZK relacionadas" con IDs, actualizar el campo `pattern_id:` de esas notas usando `obsidian-markdown`:
+
+```yaml
+pattern_id: P-YYYYMMDD-NNN
+```
+
+Si múltiples patrones aplican a la misma nota: agregar el ID como lista `[P-001, P-002]`.
 
 ## FASE 5 — ACTUALIZAR PROCESS_LOG
 

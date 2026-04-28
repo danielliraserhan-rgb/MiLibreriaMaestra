@@ -90,7 +90,8 @@ Si aprueba: actualiza activePatterns.json + PROCESS_LOG.md
 | Generar notas atómicas Zettelkasten | `zettelkasten-forge` |
 | Detectar y proponer patrones | `pattern-harvester` |
 | Mapa de contenido (índice de notas) | `moc-builder` |
-| **Detectar huecos de conocimiento** | `scan_vault.py --mode gaps` |
+| **Huecos estructurales** (preguntas abiertas, patrones débiles, huérfanas) | `desarrollador-de-temas` |
+| **Cobertura cuantitativa de temas** (temas mencionados con pocas notas ZK) | script: `scan_vault.py --mode gaps` |
 | **Análisis de voz + teología (S2)** | `writing-coach` |
 | **Espejo de voz vs patrones aprobados** | `voice-trainer` |
 | **Guía de formato por tipo de contenido** | `format-adapter` |
