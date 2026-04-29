@@ -218,6 +218,76 @@
 
 ---
 
+### 2026-04-28 — BULK-INGEST Lote 1 — 21 predicaciones pastorales
+
+**Archivos fuente (Inbox/):**
+1. `Predicación_Afirmar el Rostro.docx`
+2. `Predicación_Discipulos.docx`
+3. `Predicación_El Hombre Liberado y su Deseo de Estar con Jesús.docx`
+4. `Predicación_El Rey David — Hombre conforme al corazón de Dios.docx`
+5. `Predicación_El ministerio de la reconciliación.docx`
+6. `Predicación_El pan de vid.docx`
+7. `Predicación_El plan de Dios.docx`
+8. `Predicación_Fin — Conoce el comienzo y el Fin.docx`
+9. `Predicación_Fruto del pecado vs fruto de la gracia.docx`
+10. `Predicación_ICF Ensenada.docx`
+11. `Predicación_La Brecha.docx`
+12. `Predicación_La conquista — Parte 2 Los procesos de la promesa.docx`
+13. `Predicación_La esperanza Segura 5.docx`
+14. `Predicación_La esperanza Segura.docx`
+15. `Predicación_La imagen de la verdad.docx`
+16. `Predicación_La mujer.docx`
+17. `Predicación_La resurrección.docx`
+18. `Predicación_La verdadera Conquista simple.docx`
+19. `Predicación_La verdadera conquista.docx`
+20. `Predicación_Las 4 copas.docx`
+21. `Predicación_MARANATHA — EL YA VIENE.docx`
+
+**Nota:** Doc 11 original (`Predicaciónes_Juan 4:26`) descartado — archivo vacío. Total procesado: 21/22.
+
+**Skills ejecutados:** bulk-ingest → inbox-triage (F1+F2, todos sin pausas) → zettelkasten-forge (directo, sin modo-c per memoria activa) → pattern-harvester
+
+**Contenedores creados:**
+- `Temas/02_HistoriaDeIsrael/02_EsquemasDeClase/El Rey David — Hombre conforme al corazón de Dios.md`
+- `Temas/03_Escatologia—Destino/02_EsquemasDeClase/Fin — Conoce el comienzo y el Fin.md`
+- `Temas/03_Escatologia—Destino/02_EsquemasDeClase/La esperanza Segura.md`
+- `Temas/03_Escatologia—Destino/02_EsquemasDeClase/La esperanza Segura 5.md`
+- `Temas/03_Escatologia—Destino/02_EsquemasDeClase/MARANATHA — EL YA VIENE.md`
+- `Temas/04_ExegesisNT/02_EsquemasDeClase/Las 4 copas.md`
+- `Temas/04_ExegesisNT/02_EsquemasDeClase/La imagen de la verdad.md`
+- `Temas/05_DoctrinasFundamentales/02_EsquemasDeClase/La resurrección.md`
+- `Temas/05_DoctrinasFundamentales/02_EsquemasDeClase/La verdadera conquista.md`
+- `Temas/05_DoctrinasFundamentales/02_EsquemasDeClase/La verdadera Conquista simple.md`
+- `Temas/06_DiscipuladoVidaCristiana/02_EsquemasDeClase/Afirmar el Rostro.md`
+- `Temas/06_DiscipuladoVidaCristiana/02_EsquemasDeClase/Discipulos.md`
+- `Temas/06_DiscipuladoVidaCristiana/02_EsquemasDeClase/El Hombre Liberado y su Deseo de Estar con Jesús.md`
+- `Temas/06_DiscipuladoVidaCristiana/02_EsquemasDeClase/El ministerio de la reconciliación.md`
+- `Temas/06_DiscipuladoVidaCristiana/02_EsquemasDeClase/El pan de vid.md`
+- `Temas/06_DiscipuladoVidaCristiana/02_EsquemasDeClase/La Brecha.md`
+- `Temas/06_DiscipuladoVidaCristiana/02_EsquemasDeClase/La mujer.md`
+- `Temas/07_PredicacionesDevocionales/02_EsquemasDeClase/El plan de Dios.md`
+- `Temas/07_PredicacionesDevocionales/02_EsquemasDeClase/Fruto del pecado vs fruto de la gracia.md`
+- `Temas/07_PredicacionesDevocionales/02_EsquemasDeClase/ICF Ensenada.md`
+- `Temas/07_PredicacionesDevocionales/02_EsquemasDeClase/La conquista — Parte 2 Los procesos de la promesa.md`
+
+**Notas Zettelkasten generadas:** 63 (ZK-20260428-1700-001 a ZK-20260428-1700-063)
+- 3 notas por predicación · dominio: pastoral · todos los contenedores actualizados con IDs
+
+**Patrones detectados (pattern-harvester):** 7 propuestos · 7 aprobados
+
+**Propuestas:**
+- [x] P-018 — La espera tiene función teológica — APROBADO (teologia)
+- [x] P-019 — El clamor humano fundamental es el mismo desde Génesis hasta Apocalipsis — APROBADO (hermeneutica)
+- [x] P-020 — La identidad precede siempre a la función en el discipulado — APROBADO (estructura)
+- [x] P-021 — El evangelio es proclamación de conquista, no invitación de consumidor — APROBADO (hermeneutica)
+- [x] P-022 — La escatología produce misión y radicalidad, no escapismo — APROBADO (teologia)
+- [x] P-023 — La hermenéutica tipológica: David como tipo de Cristo — APROBADO (hermeneutica)
+- [x] P-024 — La Biblia como meta-narrativa: Creación–Caída–Redención–Restauración — APROBADO (estructura)
+
+**Resolución:** 7 aprobados, 0 rechazados. activePatterns.json actualizado a 24 patrones.
+
+---
+
 #### PROBLEMAS DOCUMENTADOS (sin acción requerida ahora)
 
 - `inbox-triage/SKILL.md`: ruta académica no especifica subcarpeta en `Maestria/` → pendiente revisión
