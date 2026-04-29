@@ -5,6 +5,7 @@
   "userIgnoreFilters": [
     "_Skills/",
     "Templates/",
-    "ContextoMaestro/"
+    "ContextoMaestro/",
+    "Inbox/scrivener-sync/"
   ]
 }
