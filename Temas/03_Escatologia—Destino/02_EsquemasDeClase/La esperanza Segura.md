@@ -30,7 +30,10 @@ fase: ""
 serie: "La esperanza Segura"
 fuente: "borrador"
 author_quotes: []
-zettelkasten_notes: []
+zettelkasten_notes:
+  - ZK-20260428-1700-040
+  - ZK-20260428-1700-041
+  - ZK-20260428-1700-042
 coaching_notes: []
 version_yaml: "2.0"
 fecha_actualizacion: "2026-04-28"
