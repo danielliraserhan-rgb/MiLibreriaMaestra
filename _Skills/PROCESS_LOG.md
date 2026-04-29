@@ -297,3 +297,43 @@
 - Checkpoints explícitos faltantes en `modo-ab` (FASE 5) y `modo-c` (PASO 3→4) → pendiente revisión
 
 **Resolución:** Completado 2026-04-27. Sistema auditado, 4 bugs corregidos, 7 decisiones aplicadas. activePatterns.json sin cambios (5 patrones activos P-006 a P-010).
+
+---
+
+### 2026-04-29 — BULK-INGEST — Lote 2 — 21 documentos
+
+**Dominio:** pastoral
+**Modo de ejecución:** aprobación total anticipada (no se esperaron OKs intermedios)
+**Caveman mode:** activo
+
+**Documentos procesados:**
+
+| # | Archivo | MODO | Destino | ZK |
+|---|---|---|---|---|
+| 1 | Momentos con Jesus | 6 | 07_PredicacionesDevocionales/03_ClasesEnVivo | 3 |
+| 2 | Navidad — Maranatha 2019 | 5 | 07_PredicacionesDevocionales/04_NotasSinProcesar | 2 |
+| 3 | Notas breves Soldado Atleta Agricultor | 3 | 06_DiscipuladoVidaCristiana/04_NotasSinProcesar | 1 |
+| 4 | Nicodemo — Parque el Capitán 2023 | 6 | 04_ExegesisNT/03_ClasesEnVivo | 2 |
+| 5 | El buen pastor — Parque el Capitán 2023 | 6 | 04_ExegesisNT/03_ClasesEnVivo | 3 |
+| 6 | Jesús te vuelve a llamar en la barca | 6 | 06_DiscipuladoVidaCristiana/03_ClasesEnVivo | 2 |
+| 7 | La vid verdadera — Parque el Capitán 2023 | 6 | 06_DiscipuladoVidaCristiana/03_ClasesEnVivo | 3 |
+| 8 | La carrera de la fe | 5 | 03_Escatologia—Destino/04_NotasSinProcesar | 2 |
+| 9 | Sensatez — Miguel Pla (material externo) | 5 | 07_PredicacionesDevocionales/05_MaterialExterno | 2 |
+| 10 | Hechos 4 — ¿A quién obedeceremos? | 6 | 04_ExegesisNT/03_ClasesEnVivo | 2 |
+| 11 | Sígueme — La perla de gran precio | 5 | 06_DiscipuladoVidaCristiana/04_NotasSinProcesar | 2 |
+| 12 | Soldado Atleta y Agricultor | 6 | 06_DiscipuladoVidaCristiana/03_ClasesEnVivo | 2 |
+| 13 | Versículos y frases — Permanece | 3 | 03_Escatologia—Destino/04_NotasSinProcesar | 2 |
+| 14 | Zaqueo — Lucas 19 | 5 | 04_ExegesisNT/04_NotasSinProcesar | 3 |
+| 15 | ¿No ardía nuestro corazón? — Agosto 2022 | 6 | 07_PredicacionesDevocionales/03_ClasesEnVivo | 2 |
+| 16 | ¿No ardía nuestro corazón? — versión base | 5 | 07_PredicacionesDevocionales/04_NotasSinProcesar | 1 |
+| 17 | Boda Paco Moreno y Brenda Hernandez | 7 | 07_PredicacionesDevocionales/03_ClasesEnVivo | 2 |
+| 18 | XV Años — Naomi | 7 | 07_PredicacionesDevocionales/03_ClasesEnVivo | 2 |
+| 19 | HOSANNA — El Rey que completa la conquista | 5 | 05_DoctrinasFundamentales/04_NotasSinProcesar | 2 |
+| 20 | Permanece hasta el día de su regreso | 6 | 03_Escatologia—Destino/03_ClasesEnVivo | 2 |
+| 21 | Proveerá un cordero — El llamado en la gran historia | 5 | 05_DoctrinasFundamentales/04_NotasSinProcesar | 3 |
+
+**Total ZK generadas:** 45 (ZK-20260429-1000-001 a ZK-20260429-1000-045)
+**Patrones propuestos:** pendiente (pattern-harvester no ejecutado — fuera del alcance acordado)
+**Directorios creados:** 7 nuevos subdirectorios en Temas/
+
+**Resolución:** Lote cerrado. 21 contenedores creados, 45 notas ZK creadas. Pattern-harvester queda pendiente para próxima sesión.
