@@ -48,13 +48,13 @@ pregunta_reflexion: ""
 
 # La urgencia misionera no nace de la emoción — nace de saber que esta era tiene un fin
 
-Los apóstoles no vivían con urgencia porque eran personas emocionalmente intensas. Vivían con urgencia porque sabían algo: el tiempo se ha cumplido, el Reino de Dios se ha acercado, Cristo está por regresar para establecer su reino por siempre.
+Ellos vivían con la urgencia de predicar el evangelio. Para ver al rey regresar a establecer su reino en la tierra por siempre. Y para que la mayor cantidad de personas pudiera entrar a este Reino y ser "salvos" de una eternidad sin Él, en el rechazo y sufrimiento eterno.
 
-Esa certeza — escatológica, no sentimental — era el motor de todo. Por eso predicaban aunque les costara la vida. Por eso arrebataban almas del reino de las tinieblas con violencia. La urgencia era proporcional a la claridad sobre hacia dónde va la historia.
+Vivían con el celo de arrebatar a la mayor cantidad de personas del reino del diablo para rescatarlas y llevarlas al [[Reino de Dios]] aunque les costara la vida.
 
-La pérdida de urgencia misionera en la iglesia contemporánea no es un problema de motivación — es un problema de cosmología. Cuando se pierde de vista que esta era termina, que el juicio se acerca, y que el arca está abierta pero no siempre estará abierta, la misión se convierte en una actividad opcional en lugar del punto central de la existencia.
+[Puente: "Ellos" refiere a Jesús y los apóstoles del primer siglo, mencionados en la introducción de la predicación como modelo de contraste frente a una vida enredada en las cosas de la vida y sueños humanos.]
 
-Recuperar la urgencia no pasa por más emocionalismos en el culto. Pasa por recuperar la convicción de que el Hijo del Hombre será revelado — y que ese día cambia todo.
+¿Qué es lo que ellos sabían que yo había pasado por alto? ¿De qué se trata la vida, cuál es el punto de la existencia, hacia dónde va la historia y cómo debo vivir mi vida ante esa realidad?
 
 ## Conexiones
 

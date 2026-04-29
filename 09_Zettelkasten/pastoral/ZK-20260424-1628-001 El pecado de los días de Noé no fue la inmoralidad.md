@@ -48,13 +48,7 @@ pregunta_reflexion: ""
 
 # El pecado de los días de Noé no fue la inmoralidad — fue vivir sin sentido ante el diluvio que se acercaba
 
-La generación de Noé no fue destruida únicamente por sus actos inmorales. La profundidad de su pecado era otra: sabiendo que el diluvio se acercaba, sabiendo que el juicio estaba sobre ellos, se entregaron día tras día a una existencia sin propósito — comían, bebían, se casaban, construían — como si nada fuera a cambiar.
-
-La inmoralidad fue el síntoma. El pecado real fue la indiferencia ante la realidad que se avecinaba.
-
-Jesús usa este patrón para describir los días del regreso del Hijo del Hombre (Lucas 17:26-27). No dice que la generación final será necesariamente más violenta o inmoral que otras — dice que será igual de indiferente. La normalidad desconectada de la urgencia escatológica es en sí misma una forma de apostasía.
-
-Esta distinción es pastoralmente crítica: el problema no es que la gente haga "cosas malas", sino que vive como si esta era no tuviera un fin inminente. El evangelio no compite con el vicio — compite con la indiferencia.
+La expresión del pecado llegó a ser la inmoralidad de todo tipo. Pero la profundidad del pecado era: sabiendo que se acercaba el diluvio, la destrucción y la nueva tierra. Se entregaron día tras día a una vida sin sentido de solo existir. El pecado se convirtió en un síntoma que llegaría tarde o temprano.
 
 ## Conexiones
 

@@ -9,4 +9,16 @@ versiculo: "Isaías 50:7"
 fecha: 2026-04-28
 ---
 
-La nueva meta trae resistencia porque el diseño de Dios tiene peso — lo que no cuesta no vale. El rostro afirmado (Is 50:7) no niega el dolor; lo atraviesa con determinación.
+# La resistencia no anula el diseño de Dios, lo afirma
+
+Nuevas metas se enfrentan a resistencia que produce desánimo y abandono. Dios ha hecho planes y somos su obra maestra, no podemos darnos el lujo de abandonarlos — por lo tanto, afirmamos el rostro.
+
+Jesús afirmó su rostro hacia Jerusalén (Lucas 9:51). Enfrentó la resistencia con determinación. Nosotros somos llamados a hacer lo mismo. "Por eso he puesto mi rostro como el pedernal, y sé que no seré avergonzado." (Isaías 50:7)
+
+## Conexiones
+
+- [[Afirmar el Rostro]]
+
+## Fuente
+
+Fuente B: Afirmar el Rostro
