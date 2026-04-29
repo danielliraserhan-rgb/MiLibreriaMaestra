@@ -1,0 +1,51 @@
+---
+id: ZK-20260428-1609-010
+aliases:
+  - "ZK-20260428-1609-010"
+titulo: "La Septuaginta es el puente lingüístico entre los Testamentos"
+tipo: zettelkasten
+subtipo: narrativa
+dominio: pastoral
+tags:
+  - Septuaginta
+  - helenismo
+  - canon-bíblico
+  - historia-de-israel
+  - intertestamental
+versiculos_biblicos: []
+personajes:
+  - Ptolomeo II
+  - Josefo
+source_file: "MODO-E-Introduccion-Profetas-Menores.docx"
+source_section: "VI. El contexto helenístico y la Septuaginta"
+source_type: esquema
+notas_relacionadas:
+  - "[[ZK-20260428-1602-003 El canon es el filtro cristológico de la revelación]]"
+  - "[[ZK-20260428-1605-006 El reino dividido es el mapa político sin el cual los]]"
+pattern_id:
+coaching_notes: []
+fecha_creacion: 2026-04-28
+fecha_proxima_revision: 2026-04-29
+intervalo_dias: 1
+repeticiones: 0
+facilidad: 2.5
+pregunta_reflexion: "¿Cómo cambia la comprensión de una cita del NT en tus estudios saber que el autor neotestamentario estaba citando la LXX y no el hebreo masorético?"
+---
+
+Traducida ~250 a.C. por 72 escribas bajo Ptolomeo II en Alejandría, la Septuaginta (LXX) se convirtió en el estándar bíblico para el judío de habla griega y es la versión que los escritores del NT citan con mayor frecuencia.
+
+## Contexto
+
+Alejandro Magno helenizó el mundo antiguo — el griego se volvió lengua franca del Mediterráneo. Los judíos de la diáspora perdieron el hebreo como primera lengua. La LXX respondió a esa necesidad: el TANAKH en griego, accesible para comunidades que ya no leían hebreo.
+
+**Datos clave:**
+- 72 escribas hábiles en griego y hebreo
+- 72 días en Alejandría
+- Completada ~250 a.C.
+- Estándar para el judío de habla griega
+
+**Importancia para el NT:** Los autores del NT, incluyendo Pablo, citan la LXX con frecuencia. Conocer la LXX ayuda a entender por qué algunas citas del NT difieren del hebreo masorético.
+
+## Conexiones
+
+- [[ZK-20260428-1602-003 El canon es el filtro cristológico de la revelación]] — La LXX es parte de la historia del canon y su transmisión

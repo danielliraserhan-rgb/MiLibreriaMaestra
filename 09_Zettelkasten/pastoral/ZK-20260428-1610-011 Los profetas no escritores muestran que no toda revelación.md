@@ -1,0 +1,57 @@
+---
+id: ZK-20260428-1610-011
+aliases:
+  - "ZK-20260428-1610-011"
+titulo: "Los profetas no escritores muestran que no toda revelación fue canonizada"
+tipo: zettelkasten
+subtipo: conceptual
+dominio: pastoral
+tags:
+  - canon-bíblico
+  - profetismo
+  - revelación
+  - historia-de-israel
+versiculos_biblicos:
+  - "1 Cr. 21:9"
+  - "1 Cr. 29:29-30"
+personajes:
+  - Gad
+  - Natán
+  - Elías
+  - Eliseo
+  - Ahías
+  - Micaías
+source_file: "MODO-E-Introduccion-Profetas-Menores.docx"
+source_section: "III. Profetas escritores y no escritores"
+source_type: esquema
+notas_relacionadas:
+  - "[[ZK-20260428-1602-003 El canon es el filtro cristológico de la revelación]]"
+  - "[[ZK-20260428-1600-001 El profeta no era un adivino]]"
+pattern_id: P-017
+coaching_notes: []
+fecha_creacion: 2026-04-28
+fecha_proxima_revision: 2026-04-29
+intervalo_dias: 1
+repeticiones: 0
+facilidad: 2.5
+pregunta_reflexion: "¿Cómo usarías la existencia de profetas no escritores para responder a alguien que cuestiona la suficiencia de la Biblia?"
+---
+
+Gad, Natán, Elías, Eliseo y otros profetizaron con autoridad real en Israel, pero sus escritos no llegaron al canon. La Biblia contiene lo que Dios determinó necesario — no todo lo que Dios reveló a lo largo de la historia.
+
+## Desarrollo
+
+La Biblia menciona la existencia de crónicas que no conservamos:
+- Crónicas de Samuel el vidente (1 Cr. 29:29)
+- Crónicas del profeta Natán (1 Cr. 29:29)
+- Crónicas de Gad el vidente (1 Cr. 29:29-30)
+- Enciclopedias de Salomón sobre botánica, zoología y comportamiento humano (1 R. 4:29,32-33)
+
+**La pregunta que genera:** ¿Por qué no están en la Biblia?
+
+**La respuesta:** El criterio de selección no fue importancia histórica ni calidad literaria, sino el propósito de Dios: revelar el plan de redención de la humanidad. Lo que está en la Biblia es suficiente para ese propósito — Jesús como Salvador es el filtro.
+
+## Conexiones
+
+- [[ZK-20260428-1602-003 El canon es el filtro cristológico de la revelación]] — El canon como filtro cristológico explica la ausencia de estas obras
+- [[ZK-20260428-1600-001 El profeta no era un adivino]] — Estos profetas ejercieron el mismo oficio que los escritores, sin el mismo destino canonical
