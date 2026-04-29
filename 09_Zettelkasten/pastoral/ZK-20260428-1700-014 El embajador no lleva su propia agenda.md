@@ -9,4 +9,19 @@ versiculo: "2 Corintios 5:20"
 fecha: 2026-04-28
 ---
 
-El embajador de Cristo (2 Co 5:20) no habla de su propia visión ni estrategia. Habla en nombre del Rey y por su autoridad. La misión no es iniciativa humana.
+# El embajador no lleva su propia agenda — lleva la del Rey
+
+> 2 Corintios 5:20 — *"Así que somos embajadores de Cristo; Dios hace su llamado por medio de nosotros. Hablamos en nombre de Cristo cuando les rogamos: '¡Vuelvan a Dios!'"*
+
+- Un embajador representa a su rey en territorio extranjero
+- Somos representantes del Reino en este mundo
+- Nuestro mensaje: ¡Vuelvan a Dios!
+
+[Puente: el esquema no desarrolla más la imagen del embajador — la cita y el bullet son los límites del material de Daniel.]
+
+## Conexiones
+- [[ZK-20260428-1700-013 La nueva creación implica reconciliación horizontal, no]]
+- [[ZK-20260428-1700-015 La unidad de la iglesia es testimonio al mundo, no logro]]
+
+## Fuente
+[[El ministerio de la reconciliación]]

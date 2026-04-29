@@ -48,15 +48,15 @@ pregunta_reflexion: ""
 
 # Dos eras, una decisión: ¿para cuál vivimos?
 
-La cosmología bíblica no divide la realidad en lo sagrado y lo secular — la divide en dos eras: la era de corrupción (presente, temporal, por terminar) y la era venidera (el Reino de Dios inaugurado por Cristo y consumado en su regreso).
+- En el principio Dios creó los cielos y la tierra para habitar entre nosotros
+- El hombre decidió alejarse de Él y se corrompió su existencia. Lo cual da inicio a La era de la corrupción
+- Dios promete a 1 redentor que pondrá fin a la corrupción, restaurará todo y establecerá su reino.
+- Todo aquel que le sea fiel, que tenga fe en este Rey entrará al [[Reino de Dios]].
+- Todo aquel que lo rechace vivirá eternamente fuera de este reino, alejado de Dios por siempre.
 
-Todo creyente vive físicamente en la primera, pero debe orientar su vida completamente hacia la segunda. Esta no es una distinción marginal — es la diferencia entre tener o no tener coordenadas existenciales reales.
+Nuestra vida no tiene sentido fuera de esta realidad. No vivimos para la era de corrupción, temporal y por terminar. Vivimos por la era venidera, el [[Reino de Dios]].
 
-Vivir para la era de corrupción significa invertir energía, tiempo, ambición y afectos en algo que terminará. Puede ser legítimo en sí mismo — casarse, trabajar, construir — pero se vuelve tragedia cuando eso consume la totalidad de la vida sin referencia a la era que no termina.
-
-La pregunta práctica que esta cosmología genera no es "¿estoy siendo suficientemente espiritual?" sino "¿estoy orientando mi vida hacia lo que permanece?" Esa reorientación no es una emoción dominical — es una restructuración total del orden de prioridades.
-
-1 Pedro 1 lo concreta: peregrinamos. No hemos llegado. Y el peregrino no construye casa permanente en el camino.
+Esta realidad es hermosa, pero también es temible.
 
 ## Conexiones
 
