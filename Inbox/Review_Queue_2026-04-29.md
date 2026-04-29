@@ -19,7 +19,7 @@ notas_en_cola: 5
 
 Fue como viajar en el tiempo y verle hablarme 7 años antes — Él fue el que me sacó de mi casa, sacó la idea islámica de mi mente, y me llevó en un viaje para encontrar la verdad.
 
-**Conexiones:** [[ZK-20260428-1000-006]] · [[ZK-20260428-1000-008]]
+**Conexiones:** [[ZK-20260428-1000-006 Si supieras que yo soy quien habla contigo]] · [[ZK-20260428-1000-008 Renuncié a todo lo que creía ser y empecé de la nada]]
 **Fuente:** 2026-04-28-how-and-when-did-you-come-to-faith-in-jesus
 
 ❓ **Pregunta de hoy:**
@@ -34,7 +34,7 @@ Esta nota dice: *Dios llevaba años hablando a Daniel antes de que Daniel supier
 
 Lo empecé a leer con escepticismo, pero pronto se convirtió en mi refugio. ¿Cómo puede tener tanto sentido si va en contra de todas mis creencias?
 
-**Conexiones:** [[ZK-20260428-1000-004]] · [[ZK-20260428-1000-006]]
+**Conexiones:** [[ZK-20260428-1000-004 Empezó mi viaje para encontrar la verdad]] · [[ZK-20260428-1000-006 Si supieras que yo soy quien habla contigo]]
 **Fuente:** 2026-04-28-how-and-when-did-you-come-to-faith-in-jesus
 
 ❓ **Pregunta de hoy:**
@@ -49,7 +49,7 @@ Esta nota dice: *el evangelio se convirtió en refugio antes de que Daniel lo re
 
 A partir de ese día, renuncié a todo lo que creía ser y empecé de la nada — sabiendo únicamente que Él es Dios, mi Señor y mi Salvador.
 
-**Conexiones:** [[ZK-20260428-1000-007]] · [[ZK-20260428-1000-002]]
+**Conexiones:** [[ZK-20260428-1000-007 Durante todo este tiempo era Él quien me hablaba]] · [[ZK-20260428-1000-002 Escalé una montaña para encontrar un precipicio]]
 **Fuente:** 2026-04-28-how-and-when-did-you-come-to-faith-in-jesus
 
 ❓ **Pregunta de hoy:**
@@ -64,7 +64,7 @@ Esta nota dice: *la conversión implicó renunciar a toda identidad previa para 
 
 Pasé 4 años rezando cada noche para oír su voz o ver su rostro — sabía todo sobre [[Jesucristo|Jesús]], toda la evidencia, pero este Dios no me hablaba.
 
-**Conexiones:** [[ZK-20260428-1000-006]] · [[ZK-20260428-1000-007]]
+**Conexiones:** [[ZK-20260428-1000-006 Si supieras que yo soy quien habla contigo]] · [[ZK-20260428-1000-007 Durante todo este tiempo era Él quien me hablaba]]
 **Fuente:** 2026-04-28-how-and-when-did-you-come-to-faith-in-jesus
 
 ❓ **Pregunta de hoy:**
@@ -79,7 +79,7 @@ Esta nota dice: *Daniel tuvo toda la evidencia intelectual de Jesús durante 4 a
 
 El nombre de [[Jesucristo|Jesús]] solo representaba a aquellos que habían confundido a un profeta con Dios — así viví 18 años sin conocerle.
 
-**Conexiones:** [[ZK-20260428-1000-004]] · [[ZK-20260428-1000-005]]
+**Conexiones:** [[ZK-20260428-1000-004 Empezó mi viaje para encontrar la verdad]] · [[ZK-20260428-1000-005 ¿Cómo seguir a un Dios que no me habla]]
 **Fuente:** 2026-04-28-how-and-when-did-you-come-to-faith-in-jesus
 
 ❓ **Pregunta de hoy:**
