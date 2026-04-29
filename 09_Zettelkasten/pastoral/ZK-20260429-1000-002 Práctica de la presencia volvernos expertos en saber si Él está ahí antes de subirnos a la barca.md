@@ -12,11 +12,9 @@ version_yaml: "2.0"
 
 # Práctica de la presencia: volvernos expertos en saber si Él está ahí antes de subirnos a la barca
 
-El objetivo del discipulado no es acumular doctrina sino volvernos expertos en relacionarnos con Dios en cada momento. Aprender a *sentir* si Él está ahí. No subirse a ninguna barca — decisión, proyecto, relación — sin verificar primero su presencia.
+Volvernos expertos en relacionarnos con Dios y sentir nuestros momentos. Saber si Él está ahí antes de subirnos a la barca. Moisés platicaba con Dios cara a cara — tú también puedes.
 
-El modelo no es una técnica mística sino conversacional. Moisés platicaba con Dios cara a cara (Éx 33:11) — y esa misma accesibilidad está disponible para quien camina con Cristo.
-
-La práctica de la presencia transforma la fe de un sistema de creencias a una relación de momentos. Cada momento es una oportunidad de checar: ¿Está Él aquí?
+[Puente: "la barca" en este mensaje es figura de cualquier decisión, proyecto o relación que se inicia sin verificar la presencia de Dios.]
 
 ---
 

@@ -35,13 +35,9 @@ pregunta_reflexion: ""
 
 # El Hijo del Hombre en Juan 3 es el título de Daniel 7: autoridad total antes del juicio
 
-Cuando Jesús le dice a Nicodemo "el Hijo del Hombre bajó del cielo," no está usando una expresión de humildad. Está citando a Daniel 7, donde una figura llamada "el Hijo del Hombre" se presenta ante el Anciano de Días y recibe todo dominio, toda gloria y todo reino — un reino eterno que no pasará. Nicodemo, estudioso de las Escrituras, debería haber reconocido inmediatamente de quién hablaba Jesús.
+La serpiente de bronce en el desierto como tipo del Hijo del Hombre levantado. Historia de Nicodemo: fariseo prominente, estudioso de Dios, que busca a Jesús de noche. Jesús le presenta el nuevo nacimiento como condición para entrar al Reino. Ref: **Juan 3:16-21**.
 
-Esta conexión es crucial: Nicodemo pregunta sobre el Reino de Dios, y Jesús responde revelando quién es Él. No puedes entrar al Reino sin reconocer al Rey. "No podrás ver el reino de Dios hasta que veas al Hijo del Hombre y nazcas de nuevo." La puerta al Reino y la puerta al nuevo nacimiento son la misma: Jesús, el Hijo del Hombre, el Rey a quien el Padre ya entregó toda autoridad.
-
-El título tiene implicaciones escatológicas directas. El Hijo del Hombre es el Rey que regresará para ejercer plenamente ese dominio. Hoy reina sobre el creyente que voluntariamente le rinde su vida. Al regreso del Rey, reinará sobre toda la tierra. Nacer de nuevo es recibir ciudadanía en ese reino que aún está en proceso de manifestarse completamente.
-
-El Rey ya vino. El Rey ya venció. El Rey viene.
+[Puente: cuando Jesús usa el título "Hijo del Hombre" con Nicodemo — un estudioso de las Escrituras — está citando la figura de Daniel 7 que recibe todo dominio y todo reino del Anciano de Días. El capítulo conecta ese título con la condición de nacer de nuevo para ver ese Reino.]
 
 ## Conexiones
 
