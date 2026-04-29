@@ -35,13 +35,11 @@ pregunta_reflexion: ""
 
 # El conocimiento sin rendición no produce el nuevo nacimiento — el caso de Nicodemo
 
-Nicodemo era un hombre fariseo, prominente entre los judíos y estudiado en las cosas de Dios. No era hipócrita por ser fariseo. Estudiar las Escrituras no es malo. Conocer a Dios intelectualmente es valioso. El problema de Nicodemo no era su ignorancia — era su cautela. Fue a Jesús de noche, en secreto, para que nadie lo viera.
+Historia de Nicodemo: fariseo prominente, estudioso de Dios, que busca a Jesús de noche. Jesús le presenta el nuevo nacimiento como condición para entrar al Reino.
 
-Quería saber más sobre Jesús sin estar listo para entregarlo todo. Formulaba preguntas pero no terminaba de entender las respuestas, porque entender estas respuestas requería rendición, y la rendición tenía un costo social que él todavía no estaba dispuesto a pagar. "¿Cómo puede un hombre mayor volver al vientre de su madre?" Conocía tanto que creía haber entendido, pero la comprensión espiritual tiene una puerta que el intelecto solo no puede abrir.
+La invitación al Reino de Dios. Ref: **Juan 3:16-21**.
 
-Jesús no le regañó por su cautela. Le dio la respuesta directa: "Tienes que nacer de nuevo." No hay un camino alternativo para el hombre más estudiado ni para el más religioso. El nuevo nacimiento no es para quienes todavía necesitan aprender más — es para todos.
-
-Nosotros somos Nicodemo. Conocemos mucho, hemos escuchado el mensaje muchas veces. Lo que puede estar faltando no es más información sino la rendición que la acompaña.
+[Puente: Nicodemo tenía el conocimiento de un fariseo prominente, pero fue de noche — sin entregarlo todo. El capítulo desarrolla que el nuevo nacimiento no se produce por más conocimiento sino por rendición.]
 
 ## Conexiones
 

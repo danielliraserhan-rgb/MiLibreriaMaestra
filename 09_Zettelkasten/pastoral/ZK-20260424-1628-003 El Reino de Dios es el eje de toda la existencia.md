@@ -47,13 +47,17 @@ pregunta_reflexion: ""
 
 # El Reino de Dios es el eje de toda la existencia — vivir fuera de esa realidad es vivir sin sentido
 
-El mensaje inaugural de Jesús en Marcos 1:14 no es complejo: el tiempo se ha cumplido, el Reino de Dios se ha acercado, arrepiéntanse y crean en el evangelio. Cuatro frases. Pero esas cuatro frases reorientan la totalidad de la existencia humana.
+Todo me llevó a una sola cosa. Todo se trata de la culminación de esta era y la inauguración de la era venidera en el [[Reino de Cristo]].
 
-El arco macro de la historia es simple: Dios creó todo para habitar con nosotros, el hombre se alejó dando inicio a la era de corrupción, Dios prometió un Redentor que restauraría todo y establecería su reino. Estamos en el umbral de ese cumplimiento.
+¿Cuál fue el mensaje de Jesús? ¿Qué vino a revelarnos? Marcos 1:14:
+- El tiempo se ha cumplido
+- El [[Reino de Dios]] se ha acercado
+- Arrepientanse
+- Y crean en el evangelio
 
-Esto significa que toda vida que no se entiende a sí misma en relación con ese arco — con la era que termina y la era que viene — es una vida sin coordenadas reales. No es solo que sea una vida "menos cristiana." Es una vida desorientada en su nivel más fundamental.
+Es un mensaje muy simple, muy directo, muy claro… pero muy radical.
 
-No vivimos para esta era de corrupción, temporal y por terminar. Vivimos para la era venidera. Cuando eso se pierde, cualquier cosa puede llenar el vacío: sueños humanos, éxito, farándula, identidades prestadas. Pero ninguna de esas cosas tiene el peso ontológico para sostener una vida con sentido.
+Nuestra vida no tiene sentido fuera de esta realidad. No vivimos para la era de corrupción, temporal y por terminar. Vivimos por la era venidera, el [[Reino de Dios]].
 
 ## Conexiones
 
