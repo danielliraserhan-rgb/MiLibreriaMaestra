@@ -49,13 +49,19 @@ pregunta_reflexion: ""
 
 # Diluir el evangelio a un ritual dominical es repetir el error de la generación de Noé
 
-La generación de Noé no ignoró completamente a Dios. Dios le habló a Noé. El arca estaba siendo construida. La señal era visible. Su error no fue la ignorancia total — fue la banalización de esa realidad. Siguieron con su vida como si el diluvio fuera una posibilidad remota, no una certeza inminente.
+Me temo que estemos pasando por lo mismo.
+- Habiendo tenido la revelación completa.
+- El conocimiento de Dios
+- Habiendo visto al Cristo, al Mesías
+- Al tener la palabra de Dios a la cual las tormentas cesan y la creación tiembla
+- La hemos guardado en un cajón
+- O diluido a un devocional, un domingo, un ritual.
+- Nos hemos entregado día a día a una vida sin sentido de solo existir.
+- Hemos olvidado la magnitud e implicaciones de su regreso.
 
-La iglesia puede cometer exactamente el mismo error con una diferencia: tenemos la revelación completa. Hemos visto al Cristo. Tenemos la palabra de Dios. Y aun así, podemos guardarla en un cajón o reducirla a un devocional matutino, un culto dominical, un ritual de identidad cultural.
+Se acerca el día del señor en donde todo será hecho nuevo. En donde esta era terminará. No podemos darnos el lujo de vivir para esta era de corrupción cuando el [[Reino de Dios]] se acerca con violencia.
 
-Cuando el evangelio se convierte en un elemento de la semana en lugar del eje de toda la existencia, hemos diluido su urgencia sin abandonarlo formalmente. Seguimos usando el lenguaje del evangelio pero hemos perdido su peso cosmológico.
-
-La pregunta que esta nota abre: ¿es posible tener ortodoxia doctrinal y al mismo tiempo vivir con la indiferencia escatológica de los días de Noé? La respuesta parece ser sí. Y esa es la advertencia pastoral más urgente de esta predicación.
+Hemos perdido el temor de Dios y la respuesta reverente a su gloria y santidad.
 
 ## Conexiones
 

@@ -35,13 +35,9 @@ pregunta_reflexion: ""
 
 # Los dos árboles: Dios diseñó la libertad de amarlo desde el principio
 
-Antes de que existiera el pecado, Dios creó la posibilidad de no amarlo. Eso es exactamente lo que significan los dos árboles en el Jardín. Para que el amor entre Dios y el hombre fuera real, genuino y libre, el hombre necesitaba la capacidad de rechazarlo. El árbol del conocimiento del bien y del mal no era una trampa — era la condición necesaria para que el amor tuviera sentido.
+¿Por qué nacer de nuevo? La condición del hombre desde Adán: creados a imagen de Dios (**Génesis 1:26**), corrompidos por el pecado (**Génesis 6:5**, **Romanos 5:12–21**).
 
-El diseño era bueno en gran manera. Dios creó al hombre y a la mujer a su imagen y semejanza, los puso en un jardín donde Él mismo habitaba con ellos, y les dio dominio sobre toda la creación. El único límite era ese árbol — y la razón era clara: "el día que de él comas, ciertamente morirás." La advertencia no era una amenaza arbitraria sino la descripción de lo que ocurre cuando la criatura se desconecta del Creador que es su fuente de vida.
-
-El pecado de Adán y Eva no fue un error de cálculo. Fue la elección deliberada de la autonomía sobre la dependencia, del yo sobre el Tú. Y en esa elección, su imagen se manchó, su diseño se corrompió y la muerte entró al mundo. Pero la presencia de dos árboles desde el principio nos dice que Dios anticipó esa posibilidad — y ya tenía un plan.
-
-Dos árboles. Dos decisiones. La segunda decisión la tomó el Hijo.
+[Puente: el capítulo abre con los dos árboles en el Jardín como el diseño original — la posibilidad de no amar a Dios era la condición para que el amor fuera real y libre. El árbol prohibido no era trampa sino la condición del amor genuino.]
 
 ## Conexiones
 
