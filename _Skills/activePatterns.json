@@ -1,6 +1,6 @@
 {
   "version": "2.0",
-  "lastUpdated": "2026-04-28T00:00:00-06:00",
+  "lastUpdated": "2026-04-28T17:00:00-06:00",
   "description": "Patrones de voz, estructura y teología detectados en el corpus de Daniel Lira. Solo crecen con aprobación explícita. El pattern-harvester lee este archivo al inicio de cada sesión y lo actualiza solo tras OK de Daniel.",
   "load_for": {
     "pastoral_general": ["estructura", "teologia", "hermeneutica"],
@@ -11,6 +11,36 @@
   },
   "patterns": {
     "estructura": [
+      {
+        "id": "P-020",
+        "name": "La identidad precede siempre a la función en el discipulado",
+        "scope": "estructura",
+        "description": "En el llamado de los discípulos, Jesús primero declara quiénes son antes de asignarles una misión. El orden nunca se invierte: identidad → función. El discípulo no adquiere identidad al obedecer — la obediencia emerge de la identidad ya conferida. Patrón estructural que organiza cualquier enseñanza sobre discipulado: primero el 'quién eres', después el 'qué haces'.",
+        "trigger": "Activar cuando se trabaje sobre discipulado, llamado, o misión. Si la estructura va de función → identidad, proponer invertir el orden. Verificar que la identidad esté declarada antes de cualquier imperativo de misión.",
+        "evidence": [
+          "ZK-006 — identidad del pescador transformada antes de la misión",
+          "ZK-005 — la perla de gran precio: valor descubierto antes de la acción",
+          "ZK-053 — Ben-David: quién es Jesús antes de qué hace",
+          "ZK-004 — Mt 4:18-22: Jesús llama a quiénes son antes de enviarlos"
+        ],
+        "source": "BULK-INGEST Lote 1 — 21 predicaciones 2026-04-28",
+        "approved_date": "2026-04-28"
+      },
+      {
+        "id": "P-024",
+        "name": "La Biblia como meta-narrativa: Creación–Caída–Redención–Restauración",
+        "scope": "estructura",
+        "description": "El arco de cuatro actos que subyace a toda la Escritura: (1) Dios crea shalom, (2) el pecado fractura el diseño, (3) Cristo redime en la cruz/resurrección, (4) la restauración final de todas las cosas. Cuando cualquiera de los cuatro actos se omite, el mensaje queda trunco. La Restauración final (acto 4) es crítica: sin ella la teología se vuelve escapista o demasiado individualista.",
+        "trigger": "Activar en cualquier enseñanza que trabaje el arco completo de la Escritura. Si el acto 4 (Restauración) está ausente, proponer completarlo. Distinguir de P-007 (Diseño→Corrupción→Restauración, 3 actos): este patrón separa explícitamente Redención de Restauración.",
+        "evidence": [
+          "ZK-019 — Gén 1-3: creación y caída",
+          "ZK-025 — Gén 2:25 vs Heb 4:15-16: diseño fracturado, Cristo que puede compadecerse",
+          "ZK-021 — Gén 22:7-8: plan de redención desde el principio",
+          "ZK-045 — Gén 4:26 + Ap 22:17-21: primer y último clamor enmarcan toda la historia"
+        ],
+        "source": "BULK-INGEST Lote 1 — 21 predicaciones 2026-04-28",
+        "approved_date": "2026-04-28"
+      },
       {
         "id": "P-015",
         "name": "Juicio → restauración → soberanía final de Dios",
@@ -71,6 +101,36 @@
       }
     ],
     "teologia": [
+      {
+        "id": "P-018",
+        "name": "La espera tiene función teológica",
+        "scope": "teologia",
+        "description": "La demora entre promesa y cumplimiento no es accidental ni pasiva — es parte activa del plan de Dios. El tiempo de espera 'marina' la promesa: intensifica el anhelo, forma el carácter del que espera, y amplifica la revelación cuando llega. Los 400 años de silencio, los 70 años de exilio, el proceso de Abrahán — todos son instancias del mismo patrón. La espera es la herramienta teológica, no el obstáculo.",
+        "trigger": "Activar cuando se trabaje con promesas diferidas, exilio, períodos de silencio, o procesos largos de formación. Proponer la función de la espera como punto teológico explícito, no como contexto de fondo.",
+        "evidence": [
+          "ZK-055 — los 400 años de silencio maridan la expectación mesiánica",
+          "ZK-034 — Gén 12:2: promesa de Dios a Abrahán como punto de partida",
+          "ZK-035 — Gén 15:13-14: Dios anuncia 430 años antes que el proceso tomará tiempo",
+          "ZK-023 — Dn 12:2-3: el tiempo final como cumplimiento de la espera"
+        ],
+        "source": "BULK-INGEST Lote 1 — 21 predicaciones 2026-04-28",
+        "approved_date": "2026-04-28"
+      },
+      {
+        "id": "P-022",
+        "name": "La escatología produce misión y radicalidad, no escapismo",
+        "scope": "teologia",
+        "description": "El anhelo por el regreso de Cristo y la urgencia escatológica no es pasividad ni huida del mundo — es la postura que genera mayor radicalidad misionera. La iglesia del primer siglo murió porque creyó que el Rey regresaba. La escatología correcta produce presencia activa en el mundo, no retirada. El error del escapismo trata la escatología como consolación; el patrón correcto la trata como comisión.",
+        "trigger": "Activar cuando se trabaje con textos escatológicos o con el regreso de Cristo. Corregir si la enseñanza presenta la espera como pasividad. Proponer el nexo: urgencia escatológica → misión radical.",
+        "evidence": [
+          "ZK-024 — Mt 24:14: el evangelio a todo el mundo antes del fin",
+          "ZK-022 — Dn 12:2-3: los que hacen brillar a muchos",
+          "ZK-038 — 1 Pe 4:7-11: el fin cerca → ministrar activamente",
+          "ZK-062 — 1 Co 16:22 + Ap 22:20: MARANATHA como clamor de misión, no de escape"
+        ],
+        "source": "BULK-INGEST Lote 1 — 21 predicaciones 2026-04-28",
+        "approved_date": "2026-04-28"
+      },
       {
         "id": "P-016",
         "name": "El profeta como fiscal del pacto, no como adivino",
@@ -144,6 +204,51 @@
       }
     ],
     "hermeneutica": [
+      {
+        "id": "P-019",
+        "name": "El clamor humano fundamental es el mismo desde Génesis hasta Apocalipsis",
+        "scope": "hermeneutica",
+        "description": "El primer clamor registrado de la humanidad a Dios (Gén 4:26) y el último del NT (Ap 22:20) son el mismo: la invocación del nombre del Señor y el anhelo de su venida. La Escritura está enmarcada por este clamor. Hermenéuticamente, cualquier texto que exprese anhelo, invocación, o súplica por la presencia de Dios es una instancia de este patrón que corre a lo largo de toda la historia de la redención.",
+        "trigger": "Activar cuando se trabaje con textos de clamor, súplica, anhelo por Dios, o presencia divina. Proponer el marco: este clamor conecta con el primero (Gén 4:26) y el último (Ap 22:20) — el oyente se inserta en una historia continua.",
+        "evidence": [
+          "ZK-061 — Gén 4:26: primer clamor registrado de la humanidad",
+          "ZK-044 — Gén 4:26 + Ap 22:17-21: estructura de inclusión del clamor",
+          "ZK-041 — Ap 22:17-21: último clamor del NT",
+          "ZK-043 — La imagen de la verdad: el nombre del Señor como punto de convergencia"
+        ],
+        "source": "BULK-INGEST Lote 1 — 21 predicaciones 2026-04-28",
+        "approved_date": "2026-04-28"
+      },
+      {
+        "id": "P-021",
+        "name": "El evangelio es proclamación de conquista, no invitación de consumidor",
+        "scope": "hermeneutica",
+        "description": "La palabra 'evangelio' (euangelion) en el mundo grecorromano era el anuncio del mensajero victorioso: el rey ha conquistado, su reino se establece ahora. Hermenéuticamente, cada vez que Jesús proclama 'el reino de los cielos se ha acercado', está usando el lenguaje de conquista imperial, no el lenguaje de invitación a un programa religioso. Leer el evangelio como conquista cambia la naturaleza de la respuesta que se pide: no consumo, sino rendición.",
+        "trigger": "Activar cuando se trabaje con el evangelio del reino o proclamaciones de Jesús. Corregir si el evangelio se presenta como 'oferta' o 'invitación a decidir'. Proponer el marco de conquista: el rey ha ganado, la pregunta es rendición, no preferencia.",
+        "evidence": [
+          "ZK-054 — Mt 4:17: el reino de los cielos se ha acercado como proclamación de conquista",
+          "ZK-057 — Mt 4:17: Ben-David proclama su reino",
+          "ZK-014 — 2 Co 5:17-21: nueva creación como nueva jurisdicción del rey",
+          "ZK-056 — Mt 3:17: el Mesías es identificado antes de proclamar"
+        ],
+        "source": "BULK-INGEST Lote 1 — 21 predicaciones 2026-04-28",
+        "approved_date": "2026-04-28"
+      },
+      {
+        "id": "P-023",
+        "name": "La hermenéutica tipológica: David como tipo de Cristo",
+        "scope": "hermeneutica",
+        "description": "David no es solo un personaje histórico — es el tipo profético del Mesías. La promesa del pacto davídico (2 Sam 7) no se cumple en Salomón sino en Cristo. 'Ben-David' (hijo de David = el amado) es el título que Dios mismo aplica a Jesús en el bautismo (Mt 3:17). Hermenéuticamente, cualquier texto sobre David — su unción, sus victorias, su corazón conforme a Dios — es una ventana tipológica que anticipa a Cristo.",
+        "trigger": "Activar cuando se trabaje con el rey David, el pacto davídico, o el título 'Hijo de David'. Proponer la lectura tipológica: ¿en qué aspectos David prefigura a Cristo? Vincular con la proclamación de Jesús como Ben-David.",
+        "evidence": [
+          "ZK-011 — Hch 13:22: hombre conforme al corazón de Dios como tipo",
+          "ZK-012 — David como tipo del Pastor-Rey que buscará a Israel",
+          "ZK-052 — Mt 3:17: 'Mi Hijo amado' = Ben-David = el Mesías",
+          "ZK-056 — Ben-David como clave hermenéutica del evangelio de Mateo"
+        ],
+        "source": "BULK-INGEST Lote 1 — 21 predicaciones 2026-04-28",
+        "approved_date": "2026-04-28"
+      },
       {
         "id": "P-009",
         "name": "El tipo del AT como espejo del momento presente",
