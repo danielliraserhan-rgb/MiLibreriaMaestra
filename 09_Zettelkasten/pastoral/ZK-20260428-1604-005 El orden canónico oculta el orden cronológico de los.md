@@ -1,0 +1,47 @@
+---
+id: ZK-20260428-1604-005
+aliases:
+  - "ZK-20260428-1604-005"
+titulo: "El orden canónico oculta el orden cronológico de los profetas"
+tipo: zettelkasten
+subtipo: conceptual
+dominio: pastoral
+tags:
+  - profetas-menores
+  - canon-bíblico
+  - hermenéutica
+  - historia-de-israel
+versiculos_biblicos: []
+personajes: []
+source_file: "MODO-E-Introduccion-Profetas-Menores.docx"
+source_section: "I. Fundamentos para el estudio"
+source_type: esquema
+notas_relacionadas:
+  - "[[ZK-20260428-1605-006 El reino dividido es el mapa político sin el cual los]]"
+  - "[[ZK-20260428-1602-003 El canon es el filtro cristológico de la revelación]]"
+pattern_id:
+coaching_notes: []
+fecha_creacion: 2026-04-28
+fecha_proxima_revision: 2026-04-29
+intervalo_dias: 1
+repeticiones: 0
+facilidad: 2.5
+pregunta_reflexion: "¿Cómo presentarías este problema del orden canónico a un grupo que acaba de empezar a leer los profetas menores sin contexto histórico?"
+---
+
+Los profetas menores están agrupados temáticamente en el canon, no cronológicamente. Leerlos sin intercalarlos en los libros históricos produce desorientación narrativa y empobrece la comprensión del mensaje profético.
+
+## Desarrollo
+
+La Biblia organiza su contenido en cuatro bloques temáticos: Pentateuco, históricos, poéticos y proféticos. Este orden es didáctico, no narrativo. El resultado: al leer los profetas en orden canónico, el lector avanza en el texto pero retrocede en el tiempo sin saberlo.
+
+La solución es intercalar cada profeta en su época dentro de los libros históricos:
+- ¿Bajo qué rey profetizó?
+- ¿Norte o sur?
+- ¿Antes o después del exilio?
+
+Sin esa coordenada, el mensaje profético pierde su ancla histórica y se vuelve flotante.
+
+## Conexiones
+
+- [[ZK-20260428-1605-006 El reino dividido es el mapa político sin el cual los]] — El reino dividido es el mapa político donde anclar cada profeta

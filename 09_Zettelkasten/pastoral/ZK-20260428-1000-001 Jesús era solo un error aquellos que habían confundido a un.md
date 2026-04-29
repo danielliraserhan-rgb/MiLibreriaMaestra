@@ -1,0 +1,33 @@
+---
+id: ZK-20260428-1000-001
+aliases:
+  - "ZK-20260428-1000-001"
+  - "ZK-20260428-1000-001 ZK-20260428-1000-001"
+title: "Jesús era solo un error: aquellos que habían confundido a un profeta con Dios"
+tipo: zettelkasten
+dominio: pastoral
+tema: 06_DiscipuladoVidaCristiana
+libro_biblico_principal: ""
+temas_principales:
+  - islam
+  - identidad de Cristo
+  - conversión
+versiculos_citados: []
+fuente: "2026-04-28-how-and-when-did-you-come-to-faith-in-jesus"
+coaching_notes: []
+zettelkasten_notes:
+  - ZK-20260428-1000-004
+  - ZK-20260428-1000-005
+fecha: "2026-04-28"
+version_yaml: "2.0"
+fecha_actualizacion: "2026-04-28"
+---
+
+# Jesús era solo un error: aquellos que habían confundido a un profeta con Dios
+
+El nombre de [[Jesucristo|Jesús]] solo representaba a aquellos que habían confundido a un profeta con Dios — así viví 18 años sin conocerle.
+
+## Conexiones
+
+- [[ZK-20260428-1000-004 Empezó mi viaje para encontrar la verdad]] — Empezó mi viaje para encontrar la verdad
+- [[ZK-20260428-1000-005 ¿Cómo seguir a un Dios que no me habla]] — ¿Cómo seguir a un Dios que no me habla?
