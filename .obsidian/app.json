@@ -7,5 +7,6 @@
     "Templates/",
     "ContextoMaestro/",
     "Inbox/scrivener-sync/"
-  ]
+  ],
+  "showUnsupportedFiles": true
 }
