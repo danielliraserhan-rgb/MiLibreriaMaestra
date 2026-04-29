@@ -133,7 +133,7 @@ Crear un archivo Markdown nuevo con:
 - YAML frontmatter v2 completo (todos los campos — sin dejar vacíos si el texto los tiene; `source_file` apunta al nombre del archivo original)
 - Estructura del cuerpo según dominio (ver §Estructuras)
 
-**La nota debe ces el índice, no la copia.** No duplicar el texto completo dentro de la nota. El cuerpo contiene resumen breve + wikilink al original.
+**La nota debe es el índice, no la copia.** No duplicar el texto completo dentro de la nota. El cuerpo contiene resumen breve + wikilink al original.
 
 ### 2.2 Agregar [[enlaces]]
 
