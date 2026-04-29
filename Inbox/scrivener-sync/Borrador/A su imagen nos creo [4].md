@@ -1,0 +1,11 @@
+1:27 Dios creó al hombre a imagen Suya, a imagen de Dios lo creó, varón y hembra los creó. Dios los bendijo y les dijo: Sean fecundos y multiplíquense. Llenen la tierra y sométanla. Ejerzan dominio sobre los peces del mar, sobre las aves del cielo, sobre todo ser viviente que se mueve sobre la tierra. 
+
+Cuando Dios creó al hombre y a la mujer, los creó a Su imagen. Es decir, la humanidad fue puesta en la tierra para reflejar la gloria de Dios. Esta es la razón de nuestro existir, es el único lugar en donde encontraremos deleite y la razón por la cual cada ser humano tiene un anhelo profundo de conocerlo a Él. 
+
+Entonces Dios los bendijo. Esta es la misión de la humanidad: llenen la tierra. Sean fecundos y multiplíquense. Dios se deleita en la unión del hombre y de la mujer expresando su gloria en toda la tierra. El hombre y la mujer fueron creados hombre y mujer para relacionarse entre sí y poder proveer vida. Dios en su naturaleza crea y da vida y eso es lo primero que les dice. Esa es la bendición principal del hombre y de la mujer, dar vida que anuncie la bondad y hermosura de Dios. 
+
+Por último, Dios establece al ser humano como gobierno sobre la tierra. ¿Qué significa esto? De la misma manera que Dios gobierna ahora el hombre gobernará la tierra: Sirviendo. El objetivo del hombre es provocar deleite en cada rincón de la tierra al apuntar  a Dios. El ser humano fue puesto en la tierra para conocer a Dios y, pareciéndose a Dios, administrar su creación.
+
+El ser humano fue creado para que vaya a administrar la tierra. Para que administren cada parte de la creación: la vegetación, los peces, los animales, los ríos y los mares. 
+
+Dios creó todas las cosas. Esta es la verdad principal y la verdad absoluta. Dios creó todas las cosas para darse a conocer y que el peso y la hermosura de quien es Él se reflejaran en cada rincón de Su creación. Por lo tanto, creó al ser humano. ¿Qué es el ser humano? Un ser creado con la capacidad de conocer y amar a Dios. Un ser creado para parecerse cada vez más al carácter de Dios e irradiarlo sobre cada rincón de la tierra. 
