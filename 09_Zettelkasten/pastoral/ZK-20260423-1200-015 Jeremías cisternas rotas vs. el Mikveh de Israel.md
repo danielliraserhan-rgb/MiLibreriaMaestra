@@ -1,0 +1,55 @@
+---
+id: ZK-20260423-1200-015
+aliases:
+  - "ZK-20260423-1200-015"
+titulo: "Jeremías: cisternas rotas vs. el Mikveh de Israel — Dios mismo es la esperanza de purificación"
+tipo: zettelkasten
+subtipo: exegetica
+dominio: pastoral
+tags: [Jeremías, cisternas-rotas, agua-viva, confianza-en-Dios, Mikveh-de-Israel, AT→NT, profecía]
+versiculos_biblicos: ["Jeremías 14:8", "Jeremías 17:5-8"]
+personajes: ["Jeremías", "Israel"]
+source_file: "[[Nacer de Nuevo]]"
+source_section: "Cap. 4 — El bautismo en agua"
+source_type: libro
+notas_relacionadas: ["[[ZK-20260423-1200-013 Mikveh significa confianza el bautismo siempre fue sobre fe]]", "[[ZK-20260423-1200-014 Los seis cuerpos del Mikveh apuntan al agua viva como]]", "[[ZK-20260423-1200-016 El bautismo en agua es la señal visible de una realidad]]"]
+pattern_id:
+fecha_creacion: 2026-04-23
+title: "Jeremías: cisternas rotas vs. el Mikveh de Israel — Dios mismo es la esperanza de purificación"
+tema: "05_DoctrinasFundamentales"
+libro_biblico_principal: "Jeremías"
+versiculos_citados: ["Jeremías 14:8", "Jeremías 17:5-8"]
+temas_principales: [Jeremías, cisternas-rotas, agua-viva, confianza-en-Dios, Mikveh-de-Israel, AT→NT, profecía]
+seo_keywords: [Jeremías, cisternas-rotas, agua-viva, confianza-en-Dios, Mikveh-de-Israel, AT→NT, profecía]
+fecha: 2026-04-23
+estado: completado
+modo: "1-libro-terminado"
+version_yaml: "2.0"
+fecha_actualizacion: "2026-04-27"
+fecha_proxima_revision: "2026-04-27"
+intervalo_dias: 1
+repeticiones: 0
+facilidad: 2.5
+pregunta_reflexion: ""
+---
+
+# Jeremías: cisternas rotas vs. el Mikveh de Israel — Dios mismo es la esperanza de purificación
+
+Jeremías usa el lenguaje del Mikveh con una radicalidad poética que corta. Israel ha caído en el mismo pecado de siempre: confiar en el hombre en lugar de confiar en Dios. Y el profeta lo describe con imágenes de agua. Jeremías 17 lo plantea como contraste absoluto: el hombre que confía en el hombre es como un arbusto en tierra salada y desolada — árbol en el desierto que no ve venir el bien. El hombre que confía en el Señor es como árbol plantado junto al agua, cuyas raíces se extienden hacia la corriente y que nunca deja de dar fruto.
+
+El momento más alto de esta teología llega en Jeremías 14:8, donde el profeta le da a Dios un nombre: "Tú, esperanza (Mikveh) de Israel, Salvador suyo en tiempo de angustia." Dios mismo es el Mikveh de Israel. No la cisterna que el pueblo construye por sus propios medios, no el pozo que se vacía cuando más se necesita — sino el cuerpo de agua viva que purifica, restaura y da vida. La esperanza de Israel no es una circunstancia ni una institución: es una Persona.
+
+Juan el Bautista entendió esto. Cuando llamaba a Israel al bautismo de arrepentimiento, no estaba inventando una práctica nueva: estaba apuntando al Mikveh de Israel que ya venía. La inmersión en el Jordán era la señal exterior de la esperanza puesta en Él.
+
+Las cisternas que construimos se rompen. El Mikveh de Israel no falla.
+
+## Conexiones
+
+- [[ZK-20260423-1200-013 Mikveh significa confianza el bautismo siempre fue sobre fe]] — Jeremías usa el mismo vocabulario del Mikveh para señalar que la fe va en Dios, no en el ritual
+- [[ZK-20260423-1200-014 Los seis cuerpos del Mikveh apuntan al agua viva como]] — Las cisternas rotas son el extremo opuesto del agua viva en la escala del Mikveh
+- [[ZK-20260423-1200-016 El bautismo en agua es la señal visible de una realidad]] — El bautismo apunta al Mikveh de Israel que Jeremías ya anunciaba
+
+## Fuente
+
+Extraído de: [[Nacer de Nuevo]]
+Sección: Cap. 4 — El bautismo en agua

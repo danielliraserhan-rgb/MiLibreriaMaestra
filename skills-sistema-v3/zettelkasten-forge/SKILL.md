@@ -1,6 +1,6 @@
 ---
 name: zettelkasten-forge
-description: "Genera notas atómicas Zettelkasten a partir de contenido procesado. Actívalo después de modo-ab, modo-e, modo-c, inbox-triage, o notas-maestria — cuando el pipeline del modo lo requiera. Produce notas ZK con IDs canónicos (ZK-YYYYMMDD-HHMM-NNN), wikilinks, YAML v2 completo, y campo coaching_notes para loops con S2. Nunca guarda notas sin OK explícito de Daniel."
+description: "Genera notas atómicas Zettelkasten a partir de contenido procesado. Actívalo después de modo-ab, modo-e, modo-c, inbox-triage, o notas-maestria — cuando el pipeline del modo lo requiera. Produce notas ZK con IDs canónicos (ZK-YYYYMMDD-HHMM), nombres de archivo formato 'ZK-YYYYMMDD-HHMM Titulo Corto.md', wikilinks, YAML v2 completo, y campo coaching_notes para loops con S2. Nunca guarda notas sin OK explícito de Daniel."
 ---
 
 # ZETTELKASTEN-FORGE — Generador de Notas Atómicas
@@ -32,12 +32,19 @@ Identificar internamente:
 Para cada nota candidata, presentar:
 
 ```
-ZK-YYYYMMDD-HHMM-NNN
-Título: [título atómico — una sola idea]
+Nombre de archivo: ZK-YYYYMMDD-HHMM Titulo Corto.md
+ID: ZK-YYYYMMDD-HHMM
+Título: [título atómico completo — una sola idea]
 Idea central: [una oración]
-Wikilinks sugeridos: [[nota1]] [[nota2]]
+Wikilinks sugeridos: [[ZK-YYYYMMDD-HHMM Titulo Corto]] [[ZK-YYYYMMDD-HHMM Titulo Corto]]
 Dominio: pastoral | academico
 ```
+
+**Regla para Titulo Corto (en el nombre de archivo):**
+- Si el título tiene ` — ` (raya em), tomar solo la parte anterior al primer ` — `
+- Sin ` — `: usar el título completo
+- Máximo 60 caracteres (cortar en la última palabra que quepa)
+- Sin caracteres problemáticos: `: " / \ ? * | < >`
 
 Presentar TODAS las propuestas antes de crear cualquiera.
 Esperar OK de Daniel (puede aprobar todas, algunas, o pedir cambios).
@@ -46,11 +53,13 @@ Esperar OK de Daniel (puede aprobar todas, algunas, o pedir cambios).
 
 Solo tras OK explícito de Daniel.
 
+**Nombre de archivo:** `ZK-YYYYMMDD-HHMM Titulo Corto.md` (mismo formato propuesto en Fase 2).
+
 Usar `obsidian-markdown` para crear cada nota con este formato:
 
 ```yaml
 ---
-id: ZK-YYYYMMDD-HHMM-NNN
+id: ZK-YYYYMMDD-HHMM
 titulo: ""          # Afirmación completa
 tipo: zettelkasten
 subtipo: ""         # conceptual | argumental | exegetica | narrativa | conexion
