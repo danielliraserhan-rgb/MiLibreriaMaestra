@@ -49,13 +49,11 @@ pregunta_reflexion: ""
 
 # La identidad de escogido es el fundamento del llamado misionero, no su recompensa
 
-1 Pedro 1 establece la secuencia con precisión: escogidos por la gracia del Padre según su conocimiento eterno → santificados por el Espíritu Santo → rociados con la sangre del Cordero → *por eso* llamados a obedecer.
+Han sido escogidos por la gracia del padre según su conocimiento eterno. Por la obra santificadora del Espíritu Santo para obediencia a Jesucristo. Hemos sido rociados por la sangre del cordero sin mancha!!!
 
-El llamado misionero no es algo que se gana con suficiente celo espiritual. Es la respuesta natural de quien ya sabe quién es en Cristo. La vida ya no es tuya — fue comprada con el precio más costoso. Y esa realidad, no la emoción dominical, es lo que lanza a alguien a pescar hombres.
+Tú has sido escogido para llevar el mensaje a toda tribu, lengua y nación. Tu vida ya no es tuya. Es de Cristo.
 
-Esto conecta directamente con el patrón P-008 (Identidad declarada antes del llamado a actuar): antes de decir "ve y haz discípulos", la Escritura dice "han sido escogidos, santificados, redimidos." La misión no construye la identidad — la identidad fundamenta la misión.
-
-La implicación práctica es que cuando la identidad no está firme — cuando no sé quién soy en Cristo, cuando mi sentido de valor depende de la moda, la farándula, el reconocimiento social — me pierdo en la era de corrupción. No porque sea malvado, sino porque no tengo base desde dónde lanzarme a los propósitos de Dios.
+Cuando tu identidad no está firme nos perdemos en la moda y la farándula. Pero cuando sí la tienes en Dios te centras en sus propósitos. Que concluyen en su regreso y la restauración de todas las cosas.
 
 ## Conexiones
 
