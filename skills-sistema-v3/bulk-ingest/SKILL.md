@@ -46,33 +46,11 @@ description: "Procesa lotes de 15-25 documentos desde Inbox/ con checkpoints agr
 1. **Caveman mode — full:** Activar `/caveman` al inicio de cada sesión antes de cualquier PASO. Si la sesión se reinicia o compacta, reactivar con `/caveman` inmediatamente.
 2. **Compactar entre pasos:** Antes de avanzar al siguiente PASO, ejecutar `/compact` para limpiar el contexto. El prompt de compactación debe incluir: estado del lote, IDs ZK generados, patrones pendientes.
 3. Si caveman no está activo al inicio → activarlo antes de responder.
-4. Si el contexto supera 70% antes de un `/compact` programado → compactar de inmediato, sin esperar el checkpoint.
+4. Si el contexto supera 45% antes de un `/compact` programado → compactar de inmediato, sin esperar el checkpoint.
 
 ---
 
 ## PROTOCOLO
-
-### PASO 0 — Inventario
-
-Listar todos los archivos en `Inbox/` (excluir `scrivener-sync/`).
-
-Presentar resumen al Daniel:
-
-```
-📦 LOTE PROPUESTO — [N] documentos
-──────────────────────────────────
-1. nombre-archivo.pdf → tipo detectado: libro / clase / paper...
-2. otro-archivo.docx → tipo detectado: ...
-...
-
-¿Proceder con este lote completo, o ajustar el tamaño?
-```
-
-Esperar OK antes de continuar.
-
-> **→ Al recibir OK:** ejecutar `/compact` antes de avanzar a PASO 1. Verificar caveman activo.
-
----
 
 ### PASO 1 — Triage rápido del lote
 
@@ -110,13 +88,6 @@ Para cada documento (en orden):
 1. `inbox-triage Fase 2` → crea contenedor en `Temas/`
 2. Skills del modo detectado → procesa el contenido
 3. `zettelkasten-forge` → genera propuestas ZK → **guardar en buffer interno** (NO crear archivos todavía)
-
-Reportar progreso en tiempo real:
-```
-✓ [1/12] "Nombre" → procesado | 18 ZK propuestas acumuladas
-✓ [2/12] "Otro"   → procesado | 26 ZK propuestas acumuladas
-...
-```
 
 > **→ Al terminar PASO 2:** ejecutar `/compact` antes de presentar propuestas ZK. Verificar caveman activo.
 
@@ -191,7 +162,7 @@ Actualizar `_Skills/PROCESS_LOG.md` con entrada de batch:
 
 - Si un documento falla el triage (tipo no detectado): pausar, avisar a Daniel, continuar con el siguiente.
 - Si un documento no tiene contenido suficiente para ZK: registrar en el log con nota `sin_zk_suficiente`, continuar.
-- Si el lote supera el 70% del contexto antes de terminar: cerrar el lote, guardar el estado en PROCESS_LOG, comenzar nuevo lote en la próxima sesión.
+- Si el lote supera el 55% del contexto antes de terminar: cerrar el lote, guardar el estado en PROCESS_LOG, comenzar nuevo lote en la próxima sesión.
 
 ---
 
