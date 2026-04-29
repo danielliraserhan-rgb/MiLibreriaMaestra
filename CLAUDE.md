@@ -39,7 +39,9 @@ Cada tema: `01_Libros` / `02_EsquemasDeClase` / `03_ClasesEnVivo` / `04_NotasSin
 ```
 Daniel trae archivo → Inbox/   (o llega vía Inbox/scrivener-sync/ con source: scrivener)
 ↓
-modo-selector → inbox-triage Fase 1 → detecta MODO + genera YAML → reporte → espera OK
+modo-selector → inbox-triage Fase 1 → detecta MODO + dominio + genera YAML → reporte → espera OK
+↓
+[cargar categorías load_for según dominio — ver tabla §7]
 ↓
 inbox-triage Fase 2 → crea contenedor en Temas/
 ↓
@@ -47,14 +49,16 @@ Skills del MODO (ver §4) → espera OK en cada checkpoint
 ↓
 zettelkasten-forge → propone notas atómicas → espera OK
 ↓
-pattern-harvester → propone patrones → espera OK granular
+¿ZK ≥ 8 O contenido teológicamente nuevo?
+  SÍ → pattern-harvester → OK granular → actualiza activePatterns.json
+  NO → registrar en PROCESS_LOG como "harvester diferido" (procesar en sesión batch)
 ↓
-Si aprueba: actualiza activePatterns.json + PROCESS_LOG.md
+PROCESS_LOG.md updated
 ```
 
 **Para carga masiva (5+ documentos):** usar `bulk-ingest` en lugar de `modo-selector`. Los checkpoints se agrupan por lote: triage del lote → OK → procesamiento auto → revisión ZK del lote → OK → pattern-harvester una vez → OK.
 
-**Regla de oro:** `inbox-triage` siempre primero · `pattern-harvester` siempre último · `zettelkasten-forge` antes del harvester · nunca avanzar sin OK explícito de Daniel.
+**Regla de oro:** `inbox-triage` siempre primero · `zettelkasten-forge` antes del harvester · nunca avanzar sin OK explícito de Daniel · `pattern-harvester` solo si ZK ≥ 8 o contenido teológicamente nuevo (Modo 7: siempre diferir).
 
 **Motor de escritura:** `obsidian-markdown` es la ÚNICA herramienta para crear/editar .md en el vault. Prohibido: `cat`, `echo >>`, `sed`, `awk`, terminal para markdown.
 
@@ -66,11 +70,11 @@ Si aprueba: actualiza activePatterns.json + PROCESS_LOG.md
 |---|---|---|---|
 | **1** | Libro Terminado | `inbox-triage` → `modo-c`(opt) → `zettelkasten-forge` → `pattern-harvester` | 15–30 |
 | **2** | Libro Pre-Diseño | `inbox-triage` → `modo-c` → `modo-ab` → `modo-r`(si hueco) → `zettelkasten-forge` → `pattern-harvester` | 10–25 |
-| **3** | Ideas Sueltas | `inbox-triage` → `zettelkasten-forge` → `pattern-harvester` | 5–10 |
+| **3** | Ideas Sueltas | `inbox-triage` → `zettelkasten-forge` → `pattern-harvester`*(si ZK ≥ 8)* | 5–10 |
 | **4** | Guía de Estudio | `inbox-triage` → `modo-e`(bíblica) → `zettelkasten-forge` → `pattern-harvester` | 10–20 |
-| **5** | Nota Temática | `inbox-triage` → `modo-c`(opt) → `zettelkasten-forge` → `pattern-harvester` | 5–10 |
+| **5** | Nota Temática | `inbox-triage` → `modo-c`(opt) → `zettelkasten-forge` → `pattern-harvester`*(si ZK ≥ 8)* | 5–10 |
 | **6** | Clase Larga | `inbox-triage` → `modo-e` → `modo-ab`(si transcripción) → `zettelkasten-forge` → `pattern-harvester` | 8–15 |
-| **7** | Grupos Conexión | `inbox-triage` → `modo-e`(temática) → `zettelkasten-forge` → `pattern-harvester` | 3–5 |
+| **7** | Grupos Conexión | `inbox-triage` → `modo-e`(temática) → `zettelkasten-forge` *(harvester siempre diferido)* | 3–5 |
 | **Acad.** | Maestría | `inbox-triage` → `notas-maestria` → `zettelkasten-forge`(neutral) → `pattern-harvester` | 5–15 |
 
 ---
@@ -150,12 +154,16 @@ fecha_actualizacion: ""
 
 **Protocolo de carga por tipo de sesión:**
 
-| Tipo de sesión | Cargar al inicio |
-|---|---|
-| Procesamiento de archivo nuevo | `00_ESENCIAL.md` + `activePatterns.json` (categorías relevantes) |
-| Investigación / rutas de conocimiento | `00_ESENCIAL.md` + `VAULT_INDEX.md` + `activePatterns.json` |
-| Coach de escritura (S2) | `00_ESENCIAL.md` + `04_voz.md` + `activePatterns.json` (voz + estructura) |
-| Bulk-ingest | `00_ESENCIAL.md` + `activePatterns.json` (bulk_ingest) |
+| Tipo de sesión | Clave `load_for` | Categorías que carga |
+|---|---|---|
+| Procesamiento pastoral (Modos 1–7) | `pastoral_general` | estructura, teologia, hermeneutica |
+| Coach de escritura (S2) | `coach_s2` | voz, estructura |
+| Exégesis / estudio bíblico | `exegesis` | hermeneutica, teologia |
+| Académico (Modo Acad.) | `academico` | teologia, hermeneutica |
+| Bulk-ingest | `bulk_ingest` | teologia, hermeneutica, estructura |
+| Investigación / MOC | `pastoral_general` + VAULT_INDEX | estructura, teologia, hermeneutica |
+
+Todos los tipos cargan `00_ESENCIAL.md`. Coach S2 también carga `04_voz.md`.
 
 > Sincronizar `ContextoMaestro/ContextoMaestro.md` con `~/Desktop/Claude/Contexto Maestro — Daniel Lira.md` cuando se actualice.
 
