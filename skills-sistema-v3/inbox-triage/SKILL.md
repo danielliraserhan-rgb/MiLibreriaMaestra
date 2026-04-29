@@ -135,7 +135,7 @@ Crear un archivo Markdown nuevo con:
 
 **La nota debe es el índice, no la copia.** No duplicar el texto completo dentro de la nota. El cuerpo contiene resumen breve + wikilink al original.
 
-Asegurate que siempre este ligado al original, si no hay original o no esta la liga detenerte y preguntar. 
+Asegúrate de que siempre esté ligado al original, si no hay original o no está la liga detenerte y preguntar. 
 
 ### 2.2 Agregar [[enlaces]]
 
