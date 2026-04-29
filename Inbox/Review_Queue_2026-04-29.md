@@ -12,7 +12,7 @@ notas_en_cola: 5
 
 ---
 
-## [1/5] ZK-20260428-1000-007 — Durante todo este tiempo era Él quien me hablaba
+## [5/5] ZK-20260428-1000-007 — Durante todo este tiempo era Él quien me hablaba
 
 **Dominio:** pastoral | **Subtipo:** — | **Creada:** 2026-04-28
 **Próxima revisión era:** primera revisión | **Intervalo actual:** 1 día | **Revisiones:** 0 | **Facilidad:** 2.5
@@ -23,11 +23,11 @@ Fue como viajar en el tiempo y verle hablarme 7 años antes — Él fue el que m
 **Fuente:** 2026-04-28-how-and-when-did-you-come-to-faith-in-jesus
 
 ❓ **Pregunta de hoy:**
-Esta nota dice: *Dios llevaba años hablando a Daniel antes de que Daniel supiera que era Él*. El vault acaba de aprobar el patrón P-018 —la espera tiene función teológica— procesando series de predicación. ¿Esta idea confirma, matiza o amplía ese patrón cuando se aplica a conversiones: la providencia encubierta como forma de espera activa de Dios en la vida de alguien que aún no le conoce?
+Esta nota dice: *Dios llevaba años hablando a Daniel antes de que Daniel supiera que era Él*. El vault acaba de aprobar el patrón P-018 —la espera tiene función teológica— procesando series de predicación. ¿Esta idea confirma, matiza o amplía ese patrón cuando se aplica a conversiones: la providencia encubierta como forma de espera activa de Dios en la vida de alguien que aún no le conoce? Matiza, no siempre nos damos cuenta de lo que Dios esta haciendo, pero si en la espera estamos atentos, siempre veremos a Dios. 
 
 ---
 
-## [2/5] ZK-20260428-1000-003 — El desconocido en el camino a Emaús
+## [5/5] ZK-20260428-1000-003 — El desconocido en el camino a Emaús
 
 **Dominio:** pastoral | **Subtipo:** — | **Creada:** 2026-04-28
 **Próxima revisión era:** primera revisión | **Intervalo actual:** 1 día | **Revisiones:** 0 | **Facilidad:** 2.5
@@ -42,7 +42,7 @@ Esta nota dice: *el evangelio se convirtió en refugio antes de que Daniel lo re
 
 ---
 
-## [3/5] ZK-20260428-1000-008 — Renuncié a todo lo que creía ser y empecé de la nada
+## [5/5] ZK-20260428-1000-008 — Renuncié a todo lo que creía ser y empecé de la nada
 
 **Dominio:** pastoral | **Subtipo:** — | **Creada:** 2026-04-28
 **Próxima revisión era:** primera revisión | **Intervalo actual:** 1 día | **Revisiones:** 0 | **Facilidad:** 2.5
@@ -57,7 +57,7 @@ Esta nota dice: *la conversión implicó renunciar a toda identidad previa para 
 
 ---
 
-## [4/5] ZK-20260428-1000-005 — ¿Cómo seguir a un Dios que no me habla?
+## [5/5] ZK-20260428-1000-005 — ¿Cómo seguir a un Dios que no me habla?
 
 **Dominio:** pastoral | **Subtipo:** — | **Creada:** 2026-04-28
 **Próxima revisión era:** primera revisión | **Intervalo actual:** 1 día | **Revisiones:** 0 | **Facilidad:** 2.5
