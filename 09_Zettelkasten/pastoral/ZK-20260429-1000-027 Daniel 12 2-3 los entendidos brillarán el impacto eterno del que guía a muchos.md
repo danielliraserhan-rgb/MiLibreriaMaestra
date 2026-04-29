@@ -1,0 +1,25 @@
+---
+id: ZK-20260429-1000-027
+title: "Daniel 12:2-3 — los entendidos brillarán: el impacto eterno del que guía a muchos"
+dominio: pastoral
+fecha_creacion: 2026-04-29
+fuente: "Versículos y frases — Permanece hasta el día de su regreso"
+tags: [Daniel-12, escatología, entendidos, brillarán, eternidad, misión, impacto]
+versiculos: ["Dn 12:2-3"]
+estado: activo
+version_yaml: "2.0"
+---
+
+# Daniel 12:2-3 — los entendidos brillarán: el impacto eterno del que guía a muchos
+
+"Los entendidos brillarán como el resplandor del firmamento, y los que guiaron a muchos a la justicia, como las estrellas, por toda la eternidad" (Dn 12:3).
+
+Dos grupos resucitan: unos para vida eterna, otros para desprecio eterno. Pero dentro de los que resucitan para vida, hay una distinción: los que guiaron a otros brillarán con especial intensidad. La misión tiene peso eterno, no solo temporal.
+
+"Entendidos" en Daniel no es sinónimo de intelectuales — es el que comprende los tiempos (Dn 12:10), el que sabe en qué historia vive. El entendimiento que genera brillo eterno es el que produce obediencia fiel y guía a otros a la justicia.
+
+Implicación: la urgencia de guiar a otros no es solo compasión — es conciencia escatológica. Lo que hacemos con el tiempo que nos queda tiene resonancia eterna.
+
+---
+
+**Wikilinks:** [[Versículos y frases — Permanece hasta el día de su regreso]] · [[ZK-20260428-1700-022 Dn 12:2-3 el tiempo final]] · [[ZK-20260429-1000-018 La urgencia del regreso de Cristo]]
