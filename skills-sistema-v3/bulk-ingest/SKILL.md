@@ -41,6 +41,15 @@ description: "Procesa lotes de 15-25 documentos desde Inbox/ con checkpoints agr
 
 ---
 
+## Reglas de sesión (activas siempre)
+
+1. **Caveman mode — full:** Activar `/caveman` al inicio de cada sesión antes de cualquier PASO. Si la sesión se reinicia o compacta, reactivar con `/caveman` inmediatamente.
+2. **Compactar entre pasos:** Antes de avanzar al siguiente PASO, ejecutar `/compact` para limpiar el contexto. El prompt de compactación debe incluir: estado del lote, IDs ZK generados, patrones pendientes.
+3. Si caveman no está activo al inicio → activarlo antes de responder.
+4. Si el contexto supera 70% antes de un `/compact` programado → compactar de inmediato, sin esperar el checkpoint.
+
+---
+
 ## PROTOCOLO
 
 ### PASO 0 — Inventario
@@ -60,6 +69,8 @@ Presentar resumen al Daniel:
 ```
 
 Esperar OK antes de continuar.
+
+> **→ Al recibir OK:** ejecutar `/compact` antes de avanzar a PASO 1. Verificar caveman activo.
 
 ---
 
@@ -87,6 +98,8 @@ Doc 2: "Otro archivo"
 
 Esperar OK. Si hay correcciones, aplicarlas antes de avanzar.
 
+> **→ Al recibir OK:** ejecutar `/compact` antes de avanzar a PASO 2. Verificar caveman activo.
+
 ---
 
 ### PASO 2 — Procesamiento automático
@@ -104,6 +117,8 @@ Reportar progreso en tiempo real:
 ✓ [2/12] "Otro"   → procesado | 26 ZK propuestas acumuladas
 ...
 ```
+
+> **→ Al terminar PASO 2:** ejecutar `/compact` antes de presentar propuestas ZK. Verificar caveman activo.
 
 ---
 
@@ -135,6 +150,8 @@ Daniel puede:
 
 Solo crear archivos tras OK explícito.
 
+> **→ Al recibir OK:** crear archivos ZK, luego ejecutar `/compact` antes de avanzar a PASO 4. Verificar caveman activo.
+
 ---
 
 ### PASO 4 — pattern-harvester del lote
@@ -144,6 +161,8 @@ Correr `pattern-harvester` **una sola vez** con todas las notas ZK del lote como
 Presentar propuestas de patrones según el formato estándar del harvester.
 
 Daniel aprueba con OK granular (patrón por patrón).
+
+> **→ Al recibir OK:** actualizar `activePatterns.json`, luego ejecutar `/compact` antes de avanzar a PASO 5. Verificar caveman activo.
 
 ---
 
@@ -163,6 +182,8 @@ Actualizar `_Skills/PROCESS_LOG.md` con entrada de batch:
 **Patrones propuestos:** N | Aprobados: N
 **Dominio:** pastoral | académico | mixto
 ```
+
+> **→ Al terminar PASO 5:** lote cerrado. Si hay Lote 2, ejecutar `/compact` antes de iniciar PASO 0 del siguiente lote. Verificar caveman activo.
 
 ---
 
