@@ -9,4 +9,4 @@ versiculo: "Génesis 1-3"
 fecha: 2026-04-28
 ---
 
-Dios no crea el universo para juzgar el pecado — crea para habitar. La caída interrumpe el propósito; la Redención lo retoma; la Restauración lo completa.
+El propósito de Dios = La comunión de la creación con Dios. La meta no es "ir al cielo" sino la restauración de todas las cosas. Dios restaurará su comunión con la creación.

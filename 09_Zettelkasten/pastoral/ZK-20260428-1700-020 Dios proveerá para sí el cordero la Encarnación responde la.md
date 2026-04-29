@@ -9,4 +9,4 @@ versiculo: "Génesis 22:8"
 fecha: 2026-04-28
 ---
 
-Abraham responde con fe (Gén 22:8) lo que él mismo no entiende aún. La Encarnación es la respuesta de Dios a su propia promesa — el cordero provisto desde antes de la fundación del mundo.
+"Dios proveerá para Sí el cordero." (Gén 22:8). Desde el principio, Dios tenía un plan: proveería el pago justo para cada uno de sus hijos. El sacrificio perfecto: su propio Hijo.

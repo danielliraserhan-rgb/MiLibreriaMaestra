@@ -9,4 +9,6 @@ versiculo: "Génesis 22:8"
 fecha: 2026-04-28
 ---
 
-La respuesta de Abraham es fe, no teología elaborada. Pero la Encarnación prueba que Abraham habló más verdad de lo que sabía — el cordero ya estaba decidido en el plan eterno.
+"Dios proveerá para Sí el cordero, hijo mío." (Gén 22:8). Dios, desde el principio, tenía un plan: proveería el pago justo a través de su Hijo.
+
+[Puente: Abraham respondió sin plena comprensión teológica, pero su respuesta apuntaba directamente al sacrificio de Cristo.]
