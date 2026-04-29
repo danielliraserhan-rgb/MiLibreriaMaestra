@@ -36,7 +36,10 @@ fase: ""
 serie: "Reyes"
 fuente: "borrador"
 author_quotes: []
-zettelkasten_notes: []
+zettelkasten_notes:
+  - ZK-20260428-1700-010
+  - ZK-20260428-1700-011
+  - ZK-20260428-1700-012
 coaching_notes: []
 version_yaml: "2.0"
 fecha_actualizacion: "2026-04-28"

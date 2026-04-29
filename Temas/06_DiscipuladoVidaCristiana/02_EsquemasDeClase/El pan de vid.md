@@ -31,7 +31,10 @@ fase: ""
 serie: "MARANATHA"
 fuente: "borrador"
 author_quotes: []
-zettelkasten_notes: []
+zettelkasten_notes:
+  - ZK-20260428-1700-016
+  - ZK-20260428-1700-017
+  - ZK-20260428-1700-018
 coaching_notes: []
 version_yaml: "2.0"
 fecha_actualizacion: "2026-04-28"
