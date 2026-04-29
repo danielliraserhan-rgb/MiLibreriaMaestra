@@ -35,7 +35,10 @@ fase: ""
 serie: ""
 fuente: "borrador"
 author_quotes: []
-zettelkasten_notes: []
+zettelkasten_notes:
+  - ZK-20260428-1700-004
+  - ZK-20260428-1700-005
+  - ZK-20260428-1700-006
 coaching_notes: []
 version_yaml: "2.0"
 fecha_actualizacion: "2026-04-28"

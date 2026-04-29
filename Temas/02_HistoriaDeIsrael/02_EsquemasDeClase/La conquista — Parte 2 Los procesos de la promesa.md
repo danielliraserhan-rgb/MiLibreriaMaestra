@@ -31,7 +31,10 @@ fase: ""
 serie: "La conquista"
 fuente: "borrador"
 author_quotes: []
-zettelkasten_notes: []
+zettelkasten_notes:
+  - ZK-20260428-1700-034
+  - ZK-20260428-1700-035
+  - ZK-20260428-1700-036
 coaching_notes: []
 version_yaml: "2.0"
 fecha_actualizacion: "2026-04-28"
