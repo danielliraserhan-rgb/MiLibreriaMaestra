@@ -35,7 +35,7 @@ coaching_notes: []
 version_yaml: "2.0"
 fecha_actualizacion: "2026-04-28"
 ---
-
+****
 # Afirmar el Rostro
 
 **Propósito:** Afirmar el rostro ante la resistencia en rumbo a la nueva Jerusalén (eternidad) a través de la intimidad y disciplina.
