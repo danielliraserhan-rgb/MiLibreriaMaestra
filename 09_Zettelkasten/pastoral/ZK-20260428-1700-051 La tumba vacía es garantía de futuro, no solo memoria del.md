@@ -9,4 +9,4 @@ versiculo: "Lucas 24:6"
 fecha: 2026-04-28
 ---
 
-La resurrección no es solo evento histórico para conmemorar — es garantía activa de que todo lo prometido se cumplirá. El cristiano vive en el tiempo entre la firma y el pago final.
+La resurrección no es solo historia pasada — es garantía de futuro. Si Cristo resucitó, todo lo que prometió se cumplirá. Vivir como testigos de la tumba vacía: el Rey está vivo.

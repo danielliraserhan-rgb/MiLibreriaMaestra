@@ -12,11 +12,9 @@ version_yaml: "2.0"
 
 # El milagro de la barca no es la calma — es su presencia
 
-El error frecuente al leer la historia de Jesús caminando sobre el agua es pensar que el milagro fue calmar la tormenta. El milagro fue que Jesús se presentó. La tormenta puede seguir. El agua puede seguir agitada. Pero cuando Él está en la barca, la tormenta pierde su poder definitivo.
+Cuando está oscuro y en tormenta… se dan cuenta que Jesús no está. Jesús llega caminando en el agua. El milagro es su presencia.
 
-Implicación pastoral: buscamos circunstancias calmadas cuando lo que necesitamos es reconocer su presencia en medio de las que ya tenemos. El discípulo que aprende esto deja de pedir que pare la tormenta y empieza a pedirle que llegue.
-
-**Él es nuestra barca.** No el medio para que las cosas mejoren, sino el único que hace posible la travesía.
+Él es nuestra barca.
 
 ---
 

@@ -35,13 +35,9 @@ pregunta_reflexion: ""
 
 # La caída produce tres reinos del pecado: Satanás, la carne y el mundo
 
-La caída de Adán no produjo solo la entrada del pecado al mundo. Produjo la entrega del gobierno a tres fuerzas que ahora compiten con el gobierno de Dios en la vida de cada ser humano. Al obedecer a la serpiente en lugar de a Dios, Adán entregó el gobierno a la influencia de Satanás. Al querer conocer el bien y el mal por sí mismo, entregó el gobierno a sus propios deseos. Al obedecer a su mujer en lugar de a Dios, entregó el gobierno al mundo — a la satisfacción de otros y a las corrientes de la cultura.
+¿Por qué nacer de nuevo? La condición del hombre desde Adán: creados a imagen de Dios (**Génesis 1:26**), corrompidos por el pecado (**Génesis 6:5**, **Romanos 5:12–21**). La obra de Cristo como nuevo Adán: **Gálatas 2:20**, **Efesios 2:1**, **Colosenses 1:13**.
 
-Estas tres fuerzas — Satanás, la carne y el mundo — son lo que la Escritura llama el reino de las tinieblas. No es una abstracción filosófica. Es la descripción de por qué el ser humano, sin el nuevo nacimiento, lucha constantemente entre lo que sabe que es bueno y lo que termina haciendo. No es solo debilidad moral — es una estructura de gobierno que ejerce influencia sobre la voluntad.
-
-El nuevo nacimiento no ignora este diagnóstico — lo confronta directamente. Colosenses 1:13 dice que Dios "nos libró del dominio de las tinieblas y nos trasladó al reino de Su Hijo amado." No somos reformados desde adentro del reino de las tinieblas — somos extraídos de él y trasladados a uno distinto. Cambia el gobierno al que pertenecemos y bajo cuya influencia vivimos.
-
-El problema era de gobierno. La solución también es de gobierno.
+[Puente: el capítulo desarrolla la corrupción producida por la caída como tres fuerzas — Satanás, la carne y el mundo — que compiten con el gobierno de Dios, lo que hace necesario el nuevo nacimiento para ser trasladado a otro reino.]
 
 ## Conexiones
 

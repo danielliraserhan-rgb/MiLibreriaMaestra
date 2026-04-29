@@ -53,13 +53,11 @@ pregunta_reflexion: ""
 
 # El vacío espiritual es la invitación de Dios, no un defecto del diseño
 
-Fuimos creados para estar con Dios. Esto no es una declaración religiosa — es la descripción de nuestro diseño original. Cuando vivimos separados de Él, algo dentro de nosotros lo siente: un vacío profundo que no se cierra con conocimiento, poder, fama, emociones ni religión ritualista. Lo hemos intentado con todo eso. Y nada alcanza.
+El vacío espiritual como puerta de entrada. El ser humano fue hecho por Dios y para Dios; separados de Él nada podemos hacer.
 
-Ese vacío no es un defecto de fábrica. Es la forma en que Dios nos llama. Está diseñado para no llenarse con nada que no sea Él. Cada intento fallido de llenarlo no es solo una experiencia de frustración — es una invitación. Dios mismo, a través del hueco que dejó en nosotros, nos dice: "Aquí estoy."
+Historia de Nicodemo: fariseo prominente, estudioso de Dios, que busca a Jesús de noche. Jesús le presenta el nuevo nacimiento como condición para entrar al Reino.
 
-Nicodemo encarna esta tensión. Tenía conocimiento, posición y religiosidad — todo lo que debería satisfacer a un hombre. Y aun así, fue a buscar a Jesús de noche. El vacío lo movió hacia la verdad aunque no estuviera listo para recibirla completamente. Eso es exactamente lo que hace el vacío en cada uno de nosotros.
-
-El vacío no se llena con más religión ni con más información. Se llena con nacer de nuevo y habitar con Él.
+[Puente: el vacío que movió a Nicodemo a buscar a Jesús de noche ilustra que ese vacío no es un defecto — es la puerta de entrada al nuevo nacimiento que el capítulo desarrolla.]
 
 ## Conexiones
 

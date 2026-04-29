@@ -35,13 +35,9 @@ pregunta_reflexion: ""
 
 # La serpiente de bronce prefigura a Cristo levantado: el mismo veneno, el mismo remedio
 
-Cuando el pueblo de Israel vagaba por el desierto, su iniquidad provocó una plaga de serpientes venenosas que los mordían y condenaban a muerte. Dios le dio instrucciones a Moisés: levantar una serpiente de bronce en un poste. Todo aquel que mirara la serpiente sería sanado. No era el acto de mirar lo que los salvaba — era la fe en la promesa de Dios expresada en ese acto de obediencia.
+La serpiente de bronce en el desierto como tipo del Hijo del Hombre levantado. Jesús le presenta el nuevo nacimiento como condición para entrar al Reino. Ref: **Juan 3:16-21**.
 
-Jesús cita esta historia en Juan 3:14 con precisión: "así como Moisés levantó la serpiente de bronce en un poste, así deberá ser levantado el Hijo del Hombre." El paralelo no es casual. El veneno de las serpientes en el desierto es imagen del veneno del pecado que Adán y Eva recibieron de la serpiente en el Jardín. La muerte que ese veneno produce es la misma muerte espiritual que heredamos. Y el remedio es el mismo: mirar al Hijo del Hombre levantado en un madero y creer que Él puede sanarnos.
-
-Lo que hace poderosa esta imagen es su simplicidad radical. No había nada que hacer excepto mirar. No había ritual, no había mérito, no había proceso de calificación. La fe se expresaba en un acto de mirada: voltearse hacia la fuente de sanidad que Dios había provisto. Así también es el nuevo nacimiento: voltear a ver a Cristo, reconocer quién es Él, creer que Su obra es suficiente.
-
-La serpiente fue levantada. Cristo fue levantado. La sanidad sigue disponible para el que mira.
+[Puente: el capítulo usa la historia de la serpiente de bronce como imagen central del reconocimiento: así como los israelitas mordidos solo miraban y eran sanados, ver al Hijo del Hombre levantado en la cruz es el mismo acto de fe que produce el nuevo nacimiento.]
 
 ## Conexiones
 
