@@ -110,9 +110,9 @@ PROCESS_LOG.md updated
 |                                                                                  |                                     |
 |                                                                                  |                                     |
 ### Reglas para Skills de Soporte (100% Python)
-* **format-adapter:** NUNCA intentes corregir espacios o tabulaciones reescribiendo el archivo. Si Daniel pide limpiar el formato, ejecuta estrictamente en la terminal: `python3 _Scripts/format_adapter.py "<ruta_del_archivo>"`
 * **scrivener-bridge:** Cuando Daniel indique que un borrador de Scrivener está listo para el vault, NO leas ni fusiones los textos. Ejecuta en la terminal: `python3 _Scripts/scrivener_bridge.py "<ruta_scrivener>" "<ruta_vault>"`
-* **moc-builder:** Tienes PROHIBIDO escanear la bóveda y escribir un índice (MOC) tú mismo. Debes invocar el script de Python deduciendo la ruta y el nombre: `python3 _Scripts/moc_builder.py "<ruta_carpeta>" "<Nombre_MOC>"`
+* **moc-builder:** Escanea con `scan_vault.py`, agrupa las notas con tu criterio editorial, y TIENES PROHIBIDO escribir el archivo final en el vault. Para guardar, debes compilar un JSON y ejecutar el comando: `python3 _Scripts/write_moc.py "<Tema>" '<json_payload>'`.
+* **markdown-cleaner:** NUNCA intentes corregir espacios o tabulaciones reescribiendo el archivo. Si Daniel pide "limpiar el formato visual" o arreglar espacios, ejecuta en la terminal: python3 _Scripts/format_adapter.py "<ruta_del_archivo>"
 ---
 
 ## §6 Contrato YAML v2
