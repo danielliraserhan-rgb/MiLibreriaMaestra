@@ -88,32 +88,31 @@ PROCESS_LOG.md updated
 
 ## §5 Mapa de Skills
 
-| Situación                                                                  | Skill                               |
-| -------------------------------------------------------------------------- | ----------------------------------- |
-| Nuevo archivo en inbox                                                     | `modo-selector`                     |
-| **5+ archivos en inbox (carga masiva)**                                    | `bulk-ingest`                       |
-| Diagnóstico de tipo + YAML                                                 | `inbox-triage`                      |
-| Texto pastoral: oral + escrito, o borrador                                 | `modo-ab-seccion-mixta`             |
-| Diagnóstico / mapa estructural                                             | `modo-c-esquema-editorial`          |
-| Hueco estructural, material de referencia                                  | `modo-r-material-referencia`        |
-| Esquema para clase / enseñanza                                             | `modo-e-unificado`                  |
-| Lectura académica / nota de maestría                                       | `notas-maestria`                    |
-| Generar notas atómicas Zettelkasten                                        | `zettelkasten-forge`                |
-| Detectar y proponer patrones                                               | `pattern-harvester`                 |
-| Mapa de contenido (índice de notas)                                        | `moc-builder`                       |
-| **Huecos estructurales** (preguntas abiertas, patrones débiles, huérfanas) | `desarrollador-de-temas`            |
-| **Cobertura cuantitativa de temas** (temas mencionados con pocas notas ZK) | script: `scan_vault.py --mode gaps` |
-| **Análisis de voz + teología (S2)**                                        | `writing-coach`                     |
-| **Espejo de voz vs patrones aprobados**                                    | `voice-trainer`                     |
-| **Guía de formato por tipo de contenido**                                  | `format-adapter`                    |
-| **Detectar archivo nuevo desde Scrivener**                                 | `scrivener-bridge`                  |
-|                                                                            |                                     |
-|                                                                            |                                     |
+| Situación                                                                        | Skill                               |
+| -------------------------------------------------------------------------------- | ----------------------------------- |
+| Nuevo archivo en inbox                                                           | `modo-selector`                     |
+| **5+ archivos en inbox (carga masiva)**                                          | `bulk-ingest`                       |
+| Diagnóstico de tipo y generación de JSON payload para inyección YAML vía Python. | `inbox-triage`                      |
+| Texto pastoral: oral + escrito, o borrador                                       | `modo-ab-seccion-mixta`             |
+| Diagnóstico / mapa estructural                                                   | `modo-c-esquema-editorial`          |
+| Hueco estructural, material de referencia                                        | `modo-r-material-referencia`        |
+| Esquema para clase / enseñanza                                                   | `modo-e-unificado`                  |
+| Lectura académica / nota de maestría                                             | `notas-maestria`                    |
+| Generar notas atómicas Zettelkasten                                              | `zettelkasten-forge`                |
+| Detectar y proponer patrones                                                     | `pattern-harvester`                 |
+| Mapa de contenido (índice de notas)                                              | `moc-builder`                       |
+| **Huecos estructurales** (preguntas abiertas, patrones débiles, huérfanas)       | `desarrollador-de-temas`            |
+| **Cobertura cuantitativa de temas** (temas mencionados con pocas notas ZK)       | script: `scan_vault.py --mode gaps` |
+| **Análisis de voz + teología (S2)**                                              | `writing-coach`                     |
+| **Espejo de voz vs patrones aprobados**                                          | `voice-trainer`                     |
+| **Guía de formato por tipo de contenido**                                        | `format-adapter`                    |
+| **Detectar archivo nuevo desde Scrivener**                                       | `scrivener-bridge`                  |
+|                                                                                  |                                     |
+|                                                                                  |                                     |
 ### Reglas para Skills de Soporte (100% Python)
 * **format-adapter:** NUNCA intentes corregir espacios o tabulaciones reescribiendo el archivo. Si Daniel pide limpiar el formato, ejecuta estrictamente en la terminal: `python3 _Scripts/format_adapter.py "<ruta_del_archivo>"`
 * **scrivener-bridge:** Cuando Daniel indique que un borrador de Scrivener está listo para el vault, NO leas ni fusiones los textos. Ejecuta en la terminal: `python3 _Scripts/scrivener_bridge.py "<ruta_scrivener>" "<ruta_vault>"`
 * **moc-builder:** Tienes PROHIBIDO escanear la bóveda y escribir un índice (MOC) tú mismo. Debes invocar el script de Python deduciendo la ruta y el nombre: `python3 _Scripts/moc_builder.py "<ruta_carpeta>" "<Nombre_MOC>"`
-* * **inbox-triage:** Tienes PROHIBIDO escribir bloques YAML y reescribir archivos para moverlos. Tu única función es leer el documento, diagnosticar las variables, y ejecutar el script pasando un objeto JSON con las claves: tipo, tema, dominio, modo, y destino. Ejemplo: `python3 _Scripts/inbox_triage.py "Inbox/archivo.md" '{"tipo": "esquema", "tema": "05", "dominio": "pastoral", "modo": "6", "destino": "Temas/05_DoctrinasFundamentales/02_EsquemasDeClase/"}'`
 * * **modo-selector:** Antes de leer completamente un archivo nuevo del `Inbox/` para hacerle triaje, TIENES OBLIGATORIAMENTE que consultar al cadenero ejecutando `python3 _Scripts/modo_selector.py "Inbox/archivo.md"`. 
     * Si la respuesta es `"action": "saltar"`, ignora el archivo por completo y pasa al siguiente. 
     * Si la respuesta es `"action": "inbox-triage"`, entonces sí lee el documento y procede a generar el JSON para el script de triage híbrido.
