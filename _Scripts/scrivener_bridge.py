@@ -1,49 +1,51 @@
 import os
 import sys
+import re
 
-def sync_scrivener_to_vault(scrivener_file, vault_file):
-    if not os.path.exists(scrivener_file):
-        print(f"❌ Error: Archivo de Scrivener no encontrado ({scrivener_file})")
-        return
-    
-    # Leer el texto actualizado de Scrivener
-    with open(scrivener_file, 'r', encoding='utf-8') as f:
-        scrivener_content = f.read()
-
-    # Si el archivo en el Vault no existe, lo creamos directamente
-    if not os.path.exists(vault_file):
-        with open(vault_file, 'w', encoding='utf-8') as f:
-            f.write(scrivener_content)
-        print(f"✅ Archivo copiado al Vault (Nuevo): {vault_file}")
+def sync_scrivener(src_path, dest_path):
+    if not os.path.exists(src_path):
+        print(f"❌ Error: Origen no encontrado: {src_path}")
         return
 
-    # Si ya existe en el Vault, extraemos su YAML y lo inyectamos al texto de Scrivener
-    with open(vault_file, 'r', encoding='utf-8') as f:
-        vault_content = f.read()
+    # 1. Leer contenido de Scrivener
+    with open(src_path, 'r', encoding='utf-8') as f:
+        new_content = f.read()
 
-    parts = vault_content.split("---", 2)
-    
-    if len(parts) >= 3 and vault_content.startswith("---"):
-        yaml_block = f"---{parts[1]}---\n"
-        # Limpiar cualquier YAML que Scrivener haya intentado exportar
-        scriv_parts = scrivener_content.split("---", 2)
-        if len(scriv_parts) >= 3 and scrivener_content.startswith("---"):
-            pure_text = scriv_parts[2].lstrip()
-        else:
-            pure_text = scrivener_content.lstrip()
-            
-        final_content = yaml_block + pure_text
+    # Limpiar cualquier YAML parcial que Scrivener haya exportado
+    if new_content.startswith("---"):
+        parts = new_content.split("---", 2)
+        new_body = parts[2].lstrip() if len(parts) >= 3 else new_content
     else:
-        # Si no había YAML en el Vault, solo sobrescribimos
-        final_content = scrivener_content
+        new_body = new_content
 
-    with open(vault_file, 'w', encoding='utf-8') as f:
-        f.write(final_content)
+    # 2. Manejar el destino
+    if os.path.exists(dest_path):
+        # Preservar YAML existente en el Vault
+        with open(dest_path, 'r', encoding='utf-8') as f:
+            vault_content = f.read()
+        
+        if vault_content.startswith("---"):
+            parts = vault_content.split("---", 2)
+            yaml_block = f"---{parts[1]}---\n"
+        else:
+            yaml_block = "---\nfuente: scrivener\n---\n"
+    else:
+        # Es un archivo nuevo
+        yaml_block = "---\nfuente: scrivener\n---\n"
+
+    # 3. Fusionar y Guardar
+    final_output = yaml_block + new_body
     
-    print(f"🔄 Sincronización Scrivener -> Vault exitosa: {vault_file}")
+    # Asegurar que la carpeta destino exista
+    os.makedirs(os.path.dirname(dest_path), exist_ok=True)
+    
+    with open(dest_path, 'w', encoding='utf-8') as f:
+        f.write(final_output)
+    
+    print(f"✅ Sincronización exitosa: {dest_path}")
 
 if __name__ == "__main__":
     if len(sys.argv) < 3:
-        print("Uso: python3 _Scripts/scrivener_bridge.py <archivo_scrivener> <archivo_vault>")
+        print("Uso: python3 _Scripts/scrivener_bridge.py <origen_scrivener> <destino_vault>")
     else:
-        sync_scrivener_to_vault(sys.argv[1], sys.argv[2])
+        sync_scrivener(sys.argv[1], sys.argv[2])
