@@ -5,7 +5,7 @@ description: "Punto de entrada de todo el flujo editorial de Daniel Lira. Actív
 
 # INBOX-TRIAGE — Punto de Entrada del Flujo Editorial
 
-**Regla de oro:** Fase 1 siempre antes de Fase 2. Nunca crear nada sin OK explícito de Daniel.
+**Regla de oro:** Fase 1 siempre antes de Fase 2. **TIENES ESTRICTAMENTE PROHIBIDO generar bloques YAML, crear archivos .md o mover archivos tú mismo.** Tu única función de escritura es invocar el script de Python con las variables que diagnosticaste.
 
 ---
 
@@ -95,6 +95,22 @@ Indicar en el reporte qué skills deben activarse después, en orden:
 - Recordar que `zettelkasten-forge` y `pattern-harvester` siempre cierran el flujo
 
 ### 1.7 Presentar reporte de triage
+Genera un objeto JSON compacto de una sola línea con los metadatos extraídos. Este JSON será el "payload" para la Fase 2.
+
+**Formato del JSON requerido:**
+`{"title": "...", "tipo": "...", "tema": "...", "libro_biblico_principal": "...", "personajes": [...], "versiculos_citados": [...], "temas_principales": [...], "seo_keywords": [...], "dominio": "...", "modo": "...", "serie": "...", "fuente": "...", "author_quotes": [...], "destino": "Ruta/Propuesta/Completa/"}`
+
+Presenta el reporte a Daniel con este formato exacto:
+
+── REPORTE DE TRIAGE HÍBRIDO ───────────────────────
+Archivo: [nombre]
+MODO DETECTADO: [N — Nombre del modo]
+Ruta destino: [ruta/propuesta/]
+
+Payload preparado:
+`[Inserta aquí el JSON compacto en una sola línea]`
+──────────────────────────────────────────────────────
+¿Procedo con Fase 2 (Inyección Python)? (sí / no)
 
 ```
 ── REPORTE DE TRIAGE ──────────────────────────────────
@@ -118,6 +134,7 @@ ADVERTENCIAS:
 
 ──────────────────────────────────────────────────────
 ¿Procedo con Fase 2? (sí / no / correcciones primero)
+
 ```
 
 ---
