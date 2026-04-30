@@ -113,9 +113,6 @@ PROCESS_LOG.md updated
 * **format-adapter:** NUNCA intentes corregir espacios o tabulaciones reescribiendo el archivo. Si Daniel pide limpiar el formato, ejecuta estrictamente en la terminal: `python3 _Scripts/format_adapter.py "<ruta_del_archivo>"`
 * **scrivener-bridge:** Cuando Daniel indique que un borrador de Scrivener está listo para el vault, NO leas ni fusiones los textos. Ejecuta en la terminal: `python3 _Scripts/scrivener_bridge.py "<ruta_scrivener>" "<ruta_vault>"`
 * **moc-builder:** Tienes PROHIBIDO escanear la bóveda y escribir un índice (MOC) tú mismo. Debes invocar el script de Python deduciendo la ruta y el nombre: `python3 _Scripts/moc_builder.py "<ruta_carpeta>" "<Nombre_MOC>"`
-* * **modo-selector:** Antes de leer completamente un archivo nuevo del `Inbox/` para hacerle triaje, TIENES OBLIGATORIAMENTE que consultar al cadenero ejecutando `python3 _Scripts/modo_selector.py "Inbox/archivo.md"`. 
-    * Si la respuesta es `"action": "saltar"`, ignora el archivo por completo y pasa al siguiente. 
-    * Si la respuesta es `"action": "inbox-triage"`, entonces sí lee el documento y procede a generar el JSON para el script de triage híbrido.
 ---
 
 ## §6 Contrato YAML v2
