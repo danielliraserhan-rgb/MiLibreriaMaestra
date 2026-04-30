@@ -1,17 +1,3 @@
-Imagina que tienes una gran biblioteca personal donde guardas todo tu trabajo, tus estudios y tus escritos, pero en lugar de ser solo un archivero estático, es una biblioteca viva que interactúa contigo. Está dividida en dos roles principales:
-Tu Archivo Central (El Segundo Cerebro): Es donde guardas toda tu investigación, tus libros como "Orígenes", tus clases, tus sermones para la iglesia y tus trabajos de la maestría. Aquí cada idea está conectada con otras, como un gran mapa de tus pensamientos.
-Tu Asistente Editorial (El Coach de Escritura): Es un asistente inteligente que se ha leído absolutamente todo lo que tú has escrito. Su regla de oro es que nunca escribe por ti, sino que funciona como un editor o mentor muy exigente. Él conoce tu estilo, sabe cómo te gusta explicar las cosas y conoce los límites de tu teología.
-
-￼
-¿Cómo es el proceso cuando quieres guardar algo nuevo?
-Todo lo que escribes (ya sea un capítulo de un libro, un ensayo para la escuela o los apuntes de una clase) pasa por un proceso de revisión muy ordenado. Piénsalo como una fábrica donde tú eres el director y debes aprobar (dar el "OK") en cada paso del ensamble:
-Recepción y Diagnóstico: El asistente recibe tu nuevo texto, lo lee y te dice: "Ah, veo que este es un ensayo para la universidad", o "Esto es el borrador de tu nuevo libro". Te pregunta: "¿Es correcto?". Si le dices que sí, avanza.
-Edición y Estructura: Dependiendo de lo que estés escribiendo, el asistente saca diferentes herramientas.
-Si es material para la iglesia, verifica que mantengas un tono cercano, pastoral y esperanzador (tiene una lista de 10 puntos que debe cumplir).
-Si es para tu maestría, "apaga" su lado pastoral y se vuelve estricto, revisando que el formato sea académico y neutral.
-Si nota que te falta explicar mejor una idea, te lo señala para que tú lo corrijas.
-Destilación de Ideas (Extracción de las pepitas de oro): Una vez que el texto está pulido, el asistente no solo lo guarda en la carpeta correspondiente, sino que saca las ideas más importantes y las convierte en "tarjetas de ideas" independientes. Así, si en tres años necesitas hablar sobre "El Bautismo", tendrás a la mano todas las ideas clave que escribiste hoy sobre ese tema.
-Aprendizaje Final: Al terminar todo el proceso, el asistente analiza cómo escribiste hoy y te dice: "Noté que últimamente te gusta usar esta nueva estructura para explicar tus puntos. ¿Quieres que me aprenda ese estilo para evaluar tus futuros escritos?". Tú le das el OK y el asistente se vuelve un poco más inteligente y más parecido a ti para la próxima vez.
 
 ---
 
