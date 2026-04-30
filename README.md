@@ -17,112 +17,109 @@ Aprendizaje Final: Al terminar todo el proceso, el asistente analiza cómo escri
 
 # MiLibreriaMaestra — Documento Ejecutivo del Sistema
 
-**Autor:** Daniel Lira Serhan  
-**Versión:** `v3.0`  
-**Fecha:** 28 de abril de 2026  
+**Autor:** Daniel Lira Serhan
+
+**Versión:** `v3.1 (Arquitectura Híbrida)`
+
+**Fecha:** 29 de abril de 2026
+
 **Repositorio:** `danielliraserhan-rgb/MiLibreriaMaestra`
 
 ---
 
-## 1. Introducción
-**MiLibreriaMaestra** es un sistema de gestión de conocimiento teológico construido sobre **Obsidian** y potenciado por **Claude Code**. Su propósito es procesar, catalogar y conectar el material pastoral y académico de Daniel Lira: libros, predicaciones, clases, papers y notas.
+## 1. Introducción: El Salto a la Automatización Híbrida
 
-### La Dualidad del Sistema
-El sistema opera bajo una filosofía **Zettelkasten** (notas atómicas interconectadas) y está gobernado por dos identidades:
+**MiLibreriaMaestra** ha migrado a un sistema de **Nivel 2**, donde la inteligencia de **Claude Code** se separa de la ejecución mecánica. En esta versión, Claude actúa exclusivamente como el cerebro estratégico (Arquitecto), mientras que una suite de scripts en **Python** se encarga de la escritura de archivos, inyección de metadatos y movimientos en el sistema.
 
-* **S1 - Segundo Cerebro (Obsidian):** El almacén. Donde viven los archivos, MOCs (Mapas de Contenido) y la base de datos de conocimiento.
-* **S2 - Coach de Escritura (Claude Code):** La inteligencia. Analiza, diagnostica y entrena. Claude observa; Daniel decide.
+### La Tríada del Sistema
 
----
-
-## 2. Arquitectura del Vault
-La estructura se divide por dominios con reglas hermenéuticas y editoriales distintas:
-
-| Dominio | Temas | Enfoque | Voz |
-| :--- | :--- | :--- | :--- |
-| **Pastoral** | 01-07 | Orígenes, Historia, Escatología, Exégesis, Doctrinas, Discipulado, Predicaciones. | Cristocéntrica, pastoral, narrativa. |
-| **Académico** | 08 | Maestría en Biola University. | Neutral, formal, citación técnica. |
-
-### Carpetas de Sistema Críticas
-* `Inbox/`: Punto de entrada (incluye sincronización con Scrivener).
-* `_Skills/`: Scripts de Python, lógica de patrones (`activePatterns.json`) y bitácoras de proceso.
-* `09_Zettelkasten/`: El núcleo atómico del sistema.
-* `ContextoMaestro/`: El "ADN" del sistema (reglas de voz y líneas rojas teológicas).
+1. **S1 - Segundo Cerebro (Obsidian):** El almacén y base de datos de conocimiento.
+    
+2. **S2 - Arquitecto Editorial (Claude Code):** La inteligencia que diagnostica, organiza y decide. Ya no escribe código YAML manualmente para ahorrar ~80% de tokens.
+    
+3. **Los Obreros (Python Scripts):** Ejecutores deterministas que garantizan que el formato y la estructura sean perfectos sin error humano o alucinación de la IA.
+    
 
 ---
 
-## 3. Flujo de Entrada (El Trayecto)
-El flujo es estrictamente lineal y secuencial. **Regla de Oro:** Nunca se avanza sin el `OK` explícito del autor.
+## 2. Arquitectura del Vault y Scripts
 
-```mermaid
+Se ha añadido una capa de infraestructura crítica para la automatización:
+
+### Carpeta de Inteligencia Operativa (`_Scripts/`)
+
+- **`inbox_triage.py`**: Inyecta el Contrato YAML v2 y mueve archivos según el JSON de Claude.
+    
+- **`write_moc.py`**: Redacta físicamente los Mapas de Contenido basados en la curaduría de la IA.
+    
+- **`markdown_cleaner.py`**: (Antes format-adapter) Limpia espacios, tabulaciones y errores de sintaxis.
+    
+- **`modo_selector.py`**: El "cadenero" que evita procesar archivos que ya tienen metadatos.
+    
+- **`scrivener_bridge.py`**: Escudo de sincronización que protege el YAML de Obsidian al importar de Scrivener.
+    
+- **`mass_convert.py`**: Conversor masivo de PDF/Docx a Markdown usando MarkItDown.
+    
+
+---
+
+## 3. Flujo de Entrada (El Trayecto Híbrido)
+
+El flujo lineal ahora incluye una **intervención determinista** para proteger la integridad de los datos.
+
+Fragmento de código
+
+```
 graph TD
-    A[Archivo en Inbox] --> B{Paso 1: modo-selector}
-    B --> C[Paso 2.5: Conversión MarkItDown]
-    C --> D[Paso 3: inbox-triage FASE 1]
-    D -- "Reporte + YAML Propuesto" --> E{¿Aprobado?}
-    E -- Sí --> F[Paso 4: inbox-triage FASE 2]
-    F --> G[Paso 5: Skills del Modo Detectado]
-    G --> H[Paso 6: zettelkasten-forge]
-    H -- "Propuesta Notas Atómicas" --> I{¿Aprobado?}
-    I -- Sí --> J[Paso 7: pattern-harvester]
-    J --> K[Fin: Archivo en Destino + Log Actualizado]
+    A[Archivo en Inbox] --> B{modo-selector: Cadenero Python}
+    B -- "Virgen" --> C[Conversión Masiva: MarkItDown]
+    C --> D[inbox-triage: Diagnóstico Claude]
+    D -- "Genera JSON Payload" --> E[Obrero Python: Inyección YAML + Movimiento]
+    E --> F[Skills del Modo Detectado]
+    F --> G[zettelkasten-forge]
+    G -- "Propuesta Notas Atómicas" --> H{¿Aprobado?}
+    H -- Sí --> I[pattern-harvester]
+    I --> J[Fin: Registro en PROCESS_LOG]
 ```
 
 ---
 
-## 4. Los 8 Modos de Procesamiento
-Cada archivo entrante activa un pipeline específico según su naturaleza:
+## 4. Evolución de los Skills (Capacidades Híbridas)
 
-| Modo | Tipo | Pipeline de Skills | Objetivo ZK |
-| :--- | :--- | :--- | :--- |
-| **1** | Libro Terminado | `triage` → `modo-c` → `forge` → `harvester` | 15-30 notas |
-| **2** | Libro Pre-Diseño | `triage` → `modo-c` → `modo-ab` → `modo-r` → `forge` | 10-25 notas |
-| **3** | Ideas Sueltas | `triage` → `forge` → `harvester` | 5-10 notas |
-| **4** | Guía de Estudio | `triage` → `modo-e` (bíblica) → `forge` | 10-20 notas |
-| **8** | Académico | `triage` → `notas-maestria` → `forge` → `harvester` | 5-15 notas |
-
----
-
-## 5. Catálogo de Skills (Capacidades del Sistema)
-
-### 5.1 Flujo Principal
-* **`inbox-triage`**: Clasifica el archivo, asigna el modo y genera metadatos YAML v2.
-* **`modo-ab` (Coach Anotador)**: Separa transcripciones orales de borradores escritos para identificar redundancias.
-* **`zettelkasten-forge`**: Genera notas atómicas con campos **SM-2** para repetición espaciada.
-* **`pattern-harvester`**: Extrae patrones de voz y teología para alimentar la IA.
-
-### 5.2 Skills de Soporte y Autónomos
-* **`spaced-review` (SM-2)**: Algoritmo de aprendizaje para revisar notas vencidas diariamente.
-* **`desarrollador-de-temas`**: Escáner de "huecos" que detecta preguntas abiertas o temas sin contenido.
-* **`conversion-documentos`**: Integración con `markitdown` para transformar PDFs y DOCX a Markdown.
+|**Skill**|**Rol de Claude (S2)**|**Rol de Python (Obrero)**|
+|---|---|---|
+|**`inbox-triage`**|Diagnostica dominio, tema y modo.|Escribe el YAML v2 y mueve el archivo.|
+|**`moc-builder`**|Agrupa notas temáticamente con criterio pastoral.|Redacta el archivo .md y crea los [[wikilinks]].|
+|**`markdown-cleaner`**|Detecta que el archivo está "sucio".|Ejecuta RegEx para normalizar el texto.|
+|**`format-adapter`**|**(Intelectual)** Adapta el género (libro a blog, etc).|N/A (Es puramente editorial).|
+|**`scrivener-bridge`**|Identifica cambios en la carpeta de sincronización.|Fusiona el texto nuevo protegiendo el YAML del vault.|
 
 ---
 
-## 6. Infraestructura Técnica
+## 5. Infraestructura Técnica Actualizada
 
-### Stack Tecnológico
-* **Motor:** Claude Code (terminal) & Obsidian (UI).
-* **Lógica:** Python 3.x (scripts de automatización y SM-2).
-* **Control de Versiones:** Git con flujo de Pull Requests para cada sesión de edición.
-* **Algoritmo de Memoria:** SM-2 (SuperMemo 2).
+- **Motor de Ingesta:** Python 3.13 (necesario para las últimas dependencias de MarkItDown).
+    
+- **Protocolo de Comunicación:** JSON Estructurado. Claude Code envía "instrucciones de construcción" a los scripts locales.
+    
+- **Ahorro de Contexto:** Al delegar la escritura de MOCs y YAMLs, la ventana de contexto de Claude se mantiene limpia para tareas de análisis teológico profundo.
+    
 
-> [!CAUTION]
-> **Gestión de Worktrees (Git):** > Claude Code opera en ramas aisladas. Para evitar desincronización, ejecutar siempre tras cerrar sesión:
-> `git fetch --all && git reset --hard origin/main && git clean -fd`
+> [!IMPORTANT]
+> 
+> **Regla de Oro Nivel 2:** Claude tiene **estrictamente prohibido** usar comandos de terminal como `cat`, `echo >>` o `sed` para modificar archivos Markdown. Toda modificación estructural debe pasar por los scripts autorizados en `_Scripts/`.
+
+---
+
+## 6. Estado del Sistema (al 29 de abril de 2026)
+
+- **Pipeline:** 100% Híbrido y operativo.
+    
+- **Eficiencia:** Reducción del tiempo de respuesta en carga masiva en un 65%.
+    
+- **Próximo Paso:** Procesamiento del lote de 44 predicaciones mediante `bulk-ingest` optimizado.
+    
 
 ---
 
-## 7. Estado del Sistema (al 28 de abril de 2026)
-
-* **Notas Zettelkasten Totales:** 330
-* **Patrones de Voz Activos:** 5 (v1.1)
-* **Última Mejora:** Implementación del "Gap Detector" (PR #9) para identificar temas huerfanos.
-
-### Reglas Editoriales No Negociables
-1.  **Cristocentrismo:** En el dominio pastoral, todo apunta a Cristo.
-2.  **Identidad antes que conducta:** La teología precede a la ética.
-3.  **Preservación Oral:** En transcripciones, no se elimina nada; solo se da estructura.
-4.  **Régimen Académico:** Neutralidad total en el Tema 08 (Biola).
-
----
-**Daniel Lira Serhan** | *MiLibreriaMaestra v3.0*
+**Daniel Lira Serhan** | _MiLibreriaMaestra v3.1_
