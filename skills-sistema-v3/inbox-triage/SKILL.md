@@ -95,13 +95,14 @@ Indicar en el reporte qué skills deben activarse después, en orden:
 - Recordar que `zettelkasten-forge` y `pattern-harvester` siempre cierran el flujo
 
 ### 1.7 Presentar reporte de triage
+
 Genera un objeto JSON compacto de una sola línea con los metadatos extraídos. Este JSON será el "payload" para la Fase 2.
 
 **Formato del JSON requerido:**
 `{"title": "...", "tipo": "...", "tema": "...", "libro_biblico_principal": "...", "personajes": [...], "versiculos_citados": [...], "temas_principales": [...], "seo_keywords": [...], "dominio": "...", "modo": "...", "serie": "...", "fuente": "...", "author_quotes": [...], "destino": "Ruta/Propuesta/Completa/"}`
 
 Presenta el reporte a Daniel con este formato exacto:
-
+```
 ── REPORTE DE TRIAGE HÍBRIDO ───────────────────────
 Archivo: [nombre]
 MODO DETECTADO: [N — Nombre del modo]
@@ -111,159 +112,20 @@ Payload preparado:
 `[Inserta aquí el JSON compacto en una sola línea]`
 ──────────────────────────────────────────────────────
 ¿Procedo con Fase 2 (Inyección Python)? (sí / no)
-
-```
-── REPORTE DE TRIAGE ──────────────────────────────────
-
-Archivo:  [nombre del archivo]
-Tipo:     [Transcripción oral / Borrador escrito / Material académico / Referencia externa / Mixto]
-Dominio:  [Pastoral / Académico]
-Tema:     [tema en una frase]
-
-MODO DETECTADO: [N — Nombre del modo]
-
-Ruta propuesta:   [carpeta/subcarpeta/]
-Skills a seguir:  inbox-triage Fase 2 → [modo-c?] → [modo-ab?] → [modo-e?] → zettelkasten-forge → pattern-harvester
-
-YAML preliminar (v2):
-─────────────────
-[YAML completo — ver §YAML]
-
-ADVERTENCIAS:
-[Solo si aplica — ver §Advertencias críticas]
-
-──────────────────────────────────────────────────────
-¿Procedo con Fase 2? (sí / no / correcciones primero)
-
 ```
 
 ---
 
-## FASE 2 — EJECUCIÓN (solo tras OK explícito)
+## FASE 2 — EJECUCIÓN HÍBRIDA (solo tras OK explícito)
 
-Daniel debe responder "sí", "adelante", "procede" o equivalente claro. Una respuesta ambigua no es OK.
+Si Daniel responde "sí", "adelante" o da luz verde, **tu única acción** en esta fase es ejecutar el script de Python en la terminal utilizando el payload JSON que generaste en la Fase 1.
 
-### 2.1 Crear la nota
+**Comando exacto a ejecutar:**
+`python3 _Scripts/inbox_triage.py "Inbox/[nombre_del_archivo]" '[Copia_exacta_del_payload_JSON_de_la_Fase_1]'`
 
-Crear un archivo Markdown nuevo con:
-- Nombre de archivo: `YYYY-MM-DD-[slug-del-tema].md`
-- YAML frontmatter v2 completo (todos los campos — sin dejar vacíos si el texto los tiene; `source_file` apunta al nombre del archivo original)
-- Estructura del cuerpo según dominio (ver §Estructuras)
+*Nota crítica: Asegúrate de que el JSON esté envuelto en comillas simples `' '` dentro del comando de terminal para evitar errores de sintaxis.*
 
-**La nota debe es el índice, no la copia.** No duplicar el texto completo dentro de la nota. El cuerpo contiene resumen breve + wikilink al original.
-
-Asegúrate de que siempre esté ligado al original, si no hay original o no está la liga detenerte y preguntar. 
-
-### 2.2 Agregar [[enlaces]]
-
-Revisar el texto y agregar wikilinks a:
-- Personajes bíblicos mencionados
-- Libros de la Biblia cuando aparecen como concepto desarrollado
-- Temas que ya existen en el vault
-- Series o proyectos mencionados
-
-No inventar enlaces. Solo enlazar lo que el texto establece.
-
-### 2.3 Mover a carpeta correcta y ligar archivos
-
-1. Mover el archivo original a la ruta propuesta en Fase 1.
-2. Si el archivo original es `.md`: agregar al inicio de su frontmatter el campo `nota_triage: "[[YYYY-MM-DD-slug]]"` apuntando a la nota recién creada.
-3. Si el archivo original no es `.md` (txt, docx, etc.): la nota es el único punto de enlace — no se modifica el original.
-
-### 2.4 Reporte de cierre
-
-```
-── TRIAGE COMPLETADO ──────────────────────────────────
-
-Nota creada:      [nombre-del-archivo.md]  ← entrada del vault
-Archivo original: [ruta/final/nombre-original.ext]  ← fuente cruda
-Enlace nota→original: source_file: [[nombre-original]] ✓
-Enlace original→nota: nota_triage: [[nombre-del-archivo]] ✓  (solo si es .md)
-YAML v2:          completo ✓
-[[enlaces]]:      [N] agregados
-Modo asignado:    [N — Nombre]
-Próximos skills:  [lista en orden]
-
-[Si es transcripción oral pastoral]:
-  → El texto original NO fue modificado.
-    Listo para MODO A+B cuando quieras.
-
-[Si requiere modo-ab]:
-  → Di: "aplica el protocolo MODO A+B"
-
-[Si requiere modo-e]:
-  → Di: "aplica modo-e-unificado"
-
-──────────────────────────────────────────────────────
-```
-
----
-
-## §YAML — Plantilla pastoral v2
-
-```yaml
----
-title: ""
-tipo: ""            # libro | esquema | clase_en_vivo | notas_sin_procesar | material_externo
-tema: ""            # 01_Origenes | 02_HistoriaDeIsrael | 03_Escatologia—Destino | 04_ExegesisNT |
-                    # 05_DoctrinasFundamentales | 06_DiscipuladoVidaCristiana | 07_PredicacionesDevocionales
-libro_biblico_principal: ""
-personajes: []
-versiculos_citados: []
-temas_principales: []
-seo_keywords: []
-fecha: ""
-estado: sin_procesar  # sin_procesar | en_proceso | completado
-
-dominio: pastoral
-modo: ""            # 1-libro-terminado | 2-libro-pre-diseno | 3-ideas-sueltas |
-                    # 4-guia-estudio | 5-nota-tematica | 6-estudio-clase | 7-grupos-conexion
-fase: ""            # (solo MODO 2) pre-diseno | en-diseno | disenado
-serie: ""
-fuente: ""          # dictado | grabacion | borrador | clase | conferencia
-author_quotes: []
-zettelkasten_notes: []
-source_file: ""     # nombre del archivo original movido (ej. "mi-archivo-original.md")
-version_yaml: "2.0"
-fecha_actualizacion: ""
----
-```
-
----
-
-## §YAML-ACADÉMICO — Plantilla académica v2
-
-```yaml
----
-title: ""
-tipo: articulo_academico   # articulo_academico | notas_sin_procesar | material_externo
-tema: 08_Academico
-libro_biblico_principal: ""
-personajes: []
-versiculos_citados: []
-temas_principales: []
-seo_keywords: []
-fecha: ""
-estado: sin_procesar
-
-dominio: academico
-modo: academico
-fase: ""
-serie: ""
-fuente: ""          # paper | clase | conferencia | libro | tesis
-author_quotes: []
-zettelkasten_notes: []
-source_file: ""     # nombre del archivo original movido
-version_yaml: "2.0"
-fecha_actualizacion: ""
-
-autor_fuente: ""
-titulo_fuente: ""
-anio_fuente:
-curso: ""
-tesis_del_autor: ""
----
-```
+Una vez que la terminal devuelva el mensaje de éxito de Python, confirma a Daniel que el archivo ha sido procesado y movido.```
 
 ---
 
