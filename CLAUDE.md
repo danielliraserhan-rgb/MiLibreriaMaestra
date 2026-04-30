@@ -110,7 +110,7 @@ PROCESS_LOG.md updated
 |                                                                                  |                                     |
 |                                                                                  |                                     |
 ### Reglas para Skills de Soporte (100% Python)
-* **scrivener-bridge:** Cuando Daniel indique que un borrador de Scrivener está listo para el vault, NO leas ni fusiones los textos. Ejecuta en la terminal: `python3 _Scripts/scrivener_bridge.py "<ruta_scrivener>" "<ruta_vault>"`
+* **scrivener-bridge:** Cuando detectes cambios en `Inbox/scrivener-sync/`, lista los archivos pero NO fusiones los textos manualmente. Ejecuta siempre: `python3 _Scripts/scrivener_bridge.py "<origen>" "<destino>"` para preservar el YAML v2.
 * **moc-builder:** Escanea con `scan_vault.py`, agrupa las notas con tu criterio editorial, y TIENES PROHIBIDO escribir el archivo final en el vault. Para guardar, debes compilar un JSON y ejecutar el comando: `python3 _Scripts/write_moc.py "<Tema>" '<json_payload>'`.
 * **markdown-cleaner:** NUNCA intentes corregir espacios o tabulaciones reescribiendo el archivo. Si Daniel pide "limpiar el formato visual" o arreglar espacios, ejecuta en la terminal: python3 _Scripts/format_adapter.py "<ruta_del_archivo>"
 ---
