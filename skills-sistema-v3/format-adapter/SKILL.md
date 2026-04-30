@@ -7,6 +7,8 @@ description: "Mapea un texto al formato correcto según su tipo de destino (libr
 
 **Principio:** Muestra las brechas. Daniel adapta.
 
+> **Prerrequisito:** Asegúrate de haber cargado `ContextoMaestro/04_voz.md` antes de ejecutar este skill para poder evaluar correctamente el nivel de lenguaje pastoral.
+
 ## FASE 1 — IDENTIFICAR TEXTO Y FORMATO DESTINO
 
 Si Daniel especifica el formato destino: usarlo directamente.
