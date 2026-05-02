@@ -11,6 +11,7 @@
 2. **Simplicity First:** Prioriza siempre el enfoque mínimo viable. Cuando generes notas atómicas (ZK) o MOCs, usa síntesis extrema y cero texto de relleno ("verborrea de IA"). Respeta la voz original del documento.
 3. **Surgical Changes:** Jamás reescribas un archivo `.md` completo para aplicar un cambio menor. Toda modificación de texto debe ser quirúrgica (solo las líneas afectadas). Confía enteramente en los scripts de `_Scripts/` para cambios estructurales o inyección masiva de YAML.
 4. **Goal-Driven Execution:** Asegura el resultado de tu Modo Activo. Tienes estrictamente prohibido avanzar de la Fase 1 a la Fase 2 sin la aprobación explícita de Daniel, y antes de terminar, debes verificar empíricamente que se lograron los entregables exactos (ej. creación de las N notas ZK correspondientes al lote).
+5. **Pre-edición Scrivener:** Antes de editar cualquier `.md` con `fuente: scrivener` en su YAML, consultar `_Skills/scrivener-manifest.json`. Si `editado_en_vault_post_sync: true`, avisar a Daniel antes de proceder. Después de editar, actualizar la entrada del manifest: `estado → modificado_vault`, `editado_en_vault_post_sync → true`.
 
 ## §0.5 Rutas del Sistema
 
@@ -27,7 +28,7 @@
 | ContextoMaestro | `ContextoMaestro/` |
 
 **Scripts disponibles en `_Scripts/`:**
-`inbox_triage.py` · `modo_selector.py` · `write_moc.py` · `scrivener_bridge.py` · `markdown_cleaner.py` · `mass_convert.py` · `scan_vault.py` · `zk_fix_title_field.py` · `zk_rename.py`
+`inbox_triage.py` · `modo_selector.py` · `write_moc.py` · `scrivener_bridge.py` · `scrivener_export.py` · `markdown_cleaner.py` · `mass_convert.py` · `scan_vault.py` · `zk_fix_title_field.py` · `zk_rename.py`
 
 ---
 
@@ -133,10 +134,12 @@ PROCESS_LOG.md updated
 | **Espejo de voz vs patrones aprobados**                                          | `voice-trainer`                     |
 | **Guía de formato por tipo de contenido**                                        | `format-adapter`                    |
 | **Detectar archivo nuevo desde Scrivener**                                       | `scrivener-bridge`                  |
+| **Exportar archivo del vault hacia Scrivener**                                   | `scrivener-export`                  |
 | **Limpiar formato visual RegEx**                                                 | `markdown-cleaner`                  |
 
 ### Reglas para Skills de Soporte (100% Python)
 * **scrivener-bridge:** Cuando detectes cambios en `Inbox/scrivener-sync/`, lista los archivos pero NO fusiones los textos manualmente. Ejecuta siempre: `python3 _Scripts/scrivener_bridge.py "<origen>" "<destino>"` para preservar el YAML v2.
+* **scrivener-export:** Cuando Claude Code termine edits en un archivo con `fuente: scrivener` y Daniel necesite continuar en Scrivener. Ejecuta siempre: `python3 _Scripts/scrivener_export.py "<ruta_vault>" [nombre_salida.md] [--preview]`. El archivo limpio queda en `Inbox/scrivener-sync/export/`.
 * **moc-builder:** Escanea con `scan_vault.py`, agrupa las notas con tu criterio editorial, y TIENES PROHIBIDO escribir el archivo final en el vault. Para guardar, debes compilar un JSON y ejecutar el comando: `python3 _Scripts/write_moc.py "<Tema>" '<json_payload>'`.
 * **markdown-cleaner:** NUNCA intentes corregir espacios o tabulaciones reescribiendo el archivo. Si Daniel pide "limpiar el formato visual" o arreglar espacios, ejecuta en la terminal: python3 _Scripts/markdown_cleaner.py "<ruta_del_archivo>"
 ---
@@ -171,6 +174,11 @@ zettelkasten_notes: []  # IDs: ZK-YYYYMMDD-HHMM-NNN
 coaching_notes: []      # IDs de sesiones de coach que usaron este archivo como fuente
 version_yaml: "2.0"
 fecha_actualizacion: ""
+scrivener_sync:
+  estado: ""        # sincronizado | modificado_vault | pendiente_export | conflicto
+  ultima_sync: ""
+  ultima_export: ""
+  scrivener_nombre: ""
 ---
 ```
 
@@ -188,7 +196,9 @@ fecha_actualizacion: ""
 | `ContextoMaestro/ContextoMaestro.md` | Fuente de verdad: voz, teología, líneas rojas |
 | `ContextoMaestro/00_ESENCIAL.md` | Cargar siempre. Resumen ejecutivo del ContextoMaestro |
 | `ContextoMaestro/04_voz.md` | Cargar solo para tareas pastorales o sesiones de coach |
+| `_Skills/scrivener-manifest.json` | Registro de archivos en co-edición: estado, timestamps sync/export, flag de conflicto |
 | `Inbox/scrivener-sync/` | Carpeta monitoreada: archivos que llegan desde Scrivener |
+| `Inbox/scrivener-sync/export/` | Archivos exportados desde Obsidian hacia Scrivener (limpios: sin YAML, sin wiki links) |
 | `MapasDeContenido—MOCs/` | MOCs generados por `write_moc.py`. No editar manualmente. |
 | `skills-sistema-v3/<skill>/SKILL.md` | Definiciones de skills del sistema. Ruta raíz de todos los skills del vault. |
 
@@ -238,4 +248,4 @@ Todos los tipos cargan `00_ESENCIAL.md`. Coach S2 también carga `04_voz.md`.
 - **activePatterns.json:** Solo actualizar con OK explícito de Daniel.
 - **Notas ZK:** Solo crear con OK explícito de Daniel después de revisión.
 - **Dominio académico ↔ pastoral:** No mezclar. Las notas ZK de cada dominio no se enlazan entre sí salvo aprobación explícita.
-- **Scrivener sync:** La dirección `Obsidian → Scrivener` es siempre manual. El sistema nunca sobreescribe drafts de Scrivener.
+- **Scrivener sync:** La dirección `Obsidian → Scrivener` se maneja via `scrivener-export`. El sistema nunca sobreescribe drafts de Scrivener sin OK explícito de Daniel.
