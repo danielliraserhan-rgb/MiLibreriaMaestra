@@ -32,20 +32,25 @@
 
 Se ha añadido una capa de infraestructura crítica para la automatización:
 
-### Carpeta de Inteligencia Operativa (`_Scripts/`)
+### Scripts Python (`_Scripts/`)
 
-- **`inbox_triage.py`**: Inyecta el Contrato YAML v2 y mueve archivos según el JSON de Claude.
-    
-- **`write_moc.py`**: Redacta físicamente los Mapas de Contenido basados en la curaduría de la IA.
-    
-- **`markdown_cleaner.py`**: (Antes format-adapter) Limpia espacios, tabulaciones y errores de sintaxis.
-    
-- **`modo_selector.py`**: El "cadenero" que evita procesar archivos que ya tienen metadatos.
-    
-- **`scrivener_bridge.py`**: Escudo de sincronización que protege el YAML de Obsidian al importar de Scrivener.
-    
-- **`mass_convert.py`**: Conversor masivo de PDF/Docx a Markdown usando MarkItDown.
-    
+| Script | Función |
+|---|---|
+| `inbox_triage.py` | Inyecta YAML v2 y mueve archivos al destino según JSON de Claude |
+| `modo_selector.py` | Cadenero: responde `saltar` si ya tiene YAML, `inbox-triage` si virgen |
+| `write_moc.py` | Escribe MOC físico en `MapasDeContenido—MOCs/` según JSON de Claude |
+| `scrivener_bridge.py` | Sincroniza Scrivener → Obsidian protegiendo el YAML existente |
+| `markdown_cleaner.py` | Limpieza RegEx: headers, saltos de línea, espacios finales |
+| `mass_convert.py` | Conversión masiva PDF/DOCX → Markdown via MarkItDown |
+| `scan_vault.py` | `--mode gaps`: cobertura ZK por tema. `--mode index`: regenera VAULT_INDEX.md |
+| `zk_fix_title_field.py` | Utilidad: corrige campo `title` → `titulo` en notas ZK |
+| `zk_rename.py` | Utilidad: renombra notas ZK al formato `{id} {titulo_corto}.md` |
+
+### Skills del Sistema (`skills-sistema-v3/`)
+
+Cada skill tiene su propio directorio con `SKILL.md`. Skills activos:
+`inbox-triage` · `modo-selector` · `moc-builder` · `scrivener-bridge` · `markdown-cleaner` · `format-adapter` · `modo-ab-seccion-mixta` · `modo-c-esquema-editorial` · `modo-e-unificado` · `modo-r-material-referencia` · `notas-maestria` · `zettelkasten-forge` · `pattern-harvester` · `bulk-ingest` · `writing-coach` · `voice-trainer` · `desarrollador-de-temas` · `spaced-review` · `conversion-documentos`
+
 
 ---
 
@@ -97,13 +102,12 @@ graph TD
 
 ---
 
-## 6. Estado del Sistema (al 29 de abril de 2026)
+## 6. Estado del Sistema (al 2 de mayo de 2026)
 
-- **Pipeline:** 100% Híbrido y operativo.
-    
-- **Eficiencia:** Reducción del tiempo de respuesta en carga masiva en un 65%.
-    
-- **Próximo Paso:** Procesamiento del lote de 44 predicaciones mediante `bulk-ingest` optimizado.
+- **Pipeline:** 100% Híbrido, operativo y auditado (v3.2).
+- **Scripts:** 9 scripts activos, todos con `chmod +x` y paths portables (`Path(__file__).parent.parent`).
+- **YAML v2:** 54+ archivos migrados. Migración en curso.
+- **Pruebas funcionales:** modo-selector ✅ · inbox-triage ✅ · write_moc ✅ · scan_vault ✅
     
 
 ---
