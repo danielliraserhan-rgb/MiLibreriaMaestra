@@ -235,6 +235,7 @@ Todos los tipos cargan `00_ESENCIAL.md`. Coach S2 también carga `04_voz.md`.
    - **Ritmo** — ¿Hay párrafos largos sin remate corto? ¿Dónde falta respiración?
    - **Líneas rojas** — ¿Alguna de las 9 prohibiciones activada? Citar sección exacta del ContextoMaestro.
 4. Proponer 2–3 preguntas que Daniel pueda hacerse para mejorar el texto (no reescribir)
+4b. **Conexiones semánticas (80/20):** Si ChromaDB indexado, consultar con primeros 200 palabras del texto. Mostrar 2-3 notas ZK como Conexiones sugeridas. Formato: `[[ZK-ID Título]] — tema — relevancia`. Solo mismo dominio. Degradación elegante si ChromaDB no disponible.
 5. Si el análisis genera insights permanentes → proponer a `pattern-harvester`
 
 **Regla:** Toda observación debe citar la sección de ContextoMaestro que la sustenta.
