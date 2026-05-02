@@ -185,8 +185,12 @@ def cmd_update(client: chromadb.PersistentClient, model: SentenceTransformer):
         return
 
     print(f"Actualizando {len(updated)} notas...")
-    parsed = [parse_zk_note(p) for p in updated]
-    parsed = [d for d in parsed if d is not None]
+    raw_parsed = [(p, parse_zk_note(p)) for p in updated]
+    # Bug 1: advertir sobre notas que fallan parse — sin aviso quedarían excluidas
+    for path, result in raw_parsed:
+        if result is None:
+            print(f"WARN [parse fallido, requiere --mode index]: {path.name}")
+    parsed = [d for _, d in raw_parsed if d is not None]
 
     for d in parsed:
         meta_record = _build_metadata_record(d)
@@ -227,11 +231,12 @@ def cmd_query(
 
     query_embedding = model.encode([f"query: {query_text}"])[0].tolist()
 
-    # B2: proteger col.query() ante fallos de ChromaDB en tiempo de ejecución
+    # Bug 2: almacenar count una vez para evitar doble llamada y posible TOCTOU
+    count = col.count()
     try:
         results = col.query(
             query_embeddings=[query_embedding],
-            n_results=min(n_results, col.count()),
+            n_results=min(n_results, count),
             include=["metadatas", "distances"],
         )
     except Exception as e:
