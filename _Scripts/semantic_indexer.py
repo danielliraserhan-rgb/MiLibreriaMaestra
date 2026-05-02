@@ -58,7 +58,9 @@ def parse_zk_note(path: Path) -> dict | None:
     meta = post.metadata
     body = post.content.strip()
 
-    titulo = str(meta.get("title", path.stem))
+    # B4+B5: fallback a path.stem si title ausente, vacío o None
+    _title_raw = meta.get("title")
+    titulo = str(_title_raw) if _title_raw else path.stem
     tema = str(meta.get("tema", ""))
     libro = str(meta.get("libro_biblico_principal", ""))
     dominio = str(meta.get("dominio", "pastoral"))
@@ -148,7 +150,14 @@ def cmd_index(client: chromadb.PersistentClient, model: SentenceTransformer):
     metadatas = [_build_metadata_record(d) for d in parsed]
 
     embeddings = model.encode(texts, show_progress_bar=True).tolist()
-    col.add(ids=ids, embeddings=embeddings, metadatas=metadatas, documents=texts)
+
+    # B3: proteger batch — guardar meta solo si col.add() tiene éxito
+    try:
+        col.add(ids=ids, embeddings=embeddings, metadatas=metadatas, documents=texts)
+    except Exception as e:
+        print(f"Error durante col.add(): {e}")
+        print("El índice puede estar incompleto. Ejecuta --mode index para reconstruir.")
+        sys.exit(1)
 
     meta = save_index_meta(len(parsed), ["zk_pastoral", "zk_academico"])
     print(f"✓ Indexadas {len(parsed)} notas | {meta['indexed_at']}")
@@ -207,22 +216,30 @@ def cmd_query(
     model: SentenceTransformer,
     query_text: str,
     n_results: int = 5,
+    collection: str = "zk_pastoral",  # B7: colección seleccionable
 ):
-    """Query zk_pastoral and print ranked results."""
-    col = get_or_create_collection(client, "zk_pastoral")
+    """Query a collection and print ranked results."""
+    col = get_or_create_collection(client, collection)
 
     if col.count() == 0:
-        print("El índice está vacío. Ejecuta --mode index primero.")
+        print(f"La colección '{collection}' está vacía. Ejecuta --mode index primero.")
         return
 
     query_embedding = model.encode([f"query: {query_text}"])[0].tolist()
-    results = col.query(
-        query_embeddings=[query_embedding],
-        n_results=min(n_results, col.count()),
-        include=["metadatas", "distances"],
-    )
 
-    print(f'\nResultados para: "{query_text}"\n')
+    # B2: proteger col.query() ante fallos de ChromaDB en tiempo de ejecución
+    try:
+        results = col.query(
+            query_embeddings=[query_embedding],
+            n_results=min(n_results, col.count()),
+            include=["metadatas", "distances"],
+        )
+    except Exception as e:
+        print(f"Error al consultar ChromaDB: {e}")
+        print("Conexiones semánticas no disponibles. Las demás funciones siguen activas.")
+        return
+
+    print(f'\nResultados para: "{query_text}" [{collection}]\n')
     print(f"{'ID':<30} {'Titulo':<45} {'Tema':<28} {'Score':>6}")
     print("-" * 115)
 
@@ -239,9 +256,23 @@ def main():
     parser.add_argument("--mode", choices=["index", "update", "query"], required=True)
     parser.add_argument("--q", type=str, help="Texto de búsqueda (requerido para --mode query)")
     parser.add_argument("--n", type=int, default=5, help="Número de resultados (query mode)")
+    # B7: colección seleccionable — por defecto pastoral, permite academico en el futuro
+    parser.add_argument(
+        "--collection",
+        choices=list(ALLOWED_COLLECTIONS),
+        default="zk_pastoral",
+        help="Colección ChromaDB a consultar (default: zk_pastoral)",
+    )
     args = parser.parse_args()
 
-    client = get_client()
+    # B2: inicialización de ChromaDB con mensaje amigable si falla
+    try:
+        client = get_client()
+    except Exception as e:
+        print(f"Error: no se pudo inicializar ChromaDB — {e}")
+        print("Verifica que _Skills/semantic_index/ no esté corrompido o que haya espacio en disco.")
+        sys.exit(1)
+
     model = get_model()
 
     if args.mode == "index":
@@ -252,7 +283,7 @@ def main():
         if not args.q:
             print("Error: --q requerido para --mode query")
             sys.exit(1)
-        cmd_query(client, model, args.q, args.n)
+        cmd_query(client, model, args.q, args.n, args.collection)
 
 
 if __name__ == "__main__":
