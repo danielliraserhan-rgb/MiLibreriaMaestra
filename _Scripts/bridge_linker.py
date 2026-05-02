@@ -89,8 +89,10 @@ def jaccard(set_a: set, set_b: set) -> float:
     return len(set_a & set_b) / len(set_a | set_b)
 
 
-def semantic_score(inbox_body: str, temas_stem: str) -> float:
-    """Query ChromaDB for a specific doc. Returns 0.0 if index unavailable."""
+def semantic_score(inbox_body: str, temas_stem: str, collection: str = "zk_pastoral") -> float:
+    """Query ChromaDB for a specific doc. Returns 0.0 if index unavailable.
+    B7: collection param permite separar consultas pastoral/academico en el futuro.
+    """
     if not CHROMA_PATH.exists():
         return 0.0
     try:
@@ -98,7 +100,7 @@ def semantic_score(inbox_body: str, temas_stem: str) -> float:
         from sentence_transformers import SentenceTransformer
 
         client = chromadb.PersistentClient(path=str(CHROMA_PATH))
-        col = client.get_collection("zk_pastoral")
+        col = client.get_collection(collection)
         if col.count() == 0:
             return 0.0
 

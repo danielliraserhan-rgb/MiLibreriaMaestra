@@ -94,8 +94,10 @@ def replace_tag(content: str, old_tag: str, new_tag: str) -> str:
 
 
 def safe_filename(title: str) -> str:
-    """Convert title to a safe filename (no special chars)."""
-    clean = re.sub(r'[<>:"/\\|?*#\n\r\t]', "", title).strip()
+    """Convert title to a safe filename (no special chars).
+    B1: incluye \x00-\x1f para eliminar null bytes y todos los chars de control ASCII.
+    """
+    clean = re.sub(r'[\x00-\x1f<>:"/\\|?*#]', "", title).strip()
     return clean or "nota_sin_titulo"
 
 
@@ -139,18 +141,36 @@ def cmd_sync():
 
         tag = parse_tag(content)
         if tag != TAG_LISTO:
+            # B6: loggear solo cuando el tag es completamente desconocido (no inbox/procesado normales)
+            if tag is None:
+                label = note.get("title") or note_id
+                print(f"SKIP [sin tag reconocido]: {str(label)[:60]}")
             continue
 
         title = get_note_title(note, content)
-        filename = safe_filename(title) + ".md"
+        base_name = safe_filename(title)
+        filename = base_name + ".md"
         target = INBOX_DIR / filename
 
-        if target.exists():
+        # B8: notas sin título colapsan en "nota_sin_titulo" — buscar nombre único en lugar de perderlas
+        if base_name == "nota_sin_titulo" and target.exists():
+            counter = 1
+            while target.exists():
+                filename = f"{base_name}_{counter}.md"
+                target = INBOX_DIR / filename
+                counter += 1
+            print(f"WARN [título vacío]: guardando como Inbox/{filename}")
+        elif target.exists():
             print(f"SKIP [ya existe]: Inbox/{filename}")
             continue
 
         body = get_note_body(content)
-        target.write_text(body, encoding="utf-8")
+        # B1: proteger la escritura ante nombres de archivo con caracteres residuales problemáticos
+        try:
+            target.write_text(body, encoding="utf-8")
+        except (ValueError, OSError) as e:
+            print(f"ERROR al escribir Inbox/{filename}: {e}")
+            continue
         print(f"✓ Creado: Inbox/{filename}")
 
         new_content = replace_tag(content, TAG_LISTO, TAG_PROCESADO)
