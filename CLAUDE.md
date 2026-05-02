@@ -1,4 +1,4 @@
-# CLAUDE.md v3 — MiLibreriaMaestra
+# CLAUDE.md v3.2 — MiLibreriaMaestra
 
 > Voz, teología, marcos y líneas rojas: `ContextoMaestro/ContextoMaestro.md`
 > Este archivo cubre arquitectura operativa únicamente.
@@ -11,6 +11,25 @@
 2. **Simplicity First:** Prioriza siempre el enfoque mínimo viable. Cuando generes notas atómicas (ZK) o MOCs, usa síntesis extrema y cero texto de relleno ("verborrea de IA"). Respeta la voz original del documento.
 3. **Surgical Changes:** Jamás reescribas un archivo `.md` completo para aplicar un cambio menor. Toda modificación de texto debe ser quirúrgica (solo las líneas afectadas). Confía enteramente en los scripts de `_Scripts/` para cambios estructurales o inyección masiva de YAML.
 4. **Goal-Driven Execution:** Asegura el resultado de tu Modo Activo. Tienes estrictamente prohibido avanzar de la Fase 1 a la Fase 2 sin la aprobación explícita de Daniel, y antes de terminar, debes verificar empíricamente que se lograron los entregables exactos (ej. creación de las N notas ZK correspondientes al lote).
+
+## §0.5 Rutas del Sistema
+
+**Vault:** `/Users/danielliraserhan/Desktop/MiLibreriaMaestra—DanielLira/`
+
+| Componente | Ruta relativa al vault |
+|---|---|
+| Scripts Python | `_Scripts/` |
+| SKILL.md de skills | `skills-sistema-v3/<nombre-skill>/SKILL.md` |
+| Patrones y estado | `_Skills/` |
+| MOCs generados | `MapasDeContenido—MOCs/` |
+| ZK Pastoral | `09_Zettelkasten/pastoral/` |
+| ZK Académico | `09_Zettelkasten/academico/` |
+| ContextoMaestro | `ContextoMaestro/` |
+
+**Scripts disponibles en `_Scripts/`:**
+`inbox_triage.py` · `modo_selector.py` · `write_moc.py` · `scrivener_bridge.py` · `markdown_cleaner.py` · `mass_convert.py` · `scan_vault.py` · `zk_fix_title_field.py` · `zk_rename.py`
+
+---
 
 ## §1 Identidad del Sistema
 
@@ -46,8 +65,6 @@ Cada tema: `01_Libros` / `02_EsquemasDeClase` / `03_ClasesEnVivo` / `04_NotasSin
 **Punto de entrada siempre:** `modo-selector` → lee `activePatterns.json` → llama a `inbox-triage`
 
 ```
-**Punto de entrada siempre:** `modo-selector` → lee `activePatterns.json` → llama a `inbox-triage`
-
 Daniel trae archivo → Inbox/ (o llega vía Inbox/scrivener-sync/ con source: scrivener)
 ↓
 modo-selector → inbox-triage Fase 1 → detecta MODO + dominio + tema
@@ -116,12 +133,12 @@ PROCESS_LOG.md updated
 | **Espejo de voz vs patrones aprobados**                                          | `voice-trainer`                     |
 | **Guía de formato por tipo de contenido**                                        | `format-adapter`                    |
 | **Detectar archivo nuevo desde Scrivener**                                       | `scrivener-bridge`                  |
-|                                                                                  |                                     |
-|                                                                                  |                                     |
+| **Limpiar formato visual RegEx**                                                 | `markdown-cleaner`                  |
+
 ### Reglas para Skills de Soporte (100% Python)
 * **scrivener-bridge:** Cuando detectes cambios en `Inbox/scrivener-sync/`, lista los archivos pero NO fusiones los textos manualmente. Ejecuta siempre: `python3 _Scripts/scrivener_bridge.py "<origen>" "<destino>"` para preservar el YAML v2.
 * **moc-builder:** Escanea con `scan_vault.py`, agrupa las notas con tu criterio editorial, y TIENES PROHIBIDO escribir el archivo final en el vault. Para guardar, debes compilar un JSON y ejecutar el comando: `python3 _Scripts/write_moc.py "<Tema>" '<json_payload>'`.
-* **markdown-cleaner:** NUNCA intentes corregir espacios o tabulaciones reescribiendo el archivo. Si Daniel pide "limpiar el formato visual" o arreglar espacios, ejecuta en la terminal: python3 _Scripts/format_adapter.py "<ruta_del_archivo>"
+* **markdown-cleaner:** NUNCA intentes corregir espacios o tabulaciones reescribiendo el archivo. Si Daniel pide "limpiar el formato visual" o arreglar espacios, ejecuta en la terminal: python3 _Scripts/markdown_cleaner.py "<ruta_del_archivo>"
 ---
 
 ## §6 Contrato YAML v2
@@ -166,12 +183,14 @@ fecha_actualizacion: ""
 | Archivo | Propósito |
 |---|---|
 | `_Skills/activePatterns.json` | Patrones aprobados v2.0 — organizados por categoría (estructura, teologia, hermeneutica, voz). Usar `load_for` para cargar solo las categorías relevantes a la tarea. |
-| `_Skills/VAULT_INDEX.md` | Índice comprimido del vault: fuentes procesadas, clusters ZK, notas más conectadas. Cargar al inicio de sesiones de investigación o coach. Regenerar con `scan_vault.py --mode index`. |
+| `_Skills/VAULT_INDEX.md` | Índice comprimido del vault: fuentes procesadas, clusters ZK, notas más conectadas. Cargar al inicio de sesiones de investigación o coach. Regenerar con `python3 _Scripts/scan_vault.py --mode index`. |
 | `_Skills/PROCESS_LOG.md` | Bitácora append-only |
 | `ContextoMaestro/ContextoMaestro.md` | Fuente de verdad: voz, teología, líneas rojas |
 | `ContextoMaestro/00_ESENCIAL.md` | Cargar siempre. Resumen ejecutivo del ContextoMaestro |
 | `ContextoMaestro/04_voz.md` | Cargar solo para tareas pastorales o sesiones de coach |
 | `Inbox/scrivener-sync/` | Carpeta monitoreada: archivos que llegan desde Scrivener |
+| `MapasDeContenido—MOCs/` | MOCs generados por `write_moc.py`. No editar manualmente. |
+| `skills-sistema-v3/<skill>/SKILL.md` | Definiciones de skills del sistema. Ruta raíz de todos los skills del vault. |
 
 **Protocolo de carga por tipo de sesión:**
 
