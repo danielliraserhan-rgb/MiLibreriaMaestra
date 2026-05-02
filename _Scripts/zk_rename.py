@@ -11,7 +11,7 @@ import yaml
 from pathlib import Path
 from collections import defaultdict
 
-VAULT = Path("/home/user/MiLibreriaMaestra")
+VAULT = Path(__file__).parent.parent
 ZK_PASTORAL = VAULT / "09_Zettelkasten" / "pastoral"
 PROBLEMATIC_CHARS = r'[:"\/\\?*|<>]'
 

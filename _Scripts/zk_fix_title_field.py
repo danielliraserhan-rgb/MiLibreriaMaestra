@@ -9,7 +9,7 @@ import re
 import yaml
 from pathlib import Path
 
-VAULT = Path("/home/user/MiLibreriaMaestra")
+VAULT = Path(__file__).parent.parent
 ZK_PASTORAL = VAULT / "09_Zettelkasten" / "pastoral"
 PROBLEMATIC_CHARS = r'[:"\/\\?*|<>]'
 

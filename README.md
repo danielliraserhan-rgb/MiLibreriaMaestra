@@ -5,9 +5,9 @@
 
 **Autor:** Daniel Lira Serhan
 
-**Versión:** `v3.1 (Arquitectura Híbrida)`
+**Versión:** `v3.2 (Arquitectura Híbrida — Auditada)`
 
-**Fecha:** 29 de abril de 2026
+**Fecha:** 2 de mayo de 2026
 
 **Repositorio:** `danielliraserhan-rgb/MiLibreriaMaestra`
 

@@ -35,7 +35,7 @@ tags: [moc]
         contenido += "\n"
 
     base_path = os.getcwd()
-    moc_dir = os.path.join(base_path, "MapasDeContenido-MOCs")
+    moc_dir = os.path.join(base_path, "MapasDeContenido—MOCs")
     os.makedirs(moc_dir, exist_ok=True)
     
     filepath = os.path.join(moc_dir, f"MOC — {tema}.md")
