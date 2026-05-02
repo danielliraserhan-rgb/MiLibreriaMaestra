@@ -38,6 +38,6 @@ def clean_markdown(filepath):
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
-        print("Uso: python3 _Scripts/format_adapter.py <ruta_al_archivo>")
+        print("Uso: python3 _Scripts/markdown_cleaner.py <ruta_al_archivo>")
     else:
         clean_markdown(sys.argv[1])
