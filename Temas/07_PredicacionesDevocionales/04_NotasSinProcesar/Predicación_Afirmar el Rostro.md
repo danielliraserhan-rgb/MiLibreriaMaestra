@@ -1,3 +1,25 @@
+---
+title: "Predicación_Afirmar el Rostro"
+tipo: "notas_sin_procesar"
+tema: "07_PredicacionesDevocionales"
+libro_biblico_principal: ""
+personajes: []
+versiculos_citados: []
+temas_principales: []
+seo_keywords: []
+fecha: "2026-05-02"
+estado: "en_proceso"
+dominio: "pastoral"
+modo: "5-nota-tematica"
+fase: ""
+serie: ""
+fuente: ""
+author_quotes: []
+zettelkasten_notes: []
+coaching_notes: []
+version_yaml: "2.0"
+fecha_actualizacion: "2026-05-02"
+---
 Afirmar el Rostro
 
 ![horizontal line](data:image/png;base64...)
