@@ -4,10 +4,25 @@
   "description": "Patrones de voz, estructura y teología detectados en el corpus de Daniel Lira. Solo crecen con aprobación explícita. El pattern-harvester lee este archivo al inicio de cada sesión y lo actualiza solo tras OK de Daniel.",
   "load_for": {
     "pastoral_general": ["estructura", "teologia", "hermeneutica"],
-    "coach_s2": ["voz", "estructura"],
+    "coach_s2": ["voz", "estructura", "semantic"],
     "exegesis": ["hermeneutica", "teologia"],
     "academico": ["teologia", "hermeneutica"],
     "bulk_ingest": ["teologia", "hermeneutica", "estructura"]
+  },
+  "stimulus_protocol": {
+    "version": "1.0",
+    "enabled": true,
+    "model": "intfloat/multilingual-e5-small",
+    "chroma_path": "_Skills/semantic_index/",
+    "collection": "zk_pastoral",
+    "n_results": 3,
+    "output_label": "Conexiones ZK sugeridas",
+    "display_format": "ID | titulo | tema | score",
+    "stimulus_questions": [
+      "¿Qué nota ZK expande esta idea teológica?",
+      "¿Qué concepto bíblico conecta con lo que estás escribiendo?",
+      "¿Hay una tensión sin resolver en tu argumento que una nota ZK ya trate?"
+    ]
   },
   "patterns": {
     "estructura": [
