@@ -96,8 +96,9 @@ def replace_tag(content: str, old_tag: str, new_tag: str) -> str:
 def safe_filename(title: str) -> str:
     """Convert title to a safe filename (no special chars).
     B1: incluye \x00-\x1f para eliminar null bytes y todos los chars de control ASCII.
+    Bug 6: trunca a 200 chars para evitar OSError en filesystems con límite de 255 bytes.
     """
-    clean = re.sub(r'[\x00-\x1f<>:"/\\|?*#]', "", title).strip()
+    clean = re.sub(r'[\x00-\x1f<>:"/\\|?*#]', "", title).strip()[:200]
     return clean or "nota_sin_titulo"
 
 
@@ -176,10 +177,14 @@ def cmd_sync():
         new_content = replace_tag(content, TAG_LISTO, TAG_PROCESADO)
         if update_note(note_id, new_content):
             print(f"  → Nota actualizada a {TAG_PROCESADO}")
+            synced += 1
         else:
-            print(f"  ✗ No se pudo actualizar la nota en Apple Notes")
-
-        synced += 1
+            # Bug 5: desync — archivo escrito pero nota sigue como #listo
+            # No contar como sincronizada; próxima ejecución detectará "ya existe" y quedará atascada
+            print(
+                f"  ✗ DESYNC: archivo escrito pero Apple Note no se pudo marcar {TAG_PROCESADO}. "
+                f"Marca manualmente la nota o elimina Inbox/{filename} para que se reintente."
+            )
 
     print(f"\nSincronizadas: {synced} nota(s)")
 

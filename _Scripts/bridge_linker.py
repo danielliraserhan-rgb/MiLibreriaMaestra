@@ -89,6 +89,25 @@ def jaccard(set_a: set, set_b: set) -> float:
     return len(set_a & set_b) / len(set_a | set_b)
 
 
+def _get_chroma_col(collection: str):
+    """Lazy singleton: instancia ChromaDB y el modelo una sola vez por proceso.
+    Bug 3: evita reinstanciar SentenceTransformer en cada llamada a semantic_score.
+    """
+    import chromadb
+    from sentence_transformers import SentenceTransformer
+
+    if not hasattr(_get_chroma_col, "_cache"):
+        _get_chroma_col._cache = {}
+
+    if collection not in _get_chroma_col._cache:
+        client = chromadb.PersistentClient(path=str(CHROMA_PATH))
+        col = client.get_collection(collection)
+        model = SentenceTransformer("intfloat/multilingual-e5-small")
+        _get_chroma_col._cache[collection] = (col, model)
+
+    return _get_chroma_col._cache[collection]
+
+
 def semantic_score(inbox_body: str, temas_stem: str, collection: str = "zk_pastoral") -> float:
     """Query ChromaDB for a specific doc. Returns 0.0 if index unavailable.
     B7: collection param permite separar consultas pastoral/academico en el futuro.
@@ -96,15 +115,10 @@ def semantic_score(inbox_body: str, temas_stem: str, collection: str = "zk_pasto
     if not CHROMA_PATH.exists():
         return 0.0
     try:
-        import chromadb
-        from sentence_transformers import SentenceTransformer
-
-        client = chromadb.PersistentClient(path=str(CHROMA_PATH))
-        col = client.get_collection(collection)
+        col, model = _get_chroma_col(collection)
         if col.count() == 0:
             return 0.0
 
-        model = SentenceTransformer("intfloat/multilingual-e5-small")
         emb = model.encode([f"query: {inbox_body[:300]}"])[0].tolist()
 
         results = col.query(
@@ -232,6 +246,11 @@ def cmd_inject(confirm: bool):
     injected = 0
     for prop in proposals:
         temas_path = VAULT_ROOT / prop["temas_file"]
+
+        # Bug 4: guard de path traversal — rechazar rutas fuera del vault root
+        if not temas_path.is_relative_to(VAULT_ROOT):
+            print(f"SKIP [ruta fuera del vault]: {prop['temas_file']}")
+            continue
 
         # Safety guard: NEVER touch anything inside Inbox/
         try:
