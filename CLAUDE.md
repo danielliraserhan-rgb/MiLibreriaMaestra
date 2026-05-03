@@ -43,10 +43,33 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 | `bridge_linker.py` | Vincula archivos Inbox con notas ZK existentes (3 tiers: keywords, versículos, semántico). `--mode scan\|propose\|inject --confirm` | — |
 | `apple_notes_bridge.py` | Sincroniza Apple Notes (carpeta "MiLibreria — Inbox") → `Inbox/`. `--mode sync\|status\|clean` | MCP `mcp__Read_and_Write_Apple_Notes__` activo |
 
-**Instalar dependencias opcionales** (si no están disponibles, los módulos 1–3 y `mass_convert.py` fallarán con `ModuleNotFoundError`):
+**Instalar dependencias** (Python 3.11+; si no están disponibles, los módulos 1–3 y `mass_convert.py` fallarán con `ModuleNotFoundError`):
 ```bash
-pip install markitdown frontmatter chromadb sentence_transformers
+pip install -r requirements.txt
 ```
+
+---
+
+## §0.6 Referencia de Comandos de Scripts
+
+Todos los scripts se ejecutan desde la raíz del vault. Usan `Path(__file__).parent.parent` para resolver rutas — no requieren `cd`.
+
+| Script | Comando completo |
+|---|---|
+| **modo_selector** | `python3 _Scripts/modo_selector.py "Inbox/archivo.md"` → devuelve JSON `{status, action}` |
+| **inbox_triage** | `python3 _Scripts/inbox_triage.py "Inbox/archivo.md" '{"tipo":"X","tema":"01_Origenes","dominio":"pastoral","modo":"1","destino":"Temas/01_Origenes/01_Libros/"}'` |
+| **write_moc** | `python3 _Scripts/write_moc.py "Tema" '{"Grupo1":["[[Nota A]]","[[Nota B]]"]}'` |
+| **scan_vault (gaps)** | `python3 _Scripts/scan_vault.py --mode gaps` |
+| **scan_vault (index)** | `python3 _Scripts/scan_vault.py --mode index` |
+| **markdown_cleaner** | `python3 _Scripts/markdown_cleaner.py "Temas/01_Origenes/archivo.md"` |
+| **mass_convert** | `python3 _Scripts/mass_convert.py "Inbox"` — convierte PDF/DOCX en el directorio dado; mueve originales a `_Originales_Procesados/` |
+| **scrivener_bridge** | `python3 _Scripts/scrivener_bridge.py "Inbox/scrivener-sync/archivo.md" "Temas/.../destino.md"` |
+| **scrivener_export** | `python3 _Scripts/scrivener_export.py "Temas/.../archivo.md" [nombre_salida.md] [--preview]` |
+| **semantic_indexer** | `python3 _Scripts/semantic_indexer.py --mode index` · `--mode update` · `--mode query --q "texto"` |
+| **bridge_linker** | `python3 _Scripts/bridge_linker.py --mode scan` · `--mode propose` · `--mode inject --confirm` |
+| **apple_notes_bridge** | `python3 _Scripts/apple_notes_bridge.py --mode sync` · `--mode status` · `--mode clean` *(requiere MCP `mcp__Read_and_Write_Apple_Notes__`)* |
+| **zk_rename** | `python3 _Scripts/zk_rename.py` — renombra todas las notas ZK en `09_Zettelkasten/pastoral/` y actualiza wikilinks en el vault |
+| **zk_fix_title_field** | `python3 _Scripts/zk_fix_title_field.py` — corrige campo `title` → `titulo` en notas ZK |
 
 ---
 
