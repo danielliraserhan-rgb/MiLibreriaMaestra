@@ -3,6 +3,9 @@ import sys
 import json
 import shutil
 from datetime import datetime
+from pathlib import Path
+
+VAULT_ROOT = Path(__file__).parent.parent
 
 def triage_file(filepath, meta_json_str):
     if not os.path.exists(filepath):
@@ -37,6 +40,11 @@ zettelkasten_notes: []
 coaching_notes: []
 version_yaml: "2.0"
 fecha_actualizacion: "{datetime.now().strftime('%Y-%m-%d')}"
+scrivener_sync:
+  estado: ""
+  ultima_sync: ""
+  ultima_export: ""
+  scrivener_nombre: ""
 ---
 """
 
@@ -52,20 +60,25 @@ fecha_actualizacion: "{datetime.now().strftime('%Y-%m-%d')}"
 
     final_content = yaml_content + content
 
-    # Asegurar directorio destino
+    # Asegurar directorio destino — validar que quede dentro del vault
     destino_dir = meta.get('destino', '')
     if not destino_dir:
         print("❌ Error: No se especificó carpeta destino.")
         return
 
-    os.makedirs(destino_dir, exist_ok=True)
-    dest_filepath = os.path.join(destino_dir, os.path.basename(filepath))
+    destino_path = (VAULT_ROOT / destino_dir).resolve()
+    if not destino_path.is_relative_to(VAULT_ROOT.resolve()):
+        print(f"❌ Error: destino fuera del vault ({destino_dir})")
+        return
+
+    destino_path.mkdir(parents=True, exist_ok=True)
+    dest_filepath = destino_path / os.path.basename(filepath)
 
     # Escribir y mover
     with open(filepath, 'w', encoding='utf-8') as f:
         f.write(final_content)
 
-    shutil.move(filepath, dest_filepath)
+    shutil.move(filepath, str(dest_filepath))
     print(f"✅ Triage completado: {dest_filepath}")
 
 if __name__ == "__main__":

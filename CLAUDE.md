@@ -15,7 +15,7 @@
 
 ## §0.5 Rutas del Sistema
 
-**Vault:** `/Users/danielliraserhan/Desktop/MiLibreriaMaestra—DanielLira/`
+**Vault:** raíz del repositorio (todos los scripts usan rutas relativas a `__file__`)
 
 | Componente | Ruta relativa al vault |
 |---|---|
@@ -94,7 +94,7 @@ PROCESS_LOG.md updated
 
 **Regla de oro:** `inbox-triage` siempre primero · `zettelkasten-forge` antes del harvester · nunca avanzar sin OK explícito de Daniel · `pattern-harvester` solo si ZK ≥ 8 o contenido teológicamente nuevo (Modo 7: siempre diferir).
 
-**Motor de escritura:** `obsidian-markdown` es la ÚNICA herramienta para crear/editar .md en el vault. Prohibido: `cat`, `echo >>`, `sed`, `awk`, terminal para markdown.
+**Motor de escritura:** skill `/obsidian-markdown` (kepano/obsidian-skills, instalado en `skills-sistema-v3/obsidian-markdown/`). Aplica siempre al crear o editar `.md` en el vault. Si MCP `obsidian` está disponible (Obsidian corriendo localmente), úsalo como transporte. Fallback: herramientas Read/Write de Claude Code. Prohibido en cualquier caso: `cat`, `echo >>`, `sed`, `awk`, terminal para markdown.
 
 ---
 
@@ -119,6 +119,7 @@ PROCESS_LOG.md updated
 | -------------------------------------------------------------------------------- | ----------------------------------- |
 | Nuevo archivo en inbox                                                           | `modo-selector`                     |
 | **5+ archivos en inbox (carga masiva)**                                          | `bulk-ingest`                       |
+| **Convertir PDF/DOCX/PPTX/XLSX a .md antes del triage**                         | `conversion-documentos`             |
 | Diagnóstico de tipo y generación de JSON payload para inyección YAML vía Python. | `inbox-triage`                      |
 | Texto pastoral: oral + escrito, o borrador                                       | `modo-ab-seccion-mixta`             |
 | Diagnóstico / mapa estructural                                                   | `modo-c-esquema-editorial`          |
@@ -136,6 +137,9 @@ PROCESS_LOG.md updated
 | **Detectar archivo nuevo desde Scrivener**                                       | `scrivener-bridge`                  |
 | **Exportar archivo del vault hacia Scrivener**                                   | `scrivener-export`                  |
 | **Limpiar formato visual RegEx**                                                 | `markdown-cleaner`                  |
+| **Crear/editar Obsidian Flavored Markdown** (wikilinks, callouts, embeds)        | `obsidian-markdown`                 |
+| **Crear/editar Obsidian Bases** (.base — vistas, filtros, fórmulas)              | `obsidian-bases`                    |
+| **Crear/editar JSON Canvas** (.canvas — diagramas de nodos)                      | `json-canvas`                       |
 
 ### Reglas para Skills de Soporte (100% Python)
 * **scrivener-bridge:** Cuando detectes cambios en `Inbox/scrivener-sync/`, lista los archivos pero NO fusiones los textos manualmente. Ejecuta siempre: `python3 _Scripts/scrivener_bridge.py "<origen>" "<destino>"` para preservar el YAML v2.

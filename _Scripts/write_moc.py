@@ -1,7 +1,19 @@
+import re
 import sys
 import json
 import os
 from datetime import datetime
+from pathlib import Path
+
+VAULT_ROOT = Path(__file__).parent.parent
+
+
+def _safe_tema(tema: str) -> str:
+    """Elimina caracteres problemáticos para nombres de archivo y path traversal."""
+    clean = re.sub(r'[/\\:*?"<>|]', '', tema).strip()
+    clean = clean.lstrip('.')  # eliminar puntos iniciales residuos de ../
+    return clean or "SinTema"
+
 
 def write_moc(tema, json_data_str):
     try:
@@ -10,18 +22,20 @@ def write_moc(tema, json_data_str):
         print("❌ Error: JSON inválido proporcionado por Claude.")
         return
 
+    safe = _safe_tema(tema)
+
     fecha_hoy = datetime.now().strftime('%Y-%m-%d')
-    
+
     contenido = f"""---
-title: "MOC — {tema}"
+title: "MOC — {safe}"
 date: {fecha_hoy}
 dominio: mixto
 tipo: MOC
-tema: "{tema}"
+tema: "{safe}"
 tags: [moc]
 ---
 
-# MOC — {tema}
+# MOC — {safe}
 
 > Mapa de contenido. Última actualización: {fecha_hoy}.
 
@@ -34,11 +48,10 @@ tags: [moc]
             contenido += f"- [[{titulo_limpio}]]\n"
         contenido += "\n"
 
-    base_path = os.getcwd()
-    moc_dir = os.path.join(base_path, "MapasDeContenido—MOCs")
-    os.makedirs(moc_dir, exist_ok=True)
-    
-    filepath = os.path.join(moc_dir, f"MOC — {tema}.md")
+    moc_dir = VAULT_ROOT / "MapasDeContenido—MOCs"
+    moc_dir.mkdir(exist_ok=True)
+
+    filepath = moc_dir / f"MOC — {safe}.md"
 
     with open(filepath, 'w', encoding='utf-8') as f:
         f.write(contenido)
