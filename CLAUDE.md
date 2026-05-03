@@ -119,6 +119,7 @@ PROCESS_LOG.md updated
 | -------------------------------------------------------------------------------- | ----------------------------------- |
 | Nuevo archivo en inbox                                                           | `modo-selector`                     |
 | **5+ archivos en inbox (carga masiva)**                                          | `bulk-ingest`                       |
+| **Convertir PDF/DOCX/PPTX/XLSX a .md antes del triage**                         | `conversion-documentos`             |
 | Diagnóstico de tipo y generación de JSON payload para inyección YAML vía Python. | `inbox-triage`                      |
 | Texto pastoral: oral + escrito, o borrador                                       | `modo-ab-seccion-mixta`             |
 | Diagnóstico / mapa estructural                                                   | `modo-c-esquema-editorial`          |
