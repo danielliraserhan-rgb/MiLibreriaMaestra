@@ -2,6 +2,11 @@
 .trash/
 .obsidian/workspace.json
 .obsidian/workspace-mobile.json
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
 # Claves y credenciales — nunca en el repo
 *.pem
 *.key
