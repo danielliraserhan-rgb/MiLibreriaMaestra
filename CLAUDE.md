@@ -1,3 +1,9 @@
+# CLAUDE.md
+
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+
+---
+
 # CLAUDE.md v3.2 — MiLibreriaMaestra
 
 > Voz, teología, marcos y líneas rojas: `ContextoMaestro/ContextoMaestro.md`
@@ -28,7 +34,19 @@
 | ContextoMaestro | `ContextoMaestro/` |
 
 **Scripts disponibles en `_Scripts/`:**
-`inbox_triage.py` · `modo_selector.py` · `write_moc.py` · `scrivener_bridge.py` · `scrivener_export.py` · `markdown_cleaner.py` · `mass_convert.py` · `scan_vault.py` · `zk_fix_title_field.py` · `zk_rename.py`
+`inbox_triage.py` · `modo_selector.py` · `write_moc.py` · `scrivener_bridge.py` · `scrivener_export.py` · `markdown_cleaner.py` · `mass_convert.py` · `scan_vault.py` · `zk_fix_title_field.py` · `zk_rename.py` · `semantic_indexer.py` · `apple_notes_bridge.py` · `bridge_linker.py`
+
+**Scripts del pipeline semántico (Módulos 1–3):**
+| Script | Uso | Dependencias externas |
+|---|---|---|
+| `semantic_indexer.py` | Índice ChromaDB para notas ZK. `--mode index\|update\|query --q "..."` | `frontmatter`, `chromadb`, `sentence_transformers` |
+| `bridge_linker.py` | Vincula archivos Inbox con notas ZK existentes (3 tiers: keywords, versículos, semántico). `--mode scan\|propose\|inject --confirm` | — |
+| `apple_notes_bridge.py` | Sincroniza Apple Notes (carpeta "MiLibreria — Inbox") → `Inbox/`. `--mode sync\|status\|clean` | MCP `mcp__Read_and_Write_Apple_Notes__` activo |
+
+**Instalar dependencias opcionales** (si no están disponibles, los módulos 1–3 y `mass_convert.py` fallarán con `ModuleNotFoundError`):
+```bash
+pip install markitdown frontmatter chromadb sentence_transformers
+```
 
 ---
 
@@ -134,6 +152,8 @@ PROCESS_LOG.md updated
 | **Análisis de voz + teología (S2)**                                              | `writing-coach`                     |
 | **Espejo de voz vs patrones aprobados**                                          | `voice-trainer`                     |
 | **Guía de formato por tipo de contenido**                                        | `format-adapter`                    |
+| **Sincronizar Apple Notes → Inbox/**                                             | script: `apple_notes_bridge.py --mode sync` |
+| **Vincular archivos Inbox con notas ZK existentes**                              | script: `bridge_linker.py --mode propose` |
 | **Detectar archivo nuevo desde Scrivener**                                       | `scrivener-bridge`                  |
 | **Exportar archivo del vault hacia Scrivener**                                   | `scrivener-export`                  |
 | **Limpiar formato visual RegEx**                                                 | `markdown-cleaner`                  |
