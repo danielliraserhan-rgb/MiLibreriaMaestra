@@ -15,7 +15,7 @@
 
 ## §0.5 Rutas del Sistema
 
-**Vault:** `/Users/danielliraserhan/Desktop/MiLibreriaMaestra—DanielLira/`
+**Vault:** raíz del repositorio (todos los scripts usan rutas relativas a `__file__`)
 
 | Componente | Ruta relativa al vault |
 |---|---|
