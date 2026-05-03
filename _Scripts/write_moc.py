@@ -2,6 +2,9 @@ import sys
 import json
 import os
 from datetime import datetime
+from pathlib import Path
+
+VAULT_ROOT = Path(__file__).parent.parent
 
 def write_moc(tema, json_data_str):
     try:
@@ -34,11 +37,10 @@ tags: [moc]
             contenido += f"- [[{titulo_limpio}]]\n"
         contenido += "\n"
 
-    base_path = os.getcwd()
-    moc_dir = os.path.join(base_path, "MapasDeContenido—MOCs")
-    os.makedirs(moc_dir, exist_ok=True)
-    
-    filepath = os.path.join(moc_dir, f"MOC — {tema}.md")
+    moc_dir = VAULT_ROOT / "MapasDeContenido—MOCs"
+    moc_dir.mkdir(exist_ok=True)
+
+    filepath = moc_dir / f"MOC — {tema}.md"
 
     with open(filepath, 'w', encoding='utf-8') as f:
         f.write(contenido)
