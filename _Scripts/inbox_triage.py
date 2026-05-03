@@ -40,6 +40,11 @@ zettelkasten_notes: []
 coaching_notes: []
 version_yaml: "2.0"
 fecha_actualizacion: "{datetime.now().strftime('%Y-%m-%d')}"
+scrivener_sync:
+  estado: ""
+  ultima_sync: ""
+  ultima_export: ""
+  scrivener_nombre: ""
 ---
 """
 
