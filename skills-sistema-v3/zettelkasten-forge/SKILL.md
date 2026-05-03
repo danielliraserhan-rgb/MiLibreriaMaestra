@@ -1,6 +1,6 @@
 ---
 name: zettelkasten-forge
-description: "Genera notas atómicas Zettelkasten a partir de contenido procesado. Actívalo después de modo-ab, modo-e, modo-c, inbox-triage, o notas-maestria — cuando el pipeline del modo lo requiera. Produce notas ZK con IDs canónicos (ZK-YYYYMMDD-HHMM), nombres de archivo formato 'ZK-YYYYMMDD-HHMM Titulo Corto.md', wikilinks, YAML v2 completo, y campo coaching_notes para loops con S2. Nunca guarda notas sin OK explícito de Daniel."
+description: "Genera notas atómicas Zettelkasten a partir de contenido procesado. Actívalo después de modo-ab, modo-e, modo-c, inbox-triage, o notas-maestria — cuando el pipeline del modo lo requiera. Produce notas ZK con IDs canónicos (ZK-YYYYMMDD-HHMM-NNN), nombres de archivo formato 'ZK-YYYYMMDD-HHMM-NNN Titulo Corto.md', wikilinks, YAML v2 completo, y campo coaching_notes para loops con S2. Nunca guarda notas sin OK explícito de Daniel."
 ---
 
 # ZETTELKASTEN-FORGE — Generador de Notas Atómicas
@@ -34,11 +34,11 @@ Identificar internamente:
 Para cada nota candidata, presentar:
 
 ```
-Nombre de archivo: ZK-YYYYMMDD-HHMM Titulo Corto.md
-ID: ZK-YYYYMMDD-HHMM
+Nombre de archivo: ZK-YYYYMMDD-HHMM-NNN Titulo Corto.md
+ID: ZK-YYYYMMDD-HHMM-NNN
 Título: [título atómico completo — una sola idea]
 Idea central: [una oración]
-Wikilinks sugeridos: [[ZK-YYYYMMDD-HHMM Titulo Corto]] [[ZK-YYYYMMDD-HHMM Titulo Corto]]
+Wikilinks sugeridos: [[ZK-YYYYMMDD-HHMM-NNN Titulo Corto]] [[ZK-YYYYMMDD-HHMM-NNN Titulo Corto]]
 Dominio: pastoral | academico
 ```
 
@@ -59,7 +59,7 @@ Esperar OK de Daniel (puede aprobar todas, algunas, o pedir cambios).
 
 Solo tras OK explícito de Daniel.
 
-**Nombre de archivo:** `ZK-YYYYMMDD-HHMM Titulo Corto.md` (mismo formato propuesto en Fase 2).
+**Nombre de archivo:** `ZK-YYYYMMDD-HHMM-NNN Titulo Corto.md` (mismo formato propuesto en Fase 2).
 
 ### REGLA DE CONTENIDO — Autoría Exclusiva (70/30)
 
@@ -74,7 +74,7 @@ Usar `obsidian-markdown` para crear cada nota con este formato:
 
 ```yaml
 ---
-id: ZK-YYYYMMDD-HHMM
+id: ZK-YYYYMMDD-HHMM-NNN
 titulo: ""          # Afirmación completa
 tipo: zettelkasten
 subtipo: ""         # conceptual | argumental | exegetica | narrativa | conexion

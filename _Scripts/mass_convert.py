@@ -33,14 +33,20 @@ def batch_convert(directory):
         
         if ext in ['.pdf', '.docx', '.pptx', '.xlsx', '.html', '.txt']:
             try:
-                print(f"📦 Procesando: {filename}...")
-                result = md.convert(filepath)
                 new_filename = f"{name_part}.md"
                 new_filepath = os.path.join(target_dir, new_filename)
-                
+
+                if os.path.exists(new_filepath):
+                    print(f"⚠️  Saltado (ya existe): {new_filename}")
+                    count_error += 1
+                    continue
+
+                print(f"📦 Procesando: {filename}...")
+                result = md.convert(filepath)
+
                 with open(new_filepath, "w", encoding="utf-8") as f:
                     f.write(result.text_content)
-                
+
                 shutil.move(filepath, os.path.join(originals_dir, filename))
                 count_success += 1
                 print(f"✅ Convertido: {new_filename}")
