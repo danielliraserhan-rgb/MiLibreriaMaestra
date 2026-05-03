@@ -1,3 +1,32 @@
+---
+author_quotes: []
+coaching_notes: []
+dominio: pastoral
+estado: en_proceso
+fase: ''
+fecha: '2026-05-03'
+fecha_actualizacion: '2026-05-03'
+fuente: ''
+libro_biblico_principal: ''
+modo: 7-grupos-conexion
+nota_puente: '[[La esperanza Segura 5]]'
+personajes: []
+scrivener_sync:
+  estado: ''
+  scrivener_nombre: ''
+  ultima_export: ''
+  ultima_sync: ''
+seo_keywords: []
+serie: ''
+tema: 07_PredicacionesDevocionales
+temas_principales: []
+tipo: clase_en_vivo
+title: Predicación_La esperanza Segura 5
+versiculos_citados: []
+version_yaml: '2.0'
+zettelkasten_notes: []
+---
+
 Esperanza segura
 Mensaje para Convivencia Familiar Campus San Agustín - 2 Sept 2020
 

@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """
-bridge_linker.py — Módulo 2: vincula archivos Inbox con notas en Temas/07
+bridge_linker.py — Módulo 2: vincula archivos Inbox con notas puente en Temas/
 Matching 3 tiers: (1) Jaccard keywords, (2) versículos compartidos, (3) semántico ChromaDB
-NUNCA modifica archivos en Inbox/
+NUNCA modifica archivos en Inbox/ (salvo inject --confirm que agrega nota_puente al YAML)
 
 Uso:
   python _Scripts/bridge_linker.py --mode scan
@@ -13,7 +13,9 @@ Uso:
 import argparse
 import json
 import re
+import subprocess
 import sys
+import unicodedata
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -21,9 +23,35 @@ import frontmatter
 
 VAULT_ROOT = Path(__file__).parent.parent
 INBOX_DIR = VAULT_ROOT / "Inbox"
-PREDICACIONES_DIR = VAULT_ROOT / "Temas" / "07_PredicacionesDevocionales"
+TEMAS_DIR = VAULT_ROOT / "Temas"
 PROPOSALS_PATH = VAULT_ROOT / "_Skills" / "bridge_proposals.json"
 CHROMA_PATH = VAULT_ROOT / "_Skills" / "semantic_index"
+
+TRIAGE_DESTINO = "Temas/07_PredicacionesDevocionales/04_NotasSinProcesar/"
+TRIAGE_PARAMS = {
+    "tipo": "clase_en_vivo",
+    "tema": "07_PredicacionesDevocionales",
+    "dominio": "pastoral",
+    "modo": "7-grupos-conexion",
+    "destino": TRIAGE_DESTINO,
+}
+
+INBOX_PREFIXES = ["Predicación_", "Predicaciónes_", "Predicaciones_"]
+
+
+def _nfc(s: str) -> str:
+    return unicodedata.normalize("NFC", s)
+
+
+def strip_inbox_prefix(stem: str) -> str:
+    """Remove sermon prefixes from inbox filename stem for name matching.
+    Normalizes to NFC before comparison — macOS filenames use NFD."""
+    stem_nfc = _nfc(stem)
+    for prefix in INBOX_PREFIXES:
+        if stem_nfc.startswith(_nfc(prefix)):
+            return stem_nfc[len(_nfc(prefix)):]
+    return stem_nfc
+
 
 STOPWORDS_ES = {
     "de", "la", "el", "en", "y", "a", "los", "del", "las", "un", "una",
@@ -42,14 +70,13 @@ def get_inbox_md_files() -> list:
     return [p for p in INBOX_DIR.glob("*.md")]
 
 
-def get_temas_v2_files() -> list:
-    """Get .md files from Temas/07 that have version_yaml: '2.0'."""
+def get_temas_files() -> list:
+    """Get all .md files from Temas/ (all subdirs). No version_yaml filter —
+    notas puente procesadas con versión anterior pueden no tener YAML v2."""
     result = []
-    for p in PREDICACIONES_DIR.rglob("*.md"):
+    for p in TEMAS_DIR.rglob("*.md"):
         try:
-            post = frontmatter.load(str(p))
-            if post.metadata.get("version_yaml") == "2.0":
-                result.append(p)
+            result.append(p)
         except Exception:
             continue
     return result
@@ -150,12 +177,28 @@ def match_files(inbox_files: list, temas_files: list) -> list:
             temas_kw = extract_keywords(temas_title + " " + temas_body[:500])
             temas_vs = get_versiculos(temas_meta)
 
-            # Tier 1: Jaccard on keywords
-            j = jaccard(inbox_kw, temas_kw)
-            if j >= 0.3:
+            # Tier 0: exact name match (inbox stem sin prefijo == temas stem)
+            inbox_stripped = strip_inbox_prefix(inbox_path.stem).lower()
+            if inbox_stripped == _nfc(temas_path.stem).lower():
                 proposals.append({
                     "inbox_file": str(inbox_path.relative_to(VAULT_ROOT)),
                     "temas_file": str(temas_path.relative_to(VAULT_ROOT)),
+                    "nota_puente": f"[[{temas_path.stem}]]",
+                    "tier": 0,
+                    "score": 1.0,
+                    "match_reason": "Nombre exacto (sin prefijo)",
+                    "proposed_zk_ids": [],
+                })
+                continue
+
+            # Tier 1: Jaccard on keywords (umbral 0.25 — notas puente pueden usar
+            # vocabulario distinto al inbox original)
+            j = jaccard(inbox_kw, temas_kw)
+            if j >= 0.25:
+                proposals.append({
+                    "inbox_file": str(inbox_path.relative_to(VAULT_ROOT)),
+                    "temas_file": str(temas_path.relative_to(VAULT_ROOT)),
+                    "nota_puente": f"[[{temas_path.stem}]]",
                     "tier": 1,
                     "score": round(j, 4),
                     "match_reason": f"Jaccard keywords={j:.3f}",
@@ -171,6 +214,7 @@ def match_files(inbox_files: list, temas_files: list) -> list:
                 proposals.append({
                     "inbox_file": str(inbox_path.relative_to(VAULT_ROOT)),
                     "temas_file": str(temas_path.relative_to(VAULT_ROOT)),
+                    "nota_puente": f"[[{temas_path.stem}]]",
                     "tier": 2,
                     "score": score,
                     "match_reason": f"Versículos compartidos: {', '.join(list(shared)[:3])}",
@@ -184,6 +228,7 @@ def match_files(inbox_files: list, temas_files: list) -> list:
                 proposals.append({
                     "inbox_file": str(inbox_path.relative_to(VAULT_ROOT)),
                     "temas_file": str(temas_path.relative_to(VAULT_ROOT)),
+                    "nota_puente": f"[[{temas_path.stem}]]",
                     "tier": 3,
                     "score": sem,
                     "match_reason": f"Semántico ChromaDB score={sem:.3f}",
@@ -202,12 +247,12 @@ def cmd_scan(inbox_files: list, temas_files: list):
         print("No se encontraron coincidencias.")
         return
 
-    print(f"\n{'Inbox':<35} {'Temas':<40} {'Tier':>4} {'Score':>6}  Razón")
-    print("-" * 110)
+    print(f"\n{'Inbox':<35} {'Nota Puente (Temas/)':<45} {'Tier':>4} {'Score':>6}  Razón")
+    print("-" * 115)
     for p in proposals:
         inbox = Path(p["inbox_file"]).name[:33]
-        temas = Path(p["temas_file"]).name[:38]
-        print(f"{inbox:<35} {temas:<40} {p['tier']:>4} {p['score']:>6.3f}  {p['match_reason']}")
+        temas = Path(p["temas_file"]).name[:43]
+        print(f"{inbox:<35} {temas:<45} {p['tier']:>4} {p['score']:>6.3f}  {p['match_reason']}")
     print(f"\nTotal: {len(proposals)} propuesta(s)")
 
 
@@ -234,70 +279,71 @@ def cmd_inject(confirm: bool):
     with open(PROPOSALS_PATH, encoding="utf-8") as f:
         data = json.load(f)
 
-    proposals = [p for p in data.get("proposals", []) if p.get("proposed_zk_ids")]
+    # Only Tier 0 (exact name match) — high-confidence, safe to auto-inject
+    tier0 = [p for p in data.get("proposals", []) if p.get("tier") == 0]
 
-    if not proposals:
-        print(
-            "No hay propuestas con proposed_zk_ids. "
-            "Edita _Skills/bridge_proposals.json para agregar IDs ZK antes de inyectar."
-        )
+    if not tier0:
+        print("No hay propuestas Tier 0 para inyectar.")
         return
 
-    injected = 0
-    for prop in proposals:
-        temas_path = VAULT_ROOT / prop["temas_file"]
+    processed = 0
 
-        # Bug 4: guard de path traversal — rechazar rutas fuera del vault root
-        if not temas_path.is_relative_to(VAULT_ROOT):
-            print(f"SKIP [ruta fuera del vault]: {prop['temas_file']}")
+    for prop in tier0:
+        inbox_path = VAULT_ROOT / prop["inbox_file"]
+        nota_puente = prop["nota_puente"]
+        # Destino = misma carpeta donde vive la nota puente
+        destino_dir = (VAULT_ROOT / prop["temas_file"]).parent
+        destino_rel = str(destino_dir.relative_to(VAULT_ROOT)) + "/"
+        moved_path = destino_dir / inbox_path.name
+
+        if not inbox_path.exists():
+            print(f"SKIP [no existe en Inbox]: {prop['inbox_file']}")
             continue
 
-        # Safety guard: NEVER touch anything inside Inbox/
-        try:
-            temas_path.relative_to(INBOX_DIR)
-            print(f"SKIP [Inbox protegido]: {prop['temas_file']}")
-            continue
-        except ValueError:
-            pass
-
-        if not temas_path.exists():
-            print(f"SKIP [no existe]: {prop['temas_file']}")
-            continue
-
-        try:
-            post = frontmatter.load(str(temas_path))
-        except Exception as e:
-            print(f"SKIP [error YAML]: {prop['temas_file']} — {e}")
-            continue
-
-        if post.metadata.get("version_yaml") != "2.0":
-            print(f"SKIP [no es YAML v2]: {prop['temas_file']}")
-            continue
-
-        current_zk = post.metadata.get("zettelkasten_notes", [])
-        if not isinstance(current_zk, list):
-            current_zk = []
-
-        new_ids = [zk for zk in prop["proposed_zk_ids"] if zk not in current_zk]
-        if not new_ids:
-            print(f"SKIP [ya tiene los IDs]: {prop['temas_file']}")
+        if moved_path.exists():
+            print(f"SKIP [ya existe en destino]: {moved_path.relative_to(VAULT_ROOT)}")
             continue
 
         if not confirm:
-            print(f"[DRY RUN] Agregaría a {prop['temas_file']}: {new_ids}")
+            print(f"[DRY RUN] {inbox_path.name}")
+            print(f"  → {destino_rel}")
+            print(f"  → nota_puente: {nota_puente}")
             continue
 
-        post.metadata["zettelkasten_notes"] = current_zk + new_ids
+        # 1. Run inbox_triage.py — inyecta YAML v2 y mueve el archivo
+        params = {**TRIAGE_PARAMS, "destino": destino_rel}
+        result = subprocess.run(
+            ["python3", str(VAULT_ROOT / "_Scripts" / "inbox_triage.py"),
+             str(inbox_path), json.dumps(params)],
+            capture_output=True, text=True, cwd=str(VAULT_ROOT),
+        )
+        if result.returncode != 0:
+            print(f"ERROR triage {inbox_path.name}: {result.stderr.strip()}")
+            continue
+
+        # 2. Inyectar nota_puente en el archivo movido
+        if not moved_path.exists():
+            print(f"ERROR: archivo no encontrado en destino tras triage: {moved_path}")
+            continue
+
+        try:
+            post = frontmatter.load(str(moved_path))
+        except Exception as e:
+            print(f"ERROR YAML {moved_path.name}: {e}")
+            continue
+
+        post.metadata["nota_puente"] = nota_puente
         post.metadata["fecha_actualizacion"] = datetime.now(timezone.utc).date().isoformat()
 
-        with open(temas_path, "w", encoding="utf-8") as f:
+        with open(moved_path, "w", encoding="utf-8") as f:
             f.write(frontmatter.dumps(post))
 
-        print(f"✓ Inyectados {new_ids} en {prop['temas_file']}")
-        injected += 1
+        print(f"✓ {inbox_path.name}")
+        print(f"  → {TRIAGE_DESTINO} | nota_puente: {nota_puente}")
+        processed += 1
 
-    action = "inyectadas" if confirm else "DRY RUN — propuestas"
-    print(f"\n{action}: {injected} modificación(es)")
+    action = "procesados" if confirm else "DRY RUN"
+    print(f"\n{action}: {processed}/{len(tier0)} Tier 0")
 
 
 def main():
@@ -312,8 +358,8 @@ def main():
 
     if args.mode in ("scan", "propose"):
         inbox_files = get_inbox_md_files()
-        temas_files = get_temas_v2_files()
-        print(f"Inbox/.md: {len(inbox_files)} | Temas/07 YAML v2: {len(temas_files)}")
+        temas_files = get_temas_files()
+        print(f"Inbox/.md: {len(inbox_files)} | Temas/ notas: {len(temas_files)}")
 
     if args.mode == "scan":
         cmd_scan(inbox_files, temas_files)

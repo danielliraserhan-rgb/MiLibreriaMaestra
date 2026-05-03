@@ -1,3 +1,32 @@
+---
+author_quotes: []
+coaching_notes: []
+dominio: pastoral
+estado: en_proceso
+fase: ''
+fecha: '2026-05-03'
+fecha_actualizacion: '2026-05-03'
+fuente: ''
+libro_biblico_principal: ''
+modo: 7-grupos-conexion
+nota_puente: '[[El pan de vid]]'
+personajes: []
+scrivener_sync:
+  estado: ''
+  scrivener_nombre: ''
+  ultima_export: ''
+  ultima_sync: ''
+seo_keywords: []
+serie: ''
+tema: 07_PredicacionesDevocionales
+temas_principales: []
+tipo: clase_en_vivo
+title: Predicación_El pan de vid
+versiculos_citados: []
+version_yaml: '2.0'
+zettelkasten_notes: []
+---
+
 MARANATHA - EL YA VIENE
 
 ![horizontal line](data:image/png;base64...)

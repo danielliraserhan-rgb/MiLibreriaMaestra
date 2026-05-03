@@ -1,8 +1,37 @@
+---
+author_quotes: []
+coaching_notes: []
+dominio: pastoral
+estado: en_proceso
+fase: ''
+fecha: '2026-05-03'
+fecha_actualizacion: '2026-05-03'
+fuente: ''
+libro_biblico_principal: ''
+modo: 7-grupos-conexion
+nota_puente: '[[ICF Ensenada]]'
+personajes: []
+scrivener_sync:
+  estado: ''
+  scrivener_nombre: ''
+  ultima_export: ''
+  ultima_sync: ''
+seo_keywords: []
+serie: ''
+tema: 07_PredicacionesDevocionales
+temas_principales: []
+tipo: clase_en_vivo
+title: Predicación_ICF Ensenada
+versiculos_citados: []
+version_yaml: '2.0'
+zettelkasten_notes: []
+---
+
 La imagen de la verdad, Jesús
 
 ![horizontal line](data:image/png;base64...)
 
-# Propósito: Mostrar que dios tiene su plan, diseño y propósito. Que nos ha invitado a participar de la historia y que podemos vivir para algo mayor que nosotros. Para Jesús, el Rey viene pronto.
+# Propósito: Mostrar que dios tiene su plan, diseño y propósito. Que nos ha invitado a participar de la historia y que podemos vivir para algo mayor que nosotros. Para Jesús, el Rey indomable viene pronto.
 
 # Puntos:
 
@@ -22,7 +51,7 @@ La imagen de la verdad, Jesús
 
 # Observa los patrones, y deja que Dios forme en la imagen su rostro diciendo ven.
 
-* No tomes los grupos como un club social. Escucha a Dios y determinate a obedecerlo. Este es el entrenamiento que nos conforma a su imagen y semejanza y nos prepara para su regreso.
+* Escucha a Dios y determinate a obedecerlo. Este es el entrenamiento que nos conforma a su imagen y semejanza y nos prepara para su regreso.
 * Vive para su regreso.
 
 #
@@ -31,7 +60,6 @@ La imagen de la verdad, Jesús
 
 # Intro: Los puntos de la vida
 
-* Hay una razón por la que este año c**omenzamos en génesis** y quiero platicarles como iremos avanzando el resto del año.
 * Alguna vez has jugado a estos **juegos de niños en donde hay puntitos** en una página con números y los vas juntando uno por uno hasta formar una imagen?
 * Bueno… a mi me encantaban y cuando me aburría en clase agarraba una hoja en blanco y una pluma. **Cerraba los ojos y bam,** bam, bam hace unos 10 puntitos.
 * Cuando abría los ojos escogía **un punto al azar** y empezaba a unir todos los puntitos.
@@ -48,6 +76,8 @@ La imagen de la verdad, Jesús
 * La empezamos a rellenar y **formar a nuestro propio entendimiento e imaginación de lo que debería de ser.**
 * Y terminamos con una especie de animal mutante o monstruo que hemos creado. Una imagen en la que a veces no podemos salir**. Una imagen o estilo de vida, una inercia que hemos hecho nuestra verdad.**
 
+#
+
 # Pero le llamamos vida
 
 * Es ahora nuestra vida, lo único que tenemos**, por lo que he trabajado tan duro durante toda mi vida. Esta es mi verdad.**
@@ -61,13 +91,10 @@ La imagen de la verdad, Jesús
 # La imagen sin sentido
 
 * Entre todos estos puntos de verdad y perspectiva el ruido de la vida **nos nubla y perdemos de vista los puntos de** la imagen verdadera y cuales solo son distracción
-* **Mira esta imagen, que ves?**
 * Hoy quiero decirte que **SI HAY MÁS**
 * Que **estos puntitos a los que llamamos realidad si tienen sentido**. Si tienen un diseño y si tienen un propósito.
 * Y cuando alcanzamos a **verlo nuestra vida cambia.**
-* **Imagen resultado**
 * Y ahora, cada vez que se te presenta una mancha, una serie de puntos sin sentido. **La verdad te informa.**
-* **Mira esta imagen, que ves?**
 * Ahora **no puedes dejar de verlo.** Ya sabes que la verdad se trata de **un novio que baila con su novia**. Y en cada mancha, en cada serie de datos que parecen aleatorios, tu que sabes la verdad, empezarás a ver la verdad.
 * **Apaga el ruido de lo que nosotros hemos inventado como verdad** y nos enfoca a lo que verdaderamente importa… **Jesús y su novia bailando por la eternidad.**
 
@@ -75,7 +102,7 @@ La imagen de la verdad, Jesús
 
 # La imagen con sentido
 
-* Este año vamos a ir a **la palabra y dejar que transforme nuestra vida,** identificar los patrones de verdad que dejó en Su creación, en Su historia.
+* Necesitamos ir a **la palabra y dejar que transforme nuestra vida,** identificar los patrones de verdad que dejó en Su creación, en Su historia.
 * Hoy quiero contarles un poco de está imagen, **patrones que indican un origen, una misión, un propósito y un destino.**
 * Somos hechos a su imagen y semejanza, nacidos de nuevo con un propósito bueno al que Dios nos está llamando a prepararnos.
 
@@ -85,10 +112,78 @@ La imagen de la verdad, Jesús
 * Pero a causa de nuestro pecado **esa imagen se corrompe y no pudimos cumplir el gobierno** de la tierra porque nos alejamos del rey.
 * Pero Dios **prometió que vendría a través de la mujer “Aquel”** que aplastará la cabeza de la serpiente y nos regresaría a su presencia.
 * Genesis 3:15 Simiente de la mujer
-* Números 24:17 De la tribu de Judá, descendencia de David
-* Salmos 2:7 Engendrado por Dios, Hijo de Dios.
-* Isaías, mateo: Proveniente de una virgen (mujer) de la ciudad de belén
-* Y lo llamarás Dios con nosotros.
+
+Pondré enemistad
+
+Entre tú y la mujera,
+
+Y entre tu simiente y su simiente;
+
+él te herirá en1 la cabeza,
+
+Y tú lo herirás en el talón».
+
+* Será como un arca (Restaurara los cielos y la tierra) Genesis 9:10-13
+
+«Miren, Yo establezco Mi pacto con ustedesa, y con su descendencia1 después de ustedes,
+
+10 y con todo ser viviente que está con ustedes: aves, ganados y todos los animales de la tierra que están con ustedes, todos los que han salido del arca, todos los animales de la tierra.
+
+11 »Yo establezco Mi pacto con ustedes, y nunca más volverá a ser exterminada1 toda carne2a por las aguas del diluvio, ni habrá más diluvio para destruir la tierrab»
+
+**12** También dijo Dios: «Esta es la señal del pacto que Yo hago con ustedes y todo ser vivientea que está con ustedes, por todas las generaciones1:
+
+13 »Pongo Mi arco en las nubes1a y será por señal de2 Mi pacto con la tierra.
+
+* Vendra de abraham y pagara el precio por romper el pacto (Genesis 15:4-5)
+
+**4** Pero la palabra del Señor vino a él, diciendo: «Tu heredero no será este, sino uno que saldrá de tus entrañas, él será tu herederoa».
+
+5 El Señor lo llevó fuera, y *le* dijo: «Ahora mira al cielo y cuenta las estrellasa, si te es posible contarlas». Y añadió: «Así será tu descendencia
+
+* Dara su vida en sustitución (isaac) Genesis 22:13
+
+**13** Entonces Abraham alzó los ojos y miró, y *vio* un carnero detrás *de él* trabado por los cuernos en un matorral. Abraham fue, tomó el carnero y lo ofreció en holocausto en lugar de su hijo.
+
+* Peleara junto a Israel (Dime tu nombre) Genesis 31:26-30)
+
+26 Entonces *el hombre* dijo: «Suéltame porque raya el alba». «No te soltaré si no me bendicesa», le respondió Jacob.
+
+27 «¿Cómo te llamas?», le preguntó el hombre. «Jacob», le respondió él.
+
+**28** Y *el hombre* dijo: «Tu nombre ya no será Jacob, sino Israel1a, porque has luchado con Dios y con los hombres, y has prevalecido»
+
+29 Entonces Jacob le dijo: «Dame a conocer ahora tu nombre». «¿Para qué preguntas por mi nombrea?», le respondió el hombre. Y lo bendijo allí.
+
+**30** Y Jacob le puso a aquel lugar el nombre de Peniel1, porque *dijo:* «He visto a Dios cara a cara, y ha sido preservada mi vida2a»
+
+* De juda vendra el gobernante: Genesis 49:10
+
+10 »El cetro no se apartará de Judáa,
+
+Ni la vara de gobernante de entre sus pies,
+
+Hasta que venga Siloh1,
+
+Y a él *sea dada* la obediencia de los pueblosb.
+
+* Engendrado por Dios, Hijo de Dios. 2 Samuel 7:12-14
+
+12 ’Cuando tus días se cumplan y reposes con tus padresa, levantaré a tu descendiente1 después de ti, el cual saldrá de tus entrañas, y estableceré su reinob.
+
+13 ’Él edificará casa a Mi nombrea, y Yo estableceré el trono de su reino para siempreb.
+
+14 ’Yo seré padre para él y él será hijo para Mía
+
+* Isaías 7:14 de una virgen Y lo llamarás Dios con nosotros.
+
+14 »Por tanto, el Señor mismo les dará esta señal: Una virgen concebirá y dará a luz un hijo, y le pondrá por nombre Emmanuel1a.
+
+* Mateo 1:1: Proveniente de una virgen (mujer) de la ciudad de belén
+
+**1**Libro de la genealogía1 de Jesucristo2, hijo3 de Davida, hijo3b de Abraham
+
+El genesis de Jesucricto: Ben David, Ben Abraham…
 
 # Y Jesús vino
 
@@ -98,9 +193,80 @@ La imagen de la verdad, Jesús
 * Daniel 7: El Anciano de Días entregará el trono a aquel que es como Hijo de Hombre.
 * **Jesus, indomable que viene con su caballo blanco entre las nubes con ojos de fuego y pelo de oveja, con voz que ruge como mil mares y espada entre la boca.**
 
+**Daniel 7:9-14**
+
+9 Seguí mirando
+
+Hasta que se establecieron tronosa,
+
+Y el Anciano de Días se sentó.
+
+Su vestidura era blanca como la nieveb,
+
+Y el cabello de Su cabeza como lana pura,
+
+Su trono, llamas de fuegoc,
+
+Y sus ruedas, fuego abrasadord.
+
+10 »Un río de fuego corría,
+
+Saliendo de delante de Éla.
+
+Miles de millares le servían,
+
+Y miríadas de miríadas1 estaban en pie delante de Élb.
+
+El tribunal se sentóc,
+
+Y se abrieron los librosd.
+
+11 »Entonces yo seguí mirando a causa del ruido de las palabras arrogantes1 que el cuerno decía. Seguí mirando hasta que mataron a la bestia, destrozaron su cuerpo y lo echaron a las llamas del fuegoa.
+
+12 »A las demás bestias, se les quitó el dominio, pero les fue concedida una prolongación de la vida por un tiempo determinado.
+
+13 Seguí mirando en las visiones nocturnas,
+
+Y en las nubes del cielo
+
+Venía uno como un Hijo de Hombrea,
+
+Que se dirigió al Anciano de Días
+
+Y fue presentado ante Él.
+
+14 »Y Le fue dado dominio,
+
+Gloria y reino1a,
+
+Para que todos los pueblos, naciones y lenguas
+
+Le sirvieranb.
+
+Su dominio es un dominio eternoc
+
+Que nunca pasarád,
+
+Y Su reino uno
+
+Que no será destruidoe.
+
 # Y vendra
 
 * Y Jesús **vendrá y restaurará todo**. Pues…
+
+Apocalipsis 21:3-7
+
+3 Entonces oí una gran voz que decía desde el trono: «El tabernáculo de Diosa está entre los hombres, y Él habitará entre ellosb y ellos serán Su pueblo1, y Dios mismo estará entre ellos2.
+
+4 »Él enjugará toda lágrima de sus ojosa, y ya no habrá muerteb, ni habrá más duelo, ni clamor, ni dolorc, porque las primeras cosas han pasadod»
+
+5 El que está sentado en el tronoa dijo: «Yo hago nuevas todas las cosasb». Y añadió\*: «Escribe, porque estas palabras son fieles y verdaderasc»
+
+6 También me dijo: «Hecho está1a. Yo soy el Alfa y la Omegab, el Principio y el Fin. Al que tiene sed, Yo le daréc gratuitamente de la fuente del agua de la vidad.
+
+7 »El vencedor1 heredará estas cosasa, y Yo seré su Diosb y él será Mi hijo.
+
 * En génesis entró el dolor, pero apocalipsis nos dice que ya no habrá dolor
 * En Génesis entró la muerte y Apocalipsis nos dice que ya no habrá más muerte
 * En génesis, **inició el clamor por su venida,** en apocalipsis **termina el clamor** cuando por fin, el novio responde al Espíritu y la novia que claman VEN!
@@ -110,6 +276,27 @@ La imagen de la verdad, Jesús
 * Durante todo el A.T esa era la pregunta. **¿Quien será?**
 * Mientras clamaban, ¡VEN!
 * Esa es **la primera oración registrada**, la primera vez que el ser humano clama a Dios, “invocan su nombre” diciendo VEN. Genesis 4
+
+Genesis 4:26
+
+26 A Set le nació también un hijo y le puso por nombre Enósa. Por ese tiempo comenzaron *los hombres* a invocar1 el nombre del Señor.
+
+Éxodo 24
+
+24 Dios oyó su gemido y se acordó de su pacto con Abraham, Isaac y Jacob.
+
+25 Dios miró a los israelitas y *los* tuvo en cuenta. (Exodus 2:24–25, NBLA)
+
+Romanos 8
+
+Pues sabemos que la creación entera gime y sufre hasta ahora dolores de parto.
+
+23 Y no solo *ella*, sino que también nosotros mismos, que tenemos las primicias del Espíritu, aun nosotros mismos gemimos en nuestro interior, aguardando ansiosamente la adopción como hijos, la redención de nuestro cuerpo.
+
+24 Porque en esperanza hemos sido salvados, pero la esperanza que se ve no es esperanza, pues, ¿por qué esperar lo que uno ve?
+
+25 Pero si esperamos lo que no vemos, con paciencia lo aguardamos. (Romans 8:22–25, NBLA)
+
 * Y toda la creación CLAMA y GIME por su creador.
 * Todo el cuerpo CLAMA y GIME por su creador.
 * VEN Redentor
@@ -124,7 +311,6 @@ La imagen de la verdad, Jesús
 * El **débil regresa fuerte para unir a todo un pueblo para la batalla final**. Rescata y **salva al mundo y se queda con la chica.**
 * Y eso nos conmueve y no es por su genialidad de contar historias. **Es por que se la han robado de la GRAN HISTORIA**. Jesús quien vino como si fuera débil a morir en la cruz regresará a salvar al mundo y se quedará con la chica.
 * Y está realidad nos puede inspirar, s**olo imagina por un momento que este personaje es Jesús.**
-* PELICULA
 * No nos equivoquemos, **Estamos en una guerra**
 * Nuestra vida es una **misión**
 * **El otro lado está luchando y nosotros huyendo para vivir un día más,** olvidando la eternidad y al Rey.
@@ -132,7 +318,7 @@ La imagen de la verdad, Jesús
 **Vivamos para algo mayor**
 
 * **Hay una imagen real**, y cuando alcanzamos a verla podrás ver
-* A un J**esús Indomable**, y nadie lo podrá detener.
+* A un J**esús glorificafo**, y nadie lo podrá detener.
 * **El regresará y se va a quedar con la chica,** con su novia a la iglesia. Pura santa y sin mancha. Para bailar eternamente.
 * Y en la espera **nos ha llamado como un ejército a tomar nuestras vidas y uniros a su misión**
 * A **prepararnos** para el gran día
@@ -156,14 +342,13 @@ La imagen de la verdad, Jesús
 **La historia en un hombre**
 
 * **Toda la historia está contenida en este hombre que vino y que vendrá.**
-* Nos guste o no
-* Nos prospere o no
+* Nos guste o no, Nos prospere o no
 * Nos de el trabajo o no
 * Cumpla mis sueños o no
 * Me emocione o no
 * Nos lleve a la prosperidad o a la persecución
 * **HAY UNA VERDAD que es sobre toda verdad** y lo crea el mundo o no lo crea….
-* **JESUS ES DIOS**, Jesus es el REY indomable que vendrá a restaurarlo todo.
+* **JESUS ES DIOS**, Jesus es el REY glorioso que vendrá a restaurarlo todo.
 
 **Y la verdad nos hará libres**
 
@@ -175,6 +360,14 @@ La imagen de la verdad, Jesús
 * Nuestros **cuerpos** claman ven
 * El **Espíritu y la novia** dicen ven
 
+Apocalipsis 22:17
+
+**17**El Espíritua y la esposab dicen: «Ven». Y el que oye, diga: «Ven». Y el que tiene sedc, venga; y el que desee, que tome gratuitamente del agua de la vidad.
+
+Apocalipsis 22:20
+
+**20**El que testifica de estas cosasa dice: «Sí, vengo prontob». Amén. Ven, Señor Jesúsc.
+
 **ORACIÓN Y PRÁCTICA DESPUÉS DE ORAR**
 
 **Si tu quieres ser parte de esta gran historia y ser preparado y entrenado por Jesús, el Rey…**
@@ -185,5 +378,5 @@ La imagen de la verdad, Jesús
 
 # Observa los patrones, y deja que Dios forme en la imagen su rostro diciendo ven.
 
-* **No tomes los grupos como un club social.** Escucha a Dios y determinate a **obedecerlo**. Este es el entrenamiento que nos conforma a su imagen y semejanza y nos prepara para su regreso.
+* **No tomes la iglesia como un club social.** Escucha a Dios y determinate a **obedecerlo**. Este es el entrenamiento que nos conforma a su imagen y semejanza y nos prepara para su regreso.
 * **Vive para su regreso.**

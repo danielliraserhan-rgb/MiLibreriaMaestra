@@ -1,3 +1,32 @@
+---
+author_quotes: []
+coaching_notes: []
+dominio: pastoral
+estado: en_proceso
+fase: ''
+fecha: '2026-05-03'
+fecha_actualizacion: '2026-05-03'
+fuente: ''
+libro_biblico_principal: ''
+modo: 7-grupos-conexion
+nota_puente: '[[Permanece hasta el día de su regreso]]'
+personajes: []
+scrivener_sync:
+  estado: ''
+  scrivener_nombre: ''
+  ultima_export: ''
+  ultima_sync: ''
+seo_keywords: []
+serie: ''
+tema: 07_PredicacionesDevocionales
+temas_principales: []
+tipo: clase_en_vivo
+title: Predicaciónes_Permanece hasta el día de su regreso
+versiculos_citados: []
+version_yaml: '2.0'
+zettelkasten_notes: []
+---
+
 Permanece hasta el día de su regreso
 
 ![horizontal line](data:image/png;base64...)

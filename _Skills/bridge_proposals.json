@@ -1,0 +1,330 @@
+{
+  "generated_at": "2026-05-03T20:58:37.616976+00:00",
+  "total": 36,
+  "proposals": [
+    {
+      "inbox_file": "Inbox/Predicación_La Brecha.md",
+      "temas_file": "Temas/06_DiscipuladoVidaCristiana/02_EsquemasDeClase/La Brecha.md",
+      "nota_puente": "[[La Brecha]]",
+      "tier": 0,
+      "score": 1.0,
+      "match_reason": "Nombre exacto (sin prefijo)",
+      "proposed_zk_ids": []
+    },
+    {
+      "inbox_file": "Inbox/Predicación_La imagen de la verdad.md",
+      "temas_file": "Temas/05_DoctrinasFundamentales/02_EsquemasDeClase/La imagen de la verdad.md",
+      "nota_puente": "[[La imagen de la verdad]]",
+      "tier": 0,
+      "score": 1.0,
+      "match_reason": "Nombre exacto (sin prefijo)",
+      "proposed_zk_ids": []
+    },
+    {
+      "inbox_file": "Inbox/Predicación_El plan de Dios.md",
+      "temas_file": "Temas/05_DoctrinasFundamentales/02_EsquemasDeClase/El plan de Dios.md",
+      "nota_puente": "[[El plan de Dios]]",
+      "tier": 0,
+      "score": 1.0,
+      "match_reason": "Nombre exacto (sin prefijo)",
+      "proposed_zk_ids": []
+    },
+    {
+      "inbox_file": "Inbox/Predicación_La resurrección.md",
+      "temas_file": "Temas/05_DoctrinasFundamentales/02_EsquemasDeClase/La resurrección.md",
+      "nota_puente": "[[La resurrección]]",
+      "tier": 0,
+      "score": 1.0,
+      "match_reason": "Nombre exacto (sin prefijo)",
+      "proposed_zk_ids": []
+    },
+    {
+      "inbox_file": "Inbox/Predicación_ICF Ensenada.md",
+      "temas_file": "Temas/03_Escatologia—Destino/02_EsquemasDeClase/ICF Ensenada.md",
+      "nota_puente": "[[ICF Ensenada]]",
+      "tier": 0,
+      "score": 1.0,
+      "match_reason": "Nombre exacto (sin prefijo)",
+      "proposed_zk_ids": []
+    },
+    {
+      "inbox_file": "Inbox/Predicación_La mujer.md",
+      "temas_file": "Temas/07_PredicacionesDevocionales/02_EsquemasDeClase/La mujer.md",
+      "nota_puente": "[[La mujer]]",
+      "tier": 0,
+      "score": 1.0,
+      "match_reason": "Nombre exacto (sin prefijo)",
+      "proposed_zk_ids": []
+    },
+    {
+      "inbox_file": "Inbox/Predicación_La verdadera conquista.md",
+      "temas_file": "Temas/05_DoctrinasFundamentales/02_EsquemasDeClase/La verdadera conquista.md",
+      "nota_puente": "[[La verdadera conquista]]",
+      "tier": 0,
+      "score": 1.0,
+      "match_reason": "Nombre exacto (sin prefijo)",
+      "proposed_zk_ids": []
+    },
+    {
+      "inbox_file": "Inbox/Predicación_La verdadera Conquista simple.md",
+      "temas_file": "Temas/05_DoctrinasFundamentales/02_EsquemasDeClase/La verdadera Conquista simple.md",
+      "nota_puente": "[[La verdadera Conquista simple]]",
+      "tier": 0,
+      "score": 1.0,
+      "match_reason": "Nombre exacto (sin prefijo)",
+      "proposed_zk_ids": []
+    },
+    {
+      "inbox_file": "Inbox/Predicación_El pan de vid.md",
+      "temas_file": "Temas/06_DiscipuladoVidaCristiana/02_EsquemasDeClase/El pan de vid.md",
+      "nota_puente": "[[El pan de vid]]",
+      "tier": 0,
+      "score": 1.0,
+      "match_reason": "Nombre exacto (sin prefijo)",
+      "proposed_zk_ids": []
+    },
+    {
+      "inbox_file": "Inbox/Predicaciónes_Boda Paco Moreno y Brenda Hernandez.md",
+      "temas_file": "Temas/07_PredicacionesDevocionales/03_ClasesEnVivo/Boda Paco Moreno y Brenda Hernandez.md",
+      "nota_puente": "[[Boda Paco Moreno y Brenda Hernandez]]",
+      "tier": 0,
+      "score": 1.0,
+      "match_reason": "Nombre exacto (sin prefijo)",
+      "proposed_zk_ids": []
+    },
+    {
+      "inbox_file": "Inbox/Predicaciónes_Permanece hasta el día de su regreso.md",
+      "temas_file": "Temas/03_Escatologia—Destino/03_ClasesEnVivo/Permanece hasta el día de su regreso.md",
+      "nota_puente": "[[Permanece hasta el día de su regreso]]",
+      "tier": 0,
+      "score": 1.0,
+      "match_reason": "Nombre exacto (sin prefijo)",
+      "proposed_zk_ids": []
+    },
+    {
+      "inbox_file": "Inbox/Predicación_Discipulos.md",
+      "temas_file": "Temas/06_DiscipuladoVidaCristiana/02_EsquemasDeClase/Discipulos.md",
+      "nota_puente": "[[Discipulos]]",
+      "tier": 0,
+      "score": 1.0,
+      "match_reason": "Nombre exacto (sin prefijo)",
+      "proposed_zk_ids": []
+    },
+    {
+      "inbox_file": "Inbox/Predicación_La esperanza Segura.md",
+      "temas_file": "Temas/03_Escatologia—Destino/02_EsquemasDeClase/La esperanza Segura.md",
+      "nota_puente": "[[La esperanza Segura]]",
+      "tier": 0,
+      "score": 1.0,
+      "match_reason": "Nombre exacto (sin prefijo)",
+      "proposed_zk_ids": []
+    },
+    {
+      "inbox_file": "Inbox/Predicación_La esperanza Segura 5.md",
+      "temas_file": "Temas/03_Escatologia—Destino/02_EsquemasDeClase/La esperanza Segura 5.md",
+      "nota_puente": "[[La esperanza Segura 5]]",
+      "tier": 0,
+      "score": 1.0,
+      "match_reason": "Nombre exacto (sin prefijo)",
+      "proposed_zk_ids": []
+    },
+    {
+      "inbox_file": "Inbox/Predicación_Fin. Conoce el comnezo y conoce el Fin para saber como participar.md",
+      "temas_file": "Temas/03_Escatologia—Destino/02_EsquemasDeClase/Fin — Conoce el comienzo y el Fin para saber cómo participar.md",
+      "nota_puente": "[[Fin — Conoce el comienzo y el Fin para saber cómo participar]]",
+      "tier": 1,
+      "score": 0.6538,
+      "match_reason": "Jaccard keywords=0.654",
+      "proposed_zk_ids": []
+    },
+    {
+      "inbox_file": "Inbox/Predicación_Momentos con jesus.md",
+      "temas_file": "Temas/07_PredicacionesDevocionales/03_ClasesEnVivo/Momentos con Jesus — Cauce 2023.md",
+      "nota_puente": "[[Momentos con Jesus — Cauce 2023]]",
+      "tier": 1,
+      "score": 0.6042,
+      "match_reason": "Jaccard keywords=0.604",
+      "proposed_zk_ids": []
+    },
+    {
+      "inbox_file": "Inbox/Predicación_En los días de Noe.md",
+      "temas_file": "Temas/03_Escatologia—Destino/02_EsquemasDeClase/2026-04-24-en-los-dias-de-noe.md",
+      "nota_puente": "[[2026-04-24-en-los-dias-de-noe]]",
+      "tier": 1,
+      "score": 0.5686,
+      "match_reason": "Jaccard keywords=0.569",
+      "proposed_zk_ids": []
+    },
+    {
+      "inbox_file": "Inbox/Predicación_La imagen de la verdad.md",
+      "temas_file": "Temas/03_Escatologia—Destino/02_EsquemasDeClase/ICF Ensenada.md",
+      "nota_puente": "[[ICF Ensenada]]",
+      "tier": 1,
+      "score": 0.551,
+      "match_reason": "Jaccard keywords=0.551",
+      "proposed_zk_ids": []
+    },
+    {
+      "inbox_file": "Inbox/Predicación_MARANATHA - EL YA VIENE - CONF SI.md",
+      "temas_file": "Temas/03_Escatologia—Destino/02_EsquemasDeClase/MARANATHA — EL YA VIENE.md",
+      "nota_puente": "[[MARANATHA — EL YA VIENE]]",
+      "tier": 1,
+      "score": 0.54,
+      "match_reason": "Jaccard keywords=0.540",
+      "proposed_zk_ids": []
+    },
+    {
+      "inbox_file": "Inbox/Predicaciónes_Provera un cordero y quedara satisfecho.md",
+      "temas_file": "Temas/05_DoctrinasFundamentales/04_NotasSinProcesar/Proveerá un cordero — El llamado en la gran historia.md",
+      "nota_puente": "[[Proveerá un cordero — El llamado en la gran historia]]",
+      "tier": 1,
+      "score": 0.5312,
+      "match_reason": "Jaccard keywords=0.531",
+      "proposed_zk_ids": []
+    },
+    {
+      "inbox_file": "Inbox/Predicación_El Rey David_ Hombre conforme al corazón De Dios.md",
+      "temas_file": "Temas/02_HistoriaDeIsrael/02_EsquemasDeClase/El Rey David — Hombre conforme al corazón de Dios.md",
+      "nota_puente": "[[El Rey David — Hombre conforme al corazón de Dios]]",
+      "tier": 1,
+      "score": 0.4821,
+      "match_reason": "Jaccard keywords=0.482",
+      "proposed_zk_ids": []
+    },
+    {
+      "inbox_file": "Inbox/Predicaciónes_HOSANNA.md",
+      "temas_file": "Temas/05_DoctrinasFundamentales/02_EsquemasDeClase/La verdadera Conquista simple.md",
+      "nota_puente": "[[La verdadera Conquista simple]]",
+      "tier": 1,
+      "score": 0.4783,
+      "match_reason": "Jaccard keywords=0.478",
+      "proposed_zk_ids": []
+    },
+    {
+      "inbox_file": "Inbox/Predicación_La verdadera conquista.md",
+      "temas_file": "Temas/05_DoctrinasFundamentales/04_NotasSinProcesar/HOSANNA — El Rey que completa la conquista.md",
+      "nota_puente": "[[HOSANNA — El Rey que completa la conquista]]",
+      "tier": 1,
+      "score": 0.4694,
+      "match_reason": "Jaccard keywords=0.469",
+      "proposed_zk_ids": []
+    },
+    {
+      "inbox_file": "Inbox/Predicación_Fruto del pecado vs fruto de la gracia_ Vergüenza y miedo vs Esperanza y fe.md",
+      "temas_file": "Temas/05_DoctrinasFundamentales/02_EsquemasDeClase/Fruto del pecado vs fruto de la gracia.md",
+      "nota_puente": "[[Fruto del pecado vs fruto de la gracia]]",
+      "tier": 1,
+      "score": 0.4545,
+      "match_reason": "Jaccard keywords=0.455",
+      "proposed_zk_ids": []
+    },
+    {
+      "inbox_file": "Inbox/Predicación_ICF Ensenada.md",
+      "temas_file": "Temas/05_DoctrinasFundamentales/02_EsquemasDeClase/La imagen de la verdad.md",
+      "nota_puente": "[[La imagen de la verdad]]",
+      "tier": 1,
+      "score": 0.431,
+      "match_reason": "Jaccard keywords=0.431",
+      "proposed_zk_ids": []
+    },
+    {
+      "inbox_file": "Inbox/Predicación_Parque el capitán 2023 - La vid verdadera.md",
+      "temas_file": "Temas/06_DiscipuladoVidaCristiana/03_ClasesEnVivo/La vid verdadera — Parque el Capitán 2023.md",
+      "nota_puente": "[[La vid verdadera — Parque el Capitán 2023]]",
+      "tier": 1,
+      "score": 0.4043,
+      "match_reason": "Jaccard keywords=0.404",
+      "proposed_zk_ids": []
+    },
+    {
+      "inbox_file": "Inbox/Predicación_Navidad - 15_12_19 Daniel Lira.md",
+      "temas_file": "Temas/07_PredicacionesDevocionales/04_NotasSinProcesar/Navidad — Maranatha 2019.md",
+      "nota_puente": "[[Navidad — Maranatha 2019]]",
+      "tier": 1,
+      "score": 0.3818,
+      "match_reason": "Jaccard keywords=0.382",
+      "proposed_zk_ids": []
+    },
+    {
+      "inbox_file": "Inbox/Predicación_El pan de vid.md",
+      "temas_file": "Temas/06_DiscipuladoVidaCristiana/04_NotasSinProcesar/Predicación_El pan de vid (MARANATHA).md",
+      "nota_puente": "[[Predicación_El pan de vid (MARANATHA)]]",
+      "tier": 1,
+      "score": 0.3387,
+      "match_reason": "Jaccard keywords=0.339",
+      "proposed_zk_ids": []
+    },
+    {
+      "inbox_file": "Inbox/Predicación_Las 4 copas (LIVE).md",
+      "temas_file": "Temas/04_ExegesisNT/02_EsquemasDeClase/Las 4 copas.md",
+      "nota_puente": "[[Las 4 copas]]",
+      "tier": 1,
+      "score": 0.2909,
+      "match_reason": "Jaccard keywords=0.291",
+      "proposed_zk_ids": []
+    },
+    {
+      "inbox_file": "Inbox/Predicación_Soldado, Atleta y Agricultor.md",
+      "temas_file": "Temas/06_DiscipuladoVidaCristiana/04_NotasSinProcesar/Notas breves — Soldado Atleta Agricultor.md",
+      "nota_puente": "[[Notas breves — Soldado Atleta Agricultor]]",
+      "tier": 1,
+      "score": 0.2857,
+      "match_reason": "Jaccard keywords=0.286",
+      "proposed_zk_ids": []
+    },
+    {
+      "inbox_file": "Inbox/Predicación_¿No ardía nuestro corazón_.md",
+      "temas_file": "Temas/07_PredicacionesDevocionales/03_ClasesEnVivo/¿No ardía nuestro corazón — San Agustín Agosto 2022.md",
+      "nota_puente": "[[¿No ardía nuestro corazón — San Agustín Agosto 2022]]",
+      "tier": 1,
+      "score": 0.2687,
+      "match_reason": "Jaccard keywords=0.269",
+      "proposed_zk_ids": []
+    },
+    {
+      "inbox_file": "Inbox/Predicación_Discipulos.md",
+      "temas_file": "Temas/06_DiscipuladoVidaCristiana/04_NotasSinProcesar/Predicación_Discipulos.md",
+      "nota_puente": "[[Predicación_Discipulos]]",
+      "tier": 1,
+      "score": 0.2679,
+      "match_reason": "Jaccard keywords=0.268",
+      "proposed_zk_ids": []
+    },
+    {
+      "inbox_file": "Inbox/Predicación_Notas breves_ Soldado, Atleta y Agricultor.md",
+      "temas_file": "Temas/06_DiscipuladoVidaCristiana/04_NotasSinProcesar/Notas breves — Soldado Atleta Agricultor.md",
+      "nota_puente": "[[Notas breves — Soldado Atleta Agricultor]]",
+      "tier": 1,
+      "score": 0.2656,
+      "match_reason": "Jaccard keywords=0.266",
+      "proposed_zk_ids": []
+    },
+    {
+      "inbox_file": "Inbox/Predicación_¿No ardía nuestro corazón_ 10-Agosto-22.md",
+      "temas_file": "Temas/07_PredicacionesDevocionales/03_ClasesEnVivo/¿No ardía nuestro corazón — San Agustín Agosto 2022.md",
+      "nota_puente": "[[¿No ardía nuestro corazón — San Agustín Agosto 2022]]",
+      "tier": 1,
+      "score": 0.2647,
+      "match_reason": "Jaccard keywords=0.265",
+      "proposed_zk_ids": []
+    },
+    {
+      "inbox_file": "Inbox/Predicación_Sigueme.md",
+      "temas_file": "Temas/06_DiscipuladoVidaCristiana/04_NotasSinProcesar/Sígueme — La perla de gran precio.md",
+      "nota_puente": "[[Sígueme — La perla de gran precio]]",
+      "tier": 1,
+      "score": 0.2542,
+      "match_reason": "Jaccard keywords=0.254",
+      "proposed_zk_ids": []
+    },
+    {
+      "inbox_file": "Inbox/Predicación_Parque el capitán 2023 - Jesús te vuelve a llamar en a barca.md",
+      "temas_file": "Temas/06_DiscipuladoVidaCristiana/03_ClasesEnVivo/Jesús te vuelve a llamar en la barca — Parque el Capitán 2023.md",
+      "nota_puente": "[[Jesús te vuelve a llamar en la barca — Parque el Capitán 2023]]",
+      "tier": 1,
+      "score": 0.2537,
+      "match_reason": "Jaccard keywords=0.254",
+      "proposed_zk_ids": []
+    }
+  ]
+}
