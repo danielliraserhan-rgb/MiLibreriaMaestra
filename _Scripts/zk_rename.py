@@ -108,8 +108,9 @@ for zk_file in zk_files:
         continue
     zk_id = str(zk_id).strip()
 
-    # Extract titulo
-    titulo = data.get("titulo") or extract_yaml_field_regex(content, "titulo")
+    # Extract titulo — check both "titulo" (canonical) and "title" (legacy)
+    titulo = (data.get("titulo") or extract_yaml_field_regex(content, "titulo")
+              or data.get("title") or extract_yaml_field_regex(content, "title"))
     if not titulo:
         titulo = old_stem
 
