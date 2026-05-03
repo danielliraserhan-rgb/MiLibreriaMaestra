@@ -16,3 +16,10 @@ id_ed25519
 id_ecdsa
 .env
 .env.*
+
+# Claude Code settings (contiene API keys)
+.claude/settings.json
+.claude/settings.local.json
+
+# Obsidian plugins (contienen API key + RSA private key)
+.obsidian/plugins/
