@@ -4,11 +4,12 @@ import os
 from pathlib import Path
 
 VAULT_ROOT = Path(__file__).parent.parent
+_VAULT_ROOT_RESOLVED = VAULT_ROOT.resolve()
 
 
 def clean_markdown(filepath):
     resolved = Path(filepath).resolve()
-    if not resolved.is_relative_to(VAULT_ROOT.resolve()):
+    if not resolved.is_relative_to(_VAULT_ROOT_RESOLVED):
         print(f"❌ Error: ruta fuera del vault ({filepath})")
         return
     if not os.path.exists(filepath):
