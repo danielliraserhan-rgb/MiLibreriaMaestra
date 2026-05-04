@@ -5,9 +5,8 @@ import json
 from datetime import datetime
 from pathlib import Path
 
-VAULT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-MANIFEST_PATH = os.path.join(VAULT_ROOT, "_Skills", "scrivener-manifest.json")
-_VAULT_ROOT_PATH = Path(VAULT_ROOT).resolve()
+VAULT_ROOT = Path(__file__).parent.parent
+MANIFEST_PATH = VAULT_ROOT / "_Skills" / "scrivener-manifest.json"
 
 
 def load_manifest():
@@ -43,10 +42,11 @@ def update_manifest(vault_path, scrivener_nombre):
 
 
 def sync_scrivener(src_path, dest_path):
-    if not Path(src_path).resolve().is_relative_to(_VAULT_ROOT_PATH):
+    vault_resolved = VAULT_ROOT.resolve()
+    if not Path(src_path).resolve().is_relative_to(vault_resolved):
         print(f"❌ Error: origen fuera del vault ({src_path})")
         return
-    if not Path(dest_path).resolve().is_relative_to(_VAULT_ROOT_PATH):
+    if not Path(dest_path).resolve().is_relative_to(vault_resolved):
         print(f"❌ Error: destino fuera del vault ({dest_path})")
         return
     if not os.path.exists(src_path):

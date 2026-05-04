@@ -163,6 +163,11 @@ def main():
     effective_renames = {old: new for old, new in renamed_ok}
     wikilink_updated_files = {}  # str(filepath) -> int(count)
 
+    compiled_renames = [
+        (re.compile(r'\[\[' + re.escape(old) + r'(\|[^\]\n]*)?\]\]'), new)
+        for old, new in effective_renames.items()
+    ]
+
     all_md = list(get_all_md_files(VAULT))
     print(f"  Scanning {len(all_md)} .md files for wikilinks...")
 
@@ -175,16 +180,12 @@ def main():
         modified = original
         file_replacements = 0
 
-        for old_stem, new_stem in effective_renames.items():
-            old_escaped = re.escape(old_stem)
-            # Match [[old_stem]] or [[old_stem|pipe text]]
-            pattern = r'\[\[' + old_escaped + r'(\|[^\]\n]*)?\]\]'
-
+        for pattern, new_stem in compiled_renames:
             def replace_link(m, ns=new_stem):
                 suffix = m.group(1) or ""
                 return f"[[{ns}{suffix}]]"
 
-            new_text, count = re.subn(pattern, replace_link, modified)
+            new_text, count = pattern.subn(replace_link, modified)
             if count > 0:
                 modified = new_text
                 file_replacements += count

@@ -14,8 +14,7 @@ def batch_convert(directory):
     if not target_dir.is_relative_to(VAULT_ROOT.resolve()):
         print(f"❌ Error: directorio fuera del vault ({directory})")
         return
-    target_dir = str(target_dir)
-    originals_dir = os.path.join(target_dir, "_Originales_Procesados")
+    originals_dir = target_dir / "_Originales_Procesados"
 
     if not os.path.exists(target_dir):
         print(f"❌ Error: No se encuentra la carpeta '{directory}' en {base_path}")
