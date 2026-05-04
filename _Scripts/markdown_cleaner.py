@@ -1,8 +1,16 @@
 import re
 import sys
 import os
+from pathlib import Path
+
+VAULT_ROOT = Path(__file__).parent.parent
+
 
 def clean_markdown(filepath):
+    resolved = Path(filepath).resolve()
+    if not resolved.is_relative_to(VAULT_ROOT.resolve()):
+        print(f"❌ Error: ruta fuera del vault ({filepath})")
+        return
     if not os.path.exists(filepath):
         print(f"❌ Error: No se encontró el archivo {filepath}")
         return

@@ -1,14 +1,22 @@
 import os
 import shutil
+from pathlib import Path
 from markitdown import MarkItDown
 from datetime import datetime
+
+VAULT_ROOT = Path(__file__).parent.parent
+
 
 def batch_convert(directory):
     md = MarkItDown()
     base_path = os.getcwd()
-    target_dir = os.path.join(base_path, directory)
+    target_dir = Path(os.path.join(base_path, directory)).resolve()
+    if not target_dir.is_relative_to(VAULT_ROOT.resolve()):
+        print(f"❌ Error: directorio fuera del vault ({directory})")
+        return
+    target_dir = str(target_dir)
     originals_dir = os.path.join(target_dir, "_Originales_Procesados")
-    
+
     if not os.path.exists(target_dir):
         print(f"❌ Error: No se encuentra la carpeta '{directory}' en {base_path}")
         return
