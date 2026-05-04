@@ -36,9 +36,10 @@ def get_model() -> SentenceTransformer:
 
 
 def _assert_collection(name: str):
-    assert name in ALLOWED_COLLECTIONS, (
-        f"Guard: colección '{name}' no permitida. Solo: {ALLOWED_COLLECTIONS}"
-    )
+    if name not in ALLOWED_COLLECTIONS:
+        raise ValueError(
+            f"Guard: colección '{name}' no permitida. Solo: {ALLOWED_COLLECTIONS}"
+        )
 
 
 def get_or_create_collection(client: chromadb.PersistentClient, name: str):

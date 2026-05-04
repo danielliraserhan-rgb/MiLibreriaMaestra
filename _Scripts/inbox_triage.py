@@ -7,6 +7,12 @@ from pathlib import Path
 
 VAULT_ROOT = Path(__file__).parent.parent
 
+
+def _yaml_str(value: str) -> str:
+    """Escape a string for safe embedding inside a YAML double-quoted scalar."""
+    return str(value).replace("\\", "\\\\").replace('"', '\\"').replace("\n", " ").replace("\r", "")
+
+
 def triage_file(filepath, meta_json_str):
     if not os.path.exists(filepath):
         print(f"❌ Error: Archivo no encontrado ({filepath})")
@@ -18,11 +24,15 @@ def triage_file(filepath, meta_json_str):
         print("❌ Error: JSON de metadatos inválido.")
         return
 
+    title = _yaml_str(os.path.splitext(os.path.basename(filepath))[0])
+    tipo  = _yaml_str(meta.get('tipo', ''))
+    tema  = _yaml_str(meta.get('tema', ''))
+
     # Generar YAML v2 estandarizado
     yaml_content = f"""---
-title: "{os.path.splitext(os.path.basename(filepath))[0]}"
-tipo: "{meta.get('tipo', '')}"
-tema: "{meta.get('tema', '')}"
+title: "{title}"
+tipo: "{tipo}"
+tema: "{tema}"
 libro_biblico_principal: ""
 personajes: []
 versiculos_citados: []
@@ -30,8 +40,8 @@ temas_principales: []
 seo_keywords: []
 fecha: "{datetime.now().strftime('%Y-%m-%d')}"
 estado: "en_proceso"
-dominio: "{meta.get('dominio', '')}"
-modo: "{meta.get('modo', '')}"
+dominio: "{_yaml_str(meta.get('dominio', ''))}"
+modo: "{_yaml_str(meta.get('modo', ''))}"
 fase: ""
 serie: ""
 fuente: ""
