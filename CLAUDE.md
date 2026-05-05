@@ -11,7 +11,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 | Archivo | Carga cuando... |
 |---|---|
 | `Daniel.md` | **Siempre.** Identidad, misión, voz y marcos teológicos de Daniel. Reemplaza `ContextoMaestro/00_ESENCIAL.md` en uso directo. |
-| `VaultMap.md` | Al navegar, mover archivos o iniciar sesión de investigación. |
+| `VaultMap.md` | Al navegar o mover archivos · al iniciar sesión de investigación · al iniciar sesión de coach S2 (contiene protocolo `load_for` con `04_voz.md`). |
 | `SkillsMap.md` | Al ejecutar cualquier skill o script. |
 
 ---
