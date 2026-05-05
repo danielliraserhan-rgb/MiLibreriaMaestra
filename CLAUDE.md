@@ -75,6 +75,8 @@ PROCESS_LOG.md updated
 
 **Para carga masiva (5+ documentos):** usar `bulk-ingest` en lugar de `modo-selector`. Los checkpoints se agrupan por lote: triage del lote → OK → procesamiento auto → revisión ZK del lote → OK → pattern-harvester una vez → OK.
 
+**Regla de fecha en carga inicial (batch):** Durante `bulk-ingest` o cualquier ingesta de contenido pre-existente, el campo `fecha` DEBE reflejar cuándo se creó o impartió el contenido original, **no** la fecha en que se ingresó al vault. El sistema escanea el documento para detectar esa fecha antes de asignar `fecha: ""`. `fecha_ingesta` registra automáticamente la fecha de hoy. Las notas nuevas (escritas hoy) no necesitan detección: `fecha` = hoy. Ver §6 para el algoritmo de detección y jerarquía de fuentes.
+
 **Regla de oro:** `inbox-triage` siempre primero · `zettelkasten-forge` antes del harvester · nunca avanzar sin OK explícito de Daniel · `pattern-harvester` solo si ZK ≥ 8 o contenido teológicamente nuevo (Modo 7: siempre diferir).
 
 **Motor de escritura:** skill `/obsidian-markdown` (instalado en `skills-sistema-v3/obsidian-markdown/`). Aplica siempre al crear o editar `.md` en el vault. Prohibido en cualquier caso: `cat`, `echo >>`, `sed`, `awk`, terminal para markdown.
@@ -110,7 +112,7 @@ personajes: []
 versiculos_citados: []
 temas_principales: []
 seo_keywords: []
-fecha: ""
+fecha: ""           # fecha de creación/impartición original del contenido (NO fecha de ingesta al vault)
 estado: ""          # sin_procesar | en_proceso | completado
 
 # === Extensión v2 (campos nuevos — no reemplaza los de arriba) ===
@@ -125,6 +127,7 @@ author_quotes: []
 zettelkasten_notes: []  # IDs: ZK-YYYYMMDD-HHMM-NNN
 coaching_notes: []      # IDs de sesiones de coach que usaron este archivo como fuente
 version_yaml: "2.0"
+fecha_ingesta: ""   # auto: fecha en que se procesó el archivo en el vault (hoy)
 fecha_actualizacion: ""
 scrivener_sync:
   estado: ""        # sincronizado | modificado_vault | pendiente_export | conflicto
@@ -135,6 +138,25 @@ scrivener_sync:
 ```
 
 **Regla:** YAML v1 sigue siendo válido. Al pasar por el sistema: upgrade automático. Campos v1 NUNCA se renombran.
+
+### §6.1 Algoritmo de detección de fecha (carga inicial / batch)
+
+**Solo aplica cuando el contenido es pre-existente** (bulk-ingest o ingesta de material histórico). Para notas nuevas: `fecha` = hoy, skip.
+
+**Jerarquía de fuentes (en orden de prioridad):**
+
+1. **YAML frontmatter existente** — si `fecha:` ya tiene valor, respetar y no sobreescribir.
+2. **Nombre del archivo** — buscar patrón `YYYY-MM-DD`, `YYYY_MM_DD`, o `YYYY-MM` en el nombre.
+3. **Primeros 500 caracteres del cuerpo** — buscar fechas explícitas:
+   - Formato ISO: `2023-05-14`
+   - Formato textual ES: "14 de mayo de 2023", "Domingo 14 mayo", "mayo 2023"
+   - Encabezados de clase/predicación: "Clase del...", "Predicación:", "Serie:", "Sesión"
+4. **Cualquier mención de año (1990–2030) en los primeros 200 palabras** con contexto de mes.
+5. **Sin fecha detectada** → asignar `fecha: "sin_fecha"` y marcar en el triage como `⚠ fecha no detectada` para que Daniel la asigne manualmente.
+
+**Formato de salida:** siempre `YYYY-MM-DD`. Si solo se detecta año → `YYYY`. Si año+mes → `YYYY-MM`.
+
+**Cuando hay múltiples fechas:** usar la más antigua (fecha de origen, no de edición).
 
 ---
 
