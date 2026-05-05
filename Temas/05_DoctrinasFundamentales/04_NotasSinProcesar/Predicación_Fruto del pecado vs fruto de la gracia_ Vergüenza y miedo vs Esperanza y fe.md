@@ -1,3 +1,32 @@
+---
+title: "Predicación_Fruto del pecado vs fruto de la gracia_ Vergüenza y miedo vs Esperanza y fe"
+tipo: "clase_en_vivo"
+tema: "05_DoctrinasFundamentales"
+libro_biblico_principal: ""
+personajes: []
+versiculos_citados: []
+temas_principales: []
+seo_keywords: []
+fecha: "sin_fecha"
+estado: "en_proceso"
+dominio: "pastoral"
+modo: "6"
+fase: ""
+serie: ""
+fuente: "dictado"
+author_quotes: []
+zettelkasten_notes: []
+coaching_notes: []
+fase_sistema: "catalogado"
+version_yaml: "2.0"
+fecha_ingesta: "2026-05-05"
+fecha_actualizacion: "2026-05-05"
+scrivener_sync:
+  estado: ""
+  ultima_sync: ""
+  ultima_export: ""
+  scrivener_nombre: ""
+---
 Verguenza y miedo…
 
 ![horizontal line](data:image/png;base64...)

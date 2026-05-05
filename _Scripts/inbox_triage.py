@@ -24,11 +24,15 @@ def triage_file(filepath, meta_json_str):
         print("❌ Error: JSON de metadatos inválido.")
         return
 
-    title   = _yaml_str(os.path.splitext(os.path.basename(filepath))[0])
-    tipo    = _yaml_str(meta.get('tipo', ''))
-    tema    = _yaml_str(meta.get('tema', ''))
-    dominio = _yaml_str(meta.get('dominio', ''))
-    modo    = _yaml_str(meta.get('modo', ''))
+    title         = _yaml_str(os.path.splitext(os.path.basename(filepath))[0])
+    tipo          = _yaml_str(meta.get('tipo', ''))
+    tema          = _yaml_str(meta.get('tema', ''))
+    dominio       = _yaml_str(meta.get('dominio', ''))
+    modo          = _yaml_str(meta.get('modo', ''))
+    fecha         = _yaml_str(meta.get('fecha', 'sin_fecha'))
+    serie         = _yaml_str(meta.get('serie', ''))
+    fuente        = _yaml_str(meta.get('fuente', ''))
+    today         = datetime.now().strftime('%Y-%m-%d')
 
     # Generar YAML v2 estandarizado
     yaml_content = f"""---
@@ -40,18 +44,20 @@ personajes: []
 versiculos_citados: []
 temas_principales: []
 seo_keywords: []
-fecha: "{datetime.now().strftime('%Y-%m-%d')}"
+fecha: "{fecha}"
 estado: "en_proceso"
 dominio: "{dominio}"
 modo: "{modo}"
 fase: ""
-serie: ""
-fuente: ""
+serie: "{serie}"
+fuente: "{fuente}"
 author_quotes: []
 zettelkasten_notes: []
 coaching_notes: []
+fase_sistema: "catalogado"
 version_yaml: "2.0"
-fecha_actualizacion: "{datetime.now().strftime('%Y-%m-%d')}"
+fecha_ingesta: "{today}"
+fecha_actualizacion: "{today}"
 scrivener_sync:
   estado: ""
   ultima_sync: ""

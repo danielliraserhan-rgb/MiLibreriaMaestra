@@ -1,3 +1,32 @@
+---
+title: "Predicación_La conquista_ Parte 2 Los procesos de la promesa"
+tipo: "clase_en_vivo"
+tema: "02_HistoriaDeIsrael"
+libro_biblico_principal: ""
+personajes: []
+versiculos_citados: []
+temas_principales: []
+seo_keywords: []
+fecha: "sin_fecha"
+estado: "en_proceso"
+dominio: "pastoral"
+modo: "6"
+fase: ""
+serie: "La Conquista"
+fuente: "dictado"
+author_quotes: []
+zettelkasten_notes: []
+coaching_notes: []
+fase_sistema: "catalogado"
+version_yaml: "2.0"
+fecha_ingesta: "2026-05-05"
+fecha_actualizacion: "2026-05-05"
+scrivener_sync:
+  estado: ""
+  ultima_sync: ""
+  ultima_export: ""
+  scrivener_nombre: ""
+---
 Los procesos de la promesa
 
 La sesión anterior hablamos de la promesa que Dios hace a Abraham y como pone a Cristo como garantía/juramento de que esa promesa se cumpliría.

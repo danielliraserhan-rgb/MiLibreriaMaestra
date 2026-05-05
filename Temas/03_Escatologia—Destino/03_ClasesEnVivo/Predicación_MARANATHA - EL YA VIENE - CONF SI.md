@@ -1,3 +1,32 @@
+---
+title: "Predicación_MARANATHA - EL YA VIENE - CONF SI"
+tipo: "clase_en_vivo"
+tema: "03_Escatologia—Destino"
+libro_biblico_principal: ""
+personajes: []
+versiculos_citados: []
+temas_principales: []
+seo_keywords: []
+fecha: "sin_fecha"
+estado: "en_proceso"
+dominio: "pastoral"
+modo: "6"
+fase: ""
+serie: ""
+fuente: "conferencia"
+author_quotes: []
+zettelkasten_notes: []
+coaching_notes: []
+fase_sistema: "catalogado"
+version_yaml: "2.0"
+fecha_ingesta: "2026-05-05"
+fecha_actualizacion: "2026-05-05"
+scrivener_sync:
+  estado: ""
+  ultima_sync: ""
+  ultima_export: ""
+  scrivener_nombre: ""
+---
 MARANATHA - EL YA VIENE
 
 ![horizontal line](data:image/png;base64...)
