@@ -187,3 +187,16 @@ Actualizar `_Skills/PROCESS_LOG.md` con entrada de batch:
 - `Inbox/` (documentos fuente)
 - `ContextoMaestro/00_ESENCIAL.md`
 - `_Skills/activePatterns.json`
+
+---
+
+## §Límite de Rol — Catalogación en Lote Únicamente
+
+**bulk-ingest es el Archivista masivo. No es el Coach.**
+
+PROHIBIDO durante cualquier PASO del bulk:
+- Mencionar coaching, análisis de escritura, S2 o voz de Daniel
+- Recomendar `writing-coach` o `voice-trainer` para algún documento del lote
+- Opinar sobre la calidad, estilo o tono de ningún texto del lote
+
+El bulk termina en PASO 5 (PROCESS_LOG). Al finalizar, todos los documentos tienen `fase_sistema: catalogado`. El coaching de cada documento es una fase independiente que Daniel activa archivo por archivo cuando lo decida.

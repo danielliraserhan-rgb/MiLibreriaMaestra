@@ -219,3 +219,15 @@ Una vez que la terminal devuelva el mensaje de éxito de Python, confirma a Dani
 5. **Si el archivo es mixto**, señalarlo con claridad y programar MODO A+B después del triage.
 6. **Si el dominio es académico**, no aplicar criterios de voz pastoral.
 7. **Siempre indicar** los skills que vienen después (derivación por modo) en el reporte de Fase 2.
+
+## §Límite de Rol — Catalogación Únicamente
+
+**Este skill es el Archivista. No es el Coach.**
+
+PROHIBIDO durante inbox-triage:
+- Mencionar coaching, análisis de escritura, S2, o voz de Daniel
+- Recomendar `writing-coach` o `voice-trainer` como paso siguiente
+- Opinar sobre la calidad, el estilo o el tono del texto
+- Sugerir que Daniel revise su escritura
+
+El flujo de catalogación termina en `zettelkasten-forge` + `pattern-harvester`. El coaching es una fase separada que Daniel activa con `inicia coaching [archivo]` cuando lo decida.

@@ -80,14 +80,34 @@ Cada tema tiene 5 contenedores estándar:
 
 | Tipo de sesión | Clave `load_for` | Archivos a cargar | Categorías de patrones |
 |---|---|---|---|
-| Procesamiento pastoral (Modos 1–7) | `pastoral_general` | `Daniel.md` + `activePatterns.json` | estructura, teologia, hermeneutica |
-| Coach de escritura (S2) | `coach_s2` | `Daniel.md` + `04_voz.md` + `activePatterns.json` | voz, estructura |
+| Catalogación pastoral (Modos 1–7) | `pastoral_general` | `Daniel.md` + `activePatterns.json` | estructura, teologia, hermeneutica |
+| Catalogación masiva (Bulk) | `bulk_ingest` | `Daniel.md` + `activePatterns.json` | teologia, hermeneutica, estructura |
+| Coach de escritura (S2) | `coach_s2` | `Daniel.md` + `04_voz.md` + `activePatterns.json (voz)` | voz, estructura |
 | Exégesis / estudio bíblico | `exegesis` | `Daniel.md` + `activePatterns.json` | hermeneutica, teologia |
 | Académico (Modo Acad.) | `academico` | `Daniel.md` + `activePatterns.json` | teologia, hermeneutica |
-| Bulk-ingest | `bulk_ingest` | `Daniel.md` + `activePatterns.json` | teologia, hermeneutica, estructura |
 | Investigación / MOC | `pastoral_general` + VAULT_INDEX | `Daniel.md` + `VAULT_INDEX.md` + `activePatterns.json` | estructura, teologia, hermeneutica |
 
 > `Daniel.md` reemplaza la carga directa de `ContextoMaestro/00_ESENCIAL.md` en todos los tipos de sesión.
+
+---
+
+## Protocolo de Coaching (Fase 2)
+
+**Trigger:** `inicia coaching [archivo]` o `inicia coaching [archivo] modo:[X]`
+
+**Guardia Python:** `python3 _Scripts/coaching_selector.py "ruta/archivo.md"`
+- Verifica `fase_sistema: catalogado` en el YAML del archivo
+- Sugiere modo de coaching según tipo de contenido
+- Retorna JSON: `{puede_coaching: true/false, modo_sugerido: "...", mensaje: "..."}`
+
+**Contexto de la sesión:** Solo cargar `coach_s2` (Daniel.md + 04_voz.md + activePatterns voz)
+**NO cargar:** VaultMap, SkillsMap, reglas de enrutamiento
+
+**Modos:** `voz` · `teologia` · `estructura` · `ritmo` · `auto`
+
+**Estado YAML al terminar:** `fase_sistema: coaching_completado` + ID en `coaching_notes: []`
+
+**Regla de secuencia:** El coaching solo puede iniciarse sobre archivos con `fase_sistema: catalogado`. Si el archivo no fue catalogado, Python retorna `puede_coaching: false` con instrucción de ejecutar `inbox` primero.
 
 ---
 

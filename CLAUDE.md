@@ -11,8 +11,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 | Archivo | Carga cuando... |
 |---|---|
 | `Daniel.md` | **Siempre.** Identidad, misión, voz y marcos teológicos de Daniel. Reemplaza `ContextoMaestro/00_ESENCIAL.md` en uso directo. |
-| `VaultMap.md` | Al navegar o mover archivos · al iniciar sesión de investigación · al iniciar sesión de coach S2 (contiene protocolo `load_for` con `04_voz.md`). |
-| `SkillsMap.md` | Al ejecutar cualquier skill o script. |
+| `VaultMap.md` | Al navegar o mover archivos · al iniciar sesión de investigación · **solo en Fase de Catalogación** (no cargar en sesiones de coaching). |
+| `SkillsMap.md` | Al ejecutar cualquier skill o script · **solo en Fase de Catalogación**. |
 
 ---
 
@@ -45,9 +45,16 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ---
 
-## §3 Protocolo de Entrada
+## §3A Protocolo de Catalogación
 
-**Punto de entrada siempre:** `modo-selector` → lee `activePatterns.json` → llama a `inbox-triage`
+**Trigger:** Daniel dice `inbox [archivo]` (un archivo) o `bulk` (5+ archivos)
+**Contexto que carga:** VaultMap + activePatterns.json + SkillsMap
+**Contexto que NO carga:** Daniel.md voz completo · ContextoMaestro/04_voz.md · nada relacionado con coaching
+
+**LÍMITE DE ROL — PROHIBIDO en sesión de catalogación:**
+- Mencionar coaching, análisis de escritura, S2 o voz de Daniel
+- Recomendar `writing-coach` o `voice-trainer` dentro del flujo
+- Opinar sobre calidad, estilo o tono del texto
 
 ```
 Daniel trae archivo → Inbox/ (o llega vía Inbox/scrivener-sync/ con source: scrivener)
@@ -58,7 +65,8 @@ modo-selector → inbox-triage Fase 1 → detecta MODO + dominio + tema
 Claude NO genera el YAML ni mueve el archivo. Claude ejecuta en terminal:
 `python3 _Scripts/inbox_triage.py "Inbox/archivo.md" '{"tipo": "X", "tema": "01_Origenes", "dominio": "pastoral", "modo": "1", "destino": "Temas/01_Origenes/01_Libros/"}'`
 ↓
-Python inyecta YAML v2 y mueve el archivo al contenedor.
+Python inyecta YAML v2 (incluye fase_sistema: catalogado) y mueve el archivo al contenedor.
+Si Python retorna error → reportar el error exacto. El archivo permanece en Inbox/ sin YAML.
 ↓
 [cargar categorías load_for según dominio — ver protocolo en VaultMap.md]
 ↓
@@ -73,13 +81,58 @@ zettelkasten-forge → propone notas atómicas → espera OK
 PROCESS_LOG.md updated
 ```
 
-**Para carga masiva (5+ documentos):** usar `bulk-ingest` en lugar de `modo-selector`. Los checkpoints se agrupan por lote: triage del lote → OK → procesamiento auto → revisión ZK del lote → OK → pattern-harvester una vez → OK.
+**Para carga masiva (5+ documentos):** usar `bulk-ingest` en lugar de `modo-selector`. Los checkpoints se agrupan por lote: triage del lote → OK → procesamiento auto → revisión ZK del lote → OK → pattern-harvester una vez → OK. Al terminar: todos los archivos del lote tienen `fase_sistema: catalogado`.
 
 **Regla de fecha en carga inicial (batch):** Durante `bulk-ingest` o cualquier ingesta de contenido pre-existente, el campo `fecha` DEBE reflejar cuándo se creó o impartió el contenido original, **no** la fecha en que se ingresó al vault. El sistema escanea el documento para detectar esa fecha antes de asignar `fecha: ""`. `fecha_ingesta` registra automáticamente la fecha de hoy. Las notas nuevas (escritas hoy) no necesitan detección: `fecha` = hoy. Ver §6 para el algoritmo de detección y jerarquía de fuentes.
 
 **Regla de oro:** `inbox-triage` siempre primero · `zettelkasten-forge` antes del harvester · nunca avanzar sin OK explícito de Daniel · `pattern-harvester` solo si ZK ≥ 8 o contenido teológicamente nuevo (Modo 7: siempre diferir).
 
 **Motor de escritura:** skill `/obsidian-markdown` (instalado en `skills-sistema-v3/obsidian-markdown/`). Aplica siempre al crear o editar `.md` en el vault. Prohibido en cualquier caso: `cat`, `echo >>`, `sed`, `awk`, terminal para markdown.
+
+---
+
+## §3B Protocolo de Coaching
+
+**Trigger:** Daniel dice `inicia coaching [archivo]` o `inicia coaching [archivo] modo:[X]`
+**Contexto que carga:** Daniel.md + ContextoMaestro/04_voz.md + activePatterns.json (solo categoría voz)
+**Contexto que NO carga:** VaultMap · SkillsMap · reglas de enrutamiento · rutas del vault
+
+**Modos disponibles:**
+
+| Modo | Qué analiza |
+|---|---|
+| `voz` | Las 5 marcas de voz de Daniel, ritmo, remates cortos — ideal para predicaciones y dictados |
+| `teologia` | Marcos teológicos, líneas rojas, estructura arco — ideal para libros y estudios doctrinales |
+| `estructura` | Arco condición humana → respuesta de Dios → aplicación — ideal para manuscritos en desarrollo |
+| `ritmo` | Densidad de párrafos, respiración, variación de longitud |
+| `auto` | Claude lee los primeros 300 palabras y propone el modo más útil antes de empezar |
+
+```
+PASO 0 — Verificación de estado:
+python3 _Scripts/coaching_selector.py "ruta/archivo.md"
+→ Si fase_sistema ≠ catalogado: avisar a Daniel y ofrecer ejecutar inbox primero
+→ Si fase_sistema = catalogado: continuar
+
+PASO 1 — Modo de análisis:
+- Si Daniel especificó modo → usar ese modo directamente
+- Si Daniel no especificó modo (o modo=auto):
+  → Claude lee primeros 300 palabras del texto
+  → Propone: "Veo que este texto es [tipo]. Te sugiero modo [X]. ¿Seguimos?"
+  → Espera confirmación antes de analizar
+
+PASO 2 — Cargar contexto de coaching:
+Daniel.md + ContextoMaestro/04_voz.md + activePatterns.json (categoría voz únicamente)
+
+PASO 3 — Análisis según modo activo (ver skill writing-coach)
+
+PASO 4 — Proponer 2–3 preguntas que Daniel pueda hacerse (nunca reescribir)
+
+PASO 5 — Si análisis genera insights permanentes → proponer pattern-harvester → OK de Daniel
+
+PASO 6 — YAML actualiza: coaching_notes agrega ID de sesión · fase_sistema: coaching_completado
+```
+
+**Regla:** Toda observación debe citar la sección de `Daniel.md` o `ContextoMaestro/` que la sustenta. El coach analiza. Daniel escribe. Siempre.
 
 ---
 
@@ -126,6 +179,7 @@ fuente: ""          # dictado | grabacion | borrador | clase | conferencia | pap
 author_quotes: []
 zettelkasten_notes: []  # IDs: ZK-YYYYMMDD-HHMM-NNN
 coaching_notes: []      # IDs de sesiones de coach que usaron este archivo como fuente
+fase_sistema: ""        # sin_procesar | catalogado | coaching_activo | coaching_completado
 version_yaml: "2.0"
 fecha_ingesta: ""   # auto: fecha en que se procesó el archivo en el vault (hoy)
 fecha_actualizacion: ""
@@ -162,24 +216,17 @@ scrivener_sync:
 
 ## §8 Protocolo Coach de Escritura (S2)
 
+> **Ver §3B para el protocolo completo de activación, modos y flujo.**
+
+**Trigger:** `inicia coaching [archivo]` o `inicia coaching [archivo] modo:[voz|teologia|estructura|ritmo|auto]`
+
 **Principio:** El coach analiza. Daniel escribe. Siempre.
 
-**Activación:** Cuando Daniel trae un texto propio para revisión (no para catalogar).
+**Skill:** `writing-coach` — acepta parámetro `modo`. Si no se especifica, usa `auto`.
 
-**Flujo del coach:**
-1. Leer `Daniel.md` (voz, marcos, líneas rojas) + `ContextoMaestro/04_voz.md`
-2. Leer `_Skills/activePatterns.json` para patrones activos
-3. Analizar el texto en 5 categorías:
-   - **Voz** — ¿Cuáles de las 5 marcas están presentes / ausentes? Citar líneas exactas.
-   - **Teología** — ¿Algún marco está ausente o comprometido?
-   - **Estructura** — ¿El arco condición humana → respuesta de Dios → aplicación está completo?
-   - **Ritmo** — ¿Párrafos largos sin remate corto? ¿Dónde falta respiración?
-   - **Líneas rojas** — ¿Alguna de las 9 prohibiciones activada? Citar sección exacta.
-4. Proponer 2–3 preguntas que Daniel pueda hacerse para mejorar el texto (no reescribir)
-4b. **Conexiones semánticas:** Si ChromaDB indexado, consultar con primeros 200 palabras. Mostrar 2-3 notas ZK. Formato: `[[ZK-ID Título]] — tema — relevancia`. Solo mismo dominio. Degradación elegante si ChromaDB no disponible.
-5. Si el análisis genera insights permanentes → proponer a `pattern-harvester`
+**Conexiones semánticas (opcional):** Si ChromaDB indexado, consultar con primeros 200 palabras. Mostrar 2–3 notas ZK. Formato: `[[ZK-ID Título]] — tema — relevancia`. Solo mismo dominio. Degradación elegante si ChromaDB no disponible.
 
-**Regla:** Toda observación debe citar la sección de `Daniel.md` o `ContextoMaestro/` que la sustenta.
+**Regla:** Toda observación debe citar la sección de `Daniel.md` o `ContextoMaestro/` que la sustenta. No cargar VaultMap ni SkillsMap en sesiones de coaching.
 
 ---
 
