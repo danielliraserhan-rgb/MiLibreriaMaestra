@@ -18,6 +18,7 @@ Todos los scripts se ejecutan desde la raíz del vault. Usan `Path(__file__).par
 |---|---|
 | **modo_selector** | `python3 _Scripts/modo_selector.py "Inbox/archivo.md"` → devuelve JSON `{status, action}` |
 | **inbox_triage** | `python3 _Scripts/inbox_triage.py "Inbox/archivo.md" '{"tipo":"X","tema":"01_Origenes","dominio":"pastoral","modo":"1","destino":"Temas/01_Origenes/01_Libros/"}'` |
+| **coaching_selector** | `python3 _Scripts/coaching_selector.py "Temas/ruta/archivo.md"` → devuelve JSON `{puede_coaching, modo_sugerido, mensaje}` |
 | **write_moc** | `python3 _Scripts/write_moc.py "Tema" '{"Grupo1":["[[Nota A]]","[[Nota B]]"]}'` |
 | **scan_vault (gaps)** | `python3 _Scripts/scan_vault.py --mode gaps` |
 | **scan_vault (index)** | `python3 _Scripts/scan_vault.py --mode index` |
@@ -48,6 +49,8 @@ pip install -r requirements.txt
 
 ## Skills — Tabla de Enrutamiento por Situación
 
+### FASE 1: Catalogación (trigger: `inbox` / `bulk`)
+
 | Situación | Skill |
 |---|---|
 | Nuevo archivo en inbox | `modo-selector` |
@@ -64,7 +67,12 @@ pip install -r requirements.txt
 | Mapa de contenido (índice de notas) | `moc-builder` |
 | **Huecos estructurales** (preguntas abiertas, patrones débiles, huérfanas) | `desarrollador-de-temas` |
 | **Cobertura cuantitativa de temas** (temas mencionados con pocas notas ZK) | script: `scan_vault.py --mode gaps` |
-| **Análisis de voz + teología (S2)** | `writing-coach` |
+### FASE 2: Coaching (trigger: `inicia coaching [archivo] [modo?]`)
+
+| Situación | Skill / Script |
+|---|---|
+| Verificar estado y sugerir modo | `coaching_selector.py` (ejecutar primero) |
+| **Análisis de voz + teología (S2)** | `writing-coach` (con parámetro `modo`) |
 | **Espejo de voz vs patrones aprobados** | `voice-trainer` |
 | **Guía de formato por tipo de contenido** | `format-adapter` |
 | **Sincronizar Apple Notes → Inbox/** | script: `apple_notes_bridge.py --mode sync` |
