@@ -87,6 +87,7 @@ Basado en dominio, tipo y MODO:
 
 ### 1.6 Derivación de skills
 
+Si fue activado por Bulk-ingrest DEBE saltarse esta sección. 
 Indicar en el reporte qué skills deben activarse después, en orden:
 
 - Ver CLAUDE.md §4 para tabla de enrutamiento por modo
