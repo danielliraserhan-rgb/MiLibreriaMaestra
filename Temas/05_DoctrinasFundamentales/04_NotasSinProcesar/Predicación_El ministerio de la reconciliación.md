@@ -16,7 +16,7 @@ fase: ""
 serie: ""
 fuente: borrador
 author_quotes: []
-zettelkasten_notes: []
+zettelkasten_notes: [ZK-20260505-1020-001, ZK-20260505-1020-002, ZK-20260505-1020-003, ZK-20260505-1020-004, ZK-20260505-1020-005, ZK-20260505-1020-006, ZK-20260505-1020-007, ZK-20260505-1020-008]
 source_file: "Predicación_El ministerio de la reconciliación. .docx"
 version_yaml: "2.0"
 fecha_actualizacion: "2026-04-28"

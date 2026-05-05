@@ -15,7 +15,7 @@ fase: ""
 serie: "La Conquista"
 fuente: "dictado"
 author_quotes: []
-zettelkasten_notes: []
+zettelkasten_notes: [ZK-20260505-1100-001, ZK-20260505-1100-002, ZK-20260505-1100-003, ZK-20260505-1100-004, ZK-20260505-1100-005]
 coaching_notes: []
 fase_sistema: "catalogado"
 version_yaml: "2.0"

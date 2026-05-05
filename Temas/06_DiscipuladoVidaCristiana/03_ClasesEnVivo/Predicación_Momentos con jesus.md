@@ -15,7 +15,7 @@ fase: ""
 serie: ""
 fuente: "dictado"
 author_quotes: []
-zettelkasten_notes: []
+zettelkasten_notes: [ZK-20260505-1130-001, ZK-20260505-1130-002, ZK-20260505-1130-003, ZK-20260505-1130-004]
 coaching_notes: []
 fase_sistema: "catalogado"
 version_yaml: "2.0"

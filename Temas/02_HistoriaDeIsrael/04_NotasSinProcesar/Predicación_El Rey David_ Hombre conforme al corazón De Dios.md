@@ -15,7 +15,7 @@ fase: ""
 serie: "Serie de Reyes"
 fuente: "dictado"
 author_quotes: []
-zettelkasten_notes: []
+zettelkasten_notes: [ZK-20260505-1010-001, ZK-20260505-1010-002, ZK-20260505-1010-003, ZK-20260505-1010-004, ZK-20260505-1010-005, ZK-20260505-1010-006, ZK-20260505-1010-007, ZK-20260505-1010-008]
 coaching_notes: []
 fase_sistema: "catalogado"
 version_yaml: "2.0"

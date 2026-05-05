@@ -15,7 +15,7 @@ fase: ""
 serie: ""
 fuente: "grabacion"
 author_quotes: []
-zettelkasten_notes: []
+zettelkasten_notes: [ZK-20260505-1110-001, ZK-20260505-1110-002, ZK-20260505-1110-003, ZK-20260505-1110-004, ZK-20260505-1110-005]
 coaching_notes: []
 fase_sistema: "catalogado"
 version_yaml: "2.0"

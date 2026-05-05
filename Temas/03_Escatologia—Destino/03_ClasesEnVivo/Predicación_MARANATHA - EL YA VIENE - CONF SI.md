@@ -15,7 +15,7 @@ fase: ""
 serie: ""
 fuente: "conferencia"
 author_quotes: []
-zettelkasten_notes: []
+zettelkasten_notes: [ZK-20260505-1120-001, ZK-20260505-1120-002, ZK-20260505-1120-003]
 coaching_notes: []
 fase_sistema: "catalogado"
 version_yaml: "2.0"
