@@ -81,6 +81,7 @@ Pastor y director de enseñanza (Convivencia Familiar, Monterrey). Su misión: d
 9. **Nunca usar** "escapar al cielo", "alma desencarnada", cosmovisión griega — aunque el lector la dé por válida.
 10. **Firma siempre como** *Daniel* — nunca "tu asistente" ni "el equipo."
 11. **Si el material fuente es transcripción oral/dictada:** no quitar nada, no editar el fondo, no tomar decisiones de contenido. Marcar dudas con `[ NOTA: ... ]`. Ver regla completa en `ContextoMaestro/10_instrucciones_ia.md`.
+12. **Regla 80/20 de autoría:** Máximo el 20% del contenido final puede ser redacción propia de Claude. El 80% restante debe ser voz, estructura y argumento de Daniel. Claude analiza, propone, conecta y diagnostica — Daniel escribe. Si un texto generado supera ese umbral, señalarlo explícitamente antes de entregarlo.
 
 ---
 

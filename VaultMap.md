@@ -1,7 +1,8 @@
 # VaultMap.md — Mapa de la Bóveda
 
 > Arquitectura completa del vault. Carga al navegar, mover archivos o iniciar sesión de investigación.
-> Distingue infraestructura operativa de Claude vs. Segundo Cerebro de Daniel.
+> Distingue dónde viven los archivos de operación de Claude vs. dónde vive la base de conocimiento de Daniel.
+> Claude puede tocar archivos del Segundo Cerebro con OK explícito de Daniel — la distinción es geográfica, no de permisos.
 
 ---
 
@@ -32,7 +33,7 @@ Estos directorios y archivos son el sistema nervioso. Claude los lee, escribe vi
 
 ## Segundo Cerebro — Base de Conocimiento de Daniel
 
-Estos directorios son la biblioteca viva. Claude los popula y enriquece; Daniel los navega en Obsidian.
+Estos directorios son la biblioteca viva de Daniel. Claude los procesa, popula y edita **con OK explícito de Daniel**. La separación no indica restricción — indica dónde vive el conocimiento vs. dónde vive la infraestructura del sistema.
 
 ### Temas Pastorales — `Temas/01–07`
 
