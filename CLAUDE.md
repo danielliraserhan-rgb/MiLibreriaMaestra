@@ -138,16 +138,16 @@ PASO 6 — YAML actualiza: coaching_notes agrega ID de sesión · fase_sistema: 
 
 ## §4 Tabla de Enrutamiento de Modos
 
-| Modo | Tipo | Skills en orden | Output ZK |
-|---|---|---|---|
-| **1** | Libro Terminado | `inbox-triage` → `modo-c`(opt) → `zettelkasten-forge` → `pattern-harvester` | 15–30 |
-| **2** | Libro Pre-Diseño | `inbox-triage` → `modo-c` → `modo-ab` → `modo-r`(si hueco) → `zettelkasten-forge` → `pattern-harvester` | 10–25 |
-| **3** | Ideas Sueltas | `inbox-triage` → `zettelkasten-forge` → `pattern-harvester`*(si ZK ≥ 8)* | 5–10 |
-| **4** | Guía de Estudio | `inbox-triage` → `modo-e`(bíblica) → `zettelkasten-forge` → `pattern-harvester` | 10–20 |
-| **5** | Nota Temática | `inbox-triage` → `modo-c`(opt) → `zettelkasten-forge` → `pattern-harvester`*(si ZK ≥ 8)* | 5–10 |
-| **6** | Clase Larga | `inbox-triage` → `modo-e` → `modo-ab`(si transcripción) → `zettelkasten-forge` → `pattern-harvester` | 8–15 |
-| **7** | Grupos Conexión | `inbox-triage` → `modo-e`(temática) → `zettelkasten-forge` *(harvester siempre diferido)* | 3–5 |
-| **Acad.** | Maestría | `inbox-triage` → `notas-maestria` → `zettelkasten-forge`(neutral) → `pattern-harvester` | 5–15 |
+| Modo      | Tipo             | Skills en orden                                                                         | Output ZK |
+| --------- | ---------------- | --------------------------------------------------------------------------------------- | --------- |
+| **1**     | Libro Terminado  | `inbox-triage`  → `zettelkasten-forge` → `pattern-harvester`                            | 15–30     |
+| **2**     | Libro Pre-Diseño | `inbox-triage`  → `zettelkasten-forge` → `pattern-harvester`                            | 10–25     |
+| **3**     | Ideas Sueltas    | `inbox-triage` → `zettelkasten-forge` → `pattern-harvester`*(si ZK ≥ 8)*                | 5–10      |
+| **4**     | Guía de Estudio  | `inbox-triage` → `zettelkasten-forge` → `pattern-harvester`                             | 10–20     |
+| **5**     | Nota Temática    | `inbox-triage` → `zettelkasten-forge` → `pattern-harvester`*(si ZK ≥ 8)*                | 5–10      |
+| **6**     | Clase Larga      | `inbox-triage` → `zettelkasten-forge` → `pattern-harvester`                             | 8–15      |
+| **7**     | Grupos Conexión  | `inbox-triage` → `zettelkasten-forge` *(harvester siempre diferido)*                    | 3–5       |
+| **Acad.** | Maestría         | `inbox-triage` → `notas-maestria` → `zettelkasten-forge`(neutral) → `pattern-harvester` | 5–15      |
 
 ---
 
@@ -232,7 +232,7 @@ scrivener_sync:
 
 ## §9 Reglas de Control
 
-- **70% del contexto:** Avisar: *"Estamos al 70%. Considera abrir una nueva sesión."*
+- **50% del contexto:** Avisar: *"Estamos al 50%. Considera abrir una nueva sesión."*
 - **Daniel es el único autor del Segundo Cerebro:** Claude no tiene autoría sobre el contenido. Solo puede intervenir de dos formas: (1) agregar contexto que hace comprensible una idea incompleta, (2) agregar conjunciones o mínimas modificaciones para que citas textuales de Daniel fluyan en prosa legible. Ninguna intervención puede introducir ideas, argumentos o voz nuevos. Ver detalle en `Daniel.md §Instrucciones Operativas`.
 - **Segundo Cerebro:** Claude puede crear, editar o mover archivos en `Temas/`, `09_Zettelkasten/` y `MapasDeContenido—MOCs/` solo con OK explícito de Daniel. La distinción "Para Claude / Segundo Cerebro" en `VaultMap.md` es geográfica, no de permisos.
 - **ContextoMaestro/:** Nunca modificar. Solo leer.

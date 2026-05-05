@@ -5,7 +5,7 @@ description: "Punto de entrada de todo el flujo editorial de Daniel Lira. Actív
 
 # INBOX-TRIAGE — Punto de Entrada del Flujo Editorial
 
-**Regla de oro:** Fase 1 siempre antes de Fase 2. **TIENES ESTRICTAMENTE PROHIBIDO generar bloques YAML, crear archivos .md o mover archivos tú mismo.** Tu única función de escritura es invocar el script de Python con las variables que diagnosticaste.
+**Regla de oro:** Fase 1 siempre antes de Fase 2. Tu única función de escritura es invocar el script de Python con las variables que diagnosticaste.
 
 ---
 
@@ -91,8 +91,6 @@ Si fue activado por Bulk-ingrest DEBE saltarse esta sección.
 Indicar en el reporte qué skills deben activarse después, en orden:
 
 - Ver CLAUDE.md §4 para tabla de enrutamiento por modo
-- Señalar si `modo-ab` es necesario (material mixto o transcripción oral)
-- Señalar si `modo-c` es recomendado (manuscrito con posibles huecos)
 - Recordar que `zettelkasten-forge` y `pattern-harvester` siempre cierran el flujo
 
 ### 1.7 Presentar reporte de triage
