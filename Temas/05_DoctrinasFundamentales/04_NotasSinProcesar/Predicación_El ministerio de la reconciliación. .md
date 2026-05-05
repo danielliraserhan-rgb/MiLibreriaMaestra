@@ -1,3 +1,30 @@
+---
+title: "Predicación_El ministerio de la reconciliación. "
+tipo: "clase_en_vivo"
+tema: "05_DoctrinasFundamentales"
+libro_biblico_principal: ""
+personajes: []
+versiculos_citados: []
+temas_principales: []
+seo_keywords: []
+fecha: "2026-05-05"
+estado: "en_proceso"
+dominio: "pastoral"
+modo: "6"
+fase: ""
+serie: ""
+fuente: ""
+author_quotes: []
+zettelkasten_notes: []
+coaching_notes: []
+version_yaml: "2.0"
+fecha_actualizacion: "2026-05-05"
+scrivener_sync:
+  estado: ""
+  ultima_sync: ""
+  ultima_export: ""
+  scrivener_nombre: ""
+---
 ***2 Corintios 17 - 21***
 
 *Esto significa que todo el que pertenece a Cristo se ha convertido en una persona nueva. La vida antigua ha pasado; ¡una nueva vida ha comenzado! Y todo esto es un regalo de Dios, quien nos trajo de vuelta a sí mismo por medio de Cristo. Y Dios nos ha dado la tarea de reconciliar a la gente con él.* *Pues Dios estaba en Cristo reconciliando al mundo consigo mismo, no tomando más en cuenta el pecado de la gente. Y nos dio a nosotros este maravilloso mensaje de reconciliación.*

@@ -1,3 +1,30 @@
+---
+title: "Predicación_Fin. Conoce el comnezo y conoce el Fin para saber como participar"
+tipo: "clase_en_vivo"
+tema: "03_Escatologia—Destino"
+libro_biblico_principal: ""
+personajes: []
+versiculos_citados: []
+temas_principales: []
+seo_keywords: []
+fecha: "2026-05-05"
+estado: "en_proceso"
+dominio: "pastoral"
+modo: "6"
+fase: ""
+serie: ""
+fuente: ""
+author_quotes: []
+zettelkasten_notes: []
+coaching_notes: []
+version_yaml: "2.0"
+fecha_actualizacion: "2026-05-05"
+scrivener_sync:
+  estado: ""
+  ultima_sync: ""
+  ultima_export: ""
+  scrivener_nombre: ""
+---
 Permanece hasta el día de su regreso
 
 ![horizontal line](data:image/png;base64...)

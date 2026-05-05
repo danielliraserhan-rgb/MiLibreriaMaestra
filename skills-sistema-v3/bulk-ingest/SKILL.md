@@ -65,18 +65,13 @@ Acumular resultados y presentar TODO el triage junto:
 ──────────────────────────────────────────────────────────────
 Doc 1: "Nombre del archivo"
   → MODO 1 (Libro Terminado) | tema: 05_DoctrinasFundamentales
-  → fecha: 2021-03-14 (detectada: nombre de archivo)
-  → YAML clave: serie: "Orígenes", libro: Génesis
 
 Doc 2: "Otro archivo"
   → MODO 6 (Clase Larga) | tema: 03_Escatologia—Destino
-  → fecha: 2019 (detectada: cuerpo — "Clase del año 2019")
-  → YAML clave: libro: Lucas, personajes: [Noé]
 
 Doc 3: "Archivo sin fecha"
   → MODO 3 (Ideas Sueltas) | tema: 06_DiscipuladoVidaCristiana
-  → ⚠ fecha: sin_fecha (no detectada — asignar manualmente)
-  → YAML clave: ...
+  → ⚠ fecha: sin_fecha
 
 ...
 ──────────────────────────────────────────────────────────────
@@ -95,7 +90,7 @@ Una vez aprobado el triage del lote, procesar cada documento **sin pausas interm
 
 Para cada documento (en orden):
 1. `inbox-triage Fase 2` → crea contenedor en `Temas/`
-2. Skills del modo detectado → procesa el contenido
+2. Asegurar que el documento fuente se haya movido a su ruta correcta
 3. `zettelkasten-forge` → genera propuestas ZK → **guardar en buffer interno** (NO crear archivos todavía)
 
 > **→ Al terminar PASO 2:** ejecutar `/compact` antes de presentar propuestas ZK. Verificar caveman activo.

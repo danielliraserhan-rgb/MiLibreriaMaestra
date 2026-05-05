@@ -1,3 +1,30 @@
+---
+title: "Predicación_El Rey David_ Hombre conforme al corazón De Dios"
+tipo: "clase_en_vivo"
+tema: "02_HistoriaDeIsrael"
+libro_biblico_principal: ""
+personajes: []
+versiculos_citados: []
+temas_principales: []
+seo_keywords: []
+fecha: "2026-05-05"
+estado: "en_proceso"
+dominio: "pastoral"
+modo: "6"
+fase: ""
+serie: ""
+fuente: ""
+author_quotes: []
+zettelkasten_notes: []
+coaching_notes: []
+version_yaml: "2.0"
+fecha_actualizacion: "2026-05-05"
+scrivener_sync:
+  estado: ""
+  ultima_sync: ""
+  ultima_export: ""
+  scrivener_nombre: ""
+---
 Introducción
 
 * Seguimos con nuestra serie de Reyes

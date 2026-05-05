@@ -1,3 +1,30 @@
+---
+title: "Predicación_El Hombre Liberado y su Deseo de Estar con Jesús (Marcos 5_18-20)"
+tipo: "clase_en_vivo"
+tema: "06_DiscipuladoVidaCristiana"
+libro_biblico_principal: ""
+personajes: []
+versiculos_citados: []
+temas_principales: []
+seo_keywords: []
+fecha: "2026-05-05"
+estado: "en_proceso"
+dominio: "pastoral"
+modo: "6"
+fase: ""
+serie: ""
+fuente: ""
+author_quotes: []
+zettelkasten_notes: []
+coaching_notes: []
+version_yaml: "2.0"
+fecha_actualizacion: "2026-05-05"
+scrivener_sync:
+  estado: ""
+  ultima_sync: ""
+  ultima_export: ""
+  scrivener_nombre: ""
+---
 I just love the way that Mark words this as well. He begged him that he might be with him. Oh, the grammar here is confusing. Is he saying, Jesus, I beg you. Stay with me or Jesus, I beg you. Can I come with you? And I don't think he cares. I don't think that this man who has just been delivered, I don't think he cares whether he's going to go with Jesus or Jesus is going to stay.
 
 The only thing he cares about is never leaving aside again. Now here's a guy that's been naked, torn up, tormented in, absolutely ravaged by demons for who knows how long. I mean, this is terrifying. And now he's experiencing freedom for the first time, and who knows how long. He's terrified of Jesus's absence.
