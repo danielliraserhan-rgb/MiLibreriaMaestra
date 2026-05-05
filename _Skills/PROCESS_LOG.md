@@ -337,3 +337,23 @@
 **Directorios creados:** 7 nuevos subdirectorios en Temas/
 
 **Resolución:** Lote cerrado. 21 contenedores creados, 45 notas ZK creadas. Pattern-harvester queda pendiente para próxima sesión.
+
+---
+
+### 2026-05-05 — PATTERN-HARVESTER — Bulk-ingest Lotes 1+2 (retrospectivo)
+
+**Contexto:** Pattern-harvester diferido de Lotes 1 y 2. Ejecutado sobre el corpus completo acumulado.
+
+**ZK analizadas:** 85 notas
+- ZK-20260428-1700-001 a ZK-20260428-1700-062 (Lote 1 — predicaciones pastorales)
+- ZK-20260429-1000-001 a ZK-20260429-1000-045 (Lote 2 — predicaciones pastorales)
+
+**Patrones propuestos:** 3 | **Aprobados:** 3
+
+- **P-025** — "La adopción funda el estado; la permanencia lo vive como relación activa" *(teologia)* — aprobado con corrección teológica: estado por adopción → expresión como relación viva (no posición estática ni relación sin fundamento)
+- **P-026** — "La historia del oyente cobra sentido solo al insertarse en la Historia de Dios" *(estructura)* — aprobado
+- **P-027** — "Jesús diagnostica el bloqueo interior del interlocutor antes de que éste lo verbalice" *(hermeneutica)* — aprobado
+
+**activePatterns.json:** actualizado — total 22 patrones (P-006 a P-027), lastUpdated 2026-05-05
+
+**Resolución:** Pattern-harvester completado. Lotes 1+2 cerrados en su totalidad.

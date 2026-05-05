@@ -1,6 +1,6 @@
 {
   "version": "2.0",
-  "lastUpdated": "2026-04-28T17:00:00-06:00",
+  "lastUpdated": "2026-05-05T00:00:00-06:00",
   "description": "Patrones de voz, estructura y teología detectados en el corpus de Daniel Lira. Solo crecen con aprobación explícita. El pattern-harvester lee este archivo al inicio de cada sesión y lo actualiza solo tras OK de Daniel.",
   "load_for": {
     "pastoral_general": ["estructura", "teologia", "hermeneutica"],
@@ -113,6 +113,23 @@
         ],
         "source": "En los días de Noé — predicación 2026-04-24",
         "approved_date": "2026-04-24"
+      },
+      {
+        "id": "P-026",
+        "name": "La historia del oyente cobra sentido solo al insertarse en la Historia de Dios",
+        "scope": "estructura",
+        "description": "Movimiento predicatorio recurrente: Daniel invita al oyente a descubrir que su historia personal —fragmentada, sin dirección— solo se vuelve inteligible cuando se inserta dentro de la meta-narrativa de Dios. No es dispositivo retórico de conexión emocional; es afirmación teológica sobre la naturaleza del relato: sin el contexto mayor, los fragmentos de la vida permanecen incoherentes. El predicador no da significado a la historia del oyente — le muestra que el significado ya existía, esperando que el oyente entrara. Distinguir de P-024 (que describe la estructura de la Escritura): P-026 describe el movimiento de invitación al oyente dentro de esa historia.",
+        "trigger": "Activar cuando el texto trabaje identidad del creyente, llamado personal, o propósito de vida. Si falta el momento en que la historia del oyente entra en la gran historia, proponer su incorporación. Preguntar: ¿el oyente sabe que su historia ya tiene lugar reservado en la Historia de Dios?",
+        "evidence": [
+          "ZK-20260429-1000-024 — El evangelio como la gran historia en la que la historia del oyente cobra sentido",
+          "ZK-20260429-1000-043 — Tu historia cobra sentido solo cuando se inserta en la Historia de Dios",
+          "ZK-20260429-1000-044 — 'Otros pueden, pero tú no' — el llamado personalizado dentro de la historia",
+          "ZK-20260429-1000-045 — El llamado de Abraham: recibir la gran historia como la tuya",
+          "ZK-20260429-1000-023 — La perla de gran precio: el costo es todo, porque vale más que todo",
+          "ZK-20260428-1700-029 — Los puntos aleatorios de la vida cobran sentido solo como parte de la gran historia"
+        ],
+        "source": "BULK-INGEST Lote 2 — predicaciones 2026-04-29",
+        "approved_date": "2026-05-05"
       }
     ],
     "teologia": [
@@ -216,6 +233,23 @@
         ],
         "source": "Nacer de Nuevo — Cap. 3, 6",
         "approved_date": "2026-04-23"
+      },
+      {
+        "id": "P-025",
+        "name": "La adopción funda el estado; la permanencia lo vive como relación activa",
+        "scope": "teologia",
+        "description": "El nuevo nacimiento produce un estado objetivo adquirido por gracia: la adopción como hijo de Dios. Ese estado es la base, no la meta. Solo porque el creyente ES hijo (estado) puede VIVIR como hijo (dinámica relacional activa). La permanencia en Cristo no es posición estática ni es relación que flota sin fundamento — es el estado de adopción expresándose como relación viva, obediente, fructífera. El error doble: (1) hacer de la permanencia solo un estado pasivo, ignorando la dinámica; (2) hacer de la permanencia solo relación que se puede perder, ignorando el estado objetivo. El orden: adopción (estado dado en el nuevo nacimiento) → permanencia como expresión de ese estado. Conecta con P-008 (identidad antes del llamado) y P-020 (identidad precede función), pero específico a la teología de unión con Cristo en Juan 15.",
+        "trigger": "Activar cuando se trabaje Juan 15, permanencia, filiación, o vida cristiana. Si el texto trata la permanencia como solo estatus (sin dinámica) o solo relación (sin fundamento objetivo), proponer el orden correcto: estado → expresión relacional. Verificar que la adopción/identidad esté declarada ANTES del imperativo de permanecer.",
+        "evidence": [
+          "ZK-20260429-1000-014 — Permanencia en Cristo es relacional y activa, no posición estática",
+          "ZK-20260429-1000-015 — Ya no siervos sino amigos: conocer el corazón del Padre es la diferencia",
+          "ZK-20260429-1000-016 — El fruto como evidencia de permanencia, no como condición de entrada",
+          "ZK-20260429-1000-028 — Vida eterna es relacional: que te conozcan a Ti (Juan 17:3)",
+          "ZK-20260429-1000-042 — Permanece: activo, eterno, relacional, obediente (Juan 15)",
+          "ZK-20260429-1000-041 — La identidad de escogido como fundamento del permanecer"
+        ],
+        "source": "BULK-INGEST Lote 2 — predicaciones 2026-04-29",
+        "approved_date": "2026-05-05"
       }
     ],
     "hermeneutica": [
@@ -278,6 +312,23 @@
         ],
         "source": "En los días de Noé — predicación 2026-04-24",
         "approved_date": "2026-04-24"
+      },
+      {
+        "id": "P-027",
+        "name": "Jesús diagnostica el bloqueo interior del interlocutor antes de que éste lo verbalice",
+        "scope": "hermeneutica",
+        "description": "En los textos evangélicos que Daniel trabaja, Jesús identifica y nombra la barrera interior del interlocutor antes de que éste la declare: Nicodemo no puede ver porque nació de una sola vez; Zaqueo no puede ver porque hay multitud y pequeñez interna; la mujer de Sicar busca agua porque tiene sed de otra cosa. Daniel usa este patrón hermenéutico para leer personajes del evangelio y como estrategia predicatoria: el diagnóstico precede la oferta. Conecta con P-012 (La pregunta que nombra el problema exacto, el equivalente retórico de Daniel), pero P-027 es el patrón bíblico en Jesús mismo que P-012 imita. Diferencia clave: P-012 es la voz de Daniel; P-027 es el movimiento de Jesús que Daniel interpreta y reproduce.",
+        "trigger": "Activar en exégesis de escenas de encuentro evangélico (Nicodemo, Samaritana, Zaqueo, Pedro, hombre liberado). Si falta el diagnóstico interior antes de la oferta, proponer su incorporación. En predicación: verificar que el movimiento 'nombrar el bloqueo' preceda el movimiento 'ofrecer la solución'.",
+        "evidence": [
+          "ZK-20260429-1000-007 — La curiosidad nocturna de Nicodemo que terminó en entrega pública (Juan 3 a Juan 19)",
+          "ZK-20260429-1000-008 — Jesús nombra la barrera antes de que el interlocutor la formule",
+          "ZK-20260429-1000-029 — Zaqueo: doble barrera (multitud externa + pequeñez interna)",
+          "ZK-20260429-1000-030 — El hambre de ver a Jesús convierte la vergüenza en escalada",
+          "ZK-20260428-1000-006 — 'Si supieras que yo soy quien habla contigo' (Juan 4:26)",
+          "ZK-20260428-1700-007 — El anhelo de estar con Jesús es marca de transformación, no de debilidad"
+        ],
+        "source": "BULK-INGEST Lote 2 + Lote 1 — predicaciones 2026-04-28/29",
+        "approved_date": "2026-05-05"
       }
     ],
     "voz": [
