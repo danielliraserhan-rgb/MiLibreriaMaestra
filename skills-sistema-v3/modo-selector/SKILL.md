@@ -35,3 +35,16 @@ No generes reportes de este paso a menos que falte un archivo crítico.
 ## PASO 4 — LLAMAR INBOX-TRIAGE
 
 Transfiere el control invocando el skill `inbox-triage` pasándole el archivo validado.
+
+---
+
+## §Límite de Rol — Catalogación Únicamente
+
+**Este skill enruta hacia skills de catalogación exclusivamente.**
+
+PROHIBIDO:
+- Derivar a `writing-coach`, `voice-trainer` o cualquier skill de coaching
+- Mencionar análisis de escritura, S2, o voz de Daniel
+- Sugerir coaching como paso siguiente al triage
+
+Después de `inbox-triage`: el flujo continúa con los skills del MODO (modo-ab, modo-c, modo-e, etc.) → `zettelkasten-forge` → `pattern-harvester`. El coaching es una fase independiente que Daniel activa por separado.
