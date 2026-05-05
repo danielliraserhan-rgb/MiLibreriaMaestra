@@ -112,11 +112,19 @@ def _extract_json(text: str) -> str:
         m = re.search(pattern, text, re.DOTALL)
         if m:
             return m.group(1).strip()
-    for opener, closer in (("{", "}"), ("[", "]")):
-        start = text.find(opener)
-        end   = text.rfind(closer)
-        if start != -1 and end != -1 and end > start:
-            return text[start : end + 1]
+    # Usar el opener que aparece primero en el string para preservar el tipo raíz
+    brace_pos   = text.find("{")
+    bracket_pos = text.find("[")
+    if brace_pos == -1 and bracket_pos == -1:
+        return text.strip()
+    if bracket_pos != -1 and (brace_pos == -1 or bracket_pos < brace_pos):
+        opener, closer = "[", "]"
+    else:
+        opener, closer = "{", "}"
+    start = text.find(opener)
+    end   = text.rfind(closer)
+    if start != -1 and end != -1 and end > start:
+        return text[start : end + 1]
     return text.strip()
 
 
@@ -138,12 +146,11 @@ def _safe_list(items: object) -> str:
 
 def _next_sequence(base_path: Path, datestamp: str, timestamp: str) -> int:
     """Calcula el próximo número de secuencia libre para este instante."""
-    prefix = f"ZK-{datestamp}-{timestamp}-"
-    taken = {
-        int(f.stem.split("-")[-1])
-        for f in base_path.glob(f"{prefix}*.md")
-        if f.stem.split("-")[-1].isdigit()
-    }
+    taken: set[int] = set()
+    for f in base_path.glob(f"ZK-{datestamp}-{timestamp}-*.md"):
+        m = re.match(rf"ZK-{datestamp}-{timestamp}-(\d{{3}})", f.stem)
+        if m:
+            taken.add(int(m.group(1)))
     n = 1
     while n in taken:
         n += 1
