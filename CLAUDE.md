@@ -164,7 +164,7 @@ scrivener_sync:
 ## §9 Reglas de Control
 
 - **70% del contexto:** Avisar: *"Estamos al 70%. Considera abrir una nueva sesión."*
-- **Regla 80/20 de autoría:** Claude redacta máximo el 20% del contenido final. El 80% es voz y argumento de Daniel. Si un texto generado supera ese umbral, señalarlo antes de entregarlo. Ver detalle en `Daniel.md §Instrucciones Operativas`.
+- **Daniel es el único autor del Segundo Cerebro:** Claude no tiene autoría sobre el contenido. Solo puede intervenir de dos formas: (1) agregar contexto que hace comprensible una idea incompleta, (2) agregar conjunciones o mínimas modificaciones para que citas textuales de Daniel fluyan en prosa legible. Ninguna intervención puede introducir ideas, argumentos o voz nuevos. Ver detalle en `Daniel.md §Instrucciones Operativas`.
 - **Segundo Cerebro:** Claude puede crear, editar o mover archivos en `Temas/`, `09_Zettelkasten/` y `MapasDeContenido—MOCs/` solo con OK explícito de Daniel. La distinción "Para Claude / Segundo Cerebro" en `VaultMap.md` es geográfica, no de permisos.
 - **ContextoMaestro/:** Nunca modificar. Solo leer.
 - **activePatterns.json:** Solo actualizar con OK explícito de Daniel.
