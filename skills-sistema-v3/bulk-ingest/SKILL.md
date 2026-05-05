@@ -56,6 +56,8 @@ description: "Procesa lotes de 15-25 documentos desde Inbox/ con checkpoints agr
 
 Para cada documento del lote, ejecutar `inbox-triage Fase 1` (auto, sin pausa).
 
+**Detección de fecha (ver §6.1 de CLAUDE.md):** Para cada documento, aplicar el algoritmo de detección antes de armar el reporte. La fecha detectada es la que va a `fecha:` en el YAML — nunca la fecha de hoy salvo que el contenido sea nuevo.
+
 Acumular resultados y presentar TODO el triage junto:
 
 ```
@@ -63,11 +65,18 @@ Acumular resultados y presentar TODO el triage junto:
 ──────────────────────────────────────────────────────────────
 Doc 1: "Nombre del archivo"
   → MODO 1 (Libro Terminado) | tema: 05_DoctrinasFundamentales
+  → fecha: 2021-03-14 (detectada: nombre de archivo)
   → YAML clave: serie: "Orígenes", libro: Génesis
 
 Doc 2: "Otro archivo"
   → MODO 6 (Clase Larga) | tema: 03_Escatologia—Destino
+  → fecha: 2019 (detectada: cuerpo — "Clase del año 2019")
   → YAML clave: libro: Lucas, personajes: [Noé]
+
+Doc 3: "Archivo sin fecha"
+  → MODO 3 (Ideas Sueltas) | tema: 06_DiscipuladoVidaCristiana
+  → ⚠ fecha: sin_fecha (no detectada — asignar manualmente)
+  → YAML clave: ...
 
 ...
 ──────────────────────────────────────────────────────────────
