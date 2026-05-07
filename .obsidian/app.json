@@ -8,5 +8,6 @@
     "ContextoMaestro/",
     "Inbox/scrivener-sync/"
   ],
-  "showUnsupportedFiles": true
+  "showUnsupportedFiles": true,
+  "alwaysUpdateLinks": true
 }
